@@ -18,6 +18,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 AFP = [sys.executable, os.path.join(HERE, "vendor", "audfprint", "audfprint.py")]
 CACHE = os.path.join(HERE, "cache"); os.makedirs(CACHE, exist_ok=True)
 SPEEDS = [0.94, 0.96, 0.98, 1.0, 1.02, 1.04, 1.06]
+WIDE = [("r", x) for x in (0.96, 0.98, 1.0, 1.02, 1.04, 1.06, 1.08, 1.10, 1.12, 1.15, 1.18, 1.21)] + \
+       [("t", x) for x in (1.04, 1.08, 1.12, 1.16, 1.20)]
+VARIANTS = [("r", x) for x in SPEEDS]
 
 def dz(path):
     url = path if path.startswith("http") else "https://api.deezer.com" + path
@@ -52,6 +55,29 @@ def catalogue(artist_names):
                                "album": al["title"], "cover": al.get("cover_medium"), "link": t.get("link"), "released": (al.get("release_date") or "")[:4]})
     return tracks
 
+def catalogue_from_rows(rows):
+    """Exact tracks people (or Shazam) named: the original plus up to 2 more versions each."""
+    tracks, seen = [], set()
+    for r in rows:
+        base = re.sub(r"\(.*?\)|\[.*?\]", " ", r["title"]).strip()
+        lead = re.split(r"[,&]| ft\.| feat\.| x ", r["artist"], flags=re.I)[0].strip()
+        res = dz("/search?q=" + urllib.parse.quote(f"{lead} {base}") + "&limit=6").get("data", [])
+        got = 0
+        for t in res:
+            if norm(base)[:6] not in norm(t["title"]) and norm(lead)[:5] not in norm(t["artist"]["name"]):
+                continue
+            k = t["id"]
+            if k in seen or not t.get("preview"):
+                continue
+            seen.add(k); got += 1
+            tracks.append({"dz": t["id"], "artist": t["artist"]["name"], "title": t["title"], "preview": t["preview"],
+                           "album": t.get("album", {}).get("title"), "cover": t.get("album", {}).get("cover_medium"), "link": t.get("link"),
+                           "released": None, "claimedAt": r.get("start"), "claimed": f"{r['artist']} - {r['title']}"})
+            if got >= 3:
+                break
+        time.sleep(0.2)
+    return tracks
+
 def fetch_preview(t):
     """Polite download: Deezer rate-limits bursts, so go one at a time with backoff; never crash the run."""
     dst = os.path.join(CACHE, f"dz{t['dz']}.mp3")
@@ -74,14 +100,14 @@ def fetch_preview(t):
     return None
 
 def speed_variants(src, workdir):
-    """Pitch-fader style speed change (tempo and pitch together), like a CDJ/turntable without key lock."""
+    """r = pitch-fader speed change (tempo and pitch together); t = key-locked tempo change (pitch kept)."""
     out = []
-    for sp in SPEEDS:
-        dst = os.path.join(workdir, f"{os.path.basename(src)[:-4]}@{sp:.2f}.wav")
-        if sp == 1.0:
-            filt = "aresample=11025"
+    for kind, sp in VARIANTS:
+        dst = os.path.join(workdir, f"{os.path.basename(src)[:-4]}@{kind}{sp:.2f}.wav")
+        if kind == "r":
+            filt = "aresample=11025" if sp == 1.0 else f"asetrate={int(44100 * sp)},aresample=11025"
         else:
-            filt = f"asetrate={int(44100 * sp)},aresample=11025"
+            filt = f"aresample=44100,atempo={sp},aresample=11025"
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-ac", "1", "-af", filt, dst], check=True)
         out.append(dst)
     return out
@@ -123,9 +149,9 @@ def match(db, wins, workdir):
     for line in r.stdout.splitlines():
         # "Matched /path/w_00120.wav 20.0 sec 1234 raw hashes as /path/dz123@1.02.wav at   3.2 s with    25 of    40 common hashes"
         # "Matched /tmp/w_00120.wav 19.8 sec 5583 raw hashes as /tmp/dz123@1.02.wav at 20.5 s with 9 of 285 common hashes at rank 0"
-        m = re.search(r"Matched\s+(\S*w_(\d+)\.wav)\s.*?\sas\s+(\S*?(dz\d+)@([\d.]+)\.wav)\s.*?with\s+(\d+)\s+of\s+(\d+)", line)
+        m = re.search(r"Matched\s+(\S*w_(\d+)\.wav)\s.*?\sas\s+(\S*?(dz\d+)@([rt]?)([\d.]+)\.wav)\s.*?with\s+(\d+)\s+of\s+(\d+)", line)
         if m:
-            hits[int(m.group(2))] = {"ref": m.group(4), "speed": float(m.group(5)), "common": int(m.group(6)), "of": int(m.group(7))}
+            hits[int(m.group(2))] = {"ref": m.group(4), "speed": float(m.group(6)), "keylock": m.group(5) == "t", "common": int(m.group(7)), "of": int(m.group(8))}
     return hits
 
 def merge_hits(hits, refs, hop=10, gap=3):
@@ -142,11 +168,13 @@ def merge_hits(hits, refs, hop=10, gap=3):
             continue
         r = refs[s["ref"]]
         sp = sorted(s["speeds"])[len(s["speeds"]) // 2]
-        out.append({**s, "artist": r["artist"], "title": r["title"], "pitch": round((sp - 1) * 100)})
+        out.append({**s, "artist": r["artist"], "title": r["title"], "pitch": round((sp - 1) * 100), "claimed": r.get("claimed"), "claimedAt": r.get("claimedAt")})
     return out
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("url"); ap.add_argument("--artists", required=True)
+    ap = argparse.ArgumentParser(); ap.add_argument("url"); ap.add_argument("--artists", default="")
+    ap.add_argument("--tracks-from", help="JSON with segments whose named tracks form the catalogue (targeted check)")
+    ap.add_argument("--wide", action="store_true", help="speed variants up to +21% (pitch) and +20% (key lock), for sped-up genres")
     ap.add_argument("--audio"); ap.add_argument("--out", default=os.path.join(HERE, "..", "sets"))
     ap.add_argument("--null", help="audio of an unrelated set, used to calibrate the false-match threshold")
     a = ap.parse_args(); t0 = time.time()
@@ -158,18 +186,27 @@ def main():
         if not audio or not os.path.exists(audio):
             subprocess.run([os.path.join(HERE, ".venv", "bin", "yt-dlp"), "-q", "-x", "--audio-format", "mp3", "-o", os.path.join(wd, "set.%(ext)s"), a.url], check=True)
             audio = os.path.join(wd, "set.mp3")
-        names = [x.strip() for x in a.artists.split(",") if x.strip()]
-        print(f"building catalogue for: {', '.join(names)}", file=sys.stderr)
-        tracks = catalogue(names)
+        global VARIANTS
+        if a.wide:
+            VARIANTS = WIDE
+        names = [x.strip() for x in (a.artists or "").split(",") if x.strip()]
+        if a.tracks_from:
+            src = json.load(open(a.tracks_from))
+            rows = [{"artist": s["track"]["artist"], "title": s["track"]["title"], "start": s["start"]} for s in src["segments"] if s["track"]]
+            print(f"building catalogue from {len(rows)} named tracks", file=sys.stderr)
+            tracks = catalogue_from_rows(rows); names = names or ["named tracks"]
+        else:
+            print(f"building catalogue for: {', '.join(names)}", file=sys.stderr)
+            tracks = catalogue(names)
         print(f"  {len(tracks)} unique tracks", file=sys.stderr)
         import hashlib
-        tag = hashlib.sha1(("|".join(sorted(norm(n) for n in names)) + str(SPEEDS)).encode()).hexdigest()[:10]
+        tag = hashlib.sha1(("|".join(sorted(norm(n) for n in names)) + str(VARIANTS) + str(sorted(t["dz"] for t in tracks))).encode()).hexdigest()[:10]
         db = os.path.join(CACHE, f"cat_{tag}.pklz"); refsf = os.path.join(CACHE, f"cat_{tag}.json")
         if os.path.exists(db) and os.path.exists(refsf):
             refs = json.load(open(refsf)); print(f"  reusing fingerprint db ({len(refs)} tracks)", file=sys.stderr)
         else:
             refs = build_db(tracks, wd, db); json.dump(refs, open(refsf, "w"))
-        print(f"  fingerprinted {len(refs)} tracks x {len(SPEEDS)} speeds in {time.time()-t0:.0f}s", file=sys.stderr)
+        print(f"  fingerprinted {len(refs)} tracks x {len(VARIANTS)} speed variants in {time.time()-t0:.0f}s", file=sys.stderr)
         wins = windows(audio, wd, dur)
         hits = match(db, wins, wd)
         thr = 15

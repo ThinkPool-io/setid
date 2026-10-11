@@ -26,22 +26,38 @@ def secs(t):
     p = [int(x) for x in t.split(":")]
     return p[0] * 60 + p[1] if len(p) == 2 else p[0] * 3600 + p[1] * 60 + p[2]
 
+CHATTY_PRE = re.compile(r"^(it'?s|it’s|its|this is|i think( it'?s)?|maybe|sounds like|probably|pretty sure( it'?s)?)\s+(a\s+)?(remix|edit|rework)?\s*(of\s+)?", re.I)
+CHATTY_POST = re.compile(r"\s+(but|i think|maybe|idk|not sure|so idk|lol)\b.*$", re.I)
+
 def clean(s):
+    s = re.sub(r"^[\s\]\)\}>:|.-]+", "", s)           # leftovers of "[42:55]" / "(1:02:03)" / "01. "
     s = re.sub(r"@\S+", " ", s)                       # @mentions
     s = re.sub(r"\((?:soundcloud|sc)\)", " ", s, flags=re.I)
     s = re.sub(r"[\U0001F300-\U0001FAFF☀-➿]", " ", s)  # emoji
     return re.sub(r"\s+", " ", s).strip(" -–·|")
 
+LEAD_TS = re.compile(r"^\s*[\[(]?(\d{1,2}:\d{2}(?::\d{2})?)[\])]?\s*(?:is|=|->|-|–|:)?\s*(.*)$", re.I)
+
+def answer_time(text):
+    """If an answer starts with its own timestamp ("1:04:38 - Artist - Title"), return (seconds, rest)."""
+    first = next((l for l in text.splitlines() if l.strip()), "")
+    m = LEAD_TS.match(first)
+    return (secs(m.group(1)), m.group(2)) if m and m.group(2).strip() else (None, text)
+
 def parse_answer(text):
     lines = [clean(l) for l in text.splitlines() if clean(l)]
     if not lines:
         return None
+    lines[0] = re.sub(r"\s*\([^)]*\b(think|idk|lol|haha\w*|maybe|not sure)\b[^)]*\)", "", lines[0], flags=re.I).strip()
     m = ANSWER.match(lines[0])
     if not m:
         return None
     a, b = m.group(1).strip(), m.group(2).strip()
+    a = CHATTY_PRE.sub("", a).strip(); b = CHATTY_POST.sub("", b).strip()
     if JUNK.match(a) or JUNK.match(b) or len(a) < 2 or len(b) < 2 or len(a) + len(b) > 120:
         return None
+    if len(a.split()) > 6 or TS.search(a) or re.match(r"^id\b", b, re.I) or re.match(r"^id\b", a, re.I):
+        return None  # a sentence, a stray timestamp, or an "ID" placeholder rather than a real name
     return a, b
 
 def key_of(a, b):
@@ -89,12 +105,15 @@ def mine(meta):
     for c in cs:
         if c.get("parent") in (None, "root"):
             continue
-        ans = parse_answer(c.get("text", ""))
+        own_t, body = answer_time(c.get("text", ""))
+        ans = parse_answer(body)
         if not ans:
             continue
         q = byid.get(c["parent"], {}).get("text", "")
         m = TS.search(q)
-        if m:
+        if own_t is not None:
+            t = own_t
+        elif m:
             t = secs(m.group(1))
         elif FIRST.search(q):
             t = 0
@@ -143,7 +162,48 @@ def mine(meta):
     for r in rows:
         r["artist"] = max(variants[key_of(r["artist"], "")], key=score)
     rows.sort(key=lambda r: r["start"])
+    rows = cluster(rows)
     return rows, len(cs)
+
+def base_title(t):
+    t = re.sub(r"\(.*?\)|\[.*?\]", " ", t.lower())
+    return re.sub(r"[^a-z0-9]+", "", t.replace("whoops", "woops"))
+
+def cluster(rows, window=130):
+    """Different people post the same track with different spellings/remix credits. Merge rows that start
+    within `window` seconds and share a base title (ignoring the bracketed remix credit) or a fuzzy-equal one."""
+    import difflib
+    out = []
+    for r in sorted(rows, key=lambda r: r["start"]):
+        bt = base_title(r["title"])
+        hit = None
+        for o in out[::-1]:
+            if r["start"] - o["start"] > window:
+                break
+            ob = base_title(o["title"])
+            ra, oa = base_title(r["artist"]), base_title(o["artist"])
+            def close(x, y):
+                return bool(x) and bool(y) and (x == y or (min(len(x), len(y)) >= 4 and (x in y or y in x)) or difflib.SequenceMatcher(None, x, y).ratio() >= 0.8)
+            if close(bt, ob) or (close(bt, oa) and close(ra, ob)) or (close(bt, oa) and len(bt) >= 5) or (close(ra, ob) and len(ob) >= 5):
+                hit = o; break
+        if hit:
+            hit.setdefault("variants", [dict(hit)])
+            hit["variants"].append(r)
+            best = max(hit["variants"], key=lambda v: (v["votes"], len(v["title"]) + len(v["artist"])))
+            hit.update({"artist": best["artist"], "title": best["title"], "start": min(v["start"] for v in hit["variants"])})
+            hit["votes"] = sum(v["votes"] for v in hit["variants"]); hit["likes"] = sum(v["likes"] for v in hit["variants"])
+            hit["evidence"] = (hit.get("evidence", []) + r["evidence"])[:6]
+        else:
+            out.append(dict(r))
+    for o in out:
+        o.pop("variants", None)
+    # a lone guess colliding with a well-supported ID at the same moment is dropped
+    keep = []
+    for o in out:
+        rival = next((x for x in out if x is not o and abs(x["start"] - o["start"]) <= 30 and x["votes"] >= 3 * o["votes"]), None)
+        if not rival:
+            keep.append(o)
+    return keep
 
 def segments(rows, dur, span=240):
     """Each comment ID covers from its time until the next ID, capped at `span` seconds; gaps stay unidentified."""
@@ -164,7 +224,12 @@ def segments(rows, dur, span=240):
 async def main():
     ap = argparse.ArgumentParser(); ap.add_argument("url"); ap.add_argument("--out", default=os.path.join(HERE, "..", "sets")); ap.add_argument("--max", type=int, default=3000)
     a = ap.parse_args(); t0 = time.time()
-    meta = fetch(a.url, a.max)
+    rawp = os.path.join(HERE, "logs", "comments", re.sub(r"\W", "_", a.url)[-40:] + ".raw.json")
+    os.makedirs(os.path.dirname(rawp), exist_ok=True)
+    if os.path.exists(rawp) and time.time() - os.path.getmtime(rawp) < 6 * 3600:
+        meta = json.load(open(rawp))
+    else:
+        meta = fetch(a.url, a.max); json.dump(meta, open(rawp, "w"))
     dur = float(meta.get("duration") or 0)
     rows, n = mine(meta)
     print(f"{n} comments scanned, {len(rows)} tracks named", file=sys.stderr)

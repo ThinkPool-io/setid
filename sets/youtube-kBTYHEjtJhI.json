@@ -1,0 +1,1702 @@
+{
+ "source": {
+  "url": "https://www.youtube.com/watch?v=kBTYHEjtJhI",
+  "platform": "Youtube",
+  "id": "kBTYHEjtJhI",
+  "title": "KOBOSIL - EMOTIONAL SCHRANZ SET (live @ HIVE Festival 2026)",
+  "channel": "Kobosil",
+  "duration": 5011.0,
+  "thumbnail": "https://i.ytimg.com/vi/kBTYHEjtJhI/maxresdefault.jpg",
+  "upload_date": "20260628",
+  "views": 1156286
+ },
+ "analysed": {
+  "samples": 30,
+  "every": 40,
+  "clip": 12,
+  "identified": 30,
+  "partialUntil": 1200,
+  "method": "multi",
+  "shazamRows": 6,
+  "audioRows": 7,
+  "commentRows": 17,
+  "commentConfirmed": 13,
+  "catalogue": 62,
+  "catalogueArtists": [
+   "named tracks"
+  ],
+  "comments": 1104,
+  "shazamSamples": 30,
+  "shazamEvery": 40,
+  "ran_at": "2026-10-11T16:30:44Z"
+ },
+ "segments": [
+  {
+   "start": 0,
+   "end": 120,
+   "track": {
+    "id": "sz9ed6e0127d",
+    "artist": "Rudyard Kipling",
+    "title": "Boots",
+    "source": "shazam",
+    "samples": 3,
+    "commentVotes": 7,
+    "evidence": [
+     "reply to \"00:00 \u2013 Kobosil \u2013 ID (Intro Edit)\r\n01:51 \u2013 Solyd \u2013 Rock The \"",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ]
+   },
+   "hits": 3
+  },
+  {
+   "start": 120,
+   "end": 320,
+   "track": {
+    "id": "sz83fa84e185",
+    "artist": "SOLYD",
+    "title": "Rock the House",
+    "source": "shazam",
+    "samples": 5,
+    "commentVotes": 8,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ]
+   },
+   "hits": 5
+  },
+  {
+   "start": 320,
+   "end": 440,
+   "track": {
+    "id": "sz35e9092f52",
+    "artist": "Stoltenhoff",
+    "title": "Feel the Beat (Prakas Remix)",
+    "source": "shazam",
+    "samples": 3,
+    "catalog": true,
+    "pitch": 2,
+    "commentVotes": 8,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ]
+   },
+   "hits": 3
+  },
+  {
+   "start": 440,
+   "end": 600,
+   "track": {
+    "id": "sz51e11485a9",
+    "artist": "Diogo Ramos",
+    "title": "Back the F**k Off",
+    "source": "shazam",
+    "samples": 4,
+    "catalog": true,
+    "pitch": 2,
+    "commentVotes": 8,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ]
+   },
+   "hits": 4
+  },
+  {
+   "start": 600,
+   "end": 800,
+   "track": {
+    "id": "cm829206271",
+    "artist": "Vlace",
+    "title": "Music Is The Answer",
+    "source": "comments",
+    "votes": 9,
+    "likes": 1059,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "bpm": 124.91,
+    "deezer": "https://www.deezer.com/track/608575532",
+    "isrc": "USTW29857757",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/a/4/d/0/a4d700ba033ec8cfe7c1424ac9e47066.mp3?hdnea=exp=1791736616~acl=/api/1/1/a/4/d/0/a4d700ba033ec8cfe7c1424ac9e47066.mp3*~data=user_id=0,application_id=42~hmac=d2e864e234e29a4e1bc4d9f6df8fa43d21ad40717a01201f7a92f9cb29d0535f",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/237ea3f14e69d551682fff7138bdf1eb/250x250-000000-80-0-0.jpg",
+    "youtube": "6iHPFSxue1w",
+    "youtubeTitle": "Music Is The Answer"
+   },
+   "hits": 9
+  },
+  {
+   "start": 800,
+   "end": 1000,
+   "track": {
+    "id": "sz7dd4cbacec",
+    "artist": "Showtek & SHOWTEKNO",
+    "title": "The Colour Of The Harder Styles (L4ZARUS Remix)",
+    "source": "shazam",
+    "samples": 5,
+    "catalog": true,
+    "pitch": 0,
+    "commentVotes": 8,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ]
+   },
+   "hits": 5
+  },
+  {
+   "start": 1000,
+   "end": 1200,
+   "track": {
+    "id": "sz7252537713",
+    "artist": "O.B.I.",
+    "title": "Underground",
+    "source": "shazam",
+    "samples": 5,
+    "catalog": true,
+    "pitch": 2,
+    "commentVotes": 8,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ]
+   },
+   "hits": 5
+  },
+  {
+   "start": 1200,
+   "end": 1291,
+   "track": {
+    "id": "cm407547473",
+    "artist": "DJ Bountyhunter",
+    "title": "Whoops (Luciid, Trugbild EDIT)",
+    "source": "comments",
+    "votes": 8,
+    "likes": 1059,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "youtube": "XQnNx-pVOuc",
+    "youtubeTitle": "Luciid - Woops (Luciid & Trugbild Edit)",
+    "askedAt": 1175
+   },
+   "hits": 8
+  },
+  {
+   "start": 1291,
+   "end": 1330,
+   "track": {
+    "id": "dz4171086662",
+    "artist": "Golpe",
+    "title": "Master At Work",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/9e8ec1dc6ef93580215c63d89bc8d7ae/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/4171086662",
+    "claimed": "Golpe - Master At Work",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/b/9/0/bb9c8c46e452eed5f3a1db2e6e2def77.mp3?hdnea=exp=1791736802~acl=/api/1/1/b/b/9/0/bb9c8c46e452eed5f3a1db2e6e2def77.mp3*~data=user_id=0,application_id=42~hmac=ed857b4072a8e152b147c2de1d0e12694051934e2d13deea359ac9b1c894c7df",
+    "released": null,
+    "album": "Master At Work",
+    "source": "audio",
+    "windows": 2,
+    "pitch": 2,
+    "score": 61,
+    "commentVotes": 8,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "matchedAs": "Pupa Nas T - Master At Work"
+   },
+   "hits": 2
+  },
+  {
+   "start": 1330,
+   "end": 1530,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 1530,
+   "end": 1718,
+   "track": {
+    "id": "cm500917479",
+    "artist": "AEREA",
+    "title": "Monsters (Golpe EDIT)(unreleased)",
+    "source": "comments",
+    "votes": 8,
+    "likes": 1059,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "youtube": "8iLZbwWHbu4",
+    "youtubeTitle": "Aerea-Monsters (Power Schranz Remix)"
+   },
+   "hits": 8
+  },
+  {
+   "start": 1718,
+   "end": 1939,
+   "track": {
+    "id": "cm662327610",
+    "artist": "Juju ft. Henning May",
+    "title": "Vermissen (Nachtigaller Remix) (unreleased)",
+    "source": "comments",
+    "votes": 8,
+    "likes": 1007,
+    "approx": false,
+    "evidence": [
+     "reply to \"||   TRACKLIST   ||\n\n[00:01] Young Fathers - Boots  (Kobosil\"",
+     "reply to \"31:20 Track ID?\"",
+     "reply to \"||   TRACKLIST   ||\n\n[00:01] Young Fathers - Boots  (Kobosil\"",
+     "comment tracklist",
+     "comment tracklist",
+     "reply to \"30:22 track ID me\""
+    ],
+    "youtube": "YHbYAUs9JCo",
+    "youtubeTitle": "Juju feat. Henning May - Vermissen (prod. Krutsch) [Official Video]"
+   },
+   "hits": 8
+  },
+  {
+   "start": 1939,
+   "end": 2086,
+   "track": {
+    "id": "cm276723033",
+    "artist": "Marie Vaunt",
+    "title": "That Acid (SONDERLING Schranz Rework)",
+    "source": "comments",
+    "votes": 8,
+    "likes": 1059,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "youtube": "SJb-LIbcAs8",
+    "youtubeTitle": "MARIE VAUNT - THAT ACID (SONDERLING SCHRANZ REWORK)"
+   },
+   "hits": 8
+  },
+  {
+   "start": 2086,
+   "end": 2234,
+   "track": {
+    "id": "cm941716255",
+    "artist": "Benny Benassi pres. The Biz",
+    "title": "Satisfaction (ID Remix)",
+    "source": "comments",
+    "votes": 6,
+    "likes": 1057,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "youtube": "fPIw-BxazY4",
+    "youtubeTitle": "Benny Benassi presents The Biz - Satisfaction (Just_us Remix) [Ultra Records]"
+   },
+   "hits": 6
+  },
+  {
+   "start": 2234,
+   "end": 2435,
+   "track": {
+    "id": "cm706556346",
+    "artist": "Alpha\u00b2",
+    "title": "Smack My Derb (ID Remix)",
+    "source": "comments",
+    "votes": 9,
+    "likes": 1060,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "reply to \"||   TRACKLIST   ||\n\n[00:01] Young Fathers - Boots  (Kobosil\"",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "youtube": "mztwScXZ0xk",
+    "youtubeTitle": "Alpha\u00b2 - Smack My Derb"
+   },
+   "hits": 9
+  },
+  {
+   "start": 2435,
+   "end": 2575,
+   "track": {
+    "id": "cm452372752",
+    "artist": "Vlace & KSN",
+    "title": "Hurt You",
+    "source": "comments",
+    "votes": 6,
+    "likes": 1057,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/4169984962",
+    "isrc": "QMDA62621737",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/7/f/4/0/7f4536da01025f6394cf37255286b57d.mp3?hdnea=exp=1791736655~acl=/api/1/1/7/f/4/0/7f4536da01025f6394cf37255286b57d.mp3*~data=user_id=0,application_id=42~hmac=f0ec09dbc42576ce2f301acbd2a0392125d8656fbcb1c4dab56b18a3f4f2854c",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/fce422a1fafe442004994c0349ec4b28/250x250-000000-80-0-0.jpg",
+    "youtube": "6k_H100tMvg",
+    "youtubeTitle": "Vlace & KSN - Hurt You (Original Mix) | SCHRANZ 2026"
+   },
+   "hits": 6
+  },
+  {
+   "start": 2575,
+   "end": 2650,
+   "track": {
+    "id": "dz3364851211",
+    "artist": "Showtek",
+    "title": "FTS (Fuck The System) (ID Remix)",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/85de2c172fda23640ba97be4a6e63102/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/3364851211",
+    "claimed": "Showtek - FTS (Fuck The System) (ID Remix)",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/b/8/0/db8212421b6ae8aed99d5172748d6f82.mp3?hdnea=exp=1791736805~acl=/api/1/1/d/b/8/0/db8212421b6ae8aed99d5172748d6f82.mp3*~data=user_id=0,application_id=42~hmac=648c4b81b47e20c65d6aec618abcfcc48f3db1f796682056610179e88ab15098",
+    "released": null,
+    "album": "FTS ((Sub Zero Project Rework))",
+    "source": "audio",
+    "windows": 2,
+    "pitch": 8,
+    "score": 42,
+    "commentVotes": 8,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "matchedAs": "Showtek - FTS (Sub Zero Project Rework)"
+   },
+   "hits": 2
+  },
+  {
+   "start": 2650,
+   "end": 2747,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 2747,
+   "end": 2905,
+   "track": {
+    "id": "cm72434095",
+    "artist": "W&W",
+    "title": "Alpha (Siwotha You Schranz Edit)",
+    "source": "comments",
+    "votes": 6,
+    "likes": 1002,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "reply to \"||   TRACKLIST   ||\n\n[00:01] Young Fathers - Boots  (Kobosil\"",
+     "reply to \"anyone have an ID for the 47:00 track?\"",
+     "comment tracklist"
+    ],
+    "youtube": "uuW3Q_n8gls",
+    "youtubeTitle": "W&W \u2013 Alpha (Siwotha You Schranz Edit)"
+   },
+   "hits": 6
+  },
+  {
+   "start": 2905,
+   "end": 2990,
+   "track": {
+    "id": "cm637430207",
+    "artist": "Daft Punk",
+    "title": "Technologic (Garc\u00e9s Schranz Edit)",
+    "source": "comments",
+    "votes": 8,
+    "likes": 1059,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "youtube": "JKavfplh81Q",
+    "youtubeTitle": "Daft Punk - Technologic (4TUM Schranz Remix)"
+   },
+   "hits": 8
+  },
+  {
+   "start": 2990,
+   "end": 3270,
+   "track": {
+    "id": "dz4058534261",
+    "artist": "Lowerzone",
+    "title": "I Like Dirty",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/ec64260d9116e0183169dca2ccb7d6ef/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/4058534261",
+    "claimed": "Lowerzone - I Like Dirty",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/0/a/0/90aa5b179da5c2bd39f81c8281e96716.mp3?hdnea=exp=1791736807~acl=/api/1/1/9/0/a/0/90aa5b179da5c2bd39f81c8281e96716.mp3*~data=user_id=0,application_id=42~hmac=d9bc18045cdb22ffb129996b6f4f18e7bde4e304dc7d9004648c76271d807044",
+    "released": null,
+    "album": "STFU EP",
+    "source": "audio",
+    "windows": 18,
+    "pitch": -2,
+    "score": 60,
+    "commentVotes": 8,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "matchedAs": "Lowerzone - I Like Dirty"
+   },
+   "hits": 18
+  },
+  {
+   "start": 3270,
+   "end": 3418,
+   "track": {
+    "id": "dz4169984992",
+    "artist": "Luciid",
+    "title": "REEKY",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/fce422a1fafe442004994c0349ec4b28/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/4169984992",
+    "claimed": "Luciid - REEKY",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/3/1/0/13195e386df010a50711255a2cb78282.mp3?hdnea=exp=1791736808~acl=/api/1/1/1/3/1/0/13195e386df010a50711255a2cb78282.mp3*~data=user_id=0,application_id=42~hmac=97b913d12eed574e45f218954e1bc5d4967803ac22b980a0a4320ba2f2834483",
+    "released": null,
+    "album": "44028",
+    "source": "audio",
+    "windows": 7,
+    "pitch": -2,
+    "score": 41,
+    "commentVotes": 6,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "matchedAs": "Luciid - Reeky"
+   },
+   "hits": 7
+  },
+  {
+   "start": 3418,
+   "end": 3530,
+   "track": {
+    "id": "dz3947227901",
+    "artist": "Vlace & Marco Leckbert",
+    "title": "No Sleep",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6ecdea79d1882e38f31bfadd994c62a8/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/3947227901",
+    "claimed": "Vlace & Marco Leckbert - No Sleep",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/5/1/0/451cd60dec52b00523df7e7fe6bbeab7.mp3?hdnea=exp=1791736808~acl=/api/1/1/4/5/1/0/451cd60dec52b00523df7e7fe6bbeab7.mp3*~data=user_id=0,application_id=42~hmac=4bf275b9dd27014178172b9c562af24c0a1f18b343cc35772ce1b02e13c965dd",
+    "released": null,
+    "album": "No Sleep",
+    "source": "audio",
+    "windows": 7,
+    "pitch": -2,
+    "score": 145,
+    "commentVotes": 8,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "matchedAs": "Marco Leckbert - No Sleep"
+   },
+   "hits": 7
+  },
+  {
+   "start": 3530,
+   "end": 3620,
+   "track": {
+    "id": "dz3577944211",
+    "artist": "Coone",
+    "title": "4 BY 4 BEATS (Svetec EDIT)(unreleased)",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/74f034c76167a2faa361b62c2c0b43d8/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/3577944211",
+    "claimed": "Coone - 4 BY 4 BEATS (Svetec EDIT)(unreleased)",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/2/1/0/d21f214bf2e95c3f281d81db1e2c1fe6.mp3?hdnea=exp=1791736809~acl=/api/1/1/d/2/1/0/d21f214bf2e95c3f281d81db1e2c1fe6.mp3*~data=user_id=0,application_id=42~hmac=b90d37f3c16a708cc83badc3ff4c18b2c47213fe219d5e04749378e2a4c786af",
+    "released": null,
+    "album": "4 BY 4 BEATS (I Don't Care)",
+    "source": "audio",
+    "windows": 6,
+    "pitch": -2,
+    "score": 180,
+    "commentVotes": 8,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "matchedAs": "Coone - 4 BY 4 BEATS (I Don't Care)"
+   },
+   "hits": 6
+  },
+  {
+   "start": 3620,
+   "end": 3724,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 3724,
+   "end": 3878,
+   "track": {
+    "id": "cm926896137",
+    "artist": "Faithless",
+    "title": "Insomnia (SCHAAR Schranz Edit)",
+    "source": "comments",
+    "votes": 8,
+    "likes": 1059,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "youtube": "Pv9howe14Oc",
+    "youtubeTitle": "Faithless - Insomnia (SCHAAR Schranz Edit) [Hard Techno 2024]"
+   },
+   "hits": 8
+  },
+  {
+   "start": 3878,
+   "end": 3927,
+   "track": {
+    "id": "cm139076278",
+    "artist": "VLACE & STANE",
+    "title": "PARADOX (unreleased)",
+    "source": "comments",
+    "votes": 5,
+    "likes": 1015,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "reply to \"||   TRACKLIST   ||\n\n[00:01] Young Fathers - Boots  (Kobosil\"",
+     "comment tracklist"
+    ],
+    "youtube": "WlMUIXWiKmA",
+    "youtubeTitle": "All New PARADOX Hero Interactions (CITY NEVER SLEEPS UPDATE) | Valve's DEADLOCK"
+   },
+   "hits": 5
+  },
+  {
+   "start": 3927,
+   "end": 4085,
+   "track": {
+    "id": "cm339972584",
+    "artist": "sweetest paradise",
+    "title": "hoehenangst",
+    "source": "comments",
+    "votes": 1,
+    "likes": 0,
+    "approx": false,
+    "evidence": [
+     "reply to \"1:05:27 fucking hell what is that track, absolute masterpiec\""
+    ],
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/3441549411",
+    "isrc": "GBKQU2566817",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/b/c/0/fbcdf735d58f72c6927151e5486c5a10.mp3?hdnea=exp=1791736697~acl=/api/1/1/f/b/c/0/fbcdf735d58f72c6927151e5486c5a10.mp3*~data=user_id=0,application_id=42~hmac=47bd5b2d1b7ca23d6708529a15a66efdd0ad5f1b354f488e1b017098fe641301",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/a3dc49ad8b3731d8a66bc014aee00e37/250x250-000000-80-0-0.jpg",
+    "youtube": "LZhmJM7j99I",
+    "youtubeTitle": "SWEETEST PARADISE"
+   },
+   "hits": 1
+  },
+  {
+   "start": 4085,
+   "end": 4260,
+   "track": {
+    "id": "cm28577030",
+    "artist": "Jay P, Psychodrums",
+    "title": "Break It (unreleased)",
+    "source": "comments",
+    "votes": 4,
+    "likes": 1001,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "youtube": "Mwu8uyBu0gA",
+    "youtubeTitle": "SCHRANZCAST 022 - Jay P"
+   },
+   "hits": 4
+  },
+  {
+   "start": 4260,
+   "end": 4462,
+   "track": {
+    "id": "cm771831039",
+    "artist": "Green Day",
+    "title": "Boulevard Of Broken Dreams (JAY P SCHRANZ REMIX)",
+    "source": "comments",
+    "votes": 8,
+    "likes": 1059,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "youtube": "pXSahufbzoE",
+    "youtubeTitle": "HARD TECHNO \u25cf Green Day - Boulevard of Broken Dreams (JAY P REMIX) .Schranz"
+   },
+   "hits": 8
+  },
+  {
+   "start": 4462,
+   "end": 4620,
+   "track": {
+    "id": "cm263882341",
+    "artist": "Ueberrest",
+    "title": "Disturbing Paradise (Jay P Schranz Edit)",
+    "source": "comments",
+    "votes": 9,
+    "likes": 1059,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "reply to \"ID 1:15:00 ?\"",
+     "comment tracklist"
+    ],
+    "youtube": "PBzdOUpxRFs",
+    "youtubeTitle": "Ueberrest - Disturbing Paradise (VERBRVUCHT Schranz Edit)"
+   },
+   "hits": 9
+  },
+  {
+   "start": 4620,
+   "end": 4792,
+   "track": {
+    "id": "cm1493232",
+    "artist": "Kobosil & Bekkaa",
+    "title": "300G",
+    "source": "comments",
+    "votes": 8,
+    "likes": 1059,
+    "approx": false,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/4045850731",
+    "isrc": "QM7282645796",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/c/9/0/dc9eb9dd1b5c5895ac706c1c4ddc1819.mp3?hdnea=exp=1791736707~acl=/api/1/1/d/c/9/0/dc9eb9dd1b5c5895ac706c1c4ddc1819.mp3*~data=user_id=0,application_id=42~hmac=7a24e1f9bb0a0da30046ff3f68917083bfe1b99ad87c3fa38053ffdedb1aae81",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/2ec7c688a4011f3b39625dc3b537e417/250x250-000000-80-0-0.jpg",
+    "youtube": "JNWgwboE2wQ",
+    "youtubeTitle": "300G"
+   },
+   "hits": 8
+  },
+  {
+   "start": 4792,
+   "end": 5000,
+   "track": {
+    "id": "dz3679813052",
+    "artist": "WestBam ft. Richard Butler",
+    "title": "You Need The Drugs (Kobosil Kartell Mix)",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/43ca17aa7d9947b5337b9a76bf0e316f/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/3679813052",
+    "claimed": "WestBam ft. Richard Butler - You Need The Drugs (Kobosil Kartell Mix)",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/4/7/0/14777984714558740eb210109406a183.mp3?hdnea=exp=1791736813~acl=/api/1/1/1/4/7/0/14777984714558740eb210109406a183.mp3*~data=user_id=0,application_id=42~hmac=3250c8dd5a1f716eb0d27753e3a4854f065cdc4e22bc7aca66e7aa8258bc91f7",
+    "released": null,
+    "album": "You Need The Drugs (Kobosil Kartell Mix)",
+    "source": "audio",
+    "windows": 9,
+    "pitch": 2,
+    "score": 282,
+    "commentVotes": 8,
+    "evidence": [
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist",
+     "comment tracklist"
+    ],
+    "matchedAs": "Westbam - You Need The Drugs (Kobosil Kartell Mix)"
+   },
+   "hits": 9
+  },
+  {
+   "start": 5000,
+   "end": null,
+   "track": null,
+   "hits": 0
+  }
+ ],
+ "similar": {
+  "cm829206271": [
+   {
+    "artist": "Dennis Ferrer",
+    "title": "Hey Hey",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2410031405",
+    "deezerId": 2410031405,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/7/c/0/e7ca3630730870908fd8e3e5f25b06b7.mp3?hdnea=exp=1791736619~acl=/api/1/1/e/7/c/0/e7ca3630730870908fd8e3e5f25b06b7.mp3*~data=user_id=0,application_id=42~hmac=f771aedfd0979fecbc476b015dc34b4bc1523196eeaa3f909c194311a4a18f24",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/3be235f85953f076baa3a42133302fcb/250x250-000000-80-0-0.jpg",
+    "youtube": "5dgimjMhAIk",
+    "youtubeTitle": "Dennis Ferrer - Hey Hey (Official Music Video)",
+    "id": "sim559437028"
+   },
+   {
+    "artist": "Dennis Ferrer",
+    "title": "Hey Hey (Jack Back Remix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3156230151",
+    "deezerId": 3156230151,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/4/b/0/14b5cb380263532e34647a3fe1ac97c7.mp3?hdnea=exp=1791736619~acl=/api/1/1/1/4/b/0/14b5cb380263532e34647a3fe1ac97c7.mp3*~data=user_id=0,application_id=42~hmac=0c89bb0b742438dcd4f72c183e124a1a65673e91a7fd0961dc97cd767beaffa7",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/ebc7b8043f8827fe5ef0b07ce2942166/250x250-000000-80-0-0.jpg",
+    "youtube": "q7EKFdBuPFk",
+    "youtubeTitle": "Dennis Ferrer - Hey Hey (Jack Back Extended Remix)",
+    "id": "sim354001632"
+   },
+   {
+    "artist": "Madonna",
+    "title": "Danceteria (Harry Romero Remix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4225136442",
+    "deezerId": 4225136442,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/6/b/3/0/6b3f8f1f53ad7a30bc15cd3207f12236.mp3?hdnea=exp=1791736619~acl=/api/1/1/6/b/3/0/6b3f8f1f53ad7a30bc15cd3207f12236.mp3*~data=user_id=0,application_id=42~hmac=afb84b5cdc3a69947a7caca2fae094bdd25bb1f084ba2301b30480a6b9107572",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/9e2ef7cf9ca2d064e9e17b23fbbdf495/250x250-000000-80-0-0.jpg",
+    "youtube": "N1s5JjCHzM0",
+    "youtubeTitle": "Madonna - Danceteria (Harry Romero Remix)",
+    "id": "sim208606557"
+   },
+   {
+    "artist": "Erick Morillo",
+    "title": "Dancin (Fuzzy Hair Remix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/551436702",
+    "deezerId": 551436702,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/b/b/0/2bb7774b53003c83f474b69cfe79e8de.mp3?hdnea=exp=1791736619~acl=/api/1/1/2/b/b/0/2bb7774b53003c83f474b69cfe79e8de.mp3*~data=user_id=0,application_id=42~hmac=6698be54b4fa73a8649fa21a63901db61f2ce86315cefdebcf31f2cdaf722fcb",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/920c5e310f0993ffb7cb9a0a6e04c342/250x250-000000-80-0-0.jpg",
+    "youtube": "v81CHZSu3ww",
+    "youtubeTitle": "Dancin (Fuzzy Hair Remix)",
+    "id": "sim700905175"
+   },
+   {
+    "artist": "Oliver $",
+    "title": "Pushing On (Radio Edit)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3155635951",
+    "deezerId": 3155635951,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/b/1/0/cb1748325871508092c57e379780c6b4.mp3?hdnea=exp=1791736619~acl=/api/1/1/c/b/1/0/cb1748325871508092c57e379780c6b4.mp3*~data=user_id=0,application_id=42~hmac=143c834c13e23b7c3071a39fc8cf0f72dc737ea15378abdf57a80ece0aabd42f",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/fa537e86de738a3410f28f42fa48e6eb/250x250-000000-80-0-0.jpg",
+    "youtube": "Pgxb3WbBx5Q",
+    "youtubeTitle": "Oliver $ & Jimi Jules - Pushing On (Official Video)",
+    "id": "sim302787584"
+   },
+   {
+    "artist": "Oliver $",
+    "title": "Doin' Ya Thang",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3156248751",
+    "deezerId": 3156248751,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/a/4/b/0/a4b489bf3a05224e3f1753c726d43810.mp3?hdnea=exp=1791736619~acl=/api/1/1/a/4/b/0/a4b489bf3a05224e3f1753c726d43810.mp3*~data=user_id=0,application_id=42~hmac=c8a2b64396e72ebbda6dc8025e097850a3d872f1f197985bdfad17db6fc52999",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/f4495e92556ed87820d1f10faa84b8c5/250x250-000000-80-0-0.jpg",
+    "youtube": "rT54onsF7Oo",
+    "youtubeTitle": "Oliver Dollar - Doin' Ya Thang",
+    "id": "sim415476597"
+   }
+  ],
+  "cm407547473": [],
+  "cm500917479": [],
+  "cm662327610": [],
+  "cm276723033": [],
+  "cm941716255": [],
+  "cm706556346": [],
+  "cm452372752": [
+   {
+    "artist": "Noise Not War",
+    "title": "MESSER",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4076737251",
+    "deezerId": 4076737251,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/7/c/8/0/7c8791aee8dab7b5f36185a00b34582a.mp3?hdnea=exp=1791736658~acl=/api/1/1/7/c/8/0/7c8791aee8dab7b5f36185a00b34582a.mp3*~data=user_id=0,application_id=42~hmac=325d29c8e0b0a51b1d69b82e63c91ab8dded9d59baf9eb5357d9c909df5a0d97",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/62e41210d1c32700632415e6e2e83334/250x250-000000-80-0-0.jpg",
+    "youtube": "WI8ZH3_8RL4",
+    "youtubeTitle": "MESSER",
+    "id": "sim216886413"
+   },
+   {
+    "artist": "Noise Not War",
+    "title": "ZERBRECHEN",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4076737261",
+    "deezerId": 4076737261,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/9/2/0/9928f87c19223c60fb6017a73df18b6e.mp3?hdnea=exp=1791736658~acl=/api/1/1/9/9/2/0/9928f87c19223c60fb6017a73df18b6e.mp3*~data=user_id=0,application_id=42~hmac=4064f51b3a5985b8316b09b73a866ebb46536f761bed27f616fa3dd5ff96dbff",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/62e41210d1c32700632415e6e2e83334/250x250-000000-80-0-0.jpg",
+    "youtube": "cI_rWcrKj-E",
+    "youtubeTitle": "ZERBRECHEN",
+    "id": "sim246556962"
+   },
+   {
+    "artist": "Solyd",
+    "title": "Beats On Deck (Original Mix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3362793621",
+    "deezerId": 3362793621,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/9/7/0/c97fb8f4d6d5ce140be68a45425e9ace.mp3?hdnea=exp=1791736658~acl=/api/1/1/c/9/7/0/c97fb8f4d6d5ce140be68a45425e9ace.mp3*~data=user_id=0,application_id=42~hmac=afa5d2985ded651b6eb04ea62c914a9855e04d7d4eccd6b209a847d3e506f41d",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/74843d53141ed556e16d51dc63d0efa0/250x250-000000-80-0-0.jpg",
+    "youtube": "CCv7DeykwLA",
+    "youtubeTitle": "Beats On Deck ((Original Mix))",
+    "id": "sim184420883"
+   },
+   {
+    "artist": "Solyd",
+    "title": "Rock the House",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3760348992",
+    "deezerId": 3760348992,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/a/4/7/0/a473cc145c1425a05bcad47f7c433f52.mp3?hdnea=exp=1791736658~acl=/api/1/1/a/4/7/0/a473cc145c1425a05bcad47f7c433f52.mp3*~data=user_id=0,application_id=42~hmac=6313fbea17b22093294a90270b0e9cef4fd5a2d89785823995a5a590329be0d6",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/d7cfbdaee608cecaed9ac1f743aaf3e3/250x250-000000-80-0-0.jpg",
+    "youtube": "BHTZ5EwhCzo",
+    "youtubeTitle": "Rock the House",
+    "id": "sim914373331"
+   },
+   {
+    "artist": "Marco Leckbert",
+    "title": "Hold It Up",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3445810541",
+    "deezerId": 3445810541,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/0/9/3/0/0938f4b1d98a1e4a862d44c888e31e31.mp3?hdnea=exp=1791736658~acl=/api/1/1/0/9/3/0/0938f4b1d98a1e4a862d44c888e31e31.mp3*~data=user_id=0,application_id=42~hmac=f1febe51f42b5be8e44e7474e892db536f7757268dfd2ad813c99c1d8068bf1c",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/651c81538011c5abe8e64c4e146dcc84/250x250-000000-80-0-0.jpg",
+    "youtube": "wKKrpk3YGxk",
+    "youtubeTitle": "Marco Leckbert - Hold It Up (Original Mix) [DGR151]",
+    "id": "sim49530927"
+   }
+  ],
+  "cm72434095": [],
+  "cm637430207": [],
+  "cm926896137": [],
+  "cm139076278": [],
+  "cm339972584": [
+   {
+    "artist": "Luciid",
+    "title": "Hard Truths",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3804176852",
+    "deezerId": 3804176852,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/6/7/b/0/67be7fbbfb2748f6f7376d605876dede.mp3?hdnea=exp=1791736700~acl=/api/1/1/6/7/b/0/67be7fbbfb2748f6f7376d605876dede.mp3*~data=user_id=0,application_id=42~hmac=ea6faf08f4c30b6f5c787aa0e86c1d535bfb8dbc9250a3deac48d4135209a9c3",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/b864a1dcf9988221c65a8ab3b4157c9c/250x250-000000-80-0-0.jpg",
+    "youtube": "0cRdqpUW4xI",
+    "youtubeTitle": "Luciid - Hard Truths | Official Audio",
+    "id": "sim233013081"
+   },
+   {
+    "artist": "Luciid",
+    "title": "Reeky",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4169984992",
+    "deezerId": 4169984992,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/3/1/0/13195e386df010a50711255a2cb78282.mp3?hdnea=exp=1791736700~acl=/api/1/1/1/3/1/0/13195e386df010a50711255a2cb78282.mp3*~data=user_id=0,application_id=42~hmac=c00d39eb287bf21ec3f5e7e47e96efa44c0df3dbdf769ea962f96aa11e63d639",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/fce422a1fafe442004994c0349ec4b28/250x250-000000-80-0-0.jpg",
+    "youtube": "Q8RwDNGLfVE",
+    "youtubeTitle": "Luciid - Reeky (Original Mix) | SCHRANZ 2026",
+    "id": "sim731200421"
+   },
+   {
+    "artist": "K\u00f8zl\u00f8v",
+    "title": "INDUSTRIAL NEVER DIES",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3835882341",
+    "deezerId": 3835882341,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/6/a/0/96a258bf56796f05673bfebe43756837.mp3?hdnea=exp=1791736700~acl=/api/1/1/9/6/a/0/96a258bf56796f05673bfebe43756837.mp3*~data=user_id=0,application_id=42~hmac=c8d5bc9b7fad47cf4c282cb938aac3b4d886586aec1e908501822b71139d3483",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/54889e5a8920184bb9b79b34af124b19/250x250-000000-80-0-0.jpg",
+    "youtube": "RAlzQRQuYPY",
+    "youtubeTitle": "INDUSTRIAL NEVER DIES",
+    "id": "sim291175995"
+   },
+   {
+    "artist": "Azyr",
+    "title": "Crush",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3556587561",
+    "deezerId": 3556587561,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/d/4/0/2d46ebfaab2668731a1c10ed5b2d715c.mp3?hdnea=exp=1791736700~acl=/api/1/1/2/d/4/0/2d46ebfaab2668731a1c10ed5b2d715c.mp3*~data=user_id=0,application_id=42~hmac=3a78f81d1a02c04ae0c1e5deca14ea68218463cd7a4e6ea30677d390b15777e6",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/e048c563df1ecb28ce709f4282a735b7/250x250-000000-80-0-0.jpg",
+    "youtube": "68FFxtbZj3k",
+    "youtubeTitle": "Crush",
+    "id": "sim785240445"
+   }
+  ],
+  "cm28577030": [],
+  "cm771831039": [],
+  "cm263882341": [],
+  "cm1493232": [
+   {
+    "artist": "Klangkuenstler",
+    "title": "Toter Schmetterling (Original Mix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2960622911",
+    "deezerId": 2960622911,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/c/8/0/1c896fd90c42a4db17fd483414265b15.mp3?hdnea=exp=1791736710~acl=/api/1/1/1/c/8/0/1c896fd90c42a4db17fd483414265b15.mp3*~data=user_id=0,application_id=42~hmac=49155e537a32310c47b3760c8de2fb027d3c6ebfb2891a450c15895d4a7b7318",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/2a1d1e896ed0da07ee014d41f8d2ca8a/250x250-000000-80-0-0.jpg",
+    "youtube": "F_CgYMiZKYE",
+    "youtubeTitle": "Klangkuenstler feat. Sant - Toter Schmetterling (Video)",
+    "id": "sim375836495"
+   },
+   {
+    "artist": "Klangkuenstler",
+    "title": "Toter Schmetterling (Single Edit)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3233190971",
+    "deezerId": 3233190971,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/0/8/4/0/084574461becf3e340c49a0884d2c7d2.mp3?hdnea=exp=1791736710~acl=/api/1/1/0/8/4/0/084574461becf3e340c49a0884d2c7d2.mp3*~data=user_id=0,application_id=42~hmac=5b557f17bb26577acf1714cfe37b1f25bea01856f02c7d4b5f768669c517e538",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/23e8c3e64ab5eea59f1e3bd116ce609a/250x250-000000-80-0-0.jpg",
+    "youtube": "dSihYdohYy0",
+    "youtubeTitle": "Toter Schmetterling (Single Edit)",
+    "id": "sim532010286"
+   },
+   {
+    "artist": "Vladimir Cauchemar",
+    "title": "Zoo (Rave Edit)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2675667432",
+    "deezerId": 2675667432,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/a/8/0/ba816119aa7eb8627c1b9ab5aac19165.mp3?hdnea=exp=1791736710~acl=/api/1/1/b/a/8/0/ba816119aa7eb8627c1b9ab5aac19165.mp3*~data=user_id=0,application_id=42~hmac=89412f1d0651dcb9e19879533c3db8d39e4a4f4fd186e74c8105cc222e9f6ae3",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/640445ec8469c36f64f7f6b65a7c4e19/250x250-000000-80-0-0.jpg",
+    "youtube": "9wgwPBwCKmc",
+    "youtubeTitle": "Zoo (Rave Edit)",
+    "id": "sim690324794"
+   },
+   {
+    "artist": "The Rocketman",
+    "title": "I Don't Care",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4038786741",
+    "deezerId": 4038786741,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/7/3/0/c7331725f7dd14e40dcc1cdbb560b28b.mp3?hdnea=exp=1791736710~acl=/api/1/1/c/7/3/0/c7331725f7dd14e40dcc1cdbb560b28b.mp3*~data=user_id=0,application_id=42~hmac=c7eb571364afd63f9ca15bfab5fd3cbe70de6d1224752bed2d5cbea0b92e5031",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6d8a9667eaf4264f4921e7e9292c093b/250x250-000000-80-0-0.jpg",
+    "youtube": "POu5vggasic",
+    "youtubeTitle": "I Don't Care",
+    "id": "sim482107705"
+   },
+   {
+    "artist": "Amelie Lens",
+    "title": "Circling The Sun",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/391369002",
+    "deezerId": 391369002,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/5/0/3/0/503d1c3435a3486413362ef562f75328.mp3?hdnea=exp=1791736710~acl=/api/1/1/5/0/3/0/503d1c3435a3486413362ef562f75328.mp3*~data=user_id=0,application_id=42~hmac=379ae488d8bea0dcab9b9cdb9f447ea92ba64b8b27f4d57777d5c31e1649e5e4",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/5c870485f83a888f754289dbcd08cd26/250x250-000000-80-0-0.jpg",
+    "youtube": "7i3rYuzSqpM",
+    "youtubeTitle": "Circling The Sun",
+    "id": "sim851813170"
+   }
+  ],
+  "sz9ed6e0127d": [
+   {
+    "artist": "LCD Soundsystem",
+    "title": "Dance Yrself Clean",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/5936379",
+    "deezerId": 5936379,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/5/8/a/0/58a3265fd19fac654de25216120c276e.mp3?hdnea=exp=1791737013~acl=/api/1/1/5/8/a/0/58a3265fd19fac654de25216120c276e.mp3*~data=user_id=0,application_id=42~hmac=df7aab859d4938fe719adaca201e7fdbd449723db0afa7f385b30ef33071c0b9",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6d1c8c822d58041dfc7fd0bb5612cdf5/250x250-000000-80-0-0.jpg",
+    "youtube": "60gl-M38xFI",
+    "youtubeTitle": "LCD Soundsystem - Dance Yourself Clean. HD Music Video",
+    "id": "sim567345546"
+   },
+   {
+    "artist": "LCD Soundsystem",
+    "title": "New York, I Love You but You're Bringing Me Down",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3110856",
+    "deezerId": 3110856,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/5/9/8/0/5984ef97009239c4d7d37932c940e257.mp3?hdnea=exp=1791737013~acl=/api/1/1/5/9/8/0/5984ef97009239c4d7d37932c940e257.mp3*~data=user_id=0,application_id=42~hmac=b31399a3b17800587377f21efb90c9cef3bf71a95bf0f556726107704d5b78d0",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/d5aec97cfc1581df6b32a267fe067827/250x250-000000-80-0-0.jpg",
+    "youtube": "c5kM3iwYVi0",
+    "youtubeTitle": "New York, I Love You but You're Bringing Me Down",
+    "id": "sim861913701"
+   },
+   {
+    "artist": "Animal Collective",
+    "title": "My Girls",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4315555",
+    "deezerId": 4315555,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/0/2/0/102e1e840243d4c95b79ed88d680c919.mp3?hdnea=exp=1791737013~acl=/api/1/1/1/0/2/0/102e1e840243d4c95b79ed88d680c919.mp3*~data=user_id=0,application_id=42~hmac=37c7d1f20c4ebc7d05405d950480f3d4678dbd86c829daab44810fd5658d80c8",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/57660f9ee356337b3802fd2cf9276198/250x250-000000-80-0-0.jpg",
+    "youtube": "zol2MJf6XNE",
+    "youtubeTitle": "Animal Collective - My Girls (Official Video)",
+    "id": "sim551821340"
+   },
+   {
+    "artist": "Animal Collective",
+    "title": "Also Frightened",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4315556",
+    "deezerId": 4315556,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/0/1/0/20182ecefbe50b8ec6a0599f45cc0a61.mp3?hdnea=exp=1791737013~acl=/api/1/1/2/0/1/0/20182ecefbe50b8ec6a0599f45cc0a61.mp3*~data=user_id=0,application_id=42~hmac=77d111b6e25e862f2baf51b8ce50250505f105c97b8dd50c4815b3ad83c6eb0f",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/57660f9ee356337b3802fd2cf9276198/250x250-000000-80-0-0.jpg",
+    "youtube": "55pDa5_CJP8",
+    "youtubeTitle": "Also Frightened",
+    "id": "sim39390042"
+   },
+   {
+    "artist": "Future Islands",
+    "title": "King of Sweden",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/1633146092",
+    "deezerId": 1633146092,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/8/6/0/986420e7bb36aa4ce4b50b90525775d3.mp3?hdnea=exp=1791737013~acl=/api/1/1/9/8/6/0/986420e7bb36aa4ce4b50b90525775d3.mp3*~data=user_id=0,application_id=42~hmac=3fe36bb260c2f3b0f72dc9abe5d7b3cbafa03c4b22a64570f836409d4c641255",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/494bebeecd57406596e43a8ab1bc3a6f/250x250-000000-80-0-0.jpg",
+    "youtube": "P9m9yYT2hFc",
+    "youtubeTitle": "Future Islands - King of Sweden",
+    "id": "sim657348664"
+   },
+   {
+    "artist": "Future Islands",
+    "title": "Light House",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/75749480",
+    "deezerId": 75749480,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/0/9/0/40930d7027cd4695392953a55f43dbad.mp3?hdnea=exp=1791737013~acl=/api/1/1/4/0/9/0/40930d7027cd4695392953a55f43dbad.mp3*~data=user_id=0,application_id=42~hmac=da407f5de1fe4d4ef91694e44b39b1ea18c49c0cfd4fab799f5c35e41d772802",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/45ef0abf9266ad8d9213838cab2ffdc9/250x250-000000-80-0-0.jpg",
+    "youtube": "clFzEWLrqUQ",
+    "youtubeTitle": "Light House",
+    "id": "sim298311395"
+   }
+  ],
+  "sz83fa84e185": [
+   {
+    "artist": "Noise Not War",
+    "title": "MESSER",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4076737251",
+    "deezerId": 4076737251,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/7/c/8/0/7c8791aee8dab7b5f36185a00b34582a.mp3?hdnea=exp=1791737022~acl=/api/1/1/7/c/8/0/7c8791aee8dab7b5f36185a00b34582a.mp3*~data=user_id=0,application_id=42~hmac=76e25b76fad7d2fad6ac519ceb9f2f1f8bb6535b9b53d954c4a6dbd07c75e6db",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/62e41210d1c32700632415e6e2e83334/250x250-000000-80-0-0.jpg",
+    "youtube": "WI8ZH3_8RL4",
+    "youtubeTitle": "MESSER",
+    "id": "sim811080315"
+   },
+   {
+    "artist": "Noise Not War",
+    "title": "ZERBRECHEN",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4076737261",
+    "deezerId": 4076737261,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/9/2/0/9928f87c19223c60fb6017a73df18b6e.mp3?hdnea=exp=1791737022~acl=/api/1/1/9/9/2/0/9928f87c19223c60fb6017a73df18b6e.mp3*~data=user_id=0,application_id=42~hmac=ea3f29bf883750889692a21da8b2de99e52da4b52504d0c4a54efcf4058588a6",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/62e41210d1c32700632415e6e2e83334/250x250-000000-80-0-0.jpg",
+    "youtube": "cI_rWcrKj-E",
+    "youtubeTitle": "ZERBRECHEN",
+    "id": "sim988512767"
+   },
+   {
+    "artist": "Mit",
+    "title": "AN INFINITE THREAD (Short Mix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3572599461",
+    "deezerId": 3572599461,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/b/9/0/eb9b2b5177e561de5adef9791337df68.mp3?hdnea=exp=1791737022~acl=/api/1/1/e/b/9/0/eb9b2b5177e561de5adef9791337df68.mp3*~data=user_id=0,application_id=42~hmac=b7122d7a4690d99514da7b60c7975c6e75136c02ffcab70cd4da01af4e39ebae",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/0c4afeb6cdb6bff1bd717287a8150e95/250x250-000000-80-0-0.jpg",
+    "youtube": "ApRTRCMu7tk",
+    "youtubeTitle": "AN INFINITE THREAD (Short Mix)",
+    "id": "sim660255740"
+   },
+   {
+    "artist": "Triptykh",
+    "title": "La Fuerza",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4175962212",
+    "deezerId": 4175962212,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/7/6/c/0/76cd64586b4b47816c8f86aa5271dda9.mp3?hdnea=exp=1791737023~acl=/api/1/1/7/6/c/0/76cd64586b4b47816c8f86aa5271dda9.mp3*~data=user_id=0,application_id=42~hmac=0f050f6da20d5692e5842cd1a2e6478394f74a7118f783586e4d07add8cd09c1",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/90c60317f90d061df997abc11646cedf/250x250-000000-80-0-0.jpg",
+    "youtube": "kUDuwEHqoHg",
+    "youtubeTitle": "TRIPTYKH - La Fuerza (Visualizer) [Helix Records]",
+    "id": "sim84556413"
+   },
+   {
+    "artist": "Triptykh",
+    "title": "Bass Keeps Going (Original Mix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2265974917",
+    "deezerId": 2265974917,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/c/2/0/4c2df68583256543d5d3d7199bef13c0.mp3?hdnea=exp=1791737023~acl=/api/1/1/4/c/2/0/4c2df68583256543d5d3d7199bef13c0.mp3*~data=user_id=0,application_id=42~hmac=13c24f2a62454b33fc92ed679079e78b911d2c783d756522ba2b36ddcc6fdf30",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/63bdca6b9055c5b09f9ccb81a78aee93/250x250-000000-80-0-0.jpg",
+    "youtube": "_iF1EMgmDxc",
+    "youtubeTitle": "Bass Keeps Going",
+    "id": "sim337493828"
+   }
+  ],
+  "sz35e9092f52": [
+   {
+    "artist": "BY\u00d8RN",
+    "title": "Adagio For Strings (VIP Remix) [Live At Tomorrowland]",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2991501791",
+    "deezerId": 2991501791,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/0/7/d/0/07dfb4d4b5b1ac02593ad24b971fe7ac.mp3?hdnea=exp=1791737032~acl=/api/1/1/0/7/d/0/07dfb4d4b5b1ac02593ad24b971fe7ac.mp3*~data=user_id=0,application_id=42~hmac=968e4ca9bf2fe6991bbe5aef133063b58cf8eec7dd68a217ed0a1f211400a185",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/8ab84c9f0a6514324dd4778506745e03/250x250-000000-80-0-0.jpg",
+    "youtube": "BLow_XwScwA",
+    "youtubeTitle": "BY\u00d8RN - Adagio For Strings (VIP Remix) [Live At Tomorrowland]",
+    "id": "sim303917262"
+   },
+   {
+    "artist": "BY\u00d8RN",
+    "title": "Adagio For Strings",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2637850962",
+    "deezerId": 2637850962,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/0/d/0/90d4f8011d79c50c5c8a9162a3d1e76b.mp3?hdnea=exp=1791737032~acl=/api/1/1/9/0/d/0/90d4f8011d79c50c5c8a9162a3d1e76b.mp3*~data=user_id=0,application_id=42~hmac=6f36880440f033ecf057e5414c69e9339d367f7815222de4d1c348b20597013b",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/65f6496393526d4181323a23e713e215/250x250-000000-80-0-0.jpg",
+    "youtube": "BLow_XwScwA",
+    "youtubeTitle": "BY\u00d8RN - Adagio For Strings (VIP Remix) [Live At Tomorrowland]",
+    "id": "sim739387697"
+   },
+   {
+    "artist": "Luciid",
+    "title": "Hard Truths",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3804176852",
+    "deezerId": 3804176852,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/6/7/b/0/67be7fbbfb2748f6f7376d605876dede.mp3?hdnea=exp=1791737032~acl=/api/1/1/6/7/b/0/67be7fbbfb2748f6f7376d605876dede.mp3*~data=user_id=0,application_id=42~hmac=cdd72ad45ee178b529ef93b18986d288e4b207df100471d223fd09ad1e993b1e",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/b864a1dcf9988221c65a8ab3b4157c9c/250x250-000000-80-0-0.jpg",
+    "youtube": "0cRdqpUW4xI",
+    "youtubeTitle": "Luciid - Hard Truths | Official Audio",
+    "id": "sim275898046"
+   },
+   {
+    "artist": "Luciid",
+    "title": "Reeky",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4169984992",
+    "deezerId": 4169984992,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/3/1/0/13195e386df010a50711255a2cb78282.mp3?hdnea=exp=1791737032~acl=/api/1/1/1/3/1/0/13195e386df010a50711255a2cb78282.mp3*~data=user_id=0,application_id=42~hmac=ad3c30f0c4605d37c9b34d9a9f2e2cda6406da6dc6c452e97fb836757b58061d",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/fce422a1fafe442004994c0349ec4b28/250x250-000000-80-0-0.jpg",
+    "youtube": "Q8RwDNGLfVE",
+    "youtubeTitle": "Luciid - Reeky (Original Mix) | SCHRANZ 2026",
+    "id": "sim724388289"
+   },
+   {
+    "artist": "Remon Verhoeve",
+    "title": "YOU CAN'T STOP ME NOW",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3450303071",
+    "deezerId": 3450303071,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/9/3/0/f93c5896d0b3ac421333f102c9ae197c.mp3?hdnea=exp=1791737032~acl=/api/1/1/f/9/3/0/f93c5896d0b3ac421333f102c9ae197c.mp3*~data=user_id=0,application_id=42~hmac=719691ea114fe4bb24efb34711c58005e178aa6132cb17e158fd03debffec2a2",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/4b015c4bceff64d4601337169d607649/250x250-000000-80-0-0.jpg",
+    "youtube": "EXuLEN87-3s",
+    "youtubeTitle": "Remon Verhoeve - YOU CAN\u2019T STOP ME NOW",
+    "id": "sim736096976"
+   }
+  ],
+  "sz51e11485a9": [
+   {
+    "artist": "Rosalia de Souza",
+    "title": "Bossa 31",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/211462",
+    "deezerId": 211462,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/8/a/2/0/8a25c2e1ce804f753e59e8d5ffa7c702.mp3?hdnea=exp=1791737040~acl=/api/1/1/8/a/2/0/8a25c2e1ce804f753e59e8d5ffa7c702.mp3*~data=user_id=0,application_id=42~hmac=3d3528b1418ce5d6e42ed63fe4d35a5a2b421255f55faf95eddf88ff387ab951",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/2e348b6e64b8046267ffd8459c50b27e/250x250-000000-80-0-0.jpg",
+    "youtube": "OodZe8Ot65A",
+    "youtubeTitle": "Rosalia De Souza - Bossa 31",
+    "id": "sim175331016"
+   },
+   {
+    "artist": "Rosalia de Souza",
+    "title": "Carolina Carol Bela",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/61930719",
+    "deezerId": 61930719,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/7/2/0/c72bef658ba2f481f8a66c1d5e508ce9.mp3?hdnea=exp=1791737040~acl=/api/1/1/c/7/2/0/c72bef658ba2f481f8a66c1d5e508ce9.mp3*~data=user_id=0,application_id=42~hmac=285ed85dc623565eb6f7f4eb247797706a6352d18d97863e4a6cd79ad9f62466",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6eb0aa917619cb9472f0c69b8c6bbf07/250x250-000000-80-0-0.jpg",
+    "youtube": "ZB0BJLnlVSI",
+    "youtubeTitle": "Rosalia De Souza - Carolina Carol Bela",
+    "id": "sim90173861"
+   },
+   {
+    "artist": "Jo\u00e3o Selva",
+    "title": "Viens Danser",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2981168361",
+    "deezerId": 2981168361,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/6/e/f/0/6ef3e7e329b5fcca00392cca29b252a2.mp3?hdnea=exp=1791737041~acl=/api/1/1/6/e/f/0/6ef3e7e329b5fcca00392cca29b252a2.mp3*~data=user_id=0,application_id=42~hmac=5363a9c23dc1f1168bd5aa09721a410f9da9b3b0ffdeb9b65fb18b3f23446493",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/b1880afb5dd23001c6fd41dbfd2fac51/250x250-000000-80-0-0.jpg",
+    "youtube": "PMZ5IyCf5Jc",
+    "youtubeTitle": "Jo\u00e3o Selva Ft. Cl\u00e9a Vincent - Viens Danser [Official Video]",
+    "id": "sim109079478"
+   },
+   {
+    "artist": "TigerBalm",
+    "title": "Vem C\u00e1",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3056774501",
+    "deezerId": 3056774501,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/3/f/0/f3f9451d0cf7385b0b959c691dddd1ce.mp3?hdnea=exp=1791737041~acl=/api/1/1/f/3/f/0/f3f9451d0cf7385b0b959c691dddd1ce.mp3*~data=user_id=0,application_id=42~hmac=f22c31eaecbd9e38cb0364ec6676a42a2dcbc09a2b8f0a6e1b69fc929623ed97",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/c4cacbf6b3c0ac24755b9465e248f093/250x250-000000-80-0-0.jpg",
+    "youtube": "jBvxZO9UL-0",
+    "youtubeTitle": "Tigerbalm - Vem C\u00e1 ft. Jo\u00e3o Selva",
+    "id": "sim548838231"
+   }
+  ],
+  "sz7dd4cbacec": [
+   {
+    "artist": "Hardwell",
+    "title": "Bang On The Drums",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4060165521",
+    "deezerId": 4060165521,
+    "preview": "",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/35375e4827ac77b2df72c7b34d0a4857/250x250-000000-80-0-0.jpg",
+    "youtube": "dp7fXbEFqa8",
+    "youtubeTitle": "Hardwell & Bassjackers - Bang On The Drums",
+    "id": "sim113840810"
+   },
+   {
+    "artist": "Hardwell",
+    "title": "Turn Up The Bass",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4131070121",
+    "deezerId": 4131070121,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/0/d/b/0/0dbd0a7c9b1f70f410e1cea0e8fa4355.mp3?hdnea=exp=1791737048~acl=/api/1/1/0/d/b/0/0dbd0a7c9b1f70f410e1cea0e8fa4355.mp3*~data=user_id=0,application_id=42~hmac=42b7b28613cb44aed7bebe590a9de4c153df5cab809d20d6f9facc15f8dc7d28",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/ffffc53b34f367ca582ba05a2bd5504b/250x250-000000-80-0-0.jpg",
+    "youtube": "3BRoOMX9zC0",
+    "youtubeTitle": "Hardwell & W&W - Turn Up The Bass",
+    "id": "sim8398616"
+   },
+   {
+    "artist": "Dimitri Vegas & Like Mike",
+    "title": "Makina Time",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3719324372",
+    "deezerId": 3719324372,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/e/8/0/ce811bdbe59e81102212f8a855f257c1.mp3?hdnea=exp=1791737048~acl=/api/1/1/c/e/8/0/ce811bdbe59e81102212f8a855f257c1.mp3*~data=user_id=0,application_id=42~hmac=303aaf829bc792fad67f5dcb747583555b69f347971e10361997efa6cfcaf304",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/b652a17e0cac0cc1e87e0ea701e143e8/250x250-000000-80-0-0.jpg",
+    "youtube": "Ed-r5SsBLx0",
+    "youtubeTitle": "Dimitri Vegas & Like Mike & Marlon Hoffstadt & DJ Konik - Makina Time (Official Music Video)",
+    "id": "sim987628581"
+   },
+   {
+    "artist": "Dimitri Vegas & Like Mike",
+    "title": "Thank You (Not So Bad)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2545396411",
+    "deezerId": 2545396411,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/8/a/d/0/8ad9a8a87f12dde2eed73428e2c39e20.mp3?hdnea=exp=1791737048~acl=/api/1/1/8/a/d/0/8ad9a8a87f12dde2eed73428e2c39e20.mp3*~data=user_id=0,application_id=42~hmac=bfa14e287309fca5ff89f06de0bc184dab61421f9f9f2ce999561e76ad9734b3",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/b182bb4fb44ee09911220b6955b753a7/250x250-000000-80-0-0.jpg",
+    "youtube": "fQWNeIiFf_s",
+    "youtubeTitle": "Dimitri Vegas & Like Mike & Ti\u00ebsto & Dido & W&W - Thank You (Not So Bad) (Official video)",
+    "id": "sim554609705"
+   },
+   {
+    "artist": "Farruko",
+    "title": "YAPAQUE",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4001032461",
+    "deezerId": 4001032461,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/4/e/0/c4e8212b7199f3b2e8e6bfbec347e207.mp3?hdnea=exp=1791737048~acl=/api/1/1/c/4/e/0/c4e8212b7199f3b2e8e6bfbec347e207.mp3*~data=user_id=0,application_id=42~hmac=4e071e03c61da1d8a1985e51125945563cd9dc6d7b8eb3c0793ad4935c6da5da",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/9fe54831c6613d3076ea5d59ccdd24c1/250x250-000000-80-0-0.jpg",
+    "youtube": "dZzBa7jlXY0",
+    "youtubeTitle": "Farruko, Greeicy, Steve Aoki - YAPAQUE (Official Video)",
+    "id": "sim135229113"
+   },
+   {
+    "artist": "Dimitri Vegas",
+    "title": "2 Times",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2996994321",
+    "deezerId": 2996994321,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/d/0/35dc6c1869326bfc88664ef60dd382b7.mp3?hdnea=exp=1791737048~acl=/api/1/1/3/5/d/0/35dc6c1869326bfc88664ef60dd382b7.mp3*~data=user_id=0,application_id=42~hmac=be3d0b49fc973a355eafb9b90628e20946aa35830cb69b6618ac8b26f0b9b579",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6116cbc02935496996b7bdf0f01dea2b/250x250-000000-80-0-0.jpg",
+    "youtube": "8VDIR3BF9zc",
+    "youtubeTitle": "Dimitri Vegas & Steve Aoki & Ann Lee & Sound Of Legend - 2 Times (Official video)",
+    "id": "sim127952476"
+   }
+  ],
+  "sz7252537713": [
+   {
+    "artist": "Svetec",
+    "title": "Dibby Sound (Original Mix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/392357862",
+    "deezerId": 392357862,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/6/d/c/0/6dc3f925626a9a2db8767301bc033a0b.mp3?hdnea=exp=1791737059~acl=/api/1/1/6/d/c/0/6dc3f925626a9a2db8767301bc033a0b.mp3*~data=user_id=0,application_id=42~hmac=6339c07f2ab81a5518731780576864dcb6647e9add362d451f10e8d3c88c7ede",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/5f954fd891aedec2af4b823422d21704/250x250-000000-80-0-0.jpg",
+    "youtube": "YLbeTt87UWU",
+    "youtubeTitle": "Dibby Sound (Original Mix)",
+    "id": "sim420155820"
+   },
+   {
+    "artist": "In Verruf",
+    "title": "Ewigkeit",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3957019001",
+    "deezerId": 3957019001,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/8/6/0/c8666913c5b5471b1dd23f64478dac36.mp3?hdnea=exp=1791737059~acl=/api/1/1/c/8/6/0/c8666913c5b5471b1dd23f64478dac36.mp3*~data=user_id=0,application_id=42~hmac=4d5ff5b2f29f4ff4d5ce82935ca0501d29af9998ef36a6a875ce9e46afbf057e",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/38391f911d3f98f9909b8f343e9d3eef/250x250-000000-80-0-0.jpg",
+    "youtube": "EuZZHx7qIMM",
+    "youtubeTitle": "Ewigkeit",
+    "id": "sim315386468"
+   },
+   {
+    "artist": "In Verruf",
+    "title": "Fassade",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3296242781",
+    "deezerId": 3296242781,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/7/8/0/c7857b74cc544983e5a047c1e4781316.mp3?hdnea=exp=1791737059~acl=/api/1/1/c/7/8/0/c7857b74cc544983e5a047c1e4781316.mp3*~data=user_id=0,application_id=42~hmac=8ae025db48890b0b44cee127c77aaa34dfcbff483b95543011bcf1f9f54478d7",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/2cea951af58ad43abd906fb016bf6565/250x250-000000-80-0-0.jpg",
+    "youtube": "Js1l6YQHL5o",
+    "youtubeTitle": "Fassade",
+    "id": "sim319942460"
+   },
+   {
+    "artist": "THAM",
+    "title": "Alles oder nichts",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3441131291",
+    "deezerId": 3441131291,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/b/7/0/db71c2a43e7a805fbd2f0e0037b0af49.mp3?hdnea=exp=1791737059~acl=/api/1/1/d/b/7/0/db71c2a43e7a805fbd2f0e0037b0af49.mp3*~data=user_id=0,application_id=42~hmac=1ac29a55a07b077d1db8f099f0f884f8e8405b55eb9171a3406f09bb89f952d0",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/36ffb03294df540bf992d9de166941c1/250x250-000000-80-0-0.jpg",
+    "youtube": "elF6xHEV54w",
+    "youtubeTitle": "Alles oder nichts",
+    "id": "sim326467"
+   },
+   {
+    "artist": "THAM",
+    "title": "Graveyard Shift (Radio Edit)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3238152041",
+    "deezerId": 3238152041,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/d/a/0/9dab1bf8f36a9d32994c9339af78b733.mp3?hdnea=exp=1791737059~acl=/api/1/1/9/d/a/0/9dab1bf8f36a9d32994c9339af78b733.mp3*~data=user_id=0,application_id=42~hmac=5bc3d96525163b610e5b159a26351355adf4e2c2af90f7bcb36f43651fcbf9a1",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/4a6be5e09b5f3b6464751a3839009860/250x250-000000-80-0-0.jpg",
+    "youtube": "XlOVWa1PWH4",
+    "youtubeTitle": "Graveyard Shift (feat. Retarded Sick) [Radio Edit]",
+    "id": "sim586446873"
+   }
+  ],
+  "dz4171086662": [
+   {
+    "artist": "Africanism",
+    "title": "Mulemba Xangola",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3972063771",
+    "deezerId": 3972063771,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/b/9/0/db90483dd3831f0e061e3781b668a0b8.mp3?hdnea=exp=1791737067~acl=/api/1/1/d/b/9/0/db90483dd3831f0e061e3781b668a0b8.mp3*~data=user_id=0,application_id=42~hmac=233aef6cf182d8c79be02f62279219cc9998c1be2b890232281e63c1f2106974",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/9e8fed2e6f8b271f46a2a7e59d9d80f8/250x250-000000-80-0-0.jpg",
+    "youtube": "o54MNSUAbq0",
+    "youtubeTitle": "Africanism presents Bob Sinclar, Jes\u00fas Fernandez & Bonga ft. Lura - Mulemba Xangola (Visualizer)",
+    "id": "sim367766360"
+   },
+   {
+    "artist": "Africanism",
+    "title": "Zanmi Kanmarad",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2681881852",
+    "deezerId": 2681881852,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/5/c/0/e5ce3085313663f64f95ec5a0c6b1eae.mp3?hdnea=exp=1791737067~acl=/api/1/1/e/5/c/0/e5ce3085313663f64f95ec5a0c6b1eae.mp3*~data=user_id=0,application_id=42~hmac=911ae0d1825ce14bbfc5e8b6e41c9d25a1fd8ab114b0762e813f7d5f060a6db2",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/597b0deb94c9e5a3c38b3934260ce7a6/250x250-000000-80-0-0.jpg",
+    "youtube": "jBsBIryohNg",
+    "youtubeTitle": "Africanism Presents, Moonlight Benjamin, Bob Sinclar - Zanmi Kanmarad (Official Video)",
+    "id": "sim178268478"
+   },
+   {
+    "artist": "Kungs",
+    "title": "Galaxy (CASSIMM remix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3804586392",
+    "deezerId": 3804586392,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/7/e/a/0/7ead7fc0c1a97b190978ede87321490d.mp3?hdnea=exp=1791737067~acl=/api/1/1/7/e/a/0/7ead7fc0c1a97b190978ede87321490d.mp3*~data=user_id=0,application_id=42~hmac=28f08bebbd7603f2e0c0d02a6e138f261afebe796f194a6b6c7d389358fcc2bd",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/d97b6fa6af3fb6beac2327f42642e0a4/250x250-000000-80-0-0.jpg",
+    "youtube": "ha046Ot_cgE",
+    "youtubeTitle": "Kungs, Theophilus London \u2013 Galaxy (CASSIMM Remix) [visualizer]",
+    "id": "sim667603256"
+   },
+   {
+    "artist": "CASSIMM",
+    "title": "LOVE DESIRE",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2459517365",
+    "deezerId": 2459517365,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/6/5/0/0/6500b07b90c7d614decc77697168ce90.mp3?hdnea=exp=1791737067~acl=/api/1/1/6/5/0/0/6500b07b90c7d614decc77697168ce90.mp3*~data=user_id=0,application_id=42~hmac=9df216f568dc414ef49698caf99d4019ee754d2c87c4a783c8595d66909b624b",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/9a81ddf226f7b5a8b7330cc375637beb/250x250-000000-80-0-0.jpg",
+    "youtube": "Jrbooss5xcE",
+    "youtubeTitle": "LOVE DESIRE",
+    "id": "sim565931898"
+   },
+   {
+    "artist": "HoneyLuv",
+    "title": "This Is My Life (Bontan Remix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2645179582",
+    "deezerId": 2645179582,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/9/3/0/99354acdf1f0de7bd1537ee0b32dce65.mp3?hdnea=exp=1791737067~acl=/api/1/1/9/9/3/0/99354acdf1f0de7bd1537ee0b32dce65.mp3*~data=user_id=0,application_id=42~hmac=70b3695d0c145f468666a1f372b518e689c87d7c4bb9b7488b2db1d72951c101",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/0ff0b441cf5fb4eba716cd171363e835/250x250-000000-80-0-0.jpg",
+    "youtube": "-RatkF__-Y4",
+    "youtubeTitle": "HoneyLuv, Roland Clark - This Is My Life (Bontan Remix) [House/Dance]",
+    "id": "sim890452957"
+   },
+   {
+    "artist": "TSHA",
+    "title": "I Need U (feat. Ellie Maxwell)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3982158351",
+    "deezerId": 3982158351,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/0/e/0/c0ed910e7c29aec8aa2971b3ee7a4e3b.mp3?hdnea=exp=1791737067~acl=/api/1/1/c/0/e/0/c0ed910e7c29aec8aa2971b3ee7a4e3b.mp3*~data=user_id=0,application_id=42~hmac=3febf0ac6d94730675c8a24ae9d33a213e72770ca0dfb76dd2350c6fa6d0b628",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/23211d353e78c69b339919258f5d1249/250x250-000000-80-0-0.jpg",
+    "youtube": "zq_1in3hp38",
+    "youtubeTitle": "TSHA, HoneyLuv - I Need U (feat. Ellie Maxwell) [Official Audio]",
+    "id": "sim654625508"
+   }
+  ],
+  "dz3364851211": [],
+  "dz4058534261": [
+   {
+    "artist": "Jacidorex",
+    "title": "Riverside",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3910461321",
+    "deezerId": 3910461321,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/c/2/0/4c2509f9bc51368fc9154f8f3354eb22.mp3?hdnea=exp=1791737078~acl=/api/1/1/4/c/2/0/4c2509f9bc51368fc9154f8f3354eb22.mp3*~data=user_id=0,application_id=42~hmac=a0f656f8c6844bc5e07edf7480a577e059b758b2d2d51f29494e6f44baceb716",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/59f87f5f3a2071bb44b75255a0edc431/250x250-000000-80-0-0.jpg",
+    "youtube": "DZGNqCOsOoQ",
+    "youtubeTitle": "Riverside",
+    "id": "sim188521896"
+   },
+   {
+    "artist": "Jacidorex",
+    "title": "Front to Back",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4104512841",
+    "deezerId": 4104512841,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/6/f/0/16fe4a6e43738be9f36fddd8ba9772c0.mp3?hdnea=exp=1791737078~acl=/api/1/1/1/6/f/0/16fe4a6e43738be9f36fddd8ba9772c0.mp3*~data=user_id=0,application_id=42~hmac=120db171a18420219cc549167c934df4760d8ab03b9b7a44c722174ce8510c1d",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/3a79cea5de3ad8b6435a6aa775be5377/250x250-000000-80-0-0.jpg",
+    "youtube": "lplTVh_LFdE",
+    "youtubeTitle": "Front to Back",
+    "id": "sim471784006"
+   }
+  ],
+  "dz4169984992": [
+   {
+    "artist": "Remon Verhoeve",
+    "title": "YOU CAN'T STOP ME NOW",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3450303071",
+    "deezerId": 3450303071,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/9/3/0/f93c5896d0b3ac421333f102c9ae197c.mp3?hdnea=exp=1791737082~acl=/api/1/1/f/9/3/0/f93c5896d0b3ac421333f102c9ae197c.mp3*~data=user_id=0,application_id=42~hmac=dc9b05fe7a36fa29838a06451e3ca1ffa20af8913f7591c4a995573a76e31a8c",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/4b015c4bceff64d4601337169d607649/250x250-000000-80-0-0.jpg",
+    "youtube": "EXuLEN87-3s",
+    "youtubeTitle": "Remon Verhoeve - YOU CAN\u2019T STOP ME NOW",
+    "id": "sim736096976"
+   },
+   {
+    "artist": "Luca Agnelli",
+    "title": "Broken Voices",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3889546931",
+    "deezerId": 3889546931,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/c/6/0/bc6798c5fdf8b5a4e3fbda07a7201ee6.mp3?hdnea=exp=1791737082~acl=/api/1/1/b/c/6/0/bc6798c5fdf8b5a4e3fbda07a7201ee6.mp3*~data=user_id=0,application_id=42~hmac=a23fbf35b74b4814cd6273d3309531e7d668cc5c85a76420f2f0ec9be872c064",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/373d9437ab9f6e6f1273696e7da2ac2a/250x250-000000-80-0-0.jpg",
+    "youtube": "8xsX35n6pe8",
+    "youtubeTitle": "Luca Agnelli, DJ Mad Dog - Broken Voices (ETBDUAL001)",
+    "id": "sim396717835"
+   },
+   {
+    "artist": "Luca Agnelli",
+    "title": "Apollo",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2255703487",
+    "deezerId": 2255703487,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/7/6/0/9760c594837c490644473d1f03ed55bc.mp3?hdnea=exp=1791737082~acl=/api/1/1/9/7/6/0/9760c594837c490644473d1f03ed55bc.mp3*~data=user_id=0,application_id=42~hmac=a485b08201f9e2a97912f36efc828c1209d714c828c2964e36661b03138de7a7",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/3d88117e57691ebdf16290268df8fc02/250x250-000000-80-0-0.jpg",
+    "youtube": "Am28oT7Kkr4",
+    "youtubeTitle": "Luca Agnelli - Apollo [Drumcode]",
+    "id": "sim458659186"
+   },
+   {
+    "artist": "BY\u00d8RN",
+    "title": "Adagio For Strings (VIP Remix) [Live At Tomorrowland]",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2991501791",
+    "deezerId": 2991501791,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/0/7/d/0/07dfb4d4b5b1ac02593ad24b971fe7ac.mp3?hdnea=exp=1791737082~acl=/api/1/1/0/7/d/0/07dfb4d4b5b1ac02593ad24b971fe7ac.mp3*~data=user_id=0,application_id=42~hmac=08afa8b6537040cd933c7a1386b6191acda17a9f823474d7d0ff3079fb10ab4a",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/8ab84c9f0a6514324dd4778506745e03/250x250-000000-80-0-0.jpg",
+    "youtube": "BLow_XwScwA",
+    "youtubeTitle": "BY\u00d8RN - Adagio For Strings (VIP Remix) [Live At Tomorrowland]",
+    "id": "sim303917262"
+   },
+   {
+    "artist": "BY\u00d8RN",
+    "title": "Adagio For Strings",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2637850962",
+    "deezerId": 2637850962,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/0/d/0/90d4f8011d79c50c5c8a9162a3d1e76b.mp3?hdnea=exp=1791737082~acl=/api/1/1/9/0/d/0/90d4f8011d79c50c5c8a9162a3d1e76b.mp3*~data=user_id=0,application_id=42~hmac=fbacea7dd5abfe922e45c36b2d9670a88a28563396c362188621432659f0bfc3",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/65f6496393526d4181323a23e713e215/250x250-000000-80-0-0.jpg",
+    "youtube": "BLow_XwScwA",
+    "youtubeTitle": "BY\u00d8RN - Adagio For Strings (VIP Remix) [Live At Tomorrowland]",
+    "id": "sim739387697"
+   }
+  ],
+  "dz3947227901": [
+   {
+    "artist": "Luciid",
+    "title": "Hard Truths",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3804176852",
+    "deezerId": 3804176852,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/6/7/b/0/67be7fbbfb2748f6f7376d605876dede.mp3?hdnea=exp=1791737092~acl=/api/1/1/6/7/b/0/67be7fbbfb2748f6f7376d605876dede.mp3*~data=user_id=0,application_id=42~hmac=e5ba2535429d291d536e7e23a59c607d9151df93d15c999933a970879cce52dd",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/b864a1dcf9988221c65a8ab3b4157c9c/250x250-000000-80-0-0.jpg",
+    "youtube": "0cRdqpUW4xI",
+    "youtubeTitle": "Luciid - Hard Truths | Official Audio",
+    "id": "sim275898046"
+   },
+   {
+    "artist": "Luciid",
+    "title": "Reeky",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4169984992",
+    "deezerId": 4169984992,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/3/1/0/13195e386df010a50711255a2cb78282.mp3?hdnea=exp=1791737092~acl=/api/1/1/1/3/1/0/13195e386df010a50711255a2cb78282.mp3*~data=user_id=0,application_id=42~hmac=e450835dec73b199e7bd72d727a813f6eacec57fe417be1caf61631f95664dca",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/fce422a1fafe442004994c0349ec4b28/250x250-000000-80-0-0.jpg",
+    "youtube": "Q8RwDNGLfVE",
+    "youtubeTitle": "Luciid - Reeky (Original Mix) | SCHRANZ 2026",
+    "id": "sim724388289"
+   },
+   {
+    "artist": "Triptykh",
+    "title": "La Fuerza",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4175962212",
+    "deezerId": 4175962212,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/7/6/c/0/76cd64586b4b47816c8f86aa5271dda9.mp3?hdnea=exp=1791737092~acl=/api/1/1/7/6/c/0/76cd64586b4b47816c8f86aa5271dda9.mp3*~data=user_id=0,application_id=42~hmac=259aa2e6e910a5fc42643c1fc29547dce1fa7ae89ab255990ee58800257ecf4d",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/90c60317f90d061df997abc11646cedf/250x250-000000-80-0-0.jpg",
+    "youtube": "kUDuwEHqoHg",
+    "youtubeTitle": "TRIPTYKH - La Fuerza (Visualizer) [Helix Records]",
+    "id": "sim84556413"
+   },
+   {
+    "artist": "Triptykh",
+    "title": "Bass Keeps Going (Original Mix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2265974917",
+    "deezerId": 2265974917,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/c/2/0/4c2df68583256543d5d3d7199bef13c0.mp3?hdnea=exp=1791737092~acl=/api/1/1/4/c/2/0/4c2df68583256543d5d3d7199bef13c0.mp3*~data=user_id=0,application_id=42~hmac=cdf64fdafe448bf1430f30ebeae5e8148252b4ec2672b6190d41fd8051a4af7a",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/63bdca6b9055c5b09f9ccb81a78aee93/250x250-000000-80-0-0.jpg",
+    "youtube": "_iF1EMgmDxc",
+    "youtubeTitle": "Bass Keeps Going",
+    "id": "sim337493828"
+   },
+   {
+    "artist": "Mit",
+    "title": "AN INFINITE THREAD (Short Mix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3572599461",
+    "deezerId": 3572599461,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/b/9/0/eb9b2b5177e561de5adef9791337df68.mp3?hdnea=exp=1791737092~acl=/api/1/1/e/b/9/0/eb9b2b5177e561de5adef9791337df68.mp3*~data=user_id=0,application_id=42~hmac=15c307276fe737faa2a1483fd04685311aaf8304d6eb1be22a3a28295e8196e5",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/0c4afeb6cdb6bff1bd717287a8150e95/250x250-000000-80-0-0.jpg",
+    "youtube": "ApRTRCMu7tk",
+    "youtubeTitle": "AN INFINITE THREAD (Short Mix)",
+    "id": "sim660255740"
+   }
+  ],
+  "dz3577944211": [],
+  "dz3679813052": [
+   {
+    "artist": "Lexy & K-Paul",
+    "title": "Let's Play (Original)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/101575828",
+    "deezerId": 101575828,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/7/c/0/d7cf9a462fdf11c6334976b16bdcc39a.mp3?hdnea=exp=1791737113~acl=/api/1/1/d/7/c/0/d7cf9a462fdf11c6334976b16bdcc39a.mp3*~data=user_id=0,application_id=42~hmac=640c84cda7c348589e27c8e81766d98b52775d82540195bf3e47831454ddc2cc",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/26582952f2f698aaf364638e8e3c191d/250x250-000000-80-0-0.jpg",
+    "youtube": "p2GSc45b5bs",
+    "youtubeTitle": "Lexy & K-Paul - Let's Play (Official Video)",
+    "id": "sim557323004"
+   },
+   {
+    "artist": "Lexy & K-Paul",
+    "title": "NEED SOMEONE",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2948786821",
+    "deezerId": 2948786821,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/6/1/9/0/619d85adfe1d3f0a515cc01d8b6d05c8.mp3?hdnea=exp=1791737113~acl=/api/1/1/6/1/9/0/619d85adfe1d3f0a515cc01d8b6d05c8.mp3*~data=user_id=0,application_id=42~hmac=ef976548d9e54308d8a567e6a30931837953ae534681adf8957c5669b1903060",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/83e73db93cca63657f67802651c94351/250x250-000000-80-0-0.jpg",
+    "youtube": "9l7jqeYCXwo",
+    "youtubeTitle": "Lexy & K-Paul \u2013  Need Someone (Official Video)",
+    "id": "sim563442930"
+   },
+   {
+    "artist": "Mr. X & Mr. Y",
+    "title": "New World Order",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2212614587",
+    "deezerId": 2212614587,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/b/e/0/3be162d4748c3379dadf5b2490b78eb0.mp3?hdnea=exp=1791737113~acl=/api/1/1/3/b/e/0/3be162d4748c3379dadf5b2490b78eb0.mp3*~data=user_id=0,application_id=42~hmac=d7b01070792aa3eaa2720325e27048a0cf9a098a586538683bb6c8f7e7c9ec51",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/bd19f9f791521ebff01bde87e6d3312f/250x250-000000-80-0-0.jpg",
+    "youtube": "eV1XPrqNLuM",
+    "youtubeTitle": "Mr X & Mr Y - New World Order.mpg",
+    "id": "sim411017057"
+   },
+   {
+    "artist": "The Love Committee",
+    "title": "You Can't Stop Us (Loveparade 2001) (Berlin Summer Mix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2172117207",
+    "deezerId": 2172117207,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/7/6/9/0/769fad365f33e79d80546c136cd25144.mp3?hdnea=exp=1791737113~acl=/api/1/1/7/6/9/0/769fad365f33e79d80546c136cd25144.mp3*~data=user_id=0,application_id=42~hmac=005e50c8a14144ce00b267c228a273b3d166481c215399fa473c11c4e0a51881",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/8dadcd37055275c76b659009fff647aa/250x250-000000-80-0-0.jpg",
+    "youtube": "CHhen2jUthk",
+    "youtubeTitle": "The Love Committee Feat  Westbam  -  You Can't Stop Us ( Love Parade 2001)",
+    "id": "sim117568563"
+   },
+   {
+    "artist": "Westbam",
+    "title": "United States of Love (Loveparade 2006) (Official Mix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2110104017",
+    "deezerId": 2110104017,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/2/4/0/124338072ca712d49427227acb4cf074.mp3?hdnea=exp=1791737113~acl=/api/1/1/1/2/4/0/124338072ca712d49427227acb4cf074.mp3*~data=user_id=0,application_id=42~hmac=c723c16f79f5bbc01eb0f474fd3f5337a1e7d0a4dc4cbbadfd26445adf9ae9c7",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/c771c47d34f2139dfef66de1c0554155/250x250-000000-80-0-0.jpg",
+    "youtube": "XYc6Ep-AIN4",
+    "youtubeTitle": "United States of Love (Loveparade 2006) (Official Mix)",
+    "id": "sim370380024"
+   }
+  ]
+ }
+}
