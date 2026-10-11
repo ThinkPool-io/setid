@@ -6,10 +6,10 @@
   "url": "https://www.youtube.com/watch?v=kBTYHEjtJhI",
   "thumbnail": "https://i.ytimg.com/vi/kBTYHEjtJhI/maxresdefault.jpg",
   "duration": 5011.0,
-  "views": 1156286,
-  "tracks": 30,
-  "coverage": 0.918,
-  "ran_at": "2026-10-11T16:30:44Z"
+  "views": 1156272,
+  "tracks": 32,
+  "coverage": 0.966,
+  "ran_at": "2026-10-11T17:33:09Z"
  },
  {
   "key": "youtube-08__IepUcFA",
@@ -18,9 +18,9 @@
   "url": "https://www.youtube.com/watch?v=08__IepUcFA",
   "thumbnail": "https://i.ytimg.com/vi/08__IepUcFA/maxresdefault.jpg",
   "duration": 3336.0,
-  "views": 373136,
-  "tracks": 12,
-  "coverage": 0.561,
-  "ran_at": "2026-10-11T16:07:22Z"
+  "views": 373133,
+  "tracks": 13,
+  "coverage": 0.616,
+  "ran_at": "2026-10-11T17:33:09Z"
  }
 ]

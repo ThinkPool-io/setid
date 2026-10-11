@@ -1,0 +1,108 @@
+/* SetID panel on youtube.com. Every selector is scoped under .setid so nothing leaks into YouTube.
+   Colours come from YouTube's own theme variables (so dark/light both work); vermilion is the one signal. */
+#setid-root.setid {
+  --setid-vm: #E8452C;
+  --setid-fg: var(--yt-spec-text-primary, #0f0f0f);
+  --setid-fg2: var(--yt-spec-text-secondary, #606060);
+  --setid-line: var(--yt-spec-10-percent-layer, rgba(0, 0, 0, .1));
+  --setid-chip: var(--yt-spec-badge-chip-background, rgba(0, 0, 0, .05));
+  --setid-hover: var(--yt-spec-button-chip-background-hover, rgba(0, 0, 0, .1));
+  --setid-base: var(--yt-spec-base-background, #fff);
+  --setid-warn: #A35F00;
+  box-sizing: border-box;
+  margin: 12px 0 0;
+  font-family: "Roboto", "Arial", sans-serif;
+  color: var(--setid-fg);
+  font-size: 14px;
+  line-height: 20px;
+}
+/* YouTube has dropped some --yt-spec-* variables in recent builds; when they are missing,
+   these fallbacks match its own dark palette (it marks dark mode with html[dark]). */
+html[dark] #setid-root.setid {
+  --setid-fg: var(--yt-spec-text-primary, #f1f1f1);
+  --setid-fg2: var(--yt-spec-text-secondary, #aaaaaa);
+  --setid-line: var(--yt-spec-10-percent-layer, rgba(255, 255, 255, .2));
+  --setid-chip: var(--yt-spec-badge-chip-background, rgba(255, 255, 255, .1));
+  --setid-hover: var(--yt-spec-button-chip-background-hover, rgba(255, 255, 255, .2));
+  --setid-base: var(--yt-spec-base-background, #0f0f0f);
+  --setid-warn: #E7A83A;
+}
+#setid-root.setid *, #setid-root.setid *::before, #setid-root.setid *::after { box-sizing: border-box; }
+
+/* ---------- shared bits ---------- */
+#setid-root .setid-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--setid-vm); flex: none; }
+#setid-root .setid-btn {
+  appearance: none; display: inline-flex; align-items: center; gap: 6px;
+  height: 32px; padding: 0 14px; border: 0; border-radius: 16px;
+  background: var(--setid-chip); color: var(--setid-fg);
+  font: 500 13px/32px "Roboto", "Arial", sans-serif; text-decoration: none; white-space: nowrap; cursor: pointer;
+}
+#setid-root .setid-btn:hover { background: var(--setid-hover); }
+#setid-root .setid-btn:disabled { opacity: .45; cursor: default; }
+#setid-root .setid-btn-primary { background: var(--setid-fg); color: var(--setid-base); }
+#setid-root .setid-btn-primary:hover:not(:disabled) { background: var(--setid-vm); color: #0E0E0E; }
+#setid-root .setid-link { color: var(--setid-fg2); font-size: 12px; text-decoration: none; white-space: nowrap; padding: 6px 4px; border-radius: 4px; }
+#setid-root .setid-link:hover { color: var(--setid-fg); text-decoration: underline; }
+#setid-root :is(button, a):focus-visible { outline: 2px solid var(--setid-vm); outline-offset: 2px; }
+#setid-root .setid-sr { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+#setid-root .setid-weak { color: var(--setid-warn); }
+
+/* ---------- slim "no tracklist yet" bar ---------- */
+#setid-root.setid-bar {
+  display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 4px 4px 4px 12px;
+  border: 1px solid var(--setid-line); border-radius: 12px; color: var(--setid-fg2); font-size: 13px;
+}
+#setid-root.setid-bar b { color: var(--setid-fg); font-weight: 500; }
+#setid-root .setid-bar-text { flex: 1; min-width: 0; }
+
+/* ---------- panel ---------- */
+#setid-root.setid-panel { border: 1px solid var(--setid-line); border-radius: 12px; overflow: hidden; }
+#setid-root .setid-head { display: flex; align-items: center; gap: 12px; padding: 10px 12px; }
+#setid-root .setid-cover-box { position: relative; flex: none; width: 56px; height: 56px; border-radius: 8px; overflow: hidden; background: var(--setid-chip); }
+#setid-root .setid-cover { display: block; width: 100%; height: 100%; object-fit: cover; }
+#setid-root .setid-cover-box.setid-empty .setid-cover { display: none; }
+#setid-root .setid-cover-box.setid-empty::after { content: ""; position: absolute; inset: 22px; border-radius: 50%; background: var(--setid-fg2); opacity: .5; }
+#setid-root .setid-body { flex: 1; min-width: 0; }
+#setid-root .setid-kicker { display: flex; align-items: center; gap: 6px; font-size: 11px; line-height: 16px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--setid-fg2); font-variant-numeric: tabular-nums; }
+#setid-root:not(.setid-has-track) .setid-kicker .setid-dot { background: var(--setid-fg2); }
+#setid-root .setid-title { font-size: 16px; line-height: 22px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#setid-root .setid-meta { display: flex; flex-wrap: wrap; column-gap: 8px; font-size: 13px; line-height: 18px; color: var(--setid-fg2); }
+#setid-root .setid-meta > span + span::before { content: "·"; margin-right: 8px; color: var(--setid-fg2); }
+#setid-root .setid-artist { color: var(--setid-fg); }
+#setid-root .setid-actions { display: flex; align-items: center; gap: 8px; flex: none; }
+#setid-root .setid-chev { width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .15s ease; }
+#setid-root.setid-open .setid-chev { transform: translateY(1px) rotate(-135deg); }
+
+/* ---------- tracklist ---------- */
+#setid-root .setid-list { list-style: none; margin: 0; padding: 4px 0; max-height: 340px; overflow-y: auto; border-top: 1px solid var(--setid-line); overscroll-behavior: contain; }
+#setid-root .setid-list[hidden] { display: none; }
+#setid-root .setid-list li { margin: 0; padding: 0; }
+#setid-root .setid-row {
+  appearance: none; display: grid; grid-template-columns: 64px minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.4fr); align-items: baseline; gap: 12px;
+  width: 100%; padding: 6px 12px 6px 9px; border: 0; border-left: 3px solid transparent; background: none;
+  color: var(--setid-fg); font: 400 13px/18px "Roboto", "Arial", sans-serif; text-align: left; cursor: pointer;
+}
+#setid-root .setid-row:hover { background: var(--setid-chip); }
+#setid-root .setid-row:focus-visible { outline-offset: -2px; }
+#setid-root .setid-row[aria-current] { border-left-color: var(--setid-vm); background: var(--setid-chip); }
+#setid-root .setid-row[aria-current] .setid-rt { font-weight: 500; }
+#setid-root .setid-row > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#setid-root .setid-ts { color: var(--setid-fg2); font-variant-numeric: tabular-nums; }
+#setid-root .setid-ra { color: var(--setid-fg2); }
+#setid-root .setid-rl { color: var(--setid-fg2); font-size: 12px; }
+#setid-root .setid-row.setid-weak .setid-rl { color: var(--setid-warn); }
+#setid-root .setid-unk .setid-rt { color: var(--setid-fg2); font-style: italic; }
+#setid-root .setid-row.setid-weak { color: var(--setid-fg); }
+
+/* narrow layouts: stack actions under the now-playing block, collapse the row grid */
+@media (max-width: 760px) {
+  #setid-root .setid-head { flex-wrap: wrap; }
+  #setid-root .setid-actions { width: 100%; flex-wrap: wrap; }
+  #setid-root .setid-row { grid-template-columns: 56px minmax(0, 1fr); row-gap: 0; }
+  #setid-root .setid-ra, #setid-root .setid-rl { grid-column: 2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #setid-root .setid-chev { transition: none; }
+  #setid-root .setid-list { scroll-behavior: auto; }
+}

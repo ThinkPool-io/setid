@@ -8,35 +8,46 @@
   "duration": 3336.0,
   "thumbnail": "https://i.ytimg.com/vi/08__IepUcFA/maxresdefault.jpg",
   "upload_date": "20240529",
-  "views": 373136
+  "views": 373133
  },
  "analysed": {
-  "method": "comments+audio",
-  "comments": 452,
-  "named": 6,
-  "samples": 452,
-  "identified": 13,
-  "every": 0,
-  "clip": 0,
-  "ran_at": "2026-10-11T16:07:22Z",
-  "took": 33,
-  "audioMatches": 8,
-  "commentOnly": 5,
-  "threshold": 35,
+  "providers": [
+   "shazam"
+  ],
+  "seconds": 3336.0,
+  "every": 30.0,
+  "clip": 12,
+  "samples": 111,
+  "identified": 14,
+  "ran_at": "2026-10-11T17:33:09Z",
+  "took": 5052,
+  "method": "multi",
+  "shazamRows": 7,
+  "audioRows": 5,
+  "commentRows": 2,
+  "commentConfirmed": 4,
   "catalogue": 281,
   "catalogueArtists": [
    "Adrian Mills",
    "Stef de Haan",
    "RAWSPORT"
-  ]
+  ],
+  "comments": 452,
+  "shazamSamples": 111,
+  "shazamEvery": 30.0,
+  "hiddenGuesses": 4,
+  "tempo": {
+   "played": 14,
+   "withOriginal": 10
+  }
  },
  "segments": [
   {
    "start": 0,
    "end": 190,
    "track": {
-    "id": "cm608129109",
-    "artist": "Adrian Mills",
+    "id": "cm967906006",
+    "artist": "Adri\u00e1n Mills",
     "title": "BABY",
     "source": "comments",
     "votes": 1,
@@ -48,10 +59,14 @@
     "bpm": null,
     "deezer": "https://www.deezer.com/track/3916754041",
     "isrc": "QM6MZ2619543",
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/3/8/0/f389635bd87306509deaa9fc631e04f5.mp3?hdnea=exp=1791734156~acl=/api/1/1/f/3/8/0/f389635bd87306509deaa9fc631e04f5.mp3*~data=user_id=0,application_id=42~hmac=e080adfe2898e66a819da471a5a4b5e0d7f0745592ac3c37dca6b47584a58a4a",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/3/8/0/f389635bd87306509deaa9fc631e04f5.mp3?hdnea=exp=1791740794~acl=/api/1/1/f/3/8/0/f389635bd87306509deaa9fc631e04f5.mp3*~data=user_id=0,application_id=42~hmac=d9a45c5c0b446980f9e64881ce734f2db95267a1fc20952b305abd15f6ae49f2",
     "cover": "https://cdn-images.dzcdn.net/images/cover/8ed0d830157f6c645288ac93b105e59f/250x250-000000-80-0-0.jpg",
     "youtube": "3fC9C-ZF7IM",
-    "youtubeTitle": "BABY"
+    "youtubeTitle": "BABY",
+    "playedBpm": 160.0,
+    "tempoConf": 1.0,
+    "originalBpm": 158.0,
+    "tempoDelta": 1.3
    },
    "hits": 1
   },
@@ -64,6 +79,7 @@
     "title": "\u00c1REA AZUL",
     "cover": "https://cdn-images.dzcdn.net/images/cover/93c976651b255eaba3d3cf38a1ea3e91/250x250-000000-80-0-0.jpg",
     "deezer": "https://www.deezer.com/track/3972126931",
+    "claimed": "",
     "preview": "https://cdnt-preview.dzcdn.net/api/1/1/0/e/6/0/0e6574be4a4a1aa3285aee5370bf645f.mp3?hdnea=exp=1791735481~acl=/api/1/1/0/e/6/0/0e6574be4a4a1aa3285aee5370bf645f.mp3*~data=user_id=0,application_id=42~hmac=13cf39d39579f60826ff1356960759b5595881cff3f0b0164a2e513f0e7d3ecc",
     "released": "2024",
     "album": "INTERGAL\u00c1CTICO EP",
@@ -71,10 +87,10 @@
     "windows": 18,
     "pitch": 0,
     "score": 78,
-    "bpm": null,
-    "isrc": "NLCK42416367",
-    "youtube": "7fi7EVVw9zo",
-    "youtubeTitle": "\u00c1REA AZUL"
+    "playedBpm": 159.9,
+    "tempoConf": 1.0,
+    "originalBpm": 158.0,
+    "tempoDelta": 1.2
    },
    "hits": 18
   },
@@ -93,6 +109,7 @@
     "title": "240 INTRO",
     "cover": "https://cdn-images.dzcdn.net/images/cover/1ebe9d0f03666a81f37de600bd634e0b/250x250-000000-80-0-0.jpg",
     "deezer": "https://www.deezer.com/track/3465541351",
+    "claimed": "",
     "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/d/b/0/bdb3b18ea3e0f8f6f41a479a75ce9803.mp3?hdnea=exp=1791735483~acl=/api/1/1/b/d/b/0/bdb3b18ea3e0f8f6f41a479a75ce9803.mp3*~data=user_id=0,application_id=42~hmac=b92ab46913f7121dfe4eb6dcf937b3ba9cc77e488c1ba83299d9a977ee7f1a3f",
     "released": "2025",
     "album": "240 INTRO",
@@ -100,10 +117,10 @@
     "windows": 2,
     "pitch": 0,
     "score": 48,
-    "bpm": null,
-    "isrc": "DEH742517692",
-    "youtube": "tOaWGp84U2g",
-    "youtubeTitle": "240 INTRO"
+    "playedBpm": 159.9,
+    "tempoConf": 1.0,
+    "originalBpm": 158.0,
+    "tempoDelta": 1.2
    },
    "hits": 2
   },
@@ -115,10 +132,10 @@
   },
   {
    "start": 570,
-   "end": 810,
+   "end": 660.0,
    "track": {
-    "id": "cm294965613",
-    "artist": "Adrian Mills",
+    "id": "cm162743081",
+    "artist": "Adri\u00e1n Mills",
     "title": "AM DB9",
     "source": "comments",
     "votes": 1,
@@ -128,51 +145,87 @@
      "reply to \"9:30 track id?\""
     ],
     "youtube": "Op4PHCOSKPM",
-    "youtubeTitle": "Adrian Mills - AM DB9. 2023"
+    "youtubeTitle": "Adrian Mills - AM DB9. 2023",
+    "playedBpm": 163.1,
+    "tempoConf": 1.0
    },
    "hits": 1
   },
   {
-   "start": 810,
-   "end": 960,
+   "start": 660.0,
+   "end": 870.0,
+   "track": {
+    "id": "sz829297285",
+    "title": "Teckno King (Vol. 1)",
+    "artist": "K\u00d8\u00d8BA",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/07/c4/47/07c447e0-3f33-b84e-e4a8-d925af28feeb/artwork.jpg/400x400cc.jpg",
+    "genre": "Techno",
+    "label": null,
+    "released": null,
+    "shazam": "https://www.shazam.com/track/829297285/teckno-king-vol-1",
+    "apple": "https://music.apple.com/subscribe?mttnagencyid=s2n",
+    "provider": "shazam",
+    "youtube": "vlOF-uKBADo",
+    "youtubeTitle": "Techno King Part 1 | Funky Mix | Techno",
+    "source": "shazam",
+    "samples": 7,
+    "playedBpm": 163.0,
+    "tempoConf": 1.0
+   },
+   "hits": 7
+  },
+  {
+   "start": 870.0,
+   "end": 930.0,
    "track": null,
    "hits": 0
   },
   {
-   "start": 960,
-   "end": 1180,
+   "start": 930.0,
+   "end": 1140.0,
    "track": {
-    "id": "cm933015493",
-    "artist": "Adrian Mills",
-    "title": "240 Intro",
-    "source": "comments",
-    "votes": 3,
-    "likes": 3,
-    "approx": false,
+    "id": "sz827047466",
+    "title": "240 INTRO",
+    "artist": "Adrian Mills & 240 KM/H",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/db/94/64/db94649b-1db2-4724-4a68-4015476eda83/820200070920.jpg/400x400cc.jpg",
+    "genre": "Dance",
+    "label": "Rimas Music Entertainment",
+    "released": "2025",
+    "shazam": "https://www.shazam.com/track/827047466/240-intro",
+    "apple": "https://music.apple.com/gb/album/240-intro/6797489922?i=6797490141",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/16/70/32/1670329f-d054-e64f-8e28-b0b8ecee2a28/mzaf_1479765197570369182.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "youtube": "DYl8rOvBqPo",
+    "youtubeTitle": "Adrian Mills - 240 INTRO. 2024",
+    "source": "shazam",
+    "samples": 7,
+    "commentVotes": 3,
     "evidence": [
      "reply to \"16:15 Id?  Dos cuarenta dos cuarentaa probando probandoooo \ud83c\udf89\"",
      "reply to \"16:50?\"",
      "reply to \"Track id @16:00 plsssss\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\""
     ],
-    "bpm": null,
-    "deezer": "https://www.deezer.com/track/3465541351",
-    "isrc": "DEH742517692",
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/d/b/0/bdb3b18ea3e0f8f6f41a479a75ce9803.mp3?hdnea=exp=1791734163~acl=/api/1/1/b/d/b/0/bdb3b18ea3e0f8f6f41a479a75ce9803.mp3*~data=user_id=0,application_id=42~hmac=e49ab625176221660ada36b815e917c89b0579314bff52d0d974e021402cc4d2",
-    "cover": "https://cdn-images.dzcdn.net/images/cover/1ebe9d0f03666a81f37de600bd634e0b/250x250-000000-80-0-0.jpg",
-    "youtube": "tOaWGp84U2g",
-    "youtubeTitle": "240 INTRO"
+    "playedBpm": 163.0,
+    "tempoConf": 1.0
    },
-   "hits": 3
+   "hits": 7
+  },
+  {
+   "start": 1140.0,
+   "end": 1180,
+   "track": null,
+   "hits": 0
   },
   {
    "start": 1180,
-   "end": 1430,
+   "end": 1440.0,
    "track": {
     "id": "dz3972126941",
     "artist": "Adrian Mills",
     "title": "INTERGAL\u00c1CTICO",
     "cover": "https://cdn-images.dzcdn.net/images/cover/93c976651b255eaba3d3cf38a1ea3e91/250x250-000000-80-0-0.jpg",
     "deezer": "https://www.deezer.com/track/3972126941",
+    "claimed": "",
     "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/6/0/0/e60b46b897e96be33a724fd9a1a2f21e.mp3?hdnea=exp=1791735481~acl=/api/1/1/e/6/0/0/e60b46b897e96be33a724fd9a1a2f21e.mp3*~data=user_id=0,application_id=42~hmac=8de094410a1cfcef091d58d54228d0295df7b023b48bd13ee04a44f66f21a13d",
     "released": "2024",
     "album": "INTERGAL\u00c1CTICO EP",
@@ -180,43 +233,50 @@
     "windows": 14,
     "pitch": -2,
     "score": 47,
-    "bpm": null,
-    "isrc": "NLCK42416368",
-    "youtube": "dhqDFNYSgAM",
-    "youtubeTitle": "INTERGAL\u00c1CTICO"
+    "playedBpm": 163.0,
+    "tempoConf": 1.0,
+    "originalBpm": 165.0,
+    "tempoDelta": -1.2
    },
    "hits": 14
   },
   {
-   "start": 1430,
-   "end": 1490,
+   "start": 1440.0,
+   "end": 1560.0,
    "track": {
-    "id": "dz3972126951",
-    "artist": "Adrian Mills",
+    "id": "sz713195734",
     "title": "\u00c1TLANTIS",
-    "cover": "https://cdn-images.dzcdn.net/images/cover/93c976651b255eaba3d3cf38a1ea3e91/250x250-000000-80-0-0.jpg",
-    "deezer": "https://www.deezer.com/track/3972126951",
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/5/f/0/e5f589a5ed77aa990a6b43e2c92055fd.mp3?hdnea=exp=1791735481~acl=/api/1/1/e/5/f/0/e5f589a5ed77aa990a6b43e2c92055fd.mp3*~data=user_id=0,application_id=42~hmac=86eadeee1432aaacb83bf1c6245bc3f41d553a603e72158603d749c392a35f24",
+    "artist": "Adrian Mills",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ba/08/ef/ba08efeb-d65c-9132-d5f4-f3ab7a2c909d/820200033741.jpg/400x400cc.jpg",
+    "genre": "Trance",
+    "label": "240 KM/H under Rimas Music Entertainment Distribution",
     "released": "2024",
-    "album": "INTERGAL\u00c1CTICO EP",
-    "source": "both",
-    "windows": 5,
+    "shazam": "https://www.shazam.com/track/713195734/%C3%A1tlantis",
+    "apple": "https://music.apple.com/gb/album/%C3%A1tlantis/1894839474?i=1894839582",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/19/28/4e/19284ee1-7eb7-b163-7fd8-a4fe97f94e6c/mzaf_8527959043177523454.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/3972126951",
+    "isrc": "NLCK42416369",
+    "youtube": "pmcg6JR7B1k",
+    "youtubeTitle": "\u00c1TLANTIS",
+    "source": "shazam",
+    "samples": 4,
+    "catalog": true,
     "pitch": 0,
-    "score": 153,
-    "votes": 1,
+    "commentVotes": 1,
     "evidence": [
      "reply to \"24:20 Track Id? Pleeeeeeease! \ud83d\ude4f\ud83c\udffc\""
     ],
-    "commentAt": 1460,
-    "bpm": null,
-    "isrc": "NLCK42416369",
-    "youtube": "pmcg6JR7B1k",
-    "youtubeTitle": "\u00c1TLANTIS"
+    "playedBpm": 163.6,
+    "tempoConf": 1.0,
+    "originalBpm": 162.4,
+    "tempoDelta": 0.7
    },
-   "hits": 5
+   "hits": 4
   },
   {
-   "start": 1490,
+   "start": 1560.0,
    "end": 1850,
    "track": null,
    "hits": 0
@@ -230,6 +290,7 @@
     "title": "TEMPO.",
     "cover": "https://cdn-images.dzcdn.net/images/cover/5f1dee5c48b8f68c2a6bc86faa22413a/250x250-000000-80-0-0.jpg",
     "deezer": "https://www.deezer.com/track/2356320475",
+    "claimed": "",
     "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/4/e/0/94efe56f3af7f24f9d99e73794848d8d.mp3?hdnea=exp=1791735504~acl=/api/1/1/9/4/e/0/94efe56f3af7f24f9d99e73794848d8d.mp3*~data=user_id=0,application_id=42~hmac=d5a1f00bb280eb565ff07c019c839c4821d9b34c1555372f62aeaf3adefbf03b",
     "released": "2023",
     "album": "TEMPO.",
@@ -237,73 +298,52 @@
     "windows": 3,
     "pitch": 2,
     "score": 51,
-    "bpm": null,
-    "isrc": "QZNWR2352995",
-    "youtube": "WBPTjubAP6g",
-    "youtubeTitle": "TEMPO."
+    "playedBpm": 164.1,
+    "tempoConf": 1.0,
+    "originalBpm": 160.0,
+    "tempoDelta": 2.6
    },
    "hits": 3
   },
   {
    "start": 1890,
-   "end": 2230,
+   "end": 2250.0,
    "track": null,
    "hits": 0
   },
   {
-   "start": 2230,
-   "end": 2280,
+   "start": 2250.0,
+   "end": 2550.0,
    "track": {
-    "id": "dz2289937735",
-    "artist": "Adrian Mills",
+    "id": "sz667196270",
     "title": "GROOVEARCADE 2004",
-    "cover": "https://cdn-images.dzcdn.net/images/cover/d0e90b85ee7b126cfdc38c3421de0a3f/250x250-000000-80-0-0.jpg",
-    "deezer": "https://www.deezer.com/track/2289937735",
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/5/5/e/0/55e2218e346c08874b2cbb86f37b5a30.mp3?hdnea=exp=1791735484~acl=/api/1/1/5/5/e/0/55e2218e346c08874b2cbb86f37b5a30.mp3*~data=user_id=0,application_id=42~hmac=6df6d1ce006fafe65c6f6a95b30d1d6267052a9c0d26e53bbf9238d993c225ec",
+    "artist": "Adrian Mills",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/51/d3/fd/51d3fd91-d836-6bb4-aa91-88f77ddeb368/820200057761.jpg/400x400cc.jpg",
+    "genre": "Dance",
+    "label": "Rimas Music Entertainment",
     "released": "2023",
-    "album": "GROOVEARCADE 2004",
-    "source": "audio",
-    "windows": 4,
-    "pitch": 0,
-    "score": 47,
+    "shazam": "https://www.shazam.com/track/667196270/groovearcade-2004",
+    "apple": "https://music.apple.com/gb/album/groovearcade-2004/6797489764?i=6797489766",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/55/e0/22/55e022d0-2864-a964-a5fa-270862d5ccb6/mzaf_11422239733738078145.plus.aac.ep.m4a",
+    "provider": "shazam",
     "bpm": null,
+    "deezer": "https://www.deezer.com/track/2289937735",
     "isrc": "QZMHP2301489",
     "youtube": "xOMeL-16eRQ",
-    "youtubeTitle": "GROOVEARCADE 2004"
+    "youtubeTitle": "GROOVEARCADE 2004",
+    "source": "shazam",
+    "samples": 5,
+    "catalog": true,
+    "pitch": 0,
+    "playedBpm": 167.0,
+    "tempoConf": 1.0,
+    "originalBpm": 160.2,
+    "tempoDelta": 4.2
    },
-   "hits": 4
+   "hits": 5
   },
   {
-   "start": 2280,
-   "end": 2460,
-   "track": null,
-   "hits": 0
-  },
-  {
-   "start": 2460,
-   "end": 2530,
-   "track": {
-    "id": "dz2289924095",
-    "artist": "Adrian Mills",
-    "title": "DR3lCOLA",
-    "cover": "https://cdn-images.dzcdn.net/images/cover/d0e90b85ee7b126cfdc38c3421de0a3f/250x250-000000-80-0-0.jpg",
-    "deezer": "https://www.deezer.com/track/2289924095",
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/8/e/4/0/8e47dcab16731978f8f70c8fc81cfee2.mp3?hdnea=exp=1791735484~acl=/api/1/1/8/e/4/0/8e47dcab16731978f8f70c8fc81cfee2.mp3*~data=user_id=0,application_id=42~hmac=2e6daa6b85c41d41322c8c1f1152e6587db3ff00c2dd93bfcb19872a8c2627b9",
-    "released": "2023",
-    "album": "DR3lCOLA",
-    "source": "audio",
-    "windows": 6,
-    "pitch": 4,
-    "score": 63,
-    "bpm": null,
-    "isrc": "QZMHK2319394",
-    "youtube": "LhcPgbismWA",
-    "youtubeTitle": "DR3lCOLA"
-   },
-   "hits": 6
-  },
-  {
-   "start": 2530,
+   "start": 2550.0,
    "end": 2670,
    "track": null,
    "hits": 0
@@ -317,79 +357,143 @@
     "title": "INTERGAL\u00c1CTICO",
     "cover": "https://cdn-images.dzcdn.net/images/cover/93c976651b255eaba3d3cf38a1ea3e91/250x250-000000-80-0-0.jpg",
     "deezer": "https://www.deezer.com/track/3972126941",
+    "claimed": "",
     "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/6/0/0/e60b46b897e96be33a724fd9a1a2f21e.mp3?hdnea=exp=1791735481~acl=/api/1/1/e/6/0/0/e60b46b897e96be33a724fd9a1a2f21e.mp3*~data=user_id=0,application_id=42~hmac=8de094410a1cfcef091d58d54228d0295df7b023b48bd13ee04a44f66f21a13d",
     "released": "2024",
     "album": "INTERGAL\u00c1CTICO EP",
     "source": "audio",
     "windows": 2,
     "pitch": 2,
-    "score": 36
+    "score": 36,
+    "playedBpm": 168.0,
+    "tempoConf": 1.0,
+    "originalBpm": 165.0,
+    "tempoDelta": 1.8
    },
    "hits": 2
   },
   {
    "start": 2700,
-   "end": 2790,
+   "end": 2910.0,
    "track": null,
    "hits": 0
   },
   {
-   "start": 2790,
-   "end": 3030,
+   "start": 2910.0,
+   "end": 2940.0,
    "track": {
-    "id": "cm926154088",
-    "artist": "Stef de Haan x Adrian Mills",
-    "title": "Instant classic",
-    "source": "comments",
-    "votes": 2,
-    "likes": 0,
-    "approx": false,
+    "id": "sz673361613",
+    "title": "INSTANT CLASSIC (feat. Adrian Mills)",
+    "artist": "Stef de Haan",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8b/15/bb/8b15bbac-66d7-29dd-0daf-68ad9a951da5/artwork.jpg/400x400cc.jpg",
+    "genre": "Trance",
+    "label": null,
+    "released": null,
+    "shazam": "https://www.shazam.com/track/673361613/instant-classic-feat-adrian-mills",
+    "apple": "https://music.apple.com/subscribe?mttnagencyid=s2n",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/2384921995",
+    "isrc": "QZNWX2306084",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/c/b/0/1cb596891d9358acaf0408d0a69a48ed.mp3?hdnea=exp=1791737844~acl=/api/1/1/1/c/b/0/1cb596891d9358acaf0408d0a69a48ed.mp3*~data=user_id=0,application_id=42~hmac=64294a92b9c79b2503231a9070182a5635b556643ca1a039a92389a4e24a6b1b",
+    "youtube": "fbf3NFax24o",
+    "youtubeTitle": "INSTANT CLASSIC (feat. Adrian Mills)",
+    "source": "shazam",
+    "samples": 1,
+    "commentVotes": 2,
     "evidence": [
      "reply to \"48:00 please track id\"",
      "reply to \"Tema/track 46:30?????\""
     ],
-    "youtube": "fbf3NFax24o",
-    "youtubeTitle": "INSTANT CLASSIC (feat. Adrian Mills)"
+    "playedBpm": 167.9,
+    "tempoConf": 1.0,
+    "originalBpm": 158.0,
+    "tempoDelta": 6.3
    },
-   "hits": 2
+   "hits": 1
   },
   {
-   "start": 3030,
-   "end": 3096.0,
+   "start": 2940.0,
+   "end": 3060.0,
+   "track": {
+    "id": "sz815549055",
+    "title": "hard groove 01",
+    "artist": "VD",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bd/9d/14/bd9d1402-c5a4-ed0e-c036-dc44a05bcfae/artwork.jpg/400x400cc.jpg",
+    "genre": "Dance",
+    "label": "VDS",
+    "released": "2025",
+    "shazam": "https://www.shazam.com/track/815549055/hard-groove-01",
+    "apple": "https://music.apple.com/gb/album/hard-groove-01/1799427988?i=1799427989",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/3d/92/c4/3d92c4a1-3519-a66b-8028-cde74a6226ff/mzaf_4803072569786232694.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/3254877641",
+    "isrc": "QZHN72551898",
+    "youtube": "opnoMjq366A",
+    "youtubeTitle": "hard groove 01",
+    "source": "shazam",
+    "samples": 3,
+    "playedBpm": 167.9,
+    "tempoConf": 1.0,
+    "originalBpm": 155.0,
+    "tempoDelta": 8.3
+   },
+   "hits": 3
+  },
+  {
+   "start": 3060.0,
+   "end": 3120.0,
    "track": null,
    "hits": 0
   },
   {
-   "start": 3096.0,
+   "start": 3120.0,
    "end": null,
    "track": {
-    "id": "cm158440901",
+    "id": "sz715090239",
+    "title": "RAWSPORT",
     "artist": "EXTENDO",
-    "title": "RAWSPORT [LATENIGHT MIX]",
-    "source": "comments",
-    "votes": 1,
-    "likes": 0,
-    "approx": true,
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9b/3b/b1/9b3bb1db-4ac0-3c33-561c-13ca457c5fa1/730530881151_cover.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "EXTENDO",
+    "released": "2024",
+    "shazam": "https://www.shazam.com/track/715090239/rawsport",
+    "apple": "https://music.apple.com/gb/album/rawsport/1769810066?i=1769810067",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0b/53/f5/0b53f53f-9249-9ed8-6042-67bd3d3a9167/mzaf_13014182382481129319.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/2119909247",
+    "isrc": "CH7812343967",
+    "youtube": "bDEJs-IxDsI",
+    "youtubeTitle": "EXTENDO - RAWSPORT",
+    "source": "shazam",
+    "samples": 7,
+    "commentVotes": 1,
     "evidence": [
      "reply to \"name of the last trackk plsssssssssssssssssss\""
-    ]
+    ],
+    "playedBpm": 168.0,
+    "tempoConf": 1.0
    },
-   "hits": 1
+   "hits": 7
   }
  ],
  "similar": {
-  "cm608129109": [
+  "sz829297285": [],
+  "sz827047466": [],
+  "sz713195734": [
    {
     "artist": "240 KM/H",
     "title": "Tranquilo (zwilling. Remix)",
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/3467274871",
     "deezerId": 3467274871,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791734159~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=230fe25144137ec0be33b186945014fd0327a6a1d4bf64bbcd7ea2fa59abac70",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791737834~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=8ff60c7f116034b7345490ea921499e1ca1ebe3bec0263db51336ef6941c46ad",
     "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
     "youtube": "kswV_qYnYFU",
     "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
-    "id": "sim871202401"
+    "id": "sim75769867"
    },
    {
     "artist": "Serafina",
@@ -397,13 +501,155 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/3819901601",
     "deezerId": 3819901601,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791734160~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=d4c1cbe2265c073391e82c19184047d9ee868be31454f2cebe1f71f0fc4577fb",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791737834~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=456a3302ca02e2718eab1c01699874eed4756c53879aa2a39ea279fe7d80d2f4",
     "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
     "youtube": "EC9O9b7bVas",
     "youtubeTitle": "FLUTE",
-    "id": "sim898830887"
+    "id": "sim660918427"
    }
   ],
+  "sz667196270": [
+   {
+    "artist": "240 KM/H",
+    "title": "Tranquilo (zwilling. Remix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3467274871",
+    "deezerId": 3467274871,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791737839~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=3c62a6634e4901ec1428cdd8bf353b912f780b3b7413fa0f25fd9b5991466469",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
+    "youtube": "kswV_qYnYFU",
+    "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
+    "id": "sim75769867"
+   },
+   {
+    "artist": "Serafina",
+    "title": "FLUTE",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3819901601",
+    "deezerId": 3819901601,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791737839~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=93f264c4bfaeb4b16343e327c41dd34d17590c5f3e739ad940531b7adf225431",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
+    "youtube": "EC9O9b7bVas",
+    "youtubeTitle": "FLUTE",
+    "id": "sim660918427"
+   }
+  ],
+  "sz673361613": [
+   {
+    "artist": "DJ Heartstring",
+    "title": "So Many Things To Say",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4224499752",
+    "deezerId": 4224499752,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/3/a/0/f3a832247f10abb84c7ad335e924513b.mp3?hdnea=exp=1791737846~acl=/api/1/1/f/3/a/0/f3a832247f10abb84c7ad335e924513b.mp3*~data=user_id=0,application_id=42~hmac=0907c98944c66070f7da500e5d559292b7bed5780470e7e3193d406a8e2c7b5b",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/2a3d74829a3942d6423f4b739aca4862/250x250-000000-80-0-0.jpg",
+    "youtube": "wnI5ZLaqsjk",
+    "youtubeTitle": "DJ HEARTSTRING - So Many Things To Say (feat. Sam Gellaitry)",
+    "id": "sim734935128"
+   },
+   {
+    "artist": "DJ Heartstring",
+    "title": "Sentimental Ultra",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4322010532",
+    "deezerId": 4322010532,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/1/7/0/917adea6f71b95cc036fbdab2fb97374.mp3?hdnea=exp=1791737846~acl=/api/1/1/9/1/7/0/917adea6f71b95cc036fbdab2fb97374.mp3*~data=user_id=0,application_id=42~hmac=88e86ccfef89f661a8ba08b477c935a58d677810d63c10c56407ed9e18415714",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/2ca29154f5e9563f4751dfd129ac5a45/250x250-000000-80-0-0.jpg",
+    "youtube": "jmgveF3keQQ",
+    "youtubeTitle": "DJ HEARTSTRING & Spriitzz - Sentimental Ultra",
+    "id": "sim799884682"
+   },
+   {
+    "artist": "Grand V",
+    "title": "That Way (Rave Mix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2972125681",
+    "deezerId": 2972125681,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/8/6/0/d86154a2902a0be535357dd6cbeda7d9.mp3?hdnea=exp=1791737846~acl=/api/1/1/d/8/6/0/d86154a2902a0be535357dd6cbeda7d9.mp3*~data=user_id=0,application_id=42~hmac=a67618deb2ec705d32ff56b5039ce172ed04a70bcbf58eb1b459b7ece2491f25",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/abc6916c8f067d6ea67a291e1494fef8/250x250-000000-80-0-0.jpg",
+    "youtube": "TyMpTHmdjcs",
+    "youtubeTitle": "DJ U\u2606HEY? - YOU (Fullmoon Rave Mix)",
+    "id": "sim784707294"
+   },
+   {
+    "artist": "Grand V",
+    "title": "Chop n Lead",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3869706161",
+    "deezerId": 3869706161,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/f/8/0/df84aeaec1df8d2bb199eb02080b6d19.mp3?hdnea=exp=1791737846~acl=/api/1/1/d/f/8/0/df84aeaec1df8d2bb199eb02080b6d19.mp3*~data=user_id=0,application_id=42~hmac=a2cc983ec03e4d4e98f0c720a1e6bb50af33daa6ee43ad78a830a6df12f9fbec",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/e20ed093457a94c0d2582fc3ae72de2c/250x250-000000-80-0-0.jpg",
+    "youtube": "n0m-Pe3vvKs",
+    "youtubeTitle": "Chop n Lead",
+    "id": "sim351706815"
+   },
+   {
+    "artist": "Bad Boombox",
+    "title": "Medulla",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/1636641232",
+    "deezerId": 1636641232,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/8/9/8/0/8984104ac073ba476549590be4bb8e7a.mp3?hdnea=exp=1791737846~acl=/api/1/1/8/9/8/0/8984104ac073ba476549590be4bb8e7a.mp3*~data=user_id=0,application_id=42~hmac=ab6c23572faf80d754e1b450d9658198f539b5a58cb9e2ca01e5c944b8fcb27e",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/41290f0fd112ce70a022b861900b5504/250x250-000000-80-0-0.jpg",
+    "youtube": "VLnqSf4B9xk",
+    "youtubeTitle": "Bad Boombox - Medulla (Official Audio)",
+    "id": "sim590694301"
+   }
+  ],
+  "sz815549055": [],
+  "sz715090239": [
+   {
+    "artist": "Metrickz",
+    "title": "W\u00fcnsch mir was",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/667936112",
+    "deezerId": 667936112,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/5/1/4/0/514ca02ae31ecf1205fac1827934f411.mp3?hdnea=exp=1791737861~acl=/api/1/1/5/1/4/0/514ca02ae31ecf1205fac1827934f411.mp3*~data=user_id=0,application_id=42~hmac=2d56734fffc4c2c84602e08ff0910aa361533c8e1eeca63fc359859b22c50329",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/8942f1725adf75623c6442193bc4a67a/250x250-000000-80-0-0.jpg",
+    "youtube": "2mvOoPVzEAE",
+    "youtubeTitle": "METRICKZ - W\u00dcNSCH MIR WAS (prod. X-Plosive)",
+    "id": "sim676250513"
+   },
+   {
+    "artist": "Metrickz",
+    "title": "Vergissmeinnicht",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/543913382",
+    "deezerId": 543913382,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/5/6/7/0/567ce0bee10f946e0e4db8e40a5830cb.mp3?hdnea=exp=1791737861~acl=/api/1/1/5/6/7/0/567ce0bee10f946e0e4db8e40a5830cb.mp3*~data=user_id=0,application_id=42~hmac=06b363064cb16d06b46f77087a0496c2864366540b573f2cb7ce3767ac4dc1dd",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/7224c99dfd753366abc3c81ca15a815a/250x250-000000-80-0-0.jpg",
+    "youtube": "BZLThqhW5PA",
+    "youtubeTitle": "Vergissmeinnicht",
+    "id": "sim701692237"
+   }
+  ],
+  "cm967906006": [
+   {
+    "artist": "240 KM/H",
+    "title": "Tranquilo (zwilling. Remix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3467274871",
+    "deezerId": 3467274871,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791740801~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=bfdb418087696db45e30b3fe22933dd4a09a875d3bc20a226822cef78e32f63c",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
+    "youtube": "kswV_qYnYFU",
+    "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
+    "id": "sim473664420"
+   },
+   {
+    "artist": "Serafina",
+    "title": "FLUTE",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3819901601",
+    "deezerId": 3819901601,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791740801~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=cbf1fbbebabb20b9b33c0b975fe62cff872c0677cbc7e7a7d2b96d86efe91e59",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
+    "youtube": "EC9O9b7bVas",
+    "youtubeTitle": "FLUTE",
+    "id": "sim422612936"
+   }
+  ],
+  "cm162743081": [],
   "dz3972126931": [
    {
     "artist": "240 KM/H",
@@ -411,11 +657,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/3467274871",
     "deezerId": 3467274871,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791735704~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=82ce9da3ed747394a9e270305f567093f87c86525e64b87d3511ffde6a1f701f",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791740825~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=92c4bb74496c76a509a1580132ca201c7b209df3f1b83ad8ae82b96fc18563b5",
     "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
     "youtube": "kswV_qYnYFU",
     "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
-    "id": "sim946374523"
+    "id": "sim27421783"
    },
    {
     "artist": "Serafina",
@@ -423,11 +669,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/3819901601",
     "deezerId": 3819901601,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791735704~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=5596d4ef9e69e6997b05e480b499ca83bcd959b1322a28a7b04840789b0d9104",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791740825~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=11b8a02819ac3fece7c48915985e116674d60fe4e27a13a1310fc2f0c250e7bc",
     "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
     "youtube": "EC9O9b7bVas",
     "youtubeTitle": "FLUTE",
-    "id": "sim127941514"
+    "id": "sim630002726"
    }
   ],
   "dz3465541351": [
@@ -437,11 +683,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/3467274871",
     "deezerId": 3467274871,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791735709~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=978d4116032f64c43425285d0422bb85e5fccf279c03e8f5c29fae5ceacfda16",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791740832~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=5087eb8f21a2410b256a193096af442e1d3549138017b6bc595177b788753f36",
     "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
     "youtube": "kswV_qYnYFU",
     "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
-    "id": "sim946374523"
+    "id": "sim27421783"
    },
    {
     "artist": "Serafina",
@@ -449,38 +695,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/3819901601",
     "deezerId": 3819901601,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791735710~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=6e123055e8c50d4ee467811e2edabecd5f8a9ca3ff2d7a0b9f2eed5c435514e6",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791740832~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=a4c29510e0fef170ca1b8f67440c20d009103aad2bbfd26b4c00a7abbd3fb5b1",
     "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
     "youtube": "EC9O9b7bVas",
     "youtubeTitle": "FLUTE",
-    "id": "sim127941514"
-   }
-  ],
-  "cm294965613": [],
-  "cm933015493": [
-   {
-    "artist": "240 KM/H",
-    "title": "Tranquilo (zwilling. Remix)",
-    "why": "related artist",
-    "deezer": "https://www.deezer.com/track/3467274871",
-    "deezerId": 3467274871,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791734165~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=7e289d732666045a0ad30bc0799461db18d75c099bc784ceb91714fa84da1e56",
-    "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
-    "youtube": "kswV_qYnYFU",
-    "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
-    "id": "sim871202401"
-   },
-   {
-    "artist": "Serafina",
-    "title": "FLUTE",
-    "why": "related artist",
-    "deezer": "https://www.deezer.com/track/3819901601",
-    "deezerId": 3819901601,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791734165~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=3a17ef0d51c210c2a4c63eff27ff0e0d86f28512b41632ceba07c98ec57536d2",
-    "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
-    "youtube": "EC9O9b7bVas",
-    "youtubeTitle": "FLUTE",
-    "id": "sim898830887"
+    "id": "sim630002726"
    }
   ],
   "dz3972126941": [
@@ -490,11 +709,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/3467274871",
     "deezerId": 3467274871,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791735714~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=47cad70a763803ddbec72e2a9a5e8d7853fcaf40bc6eeb75ce241390c931b6eb",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791740838~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=abab0921a86a11123e131fe256469ae67a698ea3aa7c32f400b4cd5910870e09",
     "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
     "youtube": "kswV_qYnYFU",
     "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
-    "id": "sim946374523"
+    "id": "sim27421783"
    },
    {
     "artist": "Serafina",
@@ -502,37 +721,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/3819901601",
     "deezerId": 3819901601,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791735715~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=fd911addac586f592cdc32ede8a1bf6f18e7585f4f7ff603d62a570ecb645fd5",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791740838~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=2d800e45086ea777d337571aa0ec0ad8d86bb247eb622bac54d535de10a36d54",
     "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
     "youtube": "EC9O9b7bVas",
     "youtubeTitle": "FLUTE",
-    "id": "sim127941514"
-   }
-  ],
-  "dz3972126951": [
-   {
-    "artist": "240 KM/H",
-    "title": "Tranquilo (zwilling. Remix)",
-    "why": "related artist",
-    "deezer": "https://www.deezer.com/track/3467274871",
-    "deezerId": 3467274871,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791735720~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=76d7ce9ef20e5772a54d8403b606e2ee8e7f3648b0cfec2ad0d8d772aba0a0c5",
-    "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
-    "youtube": "kswV_qYnYFU",
-    "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
-    "id": "sim946374523"
-   },
-   {
-    "artist": "Serafina",
-    "title": "FLUTE",
-    "why": "related artist",
-    "deezer": "https://www.deezer.com/track/3819901601",
-    "deezerId": 3819901601,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791735720~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=0a1cef358ce185bbda13d09626bbfc76eb3ce7d59f4c3986e95ac30f860495e0",
-    "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
-    "youtube": "EC9O9b7bVas",
-    "youtubeTitle": "FLUTE",
-    "id": "sim127941514"
+    "id": "sim630002726"
    }
   ],
   "dz2356320475": [
@@ -542,11 +735,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/4224499752",
     "deezerId": 4224499752,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/3/a/0/f3a832247f10abb84c7ad335e924513b.mp3?hdnea=exp=1791735725~acl=/api/1/1/f/3/a/0/f3a832247f10abb84c7ad335e924513b.mp3*~data=user_id=0,application_id=42~hmac=4ce033f098d4d909c35f6f7037eb8ea4fbfcf10f993117fcafa21b7c6c0a0834",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/3/a/0/f3a832247f10abb84c7ad335e924513b.mp3?hdnea=exp=1791740844~acl=/api/1/1/f/3/a/0/f3a832247f10abb84c7ad335e924513b.mp3*~data=user_id=0,application_id=42~hmac=5598d91198f4fdf00891b3e07c5626ec2930035d22ffdedd57840937733d0406",
     "cover": "https://cdn-images.dzcdn.net/images/cover/2a3d74829a3942d6423f4b739aca4862/250x250-000000-80-0-0.jpg",
     "youtube": "wnI5ZLaqsjk",
     "youtubeTitle": "DJ HEARTSTRING - So Many Things To Say (feat. Sam Gellaitry)",
-    "id": "sim383592067"
+    "id": "sim213287548"
    },
    {
     "artist": "DJ Heartstring",
@@ -554,11 +747,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/4322010532",
     "deezerId": 4322010532,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/1/7/0/917adea6f71b95cc036fbdab2fb97374.mp3?hdnea=exp=1791735725~acl=/api/1/1/9/1/7/0/917adea6f71b95cc036fbdab2fb97374.mp3*~data=user_id=0,application_id=42~hmac=844d251b52c408326b8bf91822459aff78c20695518c199e0a30d86004029fb8",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/1/7/0/917adea6f71b95cc036fbdab2fb97374.mp3?hdnea=exp=1791740844~acl=/api/1/1/9/1/7/0/917adea6f71b95cc036fbdab2fb97374.mp3*~data=user_id=0,application_id=42~hmac=532b48b0d119239d8d9b335327013ce203ff78141938ab7940bd8292dd5b18e8",
     "cover": "https://cdn-images.dzcdn.net/images/cover/2ca29154f5e9563f4751dfd129ac5a45/250x250-000000-80-0-0.jpg",
     "youtube": "jmgveF3keQQ",
     "youtubeTitle": "DJ HEARTSTRING & Spriitzz - Sentimental Ultra",
-    "id": "sim360885513"
+    "id": "sim830220635"
    },
    {
     "artist": "Grand V",
@@ -566,11 +759,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/2972125681",
     "deezerId": 2972125681,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/8/6/0/d86154a2902a0be535357dd6cbeda7d9.mp3?hdnea=exp=1791735725~acl=/api/1/1/d/8/6/0/d86154a2902a0be535357dd6cbeda7d9.mp3*~data=user_id=0,application_id=42~hmac=6877b052533acc9a84ad6b7eff568f19dcb60d5caa0887b24723dbe05d4bb2ca",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/8/6/0/d86154a2902a0be535357dd6cbeda7d9.mp3?hdnea=exp=1791740844~acl=/api/1/1/d/8/6/0/d86154a2902a0be535357dd6cbeda7d9.mp3*~data=user_id=0,application_id=42~hmac=95137fac25f475bf5d9ed7c2fb3480810ed077b6192ae6d709ef73819071a9fc",
     "cover": "https://cdn-images.dzcdn.net/images/cover/abc6916c8f067d6ea67a291e1494fef8/250x250-000000-80-0-0.jpg",
-    "youtube": "TyMpTHmdjcs",
-    "youtubeTitle": "DJ U\u2606HEY? - YOU (Fullmoon Rave Mix)",
-    "id": "sim636221628"
+    "youtube": "yo4pmauhugo",
+    "youtubeTitle": "Armin van Buuren vs Vini Vici feat. Hilight Tribe - Great Spirit (Extended Mix)",
+    "id": "sim691347091"
    },
    {
     "artist": "Grand V",
@@ -578,11 +771,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/3869706161",
     "deezerId": 3869706161,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/f/8/0/df84aeaec1df8d2bb199eb02080b6d19.mp3?hdnea=exp=1791735725~acl=/api/1/1/d/f/8/0/df84aeaec1df8d2bb199eb02080b6d19.mp3*~data=user_id=0,application_id=42~hmac=2293ff0f8c021db141ecdfbd0db9b9ddf6e3f8d1d72d62a68863c9482f6af18c",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/f/8/0/df84aeaec1df8d2bb199eb02080b6d19.mp3?hdnea=exp=1791740844~acl=/api/1/1/d/f/8/0/df84aeaec1df8d2bb199eb02080b6d19.mp3*~data=user_id=0,application_id=42~hmac=a84b3c395f351b3f80659ae39f48bc103996414005858e5261419342132086e2",
     "cover": "https://cdn-images.dzcdn.net/images/cover/e20ed093457a94c0d2582fc3ae72de2c/250x250-000000-80-0-0.jpg",
     "youtube": "n0m-Pe3vvKs",
     "youtubeTitle": "Chop n Lead",
-    "id": "sim538167711"
+    "id": "sim303059820"
    },
    {
     "artist": "Bad Boombox",
@@ -590,66 +783,462 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/1636641232",
     "deezerId": 1636641232,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/8/9/8/0/8984104ac073ba476549590be4bb8e7a.mp3?hdnea=exp=1791735725~acl=/api/1/1/8/9/8/0/8984104ac073ba476549590be4bb8e7a.mp3*~data=user_id=0,application_id=42~hmac=4c1794f1bc7bdff0b18a52fa8dd476a128234688732af3df8e4532db2d8aa0b7",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/8/9/8/0/8984104ac073ba476549590be4bb8e7a.mp3?hdnea=exp=1791740844~acl=/api/1/1/8/9/8/0/8984104ac073ba476549590be4bb8e7a.mp3*~data=user_id=0,application_id=42~hmac=fbd79be0b109c043c39b97741b1f16445804c4ff291ac70d24bd2412531e935f",
     "cover": "https://cdn-images.dzcdn.net/images/cover/41290f0fd112ce70a022b861900b5504/250x250-000000-80-0-0.jpg",
     "youtube": "VLnqSf4B9xk",
     "youtubeTitle": "Bad Boombox - Medulla (Official Audio)",
-    "id": "sim288112121"
+    "id": "sim24681162"
    }
+  ]
+ },
+ "tempoCurve": [
+  [
+   0,
+   159.9
   ],
-  "dz2289937735": [
-   {
-    "artist": "240 KM/H",
-    "title": "Tranquilo (zwilling. Remix)",
-    "why": "related artist",
-    "deezer": "https://www.deezer.com/track/3467274871",
-    "deezerId": 3467274871,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791735734~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=a1dcab36c297fa6487cfc89e47ce0a77c81b467063a4413051261d66ec33e007",
-    "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
-    "youtube": "kswV_qYnYFU",
-    "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
-    "id": "sim946374523"
-   },
-   {
-    "artist": "Serafina",
-    "title": "FLUTE",
-    "why": "related artist",
-    "deezer": "https://www.deezer.com/track/3819901601",
-    "deezerId": 3819901601,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791735734~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=ae772035c51885b75ed71f7dfb1ef4174c57a001746572b5b9afac3cd6b12e92",
-    "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
-    "youtube": "EC9O9b7bVas",
-    "youtubeTitle": "FLUTE",
-    "id": "sim127941514"
-   }
+  [
+   30,
+   159.9
   ],
-  "dz2289924095": [
-   {
-    "artist": "240 KM/H",
-    "title": "Tranquilo (zwilling. Remix)",
-    "why": "related artist",
-    "deezer": "https://www.deezer.com/track/3467274871",
-    "deezerId": 3467274871,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791735739~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=1401f8458d1b0eae5f3633e2b0193cea0cb5acc936fca11d624e2423e95c1fc2",
-    "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
-    "youtube": "kswV_qYnYFU",
-    "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
-    "id": "sim946374523"
-   },
-   {
-    "artist": "Serafina",
-    "title": "FLUTE",
-    "why": "related artist",
-    "deezer": "https://www.deezer.com/track/3819901601",
-    "deezerId": 3819901601,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791735740~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=4d1007c4a5d28528004e11d75d326a33767d80f8e74f7609aeceffecc0ab1504",
-    "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
-    "youtube": "EC9O9b7bVas",
-    "youtubeTitle": "FLUTE",
-    "id": "sim127941514"
-   }
+  [
+   60,
+   160.0
   ],
-  "cm926154088": [],
-  "cm158440901": []
- }
+  [
+   90,
+   160.0
+  ],
+  [
+   120,
+   160.0
+  ],
+  [
+   150,
+   160.0
+  ],
+  [
+   180,
+   160.0
+  ],
+  [
+   210,
+   159.9
+  ],
+  [
+   240,
+   159.9
+  ],
+  [
+   270,
+   159.9
+  ],
+  [
+   300,
+   159.9
+  ],
+  [
+   330,
+   160.0
+  ],
+  [
+   360,
+   159.9
+  ],
+  [
+   390,
+   160.0
+  ],
+  [
+   420,
+   160.0
+  ],
+  [
+   450,
+   160.0
+  ],
+  [
+   480,
+   160.0
+  ],
+  [
+   510,
+   160.0
+  ],
+  [
+   540,
+   160.0
+  ],
+  [
+   570,
+   162.2
+  ],
+  [
+   600,
+   163.0
+  ],
+  [
+   630,
+   163.0
+  ],
+  [
+   660,
+   163.0
+  ],
+  [
+   690,
+   163.0
+  ],
+  [
+   720,
+   163.0
+  ],
+  [
+   750,
+   163.0
+  ],
+  [
+   780,
+   163.0
+  ],
+  [
+   810,
+   163.0
+  ],
+  [
+   840,
+   163.0
+  ],
+  [
+   870,
+   163.0
+  ],
+  [
+   900,
+   163.0
+  ],
+  [
+   930,
+   163.0
+  ],
+  [
+   960,
+   163.0
+  ],
+  [
+   990,
+   163.0
+  ],
+  [
+   1020,
+   163.0
+  ],
+  [
+   1050,
+   163.0
+  ],
+  [
+   1080,
+   163.0
+  ],
+  [
+   1110,
+   163.0
+  ],
+  [
+   1140,
+   163.0
+  ],
+  [
+   1170,
+   163.0
+  ],
+  [
+   1200,
+   163.0
+  ],
+  [
+   1230,
+   163.0
+  ],
+  [
+   1260,
+   163.0
+  ],
+  [
+   1290,
+   163.0
+  ],
+  [
+   1320,
+   163.0
+  ],
+  [
+   1350,
+   163.0
+  ],
+  [
+   1380,
+   163.0
+  ],
+  [
+   1410,
+   163.0
+  ],
+  [
+   1440,
+   163.0
+  ],
+  [
+   1470,
+   163.0
+  ],
+  [
+   1500,
+   163.6
+  ],
+  [
+   1530,
+   164.0
+  ],
+  [
+   1560,
+   164.0
+  ],
+  [
+   1590,
+   164.0
+  ],
+  [
+   1620,
+   164.0
+  ],
+  [
+   1650,
+   164.0
+  ],
+  [
+   1680,
+   164.0
+  ],
+  [
+   1710,
+   164.0
+  ],
+  [
+   1740,
+   164.0
+  ],
+  [
+   1770,
+   164.0
+  ],
+  [
+   1800,
+   164.0
+  ],
+  [
+   1830,
+   164.0
+  ],
+  [
+   1860,
+   164.0
+  ],
+  [
+   1890,
+   164.0
+  ],
+  [
+   1920,
+   164.0
+  ],
+  [
+   1950,
+   164.0
+  ],
+  [
+   1980,
+   164.0
+  ],
+  [
+   2010,
+   164.0
+  ],
+  [
+   2040,
+   164.0
+  ],
+  [
+   2070,
+   164.0
+  ],
+  [
+   2100,
+   164.0
+  ],
+  [
+   2130,
+   164.0
+  ],
+  [
+   2160,
+   164.0
+  ],
+  [
+   2190,
+   164.0
+  ],
+  [
+   2220,
+   164.0
+  ],
+  [
+   2250,
+   164.0
+  ],
+  [
+   2280,
+   164.0
+  ],
+  [
+   2310,
+   164.0
+  ],
+  [
+   2340,
+   165.6
+  ],
+  [
+   2370,
+   167.1
+  ],
+  [
+   2400,
+   167.1
+  ],
+  [
+   2430,
+   167.0
+  ],
+  [
+   2460,
+   167.0
+  ],
+  [
+   2490,
+   167.0
+  ],
+  [
+   2520,
+   167.0
+  ],
+  [
+   2550,
+   167.0
+  ],
+  [
+   2580,
+   167.8
+  ],
+  [
+   2610,
+   168.0
+  ],
+  [
+   2640,
+   168.0
+  ],
+  [
+   2670,
+   168.0
+  ],
+  [
+   2700,
+   168.0
+  ],
+  [
+   2730,
+   168.0
+  ],
+  [
+   2760,
+   168.0
+  ],
+  [
+   2790,
+   168.0
+  ],
+  [
+   2820,
+   168.1
+  ],
+  [
+   2850,
+   168.1
+  ],
+  [
+   2880,
+   168.1
+  ],
+  [
+   2910,
+   168.1
+  ],
+  [
+   2940,
+   167.9
+  ],
+  [
+   2970,
+   168.0
+  ],
+  [
+   3000,
+   167.9
+  ],
+  [
+   3030,
+   167.9
+  ],
+  [
+   3060,
+   168.0
+  ],
+  [
+   3090,
+   168.0
+  ],
+  [
+   3120,
+   168.0
+  ],
+  [
+   3150,
+   168.0
+  ],
+  [
+   3180,
+   168.0
+  ],
+  [
+   3210,
+   168.0
+  ],
+  [
+   3240,
+   168.0
+  ],
+  [
+   3270,
+   168.0
+  ],
+  [
+   3300,
+   167.9
+  ],
+  [
+   3330,
+   167.9
+  ]
+ ]
 }

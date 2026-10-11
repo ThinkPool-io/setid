@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "SetID: tracklists on YouTube",
+  "short_name": "SetID",
+  "version": "0.1.0",
+  "description": "Shows SetID's timestamped tracklist under DJ sets on YouTube: what's playing now, the full list, and one-click track IDs.",
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": {
+    "default_title": "SetID",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png" }
+  },
+  "background": { "service_worker": "background.js" },
+  "host_permissions": ["https://thinkpool-io.github.io/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["config.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

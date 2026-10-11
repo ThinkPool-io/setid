@@ -35,7 +35,8 @@ def load():
                 j["state"] = "adopted"  # a previous server instance started it; worker() decides what to do
 
 def proc_alive(url):
-    r = subprocess.run(["pgrep", "-f", f"trackid.py {url}"], capture_output=True, text=True)
+    vid = re.sub(r"[^A-Za-z0-9_-]", "", url.split("v=")[-1].split("&")[0]) or re.sub(r"\W", "", url)[-20:]
+    r = subprocess.run(["pgrep", "-f", f"trackid.py .*{vid}"], capture_output=True, text=True)  # no regex metachars from the URL
     return bool(r.stdout.strip())
 
 def fetch_title(job):

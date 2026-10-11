@@ -101,12 +101,19 @@ async def main():
             if hit:
                 hit["track"]["commentVotes"] = hit["track"].get("commentVotes", 0) + ct.get("votes", 1)
                 hit["track"]["evidence"] = ct.get("evidence", [])
-                if ct.get("votes", 1) >= 3 and hit["track"]["source"] == "audio":
+                differs = norm(ct["title"]) != norm(hit["track"]["title"]) or re.sub(r"[^a-z0-9]", "", ct["title"].lower()) != re.sub(r"[^a-z0-9]", "", hit["track"]["title"].lower())
+                if ct.get("votes", 1) >= 3 and (hit["track"]["source"] == "audio" or (hit["track"]["source"] == "shazam" and differs)):
                     hit["track"]["matchedAs"] = f"{hit['track']['artist']} - {hit['track']['title']}"
                     hit["track"]["artist"], hit["track"]["title"] = ct["artist"], ct["title"]
                     hit["start"] = min(hit["start"], s["start"])
             else:
                 comment_only.append({"start": s["start"], "track": ct})
+    # an uncorroborated single Shazam clip in a mixed set is usually a transition misfire: hide it
+    hidden = [r for r in rows if r["track"]["source"] == "shazam" and r["track"].get("samples", 1) == 1
+              and not r["track"].get("catalog") and not r["track"].get("commentVotes")]
+    rows = [r for r in rows if r not in hidden]
+    for r in hidden:
+        print(f"  hid single-clip guess at {int(r['start'])//60}:{int(r['start'])%60:02d}: {r['track']['artist']} - {r['track']['title']}", file=sys.stderr)
     claimed_starts = sorted(c["start"] for c in comment_only)
     audio_rows = list(rows)
     for c in comment_only:
@@ -155,7 +162,7 @@ async def main():
                "catalogue": cat and cat.get("catalogue"), "catalogueArtists": cat and cat.get("artists"),
                "comments": com and com.get("analysed", {}).get("comments"),
                "shazamSamples": shz and shz["analysed"].get("samples"), "shazamEvery": shz and shz["analysed"].get("every"),
-               "identified": count(lambda t: True), "ran_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
+               "hiddenGuesses": len(hidden), "identified": count(lambda t: True), "ran_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
     json.dump(d, open(setp, "w"), indent=1)
     print(f"merged -> {setp}: shazam {an['shazamRows']}, catalogue {an['audioRows']}, comment-only {an['commentRows']}, comments confirmed by audio {an['commentConfirmed']}", file=sys.stderr)
     for s in out:
