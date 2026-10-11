@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SetID · five design directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Archivo:wdth,wght@62..125,100..900&family=Barlow+Semi+Condensed:wght@500;600;700&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Hanken+Grotesk:wght@400..700&family=Kalam:wght@400;700&family=Schibsted+Grotesk:wght@400..800&family=Unbounded:wght@300..600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#E9E9E7;color:#1A1A18;font:16px/1.5 'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+button,input{font:inherit;color:inherit}
+.btop{max-width:1400px;margin:0 auto;padding:64px 40px 40px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:end}
+.btop h1{font-family:'Hanken Grotesk';font-weight:700;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-.03em;margin:0}
+.btop p{margin:0 0 12px;max-width:62ch;color:#3E3D38}
+.btop .fine{font-size:14px;color:#5E5C55}
+.bnav{position:sticky;top:0;z-index:100;background:#1A1A18;display:flex;gap:4px;padding:8px 24px;overflow-x:auto;scrollbar-width:none}
+.bnav::-webkit-scrollbar{display:none}
+.bnav a{display:flex;align-items:center;gap:10px;color:#F3F2EE;text-decoration:none;padding:8px 14px;border-radius:6px;font-weight:600;font-size:14px;white-space:nowrap}
+.bnav a:hover,.bnav a:focus-visible{background:#33322E;outline:0}
+.bnav .sw{display:flex}.bnav .sw i{width:10px;height:14px}
+.bnav .n{color:#A8A69F;font-variant-numeric:tabular-nums}
+.dir{padding:80px 0 96px;scroll-margin-top:52px}
+.wrap{max-width:1400px;margin:0 auto;padding:0 40px}
+.dh{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;margin-bottom:56px}
+.dh .num{font:600 14px 'Hanken Grotesk';margin:0 0 14px;display:block}
+.dh .pov{font:400 18px/1.55 'Hanken Grotesk';margin:0 0 22px;max-width:68ch}
+.dh dl{display:grid;grid-template-columns:150px 1fr;gap:8px 18px;margin:0;font:14.5px/1.45 'Hanken Grotesk'}
+.dh dt{font-weight:700}.dh dd{margin:0}
+.dh .pal{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.dh .pal span{display:flex;align-items:center;gap:7px;font:500 12.5px 'Hanken Grotesk';padding:4px 10px 4px 4px;border-radius:999px;background:rgba(255,255,255,.55);color:#1A1A18}
+.dh .pal i{width:22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.cap{display:flex;align-items:baseline;gap:14px;margin:56px 0 14px;font:700 14px 'Hanken Grotesk'}
+.cap span{font-weight:400}
+.cap:first-of-type{margin-top:0}
+.s3{display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);gap:48px;align-items:start}
+.modes{font:15px/1.5 'Hanken Grotesk'}
+.modes h4{font:700 14px 'Hanken Grotesk';margin:0 0 4px}
+.modes p{margin:0 0 20px;max-width:56ch}
+.d4 .dh .pal span{background:rgba(255,255,255,.1);color:#F2F0EA}
+.d3 .dh .pal span{background:rgba(255,255,255,.4)}
+.foot{max-width:1400px;margin:0 auto;padding:72px 40px 96px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:48px}
+.foot h2{font:700 30px/1.1 'Hanken Grotesk';letter-spacing:-.02em;margin:0}
+.foot ul{margin:0;padding:0;list-style:none;display:grid;gap:12px;font-size:15px}
+.foot li b{display:block}
+.foot li span{color:#55534C}
+@media (max-width:760px){
+ .btop{grid-template-columns:1fr;padding:40px 16px 28px;gap:16px}
+ .bnav{padding:6px 10px}
+ .bnav a{padding:8px 10px;font-size:13.5px}
+ .dir{padding:48px 0 64px}
+ .wrap{padding:0 12px}
+ .dh{grid-template-columns:1fr;gap:20px;margin-bottom:36px}
+ .dh dl{grid-template-columns:1fr;gap:2px}.dh dd{margin-bottom:10px}
+ .cap{margin-top:40px;flex-direction:column;gap:2px}
+ .s3{grid-template-columns:1fr;gap:28px}
+ .foot{grid-template-columns:1fr;padding:48px 16px 72px;gap:20px}
+}
+
+.d1{--p:#F1F1EC;--k:#121212;--t:#E5432B;--s:#F4C21B;--g:#0F7E78;--b:#2140A8;--m:#55554F;background:#DCDCD3;color:var(--k);font-family:'Archivo',sans-serif}
+.d1 ::selection{background:var(--s);color:var(--k)}
+.d1 :focus-visible{outline:3px solid var(--b);outline-offset:2px}
+.d1 .cond{font-stretch:62%;font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:0}
+.d1 .wide{font-stretch:125%;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.d1 .dh h2{font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:clamp(56px,9vw,128px);line-height:.85;margin:0}
+.d1 .frame{background:var(--p);border:2px solid var(--k)}
+.d1 .t{background:var(--t);color:var(--k)}.d1 .s{background:var(--s);color:var(--k)}.d1 .g{background:var(--g);color:#fff}.d1 .b{background:var(--b);color:#fff}
+.d1 .btn{display:inline-flex;align-items:center;gap:8px;font:700 14px/1 'Archivo';font-stretch:87%;text-transform:uppercase;padding:11px 14px;border:2px solid var(--k);background:var(--p);color:var(--k);cursor:pointer;text-decoration:none}
+.d1 .btn:hover{background:var(--s)}
+.d1 .btn.ink{background:var(--k);color:var(--p)}.d1 .btn.ink:hover{background:var(--b)}
+.d1 .btn.sm{padding:7px 10px;font-size:12.5px}
+.d1 .ib{width:36px;height:36px;display:grid;place-items:center;border:2px solid var(--k);background:var(--p);cursor:pointer;color:var(--k)}
+.d1 .ib:hover{background:var(--s)}
+.d1 .ic{width:18px;height:18px;flex:none}
+.d1 .bar{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:2px solid var(--k)}
+.d1 .logo{font-stretch:62%;font-weight:900;font-size:30px;text-transform:uppercase;letter-spacing:.02em}
+.d1 .bar nav{display:flex;gap:22px;font-stretch:75%;font-weight:700;text-transform:uppercase;font-size:15px}
+.d1 .bar a{color:inherit;text-decoration:none}.d1 .bar a:hover{text-decoration:underline;text-underline-offset:4px}
+.d1 .sl-link b{background:var(--s);padding:1px 6px;margin-left:4px}
+.d1 .hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.d1 .hl{padding:48px 32px 40px}
+.d1 .h1{font-size:clamp(64px,9.4vw,138px);margin:0}
+.d1 .promise{font-size:20px;line-height:1.4;max-width:30ch;margin:22px 0 0;font-weight:500}
+.d1 .paste{display:grid;grid-template-columns:auto 1fr auto;border:2px solid var(--k);margin-top:30px;background:#fff}
+.d1 .slot{display:grid;place-items:center;padding:0 16px;background:var(--s);border-right:2px solid var(--k);font-size:13px}
+.d1 .paste input{border:0;padding:20px 16px;font:500 17px 'Archivo';background:transparent;min-width:0;color:var(--k)}
+.d1 .paste input::placeholder{color:var(--m)}
+.d1 .paste input:focus{outline:0}.d1 .paste:focus-within{outline:3px solid var(--b);outline-offset:2px}
+.d1 .go{display:flex;align-items:center;gap:10px;background:var(--k);color:var(--p);border:0;padding:0 24px;font:800 18px 'Archivo';font-stretch:75%;text-transform:uppercase;cursor:pointer}
+.d1 .go:hover{background:var(--b)}
+.d1 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.d1 .chip{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--k);padding:6px 10px;font-size:13px;font-weight:700;font-stretch:87%;text-transform:uppercase}
+.d1 .chip i{width:10px;height:10px}.d1 .chip small{font-weight:500;text-transform:none;color:var(--m);font-size:12.5px}
+.d1 .hr{border-left:2px solid var(--k);padding:24px 28px 28px;background:#fff}
+.d1 .tth{display:flex;flex-direction:column;gap:6px;padding-bottom:14px;border-bottom:2px solid var(--k);margin-bottom:12px}
+.d1 .tth b{font-size:24px}.d1 .tth span{font-size:12px;color:var(--m)}
+.d1 .tt-grid{display:grid;grid-template-columns:44px 1fr}
+.d1 .tt-rule{position:relative}.d1 .tt-rule span{position:absolute;left:0;font-stretch:125%;font-weight:700;font-size:12px;transform:translateY(-1px)}
+.d1 .tt-col{position:relative;border-top:1.5px solid var(--k)}
+.d1 .blk{position:absolute;left:0;right:0;padding:3px 8px;overflow:hidden;border-bottom:2px solid #fff;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;line-height:1.05}
+.d1 .blk b{font-stretch:62%;font-weight:900;text-transform:uppercase;font-size:15px}
+.d1 .blk span{font-size:11.5px;font-weight:600}
+.d1 .blk.xs{padding:0 8px;flex-wrap:nowrap}.d1 .blk.xs span{display:none}.d1 .blk.xs b{font-size:12px;line-height:1;margin-top:1px}
+.d1 .blk.gap{background:transparent;border:1.5px dashed var(--m);color:var(--m);border-bottom-width:1.5px}
+.d1 .blk.gap b{font-size:11px;font-weight:700}
+.d1 .proc{display:grid;grid-template-columns:auto auto 1fr;gap:20px;align-items:center;border-top:2px solid var(--k);padding:16px 28px}
+.d1 .pl{display:flex;align-items:center;gap:8px;font-size:22px}.d1 .pl i{width:12px;height:12px;background:var(--t);animation:d1blink 1.2s steps(2) infinite}
+.d1 .pt b{font-weight:700}.d1 .pt span{color:var(--m);font-stretch:125%;font-size:12px;font-weight:700;margin-left:8px}
+.d1 .tk{display:grid;grid-template-columns:repeat(108,1fr);gap:2px;height:22px}.d1 .tk i{background:#D3D3CB}.d1 .tk i.on{background:var(--k)}.d1 .tk i.cur{background:var(--t)}
+@keyframes d1blink{50%{opacity:.2}}
+.d1 .st{padding:22px 28px;border-bottom:2px solid var(--k);display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.d1 .st h3{font-size:clamp(34px,4.4vw,56px);margin:0}.d1 .meta{font-size:12px;color:var(--m)}
+.d1 .sv{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);border-bottom:2px solid var(--k)}
+.d1 .vid{position:relative;aspect-ratio:16/9;background:var(--k)}.d1 .vid img{width:100%;height:100%;object-fit:cover;display:block}
+.d1 .vplay{position:absolute;left:24px;bottom:24px;width:64px;height:64px;background:var(--s);border:2px solid var(--k);display:grid;place-items:center;cursor:pointer}
+.d1 .vplay .ic{width:28px;height:28px}
+.d1 .now{display:grid;grid-template-columns:auto auto 1fr auto;gap:14px;align-items:center;padding:10px 16px;background:var(--k);color:var(--p)}
+.d1 .nt{background:var(--s);color:var(--k);padding:6px 8px;font-size:14px}
+.d1 .na{display:flex;flex-direction:column;min-width:0}.d1 .na b{font-weight:800}.d1 .na span{font-size:13px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.d1 .np{font-size:13px}
+.d1 .cv{width:52px;height:52px;object-fit:cover;display:block;border:2px solid var(--k);flex:none}.d1 .cv.sm{width:40px;height:40px}
+.d1 .now .cv{border-color:var(--p)}
+.d1 .ask{border-left:2px solid var(--k);padding:24px 24px 20px;display:flex;flex-direction:column;gap:14px}
+.d1 .al{font-size:40px}
+.d1 .aq{display:flex;gap:8px}.d1 .aq input{width:100%;min-width:0;font-size:34px;padding:6px 10px;border:2px solid var(--k);background:#fff;color:var(--k);font-family:'Archivo'}
+.d1 .ans{background:var(--s);border:2px solid var(--k);padding:16px;display:flex;flex-direction:column;gap:4px}
+.d1 .ans .k{font-size:12px}.d1 .ans b{font-size:40px;margin:4px 0 2px}.d1 .ans .fr{font-size:12px;margin-top:4px}
+.d1 .ab{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.d1 .ans .btn.ol{background:transparent}
+.d1 .pastes{margin:0;font-size:12px;color:var(--m)}.d1 .pastes code{font:600 12px 'Archivo';font-stretch:112%;color:var(--k);background:#fff;padding:2px 6px;border:1px solid var(--k)}
+.d1 .tl{padding:18px 28px 18px;border-bottom:2px solid var(--k)}
+.d1 .tl-rule{position:relative;height:16px}.d1 .tl-rule span{position:absolute;font-stretch:125%;font-weight:700;font-size:12px}
+.d1 .tl-bar{position:relative;height:48px;border:2px solid var(--k);background:#fff}
+.d1 .tl-bar i{position:absolute;top:0;bottom:0;border-right:2px solid #fff}
+.d1 .tl-bar i.gap{background:#fff;border:0}
+.d1 .tl-bar i.cur{box-shadow:inset 0 0 0 3px var(--k)}
+.d1 .cursor{position:absolute;top:-26px;bottom:-6px;width:3px;background:var(--k);transform:translateX(-1px)}
+.d1 .cursor b{position:absolute;top:0;left:6px;font-stretch:125%;font-size:11px;background:var(--k);color:var(--p);padding:2px 5px}
+.d1 .tl-key{display:flex;gap:20px;flex-wrap:wrap;margin-top:10px;font-size:12px;color:var(--m)}
+.d1 .tl-key span{display:flex;align-items:center;gap:6px}.d1 .tl-key i{width:14px;height:10px;display:inline-block}.d1 .tl-key i.gap{border:1.5px dashed var(--m)}
+.d1 .row{display:grid;grid-template-columns:96px 56px minmax(0,1fr) 200px 110px auto;gap:16px;align-items:center;padding:12px 28px;border-bottom:2px solid var(--k)}
+.d1 .row:last-child{border-bottom:0}
+.d1 .row.cur{background:#fff}
+.d1 .time{font-stretch:125%;font-weight:800;font-variant-numeric:tabular-nums;font-size:16px;padding:8px 6px;text-align:center}
+.d1 .ta{display:flex;flex-direction:column;min-width:0}.d1 .ta b{font-stretch:75%;font-weight:800;font-size:21px;text-transform:uppercase;line-height:1}.d1 .ta span{font-size:14px;color:var(--m);margin-top:3px}
+.d1 .lab{font-size:13px;color:var(--m)}
+.d1 .bpm{font-stretch:125%;font-weight:700;font-size:12px;border:2px solid var(--k);padding:5px 8px;text-align:center}.d1 .bpm.na{border-style:dashed;color:var(--m);border-color:var(--m)}
+.d1 .acts{display:flex;gap:8px}
+.d1 .exp{grid-column:3/-1;display:grid;grid-template-columns:3fr 2fr;gap:24px;padding:16px 0 6px;border-top:2px solid var(--k)}
+.d1 h4{font-stretch:75%;font-weight:800;text-transform:uppercase;font-size:15px;margin:0 0 10px}.d1 h4 small{font-weight:500;color:var(--m);text-transform:none;font-stretch:100%;margin-left:6px}
+.d1 .sims{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.d1 .sims li{display:grid;grid-template-columns:40px 1fr auto auto;gap:10px;align-items:center}
+.d1 .sims b{display:block;font-weight:700}.d1 .sims span{font-size:13px;color:var(--m)}
+.d1 .opens{display:flex;flex-wrap:wrap;gap:8px}
+.d1 .setl{width:100%}
+.d1 .slh{display:flex;justify-content:space-between;align-items:end;padding:20px 22px;border-bottom:2px solid var(--k)}.d1 .slh h3{font-size:44px;margin:0}.d1 .slh span{font-size:12px}
+.d1 .setl ul{list-style:none;margin:0;padding:0}
+.d1 .setl li{display:grid;grid-template-columns:84px 1fr auto;gap:14px;align-items:center;padding:10px 22px;border-bottom:2px solid var(--k)}
+.d1 .setl li b{display:block;font-weight:800}.d1 .setl li span{font-size:13px;color:var(--m)}.d1 .setl li .time{font-size:14px;color:inherit}.d1 .setl li .time.g,.d1 .setl li .time.b{color:#fff}
+.d1 .exb{padding:18px 22px 22px}.d1 .exb h4{font-size:24px}
+.d1 .exg{display:grid;grid-template-columns:1fr 1fr;gap:8px}.d1 .exg .wide-b{grid-column:1/-1;justify-content:center;padding:15px}
+.d1 .exb p{font-size:13px;color:var(--m);margin:12px 0 0}
+@media (max-width:760px){
+ .d1 .hero,.d1 .sv{grid-template-columns:minmax(0,1fr)}
+ .d1 .hl{padding:28px 18px}
+ .d1 .hr{border-left:0;border-top:2px solid var(--k);padding:20px 18px}
+ .d1 .bar{padding:12px 16px}.d1 .bar nav a:not(.sl-link){display:none}
+ .d1 .paste{grid-template-columns:minmax(0,1fr)}.d1 .slot{display:none}.d1 .go{padding:16px;justify-content:center;border-top:2px solid var(--k)}
+ .d1 .proc{grid-template-columns:minmax(0,1fr);gap:10px;padding:14px 18px}
+ .d1 .st{padding:18px}
+ .d1 .ask{border-left:0;border-top:2px solid var(--k);padding:20px 18px}
+ .d1 .now{grid-template-columns:auto 1fr;}.d1 .now .cv,.d1 .np{display:none}
+ .d1 .tl{padding:16px 18px}.d1 .tl-rule span:nth-child(even){display:none}
+ .d1 .row{grid-template-columns:64px 48px minmax(0,1fr);padding:12px 16px;gap:12px}
+ .d1 .time{font-size:13px}.d1 .cv{width:48px;height:48px}
+ .d1 .lab{grid-column:3}.d1 .bpm{grid-column:1/3;grid-row:2}.d1 .acts{grid-column:3;grid-row:3}
+ .d1 .row .lab{grid-row:2}
+ .d1 .exp{grid-column:1/-1;grid-template-columns:minmax(0,1fr)}
+ .d1 .ta b{font-size:18px}
+ .d1 .slh h3{font-size:34px}.d1 .slh,.d1 .setl li,.d1 .exb{padding-left:16px;padding-right:16px}
+ .d1 .exg{grid-template-columns:minmax(0,1fr)}
+}
+
+.d2{--w:#F7F8FA;--ink:#171A33;--ind:#2E3F9E;--mad:#B8323F;--saf:#EFA42A;--m:#565A72;background:#E7EAF0;color:var(--ink);font-family:'Hanken Grotesk',sans-serif}
+.d2 ::selection{background:var(--saf);color:var(--ink)}
+.d2 :focus-visible{outline:2px solid var(--ind);outline-offset:3px}
+.d2 .wd{font-family:'Unbounded',sans-serif;font-weight:400;letter-spacing:-.02em}
+.d2 .lb{font-family:'Unbounded',sans-serif;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.d2 .dh h2{font-family:'Unbounded';font-weight:300;font-size:clamp(48px,7vw,104px);letter-spacing:-.03em;line-height:.95;margin:0}
+.d2 .frame{background:var(--w);border-radius:14px;overflow:hidden;box-shadow:0 2px 4px rgba(23,26,51,.06),0 24px 48px -24px rgba(23,26,51,.28)}
+.d2 .ind{background:var(--ind)}.d2 .mad{background:var(--mad)}.d2 .saf{background:var(--saf)}
+.d2 .ic{width:18px;height:18px;flex:none}
+.d2 .btn{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 'Hanken Grotesk';padding:11px 16px;border-radius:6px;border:1.5px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;text-decoration:none}
+.d2 .btn:hover{background:#EEF0FA}.d2 .btn.pr{background:var(--ind);border-color:var(--ind);color:#fff}.d2 .btn.pr:hover{background:#22307D}
+.d2 .btn.sm{padding:8px 11px;font-size:13px}
+.d2 .ib{width:36px;height:36px;border-radius:6px;display:grid;place-items:center;border:1.5px solid rgba(23,26,51,.25);background:#fff;color:var(--ink);cursor:pointer}.d2 .ib:hover{border-color:var(--ink)}
+.d2 .bar{display:flex;justify-content:space-between;align-items:center;padding:18px 32px;position:relative;z-index:3}
+.d2 .logo{font-family:'Unbounded';font-weight:600;font-size:20px;letter-spacing:-.02em}
+.d2 .bar nav{display:flex;gap:26px;font-size:14px;font-weight:600}.d2 .bar a{color:inherit;text-decoration:none}
+.d2 .canopy{position:relative;min-height:660px;overflow:hidden}
+.d2 .band{position:absolute;opacity:.82;mix-blend-mode:multiply;display:flex;align-items:center;animation:d2drift 26s cubic-bezier(.45,0,.55,1) infinite alternate}
+.d2 .band:nth-child(2){animation-duration:31s;animation-delay:-8s}.d2 .band:nth-child(3){animation-duration:23s;animation-delay:-4s}.d2 .band:nth-child(4){animation-duration:35s}
+.d2 .band span{font-family:'Unbounded';font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#fff;padding:0 18px;white-space:nowrap}
+.d2 .band.saf span{color:var(--ink)}
+.d2 .band.lab-r{justify-content:flex-end}
+@keyframes d2drift{from{transform:translateX(-2.5%)}to{transform:translateX(2.5%)}}
+.d2 .clear{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:200px 32px 230px;text-align:center}
+.d2 .h1{font-size:clamp(40px,5.4vw,76px);line-height:1.02;margin:0;font-weight:300}
+.d2 .promise{font-size:19px;line-height:1.5;color:var(--m);max-width:46ch;margin:18px auto 0}
+.d2 .paste{display:flex;gap:6px;background:#fff;border:1.5px solid var(--ink);border-radius:8px;padding:6px;margin:28px auto 0;max-width:600px}
+.d2 .paste input{flex:1;min-width:0;border:0;padding:12px 12px;font:500 16px 'Hanken Grotesk';background:transparent;color:var(--ink)}.d2 .paste input:focus{outline:0}
+.d2 .paste:focus-within{box-shadow:0 0 0 3px rgba(46,63,158,.25)}
+.d2 .go{border:0;border-radius:5px;background:var(--ind);color:#fff;font:600 15px 'Hanken Grotesk';padding:0 20px;cursor:pointer}.d2 .go:hover{background:#22307D}
+.d2 .chips{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;margin-top:18px;font-size:13.5px;font-weight:600}
+.d2 .chip{display:inline-flex;align-items:center;gap:8px}.d2 .chip i{width:26px;height:7px;opacity:.85}
+.d2 .proc{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:28px;align-items:center;padding:18px 32px 22px;border-top:1px solid rgba(23,26,51,.12)}
+.d2 .pt{display:flex;flex-direction:column;gap:3px}.d2 .pt b{font-weight:700}.d2 .pc{font-size:13px;color:var(--m)}
+.d2 .pl{position:relative}.d2 .head{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink)}
+.d2 .lanes{position:relative;height:46px}.d2 .ln{position:absolute;left:0;right:0;height:26px}.d2 .ln:nth-child(2){top:10px}.d2 .ln:nth-child(3){top:20px}
+.d2 .ln i{position:absolute;top:0;bottom:0;opacity:.78;mix-blend-mode:multiply}
+.d2 .lanes.mini{height:16px}.d2 .lanes.mini .ln{height:10px}.d2 .lanes.mini .ln:nth-child(2){top:3px}.d2 .lanes.mini .ln:nth-child(3){top:6px}
+.d2 .sv{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px;padding:4px 32px 28px}
+.d2 .vid{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:var(--ink)}.d2 .vid img{width:100%;height:100%;object-fit:cover;display:block}
+.d2 .vplay{position:absolute;inset:0;margin:auto;width:72px;height:72px;border-radius:50%;border:0;background:rgba(247,248,250,.92);color:var(--ink);display:grid;place-items:center;cursor:pointer}.d2 .vplay .ic{width:28px;height:28px;margin-left:3px}
+.d2 .side{display:flex;flex-direction:column;gap:18px}
+.d2 .now{padding-bottom:16px;border-bottom:1px solid rgba(23,26,51,.14)}
+.d2 .nw{display:flex;gap:14px;align-items:center;margin-top:10px}.d2 .nw b{display:block;font-size:24px}.d2 .nw span{color:var(--m);font-size:14px}
+.d2 .cv{width:56px;height:56px;border-radius:4px;object-fit:cover;display:block;flex:none}.d2 .cv.sm{width:40px;height:40px}
+.d2 .nw .cv{width:68px;height:68px}
+.d2 .aq{display:flex;gap:8px;margin-top:10px}.d2 .aq input{flex:1;min-width:0;font:400 30px 'Unbounded';letter-spacing:-.02em;padding:6px 14px;border:1.5px solid var(--ink);border-radius:6px;background:#fff;color:var(--ink)}
+.d2 .ans{display:flex;gap:14px;align-items:flex-start;margin-top:14px;background:#fff;border-radius:8px;padding:14px}
+.d2 .chord{width:44px;height:44px;flex:none;border-radius:4px;background:var(--ind);opacity:.85}
+.d2 .ans b{display:block;font-size:20px;font-weight:700}.d2 .ans span{display:block;color:var(--m)}.d2 .ans small{display:block;font-size:13px;color:var(--m);margin-top:6px}
+.d2 .ab{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.d2 .pastes{font-size:12.5px;color:var(--m);margin:10px 0 0}.d2 .pastes code{font:500 12.5px 'Hanken Grotesk';background:#fff;padding:2px 6px;border-radius:4px;color:var(--ink)}
+.d2 .tl{padding:22px 32px 26px;background:#fff;border-top:1px solid rgba(23,26,51,.1);border-bottom:1px solid rgba(23,26,51,.1)}
+.d2 .tlh{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px}.d2 .tlh h3{font-size:22px;margin:0}.d2 .tlh span{font-size:13px;color:var(--m)}
+.d2 .tl-rule{position:relative;height:18px;font-size:12px;color:var(--m);font-variant-numeric:tabular-nums}.d2 .tl-rule span{position:absolute}
+.d2 .tlw{position:relative}
+.d2 .ln i.cur{outline:2px solid var(--ink);outline-offset:1px}
+.d2 .cursor{position:absolute;top:-8px;bottom:-8px;width:2px;background:var(--ink)}.d2 .cursor b{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font:500 11.5px 'Unbounded';background:var(--ink);color:#fff;padding:3px 6px;border-radius:3px;white-space:nowrap}
+.d2 .key{font-size:13px;color:var(--m);margin:16px 0 0;max-width:80ch}.d2 .key .lb{color:var(--ink);margin-right:8px}
+.d2 .rows{padding:6px 0}
+.d2 .row{display:grid;grid-template-columns:58px 30px 56px minmax(0,1fr) 180px 100px auto;gap:16px;align-items:center;padding:12px 32px}
+.d2 .row+.row{border-top:1px solid rgba(23,26,51,.1)}
+.d2 .row.cur{background:#fff}
+.d2 .time{font-family:'Unbounded';font-size:13px;font-variant-numeric:tabular-nums}
+.d2 .sw{height:8px;opacity:.85;display:block}
+.d2 .ta b{display:block;font-size:17px;font-weight:700}.d2 .ta span{color:var(--m);font-size:14px}
+.d2 .lab{font-size:13px;color:var(--m)}
+.d2 .bpm{font-size:12.5px;font-weight:600;border-radius:999px;border:1.5px solid var(--ink);padding:4px 10px;text-align:center;font-variant-numeric:tabular-nums}.d2 .bpm.na{border-color:rgba(23,26,51,.25);color:var(--m)}
+.d2 .acts{display:flex;gap:8px}
+.d2 .exp{grid-column:4/-1;display:grid;grid-template-columns:3fr 2fr;gap:28px;padding-top:14px}
+.d2 h4{margin:0 0 10px;color:var(--m)}
+.d2 .sims{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}.d2 .sims li{display:grid;grid-template-columns:40px 1fr auto auto;gap:10px;align-items:center}
+.d2 .sims b{display:block;font-weight:700;font-size:15px}.d2 .sims span{font-size:13px;color:var(--m)}
+.d2 .opens{display:flex;flex-wrap:wrap;gap:8px}
+.d2 .slt{display:flex;height:10px}.d2 .slt i{flex:1;opacity:.85}
+.d2 .slh{display:flex;justify-content:space-between;align-items:baseline;padding:22px 24px 8px}.d2 .slh h3{font-size:32px;margin:0}
+.d2 .setl ul{list-style:none;margin:0;padding:0 24px}
+.d2 .setl li{display:grid;grid-template-columns:22px 56px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(23,26,51,.1)}
+.d2 .setl li b{display:block;font-weight:700}.d2 .setl li span{font-size:13px;color:var(--m)}
+.d2 .exb{padding:18px 24px 24px}.d2 .exg{display:grid;grid-template-columns:1fr 1fr;gap:8px}.d2 .exg .wide-b{grid-column:1/-1;justify-content:center;padding:14px}
+.d2 .exb p{font-size:13px;color:var(--m);margin:12px 0 0}
+@media (prefers-reduced-motion:reduce){.d2 .band{animation:none}}
+@media (max-width:760px){
+ .d2 .bar{padding:14px 18px}.d2 .bar nav a:not(:last-child){display:none}
+ .d2 .canopy{min-height:0}
+ .d2 .clear{padding:150px 18px 170px}
+ .d2 .band span{font-size:11px;padding:0 10px}
+ .d2 .band:nth-child(1){top:20px!important;height:56px!important;width:90%!important}
+ .d2 .band:nth-child(2){top:60px!important;height:48px!important;left:30%!important}
+ .d2 .band:nth-child(3){bottom:70px!important;height:52px!important;width:80%!important}
+ .d2 .band:nth-child(4){bottom:40px!important;height:40px!important}
+ .d2 .paste{flex-direction:column}.d2 .go{padding:14px}
+ .d2 .proc{grid-template-columns:minmax(0,1fr);padding:16px 18px}
+ .d2 .sv{grid-template-columns:minmax(0,1fr);padding:4px 16px 20px;gap:20px}
+ .d2 .tl{padding:18px 16px}.d2 .tl-rule span:nth-child(even){display:none}
+ .d2 .row{grid-template-columns:48px 48px minmax(0,1fr);padding:12px 16px;gap:10px}
+ .d2 .row .sw{display:none}.d2 .row .cv{width:48px;height:48px}
+ .d2 .lab{grid-column:3}.d2 .bpm{grid-column:1/3;grid-row:2;justify-self:start}.d2 .acts{grid-column:3}
+ .d2 .exp{grid-column:1/-1;grid-template-columns:minmax(0,1fr)}
+ .d2 .exg{grid-template-columns:minmax(0,1fr)}
+}
+
+.d3{--pk:#FF48B0;--pl:#FFC4E3;--nv:#15204A;--yl:#FFE800;background:var(--pk);color:var(--nv);font-family:'Barlow Semi Condensed',sans-serif;font-weight:500}
+.d3 ::selection{background:var(--yl);color:var(--nv)}
+.d3 :focus-visible{outline:3px solid var(--yl);outline-offset:2px}
+.d3 .fly{font-family:'Anybody',sans-serif;font-stretch:150%;font-weight:900;text-transform:uppercase;line-height:.9;letter-spacing:-.01em}
+.d3 .dh h2{font-family:'Anybody';font-stretch:150%;font-weight:900;text-transform:uppercase;font-size:clamp(56px,9vw,132px);line-height:.85;margin:0;text-shadow:4px 3px 0 var(--yl)}
+.d3 .frame{background:var(--pk);border-radius:4px;box-shadow:0 2px 3px rgba(21,32,74,.15),0 22px 44px -22px rgba(21,32,74,.45)}
+.d3 .ic{width:18px;height:18px;flex:none}
+.d3 .btn{display:inline-flex;align-items:center;gap:8px;font:800 14px/1 'Anybody';font-stretch:112%;text-transform:uppercase;padding:11px 14px;border:2.5px solid var(--nv);background:transparent;color:var(--nv);cursor:pointer;text-decoration:none;border-radius:2px}
+.d3 .btn:hover{background:var(--yl)}.d3 .btn.nv{background:var(--nv);color:var(--yl)}.d3 .btn.nv:hover{background:#0B1430}
+.d3 .btn.sm{padding:8px 10px;font-size:12px}
+.d3 .ib{width:36px;height:36px;display:grid;place-items:center;border:2.5px solid var(--nv);background:transparent;color:var(--nv);border-radius:50%;cursor:pointer}.d3 .ib:hover{background:var(--yl)}
+.d3 .bar{display:flex;justify-content:space-between;align-items:center;padding:16px 28px}
+.d3 .logo{font-size:30px}
+.d3 .bar nav{display:flex;gap:22px;font:800 14px 'Anybody';font-stretch:120%;text-transform:uppercase}.d3 .bar a{color:inherit;text-decoration:none}
+.d3 .slk{background:var(--nv);color:var(--yl)!important;padding:4px 8px}
+.d3 .hero{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:36px;padding:20px 28px 36px}
+.d3 .h1{font-size:clamp(54px,8vw,118px);margin:0;text-shadow:5px 4px 0 var(--yl)}
+.d3 .promise{font-size:23px;line-height:1.3;max-width:28ch;margin:22px 0 0;font-weight:600}
+.d3 .ticket{display:grid;grid-template-columns:1fr auto;background:var(--yl);margin-top:28px;border-radius:3px;max-width:620px}
+.d3 .ticket input{border:0;background:transparent;padding:22px 18px;font:600 19px 'Barlow Semi Condensed';color:var(--nv);min-width:0}.d3 .ticket input::placeholder{color:rgba(21,32,74,.72)}.d3 .ticket input:focus{outline:0}
+.d3 .ticket:focus-within{outline:3px solid var(--nv);outline-offset:3px}
+.d3 .go{border:0;border-left:3px dashed var(--nv);background:var(--nv);color:var(--yl);font-size:17px;padding:0 22px;cursor:pointer;text-align:left;background-clip:padding-box}
+.d3 .go:hover{background-color:#0B1430}
+.d3 .status{list-style:none;padding:0;margin:18px 0 0;display:flex;gap:22px;flex-wrap:wrap;font:800 13.5px 'Anybody';font-stretch:120%;text-transform:uppercase}
+.d3 .status li{display:flex;align-items:center;gap:6px}.d3 .status b{background:var(--nv);color:var(--yl);padding:1px 7px}
+.d3 .poster{background:var(--pl);padding:18px;border-radius:2px}
+.d3 .duo{display:block;background:var(--pk);position:relative;overflow:hidden}
+.d3 .duo img{display:block;width:100%;filter:grayscale(1) contrast(1.25) brightness(1.05);mix-blend-mode:multiply;transition:filter .5s cubic-bezier(.2,.8,.2,1)}
+.d3 .row:hover .duo img,.d3 .setl li:hover .duo img{filter:none;mix-blend-mode:normal}
+.d3 .poster .duo{aspect-ratio:16/9}.d3 .poster .duo img{height:100%;object-fit:cover}
+.d3 .pcap{display:flex;flex-direction:column;gap:4px;margin:14px 0 10px}.d3 .pcap b{font-size:18px}.d3 .pcap span{font-size:15px}
+.d3 .lineup{margin:0;line-height:1.08;font-family:'Anybody';font-stretch:130%;font-weight:900;text-transform:uppercase}
+.d3 .lineup span{white-space:normal}.d3 .lineup small{font-size:11px;font-stretch:100%;font-weight:700;margin-left:4px;vertical-align:super}
+.d3 .lineup i{font-style:normal;color:var(--pk)}
+.d3 .proc{display:grid;grid-template-columns:auto auto 1fr;gap:18px;align-items:center;background:var(--nv);color:var(--yl);padding:14px 28px}
+.d3 .proc b{font-size:18px}.d3 .pt{font-weight:600;font-size:16px;color:#fff}
+.d3 .tk{display:grid;grid-template-columns:repeat(108,1fr);gap:2px;height:20px}.d3 .tk i{background:rgba(255,72,176,.45)}.d3 .tk i.on{background:var(--yl)}.d3 .tk i.cur{background:var(--pk);animation:d3p 1s steps(2) infinite}
+@keyframes d3p{50%{opacity:.3}}
+.d3 .st{padding:8px 28px 18px;display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}.d3 .st h3{font-size:clamp(28px,3.6vw,46px);margin:0}.d3 .st span{font-weight:600;font-size:16px}
+.d3 .sv{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;padding:0 28px 24px}
+.d3 .ask{background:var(--yl);padding:22px;border-radius:3px;height:100%;display:flex;flex-direction:column;gap:12px}
+.d3 .al{font-size:30px}
+.d3 .aq{display:flex;gap:8px}.d3 .aq input{flex:1;min-width:0;font-size:38px;padding:6px 12px;border:3px solid var(--nv);background:#fff;color:var(--nv)}
+.d3 .ans{border-top:3px dashed var(--nv);padding-top:14px;display:flex;flex-direction:column;gap:3px}.d3 .ans b{font-size:30px}.d3 .ans span{font-size:18px;font-weight:600}.d3 .ans small{font-size:15px}
+.d3 .ab{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.d3 .pastes{margin:auto 0 0;font-size:14px}.d3 .pastes code{font:600 14px 'Barlow Semi Condensed';background:#fff;padding:2px 6px}
+.d3 .vid{position:relative;aspect-ratio:16/9;background:var(--nv);border-radius:3px;overflow:hidden}.d3 .vid img{width:100%;height:100%;object-fit:cover;display:block}
+.d3 .vplay{position:absolute;right:18px;bottom:18px;width:68px;height:68px;border-radius:50%;background:var(--yl);color:var(--nv);border:3px solid var(--nv);display:grid;place-items:center;cursor:pointer}.d3 .vplay .ic{width:28px;height:28px;margin-left:3px}
+.d3 .now{display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:center;background:var(--nv);color:#fff;padding:10px 14px;margin-top:8px;border-radius:3px}
+.d3 .now .k{display:block;font-size:13px;color:var(--yl);font-weight:700;text-transform:uppercase;letter-spacing:.04em}.d3 .now b{display:block;font-size:19px}.d3 .now span{font-size:15px}
+.d3 .np{font-size:22px;color:var(--yl)}.d3 .np small{font-size:12px;margin-left:4px;color:#fff}
+.d3 .duo.sm{width:52px;height:52px;flex:none}.d3 .duo.sm img,.d3 .duo .cv{width:100%;height:100%;object-fit:cover}
+.d3 .cv{width:60px;height:60px;object-fit:cover;display:block}.d3 .cv-none{background:var(--pl)}
+.d3 .tl{padding:6px 28px 20px}
+.d3 .tl-rule{position:relative;height:18px;font:700 12px 'Barlow Semi Condensed';font-variant-numeric:tabular-nums}.d3 .tl-rule span{position:absolute}
+.d3 .tl-bar{position:relative;height:40px;background:var(--nv)}
+.d3 .tl-bar i{position:absolute;top:5px;bottom:5px}.d3 .tl-bar i.a{background:var(--yl)}.d3 .tl-bar i.b{background:var(--pl)}.d3 .tl-bar i.cur{background:#fff;top:0;bottom:0}
+.d3 .cursor{position:absolute;top:-8px;bottom:-8px;width:3px;background:var(--pk)}.d3 .cursor b{position:absolute;top:100%;left:-18px;margin-top:4px;font:800 11px 'Anybody';background:var(--pk);color:var(--nv);padding:2px 5px}
+.d3 .key{display:flex;gap:20px;flex-wrap:wrap;margin:22px 0 0;font-size:14px;font-weight:600}.d3 .key span{display:flex;align-items:center;gap:4px}.d3 .key i{width:14px;height:10px;display:inline-block}
+.d3 .key .a{background:var(--yl)}.d3 .key .b{background:var(--pl)}.d3 .key .n{background:var(--nv)}.d3 .key .c{background:#fff;outline:1px solid var(--nv)}
+.d3 .rows{margin:0 28px 28px;background:var(--pl);border-radius:3px}
+.d3 .row{display:grid;grid-template-columns:96px 60px minmax(0,1fr) 170px 100px auto;gap:16px;align-items:center;padding:12px 18px}
+.d3 .row+.row{border-top:2.5px solid var(--nv)}.d3 .row.cur{background:#fff}
+.d3 .row .duo{width:60px;height:60px}
+.d3 .time{font-size:20px;font-variant-numeric:tabular-nums}
+.d3 .ta b{display:block;font-size:20px;font-stretch:120%}.d3 .ta span{font-size:16px;font-weight:600}
+.d3 .lab{font-size:15px}
+.d3 .bpm{font:800 12px 'Anybody';font-stretch:110%;text-transform:uppercase;background:var(--yl);padding:6px 8px;text-align:center}.d3 .bpm.na{background:transparent;border:2px dashed var(--nv)}
+.d3 .acts{display:flex;gap:8px}
+.d3 .exp{grid-column:3/-1;display:grid;grid-template-columns:3fr 2fr;gap:24px;padding-top:14px;border-top:2.5px dashed var(--nv)}
+.d3 h4{font-size:16px;margin:0 0 10px}.d3 h4 small{font:600 13px 'Barlow Semi Condensed';text-transform:none;margin-left:6px}
+.d3 .sims{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}.d3 .sims li{display:grid;grid-template-columns:44px 1fr auto auto;gap:10px;align-items:center}
+.d3 .sims .duo{width:44px;height:44px}.d3 .sims b{display:block;font-weight:700;font-size:16px}.d3 .sims span{font-size:14px}
+.d3 .opens{display:flex;flex-wrap:wrap;gap:8px}
+.d3 .setl{background:var(--pk);padding:22px}
+.d3 .sheet{background:var(--yl);padding:22px;border-radius:2px;position:relative}
+.d3 .sheet h3{font-size:54px;margin:0}.d3 .cnt{display:inline-block;margin-top:10px;font-size:14px;background:var(--nv);color:var(--yl);padding:4px 8px}
+.d3 .setl ul{list-style:none;margin:16px 0;padding:0}
+.d3 .setl li{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:9px 0;border-top:2.5px solid var(--nv)}
+.d3 .setl li b{display:block;font-weight:700;font-size:17px}.d3 .setl li span{font-size:14.5px}
+.d3 .setl .duo{background:var(--pk)}
+.d3 .exg{display:grid;grid-template-columns:1fr 1fr;gap:8px}.d3 .exg .wide-b{grid-column:1/-1;justify-content:center;padding:15px}
+.d3 .sheet p{font-size:14.5px;margin:12px 0 0}
+@media (prefers-reduced-motion:reduce){.d3 .tk i.cur{animation:none}}
+@media (max-width:760px){
+ .d3 .bar{padding:14px 16px}.d3 .bar nav a:not(.slk){display:none}
+ .d3 .hero{grid-template-columns:minmax(0,1fr);padding:12px 16px 28px;gap:28px}
+ .d3 .ticket{grid-template-columns:minmax(0,1fr)}.d3 .go{border-left:0;border-top:3px dashed var(--nv);padding:16px}.d3 .go br{display:none}
+ .d3 .proc{grid-template-columns:minmax(0,1fr);gap:8px;padding:14px 16px}
+ .d3 .st{padding:6px 16px 16px}
+ .d3 .sv{grid-template-columns:minmax(0,1fr);padding:0 16px 20px}.d3 .vcol{order:-1}
+ .d3 .tl{padding:6px 16px 18px}.d3 .tl-rule span:nth-child(even){display:none}
+ .d3 .rows{margin:0 12px 20px}
+ .d3 .row{grid-template-columns:52px minmax(0,1fr);padding:12px;gap:10px}
+ .d3 .row .time{grid-column:1/-1;font-size:16px}.d3 .row .duo{width:52px;height:52px}
+ .d3 .lab{grid-column:2}.d3 .bpm{grid-column:1/-1;justify-self:start}.d3 .acts{grid-column:1/-1}
+ .d3 .exp{grid-column:1/-1;grid-template-columns:minmax(0,1fr)}
+ .d3 .setl{padding:12px}.d3 .sheet h3{font-size:40px}.d3 .exg{grid-template-columns:minmax(0,1fr)}
+}
+
+.d4{--bk:#0E0E0E;--wh:#F2F0EA;--g1:#B8B6AF;--g2:#8E8C86;--g3:#38372F;--vm:#E8452C;background:#050505;color:var(--wh);font-family:'Schibsted Grotesk',sans-serif}
+.d4 ::selection{background:var(--vm);color:var(--bk)}
+.d4 :focus-visible{outline:2px solid var(--vm);outline-offset:3px}
+.d4 .dh h2{font-weight:800;font-size:clamp(56px,9vw,136px);letter-spacing:-.04em;line-height:.85;margin:0}
+.d4 .frame{background:var(--bk);box-shadow:0 0 0 1px #1E1E1C}
+.d4 .ic{width:18px;height:18px;flex:none}
+.d4 .btn{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 'Schibsted Grotesk';padding:11px 16px;background:transparent;color:var(--wh);border:1.5px solid var(--wh);cursor:pointer;text-decoration:none}
+.d4 .btn:hover{background:var(--wh);color:var(--bk)}.d4 .btn.pr{background:var(--wh);color:var(--bk)}.d4 .btn.pr:hover{background:var(--vm);border-color:var(--vm)}
+.d4 .btn.tx{border-color:transparent;padding-left:4px;text-decoration:underline;text-underline-offset:4px}.d4 .btn.tx:hover{background:transparent;color:var(--vm)}
+.d4 .btn.sm{padding:8px 11px;font-size:13px}
+.d4 .ib{width:36px;height:36px;display:grid;place-items:center;border:0;background:transparent;color:var(--g1);cursor:pointer}.d4 .ib:hover{color:var(--vm)}
+.d4 .g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:0 48px}
+.d4 .bar{display:flex;justify-content:space-between;align-items:center;padding:22px 48px}
+.d4 .logo{font-weight:800;font-size:20px;letter-spacing:-.02em}.d4 .bar nav{display:flex;gap:28px;font-size:14px;color:var(--g1)}.d4 .bar a{color:inherit;text-decoration:none}.d4 .bar a:hover{color:var(--wh)}
+.d4 .hero{padding-top:56px;padding-bottom:56px}
+.d4 .stat{grid-column:1/4;list-style:none;margin:0;padding:14px 0 0;display:flex;flex-direction:column;gap:14px;font-size:14px;color:var(--g1)}
+.d4 .stat li{display:grid;grid-template-columns:14px 1fr;align-items:baseline}.d4 .stat span{grid-column:2;font-size:13px;color:var(--g2)}
+.d4 .stat i{width:8px;height:8px;background:var(--g3)}.d4 .stat i.on{background:var(--wh)}
+.d4 .main{grid-column:4/13}
+.d4 .h1{font-weight:800;font-size:clamp(68px,11vw,160px);line-height:.86;letter-spacing:-.04em;margin:0}
+.d4 .promise{font-size:22px;line-height:1.4;color:var(--g1);max-width:38ch;margin:28px 0 0}
+.d4 .paste{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;margin-top:40px;max-width:820px}
+.d4 .paste input{background:transparent;border:0;border-bottom:2px solid var(--wh);padding:14px 0;font:400 22px 'Schibsted Grotesk';color:var(--wh);min-width:0}.d4 .paste input::placeholder{color:var(--g2)}.d4 .paste input:focus{outline:0;border-color:var(--vm)}
+.d4 .go{background:var(--vm);color:var(--bk);border:0;font:700 17px 'Schibsted Grotesk';padding:18px 26px;cursor:pointer}.d4 .go:hover{background:var(--wh)}
+.d4 .proof{padding-bottom:48px}
+.d4 .rcap{grid-column:1/4;margin:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--g2)}.d4 .rcap b{color:var(--wh);font-size:16px}
+.d4 .rhythm{grid-column:4/13}
+.d4 .rr{display:flex;flex-direction:column;gap:5px}.d4 .rr i{display:block;height:7px;background:var(--wh);min-width:3px}.d4 .rr i.cur{background:var(--vm)}
+.d4 .rx{position:relative;height:28px;margin-top:12px;border-top:1px solid var(--g3);font-size:12px;color:var(--g2);font-variant-numeric:tabular-nums}.d4 .rx span{position:absolute;top:8px}
+.d4 .proc{display:grid;grid-template-columns:auto auto auto 1fr;gap:24px;align-items:center;padding:20px 48px;border-top:1px solid var(--g3);font-size:14px;color:var(--g1)}
+.d4 .proc b{color:var(--wh);font-weight:600}.d4 .pn{font-variant-numeric:tabular-nums}
+.d4 .prog{height:2px;background:var(--g3);position:relative}.d4 .prog i{position:absolute;left:0;top:0;bottom:0;background:var(--wh)}
+.d4 .st{padding:8px 48px 28px;display:flex;flex-direction:column;gap:6px}.d4 .st h3{font-size:clamp(32px,4vw,54px);font-weight:700;letter-spacing:-.03em;margin:0;line-height:1}.d4 .st span{color:var(--g2);font-size:14px}
+.d4 .sv{padding-bottom:36px}
+.d4 .vcol{grid-column:1/8}
+.d4 .vid{position:relative;aspect-ratio:16/9;background:#000}.d4 .vid img{width:100%;height:100%;object-fit:cover;display:block}
+.d4 .vplay{position:absolute;left:0;bottom:0;width:72px;height:72px;background:var(--vm);color:var(--bk);border:0;display:grid;place-items:center;cursor:pointer}.d4 .vplay .ic{width:26px;height:26px}
+.d4 .now{display:grid;grid-template-columns:auto 1fr auto;column-gap:16px;padding-top:16px;align-items:baseline}
+.d4 .nk{color:var(--vm);font-weight:700;font-size:14px;grid-row:1/3}.d4 .now b{font-size:20px;font-weight:600}.d4 .now span:not(.nk):not(.np){grid-column:2;color:var(--g1);font-size:14px}.d4 .np{grid-column:3;grid-row:1;color:var(--g2);font-size:14px;font-variant-numeric:tabular-nums}
+.d4 .ask{grid-column:8/13;display:grid;grid-template-columns:1fr auto;align-content:start;column-gap:12px}
+.d4 .ask label{grid-column:1/-1;font-size:15px;color:var(--g1)}
+.d4 .ask input{font:700 76px/1 'Schibsted Grotesk';letter-spacing:-.04em;font-variant-numeric:tabular-nums;background:transparent;color:var(--wh);border:0;border-bottom:2px solid var(--wh);padding:4px 0 8px;min-width:0;width:100%}
+.d4 .ask input:focus{outline:0;border-color:var(--vm)}.d4 .ask>.btn{align-self:end;margin-bottom:10px}
+.d4 .ans{grid-column:1/-1;margin-top:26px;display:flex;flex-direction:column;gap:4px}
+.d4 .ans b{font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--vm)}.d4 .ans span{color:var(--wh);font-size:17px;margin-top:6px}.d4 .ans small{color:var(--g2);font-size:14px}
+.d4 .ab{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.d4 .pastes{margin:14px 0 0;font-size:13px;color:var(--g2)}.d4 .pastes code{font:500 13px 'Schibsted Grotesk';color:var(--g1)}
+.d4 .tl{padding:0 48px 32px}
+.d4 .tl-bar{position:relative;height:32px}.d4 .tl-bar i{position:absolute;top:0;bottom:0;background:var(--wh);border-right:2px solid var(--bk)}.d4 .tl-bar i.gap{background:transparent;border-right:0;box-shadow:inset 0 -1px 0 var(--g3)}.d4 .tl-bar i.cur{background:var(--vm)}
+.d4 .cursor{position:absolute;top:-10px;bottom:-10px;width:2px;background:var(--wh);mix-blend-mode:difference}
+.d4 .tl-rule{position:relative;height:22px;font-size:12px;color:var(--g2);font-variant-numeric:tabular-nums;margin-top:8px}.d4 .tl-rule span{position:absolute}
+.d4 .rows{padding:0 48px 32px}
+.d4 .row{display:grid;grid-template-columns:120px 64px minmax(0,1fr) 200px 100px auto;column-gap:24px;align-items:center;padding:16px 0;color:var(--g2)}
+.d4 .row .time{font-size:30px;font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.d4 .ta b{display:block;font-size:22px;font-weight:600;color:var(--g1);letter-spacing:-.01em}.d4 .ta span{font-size:14.5px}
+.d4 .row.cur .time{color:var(--vm)}.d4 .row.cur .ta b{color:var(--wh)}.d4 .row.cur .ta span{color:var(--g1)}
+.d4 .lab,.d4 .bpm{font-size:13.5px;font-variant-numeric:tabular-nums}
+.d4 .cv{width:64px;height:64px;object-fit:cover;display:block;filter:grayscale(1);opacity:.7}.d4 .row.cur .cv,.d4 .sims .cv{filter:none;opacity:1}.d4 .cv.sm{width:44px;height:44px}
+.d4 .acts{display:flex;gap:6px;align-items:center}
+.d4 .exp{grid-column:3/-1;display:grid;grid-template-columns:3fr 2fr;gap:32px;padding-top:22px}
+.d4 h4{font-size:14px;font-weight:600;color:var(--wh);margin:0 0 12px}.d4 h4 span{color:var(--g2);font-weight:400;margin-left:6px}
+.d4 .sims{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}.d4 .sims li{display:grid;grid-template-columns:44px 1fr auto auto;gap:12px;align-items:center}
+.d4 .sims b{display:block;color:var(--wh);font-weight:600}.d4 .sims span{font-size:13.5px}
+.d4 .opens{display:flex;flex-wrap:wrap;gap:8px}
+.d4 .setl{padding:40px 48px}
+.d4 .setl h3{font-size:72px;font-weight:800;letter-spacing:-.04em;line-height:.9;margin:0}.d4 .sub{color:var(--g2);margin:8px 0 24px}
+.d4 .setl ol{list-style:none;margin:0 0 28px;padding:0}
+.d4 .setl li{display:grid;grid-template-columns:48px 1fr auto auto;gap:16px;align-items:baseline;padding:12px 0}
+.d4 .setl li .n{font-size:28px;font-weight:700;color:var(--vm);font-variant-numeric:tabular-nums}.d4 .setl li b{display:block;font-size:19px;font-weight:600}.d4 .setl li span{color:var(--g2);font-size:14px}.d4 .setl li .t{font-variant-numeric:tabular-nums}
+.d4 .exg{display:flex;flex-wrap:wrap;gap:10px}.d4 .note{color:var(--g2);font-size:13.5px;margin:16px 0 0}
+@media (max-width:760px){
+ .d4 .g12{grid-template-columns:minmax(0,1fr);padding:0 18px}.d4 .g12>*{grid-column:1/-1!important}
+ .d4 .bar{padding:16px 18px}.d4 .bar nav a:not(:last-child){display:none}
+ .d4 .hero{padding-top:24px;padding-bottom:36px}.d4 .stat{order:2;padding-top:28px;flex-direction:row;flex-wrap:wrap;gap:12px 20px}.d4 .stat span{display:none}
+ .d4 .paste{grid-template-columns:minmax(0,1fr)}.d4 .go{padding:16px}
+ .d4 .rcap{margin-bottom:16px}.d4 .rr{gap:4px}.d4 .rr i{height:5px}.d4 .rx span:nth-child(even){display:none}
+ .d4 .proc{grid-template-columns:1fr auto;gap:8px 16px;padding:16px 18px}.d4 .proc b{grid-column:1/-1;grid-row:2}.d4 .prog{grid-column:1/-1}
+ .d4 .st{padding:4px 18px 20px}
+ .d4 .ask{margin-top:28px}.d4 .ask input{font-size:56px}
+ .d4 .tl{padding:0 18px 24px}.d4 .tl-rule span:nth-child(even){display:none}
+ .d4 .rows{padding:0 18px 20px}
+ .d4 .row{grid-template-columns:52px minmax(0,1fr);column-gap:12px;row-gap:6px}
+ .d4 .row .time{grid-column:1/-1;font-size:24px}.d4 .cv{width:52px;height:52px}
+ .d4 .lab,.d4 .bpm,.d4 .acts{grid-column:2}
+ .d4 .exp{grid-column:1/-1;grid-template-columns:minmax(0,1fr);gap:20px}
+ .d4 .setl{padding:28px 18px}.d4 .setl h3{font-size:52px}.d4 .setl li{grid-template-columns:32px 1fr auto}.d4 .setl li .t{display:none}
+}
+
+.d5{--kr:#C49A6C;--kd:#9C7448;--sl:#F7F4EE;--ink:#1B1712;--st:#0E6B43;--bi:#1E3BB3;--og:#FF7A1A;--m:#5B4E40;background:#B88E63;color:var(--ink);font-family:'Bricolage Grotesque',sans-serif}
+.d5 ::selection{background:var(--og);color:var(--ink)}
+.d5 :focus-visible{outline:3px solid var(--bi);outline-offset:2px}
+.d5 .dh h2{font-weight:800;font-variation-settings:'opsz' 96,'wdth' 75;font-size:clamp(56px,9vw,132px);line-height:.85;letter-spacing:-.03em;margin:0}
+.d5 .frame{background:var(--kr);border-radius:12px;overflow:hidden;box-shadow:0 2px 4px rgba(27,23,18,.15),0 26px 50px -24px rgba(27,23,18,.55)}
+.d5 .ic{width:18px;height:18px;flex:none}
+.d5 .btn{display:inline-flex;align-items:center;gap:8px;font:700 14px/1 'Bricolage Grotesque';padding:11px 15px;border-radius:6px;border:2px solid var(--ink);background:var(--sl);color:var(--ink);cursor:pointer;text-decoration:none}
+.d5 .btn:hover{background:#fff}.d5 .btn.ink{background:var(--ink);color:var(--sl)}.d5 .btn.ink:hover{background:#3a3128}
+.d5 .btn.sm{padding:8px 11px;font-size:13px}
+.d5 .ib{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;border:2px solid var(--ink);background:var(--sl);color:var(--ink);cursor:pointer}.d5 .ib:hover{background:var(--og)}
+.d5 .bar{display:flex;justify-content:space-between;align-items:center;padding:16px 30px}
+.d5 .logo{font-weight:800;font-size:26px;letter-spacing:-.03em;font-variation-settings:'opsz' 96,'wdth' 75}
+.d5 .bar nav{display:flex;gap:22px;font-weight:600;font-size:15px}.d5 .bar a{color:inherit;text-decoration:none}
+.d5 .bag b{background:var(--og);padding:1px 7px;border-radius:3px;margin-left:4px}
+.d5 .hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:24px;padding:24px 30px 0;align-items:end}
+.d5 .hl{padding-bottom:48px}
+.d5 .h1{font-weight:800;font-variation-settings:'opsz' 96,'wdth' 75;font-size:clamp(68px,9.6vw,140px);line-height:.84;letter-spacing:-.035em;margin:0}
+.d5 .promise{font-size:20px;line-height:1.42;max-width:34ch;margin:22px 0 0;font-weight:500}
+.d5 .paste{display:flex;background:var(--sl);border:2px solid var(--ink);border-radius:8px;margin-top:26px;padding:6px;gap:6px}
+.d5 .paste input{flex:1;min-width:0;border:0;background:transparent;padding:12px;font:500 17px 'Bricolage Grotesque';color:var(--ink)}.d5 .paste input:focus{outline:0}.d5 .paste:focus-within{outline:3px solid var(--bi);outline-offset:2px}
+.d5 .go{display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--sl);border:0;border-radius:5px;padding:0 18px;font:700 16px 'Bricolage Grotesque';cursor:pointer}.d5 .go:hover{background:#3a3128}
+.d5 .stickers{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.d5 .stk{background:var(--og);color:var(--ink);font-weight:700;font-size:13px;padding:6px 10px;border-radius:3px;box-shadow:0 1px 2px rgba(27,23,18,.3)}
+.d5 .stk:nth-child(1){transform:rotate(-2deg)}.d5 .stk:nth-child(2){transform:rotate(1.5deg)}.d5 .stk:nth-child(3){transform:rotate(-1deg);background:var(--sl)}
+.d5 .crate{position:relative;height:540px}
+.d5 .rec{position:absolute;margin:0;left:calc(50% - 165px + var(--d)*6px);bottom:calc(110px + var(--d)*26px);width:calc(330px - var(--d)*12px);aspect-ratio:1;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.d5 .rec img{width:100%;height:100%;object-fit:cover;display:block;border-radius:2px;box-shadow:0 -2px 6px rgba(27,23,18,.25)}
+.d5 .crate:hover .rec:last-of-type{transform:translateY(-28px)}
+.d5 .box{position:absolute;left:0;right:0;bottom:0;height:140px;background:var(--kd);border-radius:6px 6px 0 0;z-index:20;display:flex;align-items:flex-end;padding:0 0 18px 22px;box-shadow:0 -8px 18px -10px rgba(27,23,18,.6)}
+.d5 .box span{font-weight:700;font-size:13px;color:var(--ink);letter-spacing:.02em}
+.d5 .divider{position:absolute;z-index:21;right:22px;bottom:84px;background:var(--sl);padding:12px 14px;border-radius:4px;transform:rotate(2deg);box-shadow:0 2px 6px rgba(27,23,18,.35);display:flex;flex-direction:column;gap:2px;max-width:220px}
+.d5 .divider b{font-size:18px}.d5 .divider span:last-child{font-size:13px;color:var(--m)}
+.d5 .stamp{display:inline-block;color:var(--st);border:2px solid var(--st);border-radius:4px;padding:3px 7px;font-weight:800;font-variation-settings:'opsz' 24,'wdth' 75;font-size:16px;font-variant-numeric:tabular-nums;transform:rotate(-2deg);justify-self:start;align-self:center;background:rgba(247,244,238,.5)}
+.d5 .proc{display:grid;grid-template-columns:auto auto 1fr;gap:20px;align-items:center;background:var(--sl);padding:14px 30px}
+.d5 .slv{width:96px;aspect-ratio:16/9;border-radius:3px;overflow:hidden;display:block;box-shadow:0 0 0 3px #fff,0 0 0 4px var(--ink)}.d5 .slv img{width:100%;height:100%;object-fit:cover;display:block}
+.d5 .proc .k{display:block;font-size:12px;font-weight:700;color:var(--st);text-transform:uppercase;letter-spacing:.06em}.d5 .proc b{display:block}.d5 .pc{font-size:13px;color:var(--m)}
+.d5 .tk{display:grid;grid-template-columns:repeat(108,1fr);gap:2px;height:20px}.d5 .tk i{background:#E2D8C8;border-radius:1px}.d5 .tk i.on{background:var(--ink)}.d5 .tk i.cur{background:var(--og)}
+.d5 .sv{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:26px;padding:8px 30px 26px}
+.d5 .vid{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:var(--ink)}.d5 .vid img{width:100%;height:100%;object-fit:cover;display:block}
+.d5 .vplay{position:absolute;left:18px;bottom:18px;width:66px;height:66px;border-radius:50%;background:var(--og);border:2px solid var(--ink);color:var(--ink);display:grid;place-items:center;cursor:pointer}.d5 .vplay .ic{width:26px;height:26px;margin-left:3px}
+.d5 .st{padding-top:16px}.d5 .st h3{font-weight:800;font-variation-settings:'opsz' 60,'wdth' 75;font-size:clamp(28px,3vw,40px);line-height:1;letter-spacing:-.02em;margin:0}.d5 .st span{display:block;margin-top:6px;color:var(--ink);font-size:14px}
+.d5 .side{display:flex;flex-direction:column;gap:16px}
+.d5 .now{display:grid;grid-template-columns:132px 1fr;gap:16px;align-items:center;background:var(--sl);padding:14px;border-radius:8px}
+.d5 .now .k{display:block;font-size:12px;font-weight:700;color:var(--st);text-transform:uppercase;letter-spacing:.06em}.d5 .now b{display:block;font-size:24px;line-height:1.05;margin:4px 0}.d5 .now span{display:block;font-size:14.5px}.d5 .now .lab{color:var(--m);font-size:13px}
+.d5 .cv{width:64px;height:64px;object-fit:cover;display:block;border-radius:2px;box-shadow:0 1px 3px rgba(27,23,18,.3)}.d5 .cv.big{width:132px;height:132px}.d5 .cv.sm{width:44px;height:44px}
+.d5 .ask{background:var(--sl);padding:16px;border-radius:8px}
+.d5 .ask label{font-weight:800;font-variation-settings:'opsz' 48,'wdth' 75;font-size:26px}
+.d5 .aq{display:flex;gap:8px;margin-top:8px}.d5 .aq input{flex:1;min-width:0;font:700 30px 'Bricolage Grotesque';font-variant-numeric:tabular-nums;padding:6px 12px;border:2px solid var(--ink);border-radius:6px;background:#fff;color:var(--ink)}
+.d5 .ans{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center;margin-top:12px;padding-top:12px;border-top:2px dashed rgba(27,23,18,.3)}
+.d5 .ans b{display:block;font-size:20px}.d5 .ans span{display:block;font-size:14px}.d5 .ans small{color:var(--st);font-weight:700;font-size:13px}
+.d5 .ab{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.d5 .pastes{font-size:12.5px;color:var(--m);margin:10px 0 0}.d5 .pastes code{font:600 12.5px 'Bricolage Grotesque';background:#fff;padding:2px 6px;border-radius:3px;color:var(--ink)}
+.d5 .tl{padding:4px 30px 24px}
+.d5 .strip{position:relative;height:64px;background:var(--kd);border-radius:4px}
+.d5 .strip i{position:absolute;top:0;bottom:0;background-size:cover;background-position:center;box-shadow:inset -1px 0 0 rgba(27,23,18,.5)}
+.d5 .strip i.nc{background:var(--sl)}.d5 .strip i.gap{background:transparent}
+.d5 .strip i.cur{top:-8px;bottom:-8px;box-shadow:0 0 0 3px var(--og),0 6px 14px rgba(27,23,18,.4);z-index:2}
+.d5 .cursor{position:absolute;top:-16px;bottom:-16px;width:3px;background:var(--ink);z-index:3}.d5 .cursor b{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:12px;font-weight:800;background:var(--ink);color:var(--sl);padding:2px 6px;border-radius:3px}
+.d5 .tl-rule{position:relative;height:22px;margin-top:20px;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}.d5 .tl-rule span{position:absolute}
+.d5 .key{font-size:13.5px;color:var(--ink);margin:4px 0 0}
+.d5 .rows{margin:0 30px 30px;background:var(--sl);border-radius:8px}
+.d5 .row{display:grid;grid-template-columns:86px 72px minmax(0,1fr) 100px auto;gap:16px;align-items:center;padding:14px 18px}
+.d5 .row+.row{border-top:1.5px solid rgba(27,23,18,.15)}.d5 .row.cur{background:#fff;border-radius:8px}
+.d5 .row .cv{width:72px;height:72px}
+.d5 .ta b{display:block;font-size:20px;font-weight:700;letter-spacing:-.01em}.d5 .ta span{display:block;font-size:14.5px}.d5 .ta .lab{color:var(--m);font-size:13px;margin-top:2px}
+.d5 .bpm{background:var(--og);font-weight:800;font-size:12.5px;padding:5px 8px;border-radius:3px;text-align:center;transform:rotate(1.5deg)}.d5 .bpm.na{background:transparent;border:2px dashed var(--m);color:var(--m);transform:none}
+.d5 .acts{display:flex;gap:8px}
+.d5 .exp{grid-column:3/-1;display:grid;grid-template-columns:3fr 2fr;gap:24px;padding-top:12px}
+.d5 .pick{background:#FFFDF6;border-radius:3px;padding:14px 16px 12px;box-shadow:0 1px 3px rgba(27,23,18,.25);transform:rotate(-.6deg);position:relative;border-top:22px solid #F2EBDD}
+.d5 .hand{font-family:'Kalam',cursive;color:var(--bi);font-size:20px;line-height:1.2;margin:0 0 10px}
+.d5 .why{display:block;font-family:'Kalam';color:var(--bi);font-size:14px;margin-top:6px}
+.d5 h4{font-size:14px;margin:0 0 10px}
+.d5 .sims{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}.d5 .sims li{display:grid;grid-template-columns:44px 1fr auto auto;gap:10px;align-items:center}
+.d5 .sims b{display:block;font-weight:700;font-size:15px}.d5 .sims span{font-size:13px;color:var(--m)}
+.d5 .opens{display:flex;flex-wrap:wrap;gap:8px}
+.d5 .setl{background:var(--sl)}
+.d5 .bagh{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;padding:22px;background:var(--kr)}
+.d5 .fan{position:relative;width:150px;height:96px}.d5 .fan img{position:absolute;top:0;left:calc(var(--i)*18px);width:96px;height:96px;object-fit:cover;border-radius:2px;box-shadow:-3px 0 8px rgba(27,23,18,.35)}
+.d5 .bagh h3{font-weight:800;font-variation-settings:'opsz' 96,'wdth' 75;font-size:46px;margin:0;line-height:.9}.d5 .bagh span{font-size:14px}
+.d5 .setl ul{list-style:none;margin:0;padding:6px 22px}
+.d5 .setl li{display:grid;grid-template-columns:84px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1.5px solid rgba(27,23,18,.12)}
+.d5 .setl li b{display:block;font-weight:700}.d5 .setl li span{font-size:13.5px;color:var(--m)}
+.d5 .exb{padding:16px 22px 22px}.d5 .exg{display:grid;grid-template-columns:1fr 1fr;gap:8px}.d5 .exg .wide-b{grid-column:1/-1;justify-content:center;padding:14px}
+.d5 .exb p{font-size:13px;color:var(--m);margin:12px 0 0}
+@media (prefers-reduced-motion:reduce){.d5 .rec{transition:none}}
+@media (max-width:760px){
+ .d5 .bar{padding:14px 16px}.d5 .bar nav a:not(.bag){display:none}
+ .d5 .hero{grid-template-columns:minmax(0,1fr);padding:12px 16px 0}.d5 .hl{padding-bottom:12px}
+ .d5 .paste{flex-direction:column}.d5 .go{padding:14px;justify-content:center}
+ .d5 .crate{height:400px}.d5 .rec{left:calc(50% - 120px + var(--d)*5px);width:calc(240px - var(--d)*9px);bottom:calc(86px + var(--d)*20px)}
+ .d5 .box{height:120px}.d5 .divider{bottom:70px;right:10px;max-width:170px}
+ .d5 .proc{grid-template-columns:auto 1fr;padding:14px 16px}.d5 .proc .tk{grid-column:1/-1}
+ .d5 .sv{grid-template-columns:minmax(0,1fr);padding:8px 16px 20px}
+ .d5 .now{grid-template-columns:96px 1fr}.d5 .cv.big{width:96px;height:96px}
+ .d5 .tl{padding:4px 16px 20px}.d5 .tl-rule span:nth-child(even){display:none}
+ .d5 .rows{margin:0 10px 20px}
+ .d5 .row{grid-template-columns:60px minmax(0,1fr);padding:12px;gap:10px}
+ .d5 .row .stamp{grid-column:1/-1}.d5 .row .cv{width:60px;height:60px}
+ .d5 .bpm{grid-column:1/-1;justify-self:start}.d5 .acts{grid-column:1/-1}
+ .d5 .exp{grid-column:1/-1;grid-template-columns:minmax(0,1fr)}
+ .d5 .exg{grid-template-columns:minmax(0,1fr)}
+}
+</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.8v14.4L19 12z" fill="currentColor"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></g></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></g></symbol>
+<symbol id="i-yt" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor"/></symbol>
+<symbol id="i-sp" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.2"/><path d="M7.2 9.4c3.2-1 6.8-.7 9.6.9M7.8 12.6c2.6-.7 5.4-.5 7.6.8M8.5 15.6c1.9-.5 3.9-.3 5.5.6"/></g></symbol>
+<symbol id="i-ap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M9 17.5V6.5l10-2.2v11"/><circle cx="6.8" cy="17.5" r="2.3"/><circle cx="16.8" cy="15.3" r="2.3"/></g></symbol>
+<symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</defs></svg>
+<header class="btop"><h1>SetID, five directions</h1><div>
+<p>Five replacement visual worlds for SetID, each rendering the same three surfaces with the same real set: Fred again.. | Boiler Room: London (1:11:44, 87 of 108 clips identified). The home is a Persuade surface, the set view is Operate, and every direction honours both. The current lime-on-black look is the anti-reference and appears nowhere.</p>
+<p class="fine">Real data: every track, artist, label, cover, BPM and timestamp comes from sets/youtube-c0-hvjV2A5Y.json. Demo states: the worker chips, "2 in queue" and the "clip 62 of 108" tracker. Track ID is asked at 52:10, inside Baby again.. (48:40 to 56:00).</p></div></header>
+<nav class="bnav" aria-label="Directions"><a href="#d1"><span class="n">1</span><span class="sw"><i style="background:#F1F1EC"></i><i style="background:#121212"></i><i style="background:#E5432B"></i><i style="background:#F4C21B"></i></span>Set Times</a><a href="#d2"><span class="n">2</span><span class="sw"><i style="background:#F7F8FA"></i><i style="background:#171A33"></i><i style="background:#2E3F9E"></i><i style="background:#B8323F"></i></span>Blend</a><a href="#d3"><span class="n">3</span><span class="sw"><i style="background:#FF48B0"></i><i style="background:#15204A"></i><i style="background:#FFE800"></i><i style="background:#FFC4E3"></i></span>Riso</a><a href="#d4"><span class="n">4</span><span class="sw"><i style="background:#0E0E0E"></i><i style="background:#F2F0EA"></i><i style="background:#B8B6AF"></i><i style="background:#8E8C86"></i></span>Tonhalle</a><a href="#d5"><span class="n">5</span><span class="sw"><i style="background:#C49A6C"></i><i style="background:#F7F4EE"></i><i style="background:#1B1712"></i><i style="background:#0E6B43"></i></span>White Label</a></nav>
+<main><section class="dir d1" id="d1" aria-labelledby="d1-h"><div class="wrap">
+<header class="dh"><div><span class="num">Direction 1</span><h2 id="d1-h">Set Times</h2><div class="pal"><span><i style="background:#F1F1EC"></i>paper #F1F1EC</span><span><i style="background:#121212"></i>ink #121212</span><span><i style="background:#E5432B"></i>tomato #E5432B</span><span><i style="background:#F4C21B"></i>sun #F4C21B</span><span><i style="background:#0F7E78"></i>teal #0F7E78</span><span><i style="background:#2140A8"></i>ink blue #2140A8</span></div></div>
+<div><p class="pov">The festival clash-finder is the one printed document every raver studies: it maps time to who is playing. SetID makes that document for a single set. Listeners get the answer they came for in the shape they already read (a time, a block, a name); DJs get a set laid out as a running order they can scan for the stretch they want. Archivo is the only family, run through its width axis: condensed black capitals for names and headlines, expanded figures for every timestamp. Paper white, black rules, and four stage colours (tomato, sun, teal, ink blue) that rotate track by track, so colour always means one track. Home persuades with the timetable itself as proof; the set view keeps standard controls and lets the timetable rule and stage colours do the work.</p><dl><dt>Fonts</dt><dd>Archivo (variable width 62 to 125, one family)</dd><dt>Palette</dt><dd>Full palette: paper, black, four stage colours</dd><dt>Signature</dt><dd>The set as a timetable: blocks sized by minutes, a cursor dropped at the asked time</dd><dt>Motion</dt><dd>Almost none. One blinking listening square; the cursor jumps, it never glides</dd><dt>Kept from declined challengers</dt><dd>Brick instructions: one 8 px module governs every alignment. Night instruments: each worker reading carries its last result, not only a state.</dd></dl></div></header>
+<div class="cap">Home <span>Persuade: earn the paste</span></div><div class="frame home"><div class="bar"><span class="logo">SetID</span><nav><a href="#">Library</a><a href="#">How it works</a><a href="#" class="sl-link">Setlist <b>4</b></a></nav></div>
+<div class="hero"><div class="hl">
+<h3 class="cond h1">Who's on<br>at 47:12?</h3>
+<p class="promise">Paste a DJ set. SetID listens to all of it and prints the set times: every track, to the minute.</p>
+<form class="paste" onsubmit="return false"><span class="slot wide">NEXT</span><input aria-label="Set link" placeholder="Paste a YouTube or SoundCloud link"><button class="go">Get set times <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button></form>
+<div class="chips"><span class="chip"><i class="g"></i>Worker online</span><span class="chip"><i class="b"></i>Shazam ok <small>last run 87/108 clips</small></span><span class="chip"><i class="s"></i>2 in queue</span></div>
+</div>
+<div class="hr"><div class="tth"><b class="cond">Fred again.. | Boiler Room: London</b><span class="wide">0:00 to 26:40, as SetID heard it</span></div><div class="tt-grid"><div class="tt-rule"><span style="top:0px">0:00</span><span style="top:120px">5:00</span><span style="top:240px">10:00</span><span style="top:360px">15:00</span><span style="top:480px">20:00</span><span style="top:600px">25:00</span></div><div class="tt-col" style="height:640px"><div class="blk gap" style="top:0px;height:32px"><b>Unidentified</b></div><div class="blk t xs" style="top:32px;height:16px"><b>Nathan (still breathing)</b><span>1:20 Fred again..</span></div><div class="blk s xs" style="top:48px;height:16px"><b>Black Waters</b><span>2:00 Stephan V. Star</span></div><div class="blk g" style="top:64px;height:96px"><b>Kammy (like i do)</b><span>2:40 Fred again..</span></div><div class="blk b" style="top:160px;height:80px"><b>Danielle (smile on my face)</b><span>6:40 Fred again..</span></div><div class="blk t" style="top:240px;height:80px"><b>Tanya (Maybe Life)</b><span>10:00 Fred again..</span></div><div class="blk s" style="top:320px;height:112px"><b>Delilah (pull me out of this)</b><span>13:20 Fred again.. &amp; Delilah Montagu</span></div><div class="blk gap" style="top:432px;height:16px"><b>Unidentified</b></div><div class="blk g" style="top:448px;height:80px"><b>BBY vs. Real As It Gets</b><span>18:40 mason messiah</span></div><div class="blk gap" style="top:528px;height:16px"><b>Unidentified</b></div><div class="blk b" style="top:544px;height:64px"><b>Stay With Me</b><span>22:40 Skrillex</span></div><div class="blk t" style="top:608px;height:32px"><b>Haribo</b><span>25:20 Matt Jam Lamont, Echelon (UKG) &amp; Smokey Bubblin&#x27; B</span></div></div></div></div></div>
+<div class="proc"><span class="cond pl"><i></i>Now listening</span><span class="pt"><b>Fred again.. | Boiler Room: London</b> <span>clip 62 of 108</span></span><span class="tk" role="img" aria-label="clip 62 of 108"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div>
+</div>
+<div class="cap">Set view <span>Operate: answer the question, then let DJs dig</span></div><div class="frame setv"><div class="bar"><span class="logo">SetID</span><nav><a href="#">Library</a><a href="#">How it works</a><a href="#" class="sl-link">Setlist <b>4</b></a></nav></div>
+<div class="st"><h3 class="cond">Fred again.. | Boiler Room: London</h3><span class="wide meta">Boiler Room · 1:11:44 · 56.1M views · 87 of 108 clips identified</span></div>
+<div class="sv"><div class="vcol"><div class="vid"><img src="https://i.ytimg.com/vi/c0-hvjV2A5Y/maxresdefault.jpg" alt="Fred again.. Boiler Room London video"><button class="vplay" aria-label="Play"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button></div>
+<div class="now"><span class="nt wide">48:40</span><img class="cv sm" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy"><span class="na"><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span></span><span class="np wide">52:10 / 1:11:44</span></div></div>
+<div class="ask"><label class="cond al" for="d1t">Track ID @</label><div class="aq"><input id="d1t" class="wide" value="52:10"><button class="btn">Find</button></div>
+<div class="ans"><span class="wide k">Playing</span><b class="cond">Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span><span class="wide fr">from 48:40 to 56:00</span>
+<div class="ab"><button class="btn ink"><svg class="ic" aria-hidden="true"><use href="#i-copy"/></svg>Copy answer</button><button class="btn ol"><svg class="ic" aria-hidden="true"><use href="#i-link"/></svg>Link to this moment</button></div></div>
+<p class="pastes"><span>Pastes as</span> <code>52:10 Fred again.., Skrillex &amp; Four Tet - Baby again..</code></p></div></div>
+<div class="tl"><div class="tl-rule"><span style="left:0.000%">0:00</span><span style="left:13.941%">10:00</span><span style="left:27.881%">20:00</span><span style="left:41.822%">30:00</span><span style="left:55.762%">40:00</span><span style="left:69.703%">50:00</span><span style="left:83.643%">1:00:00</span><span style="left:97.584%">1:10:00</span></div><div class="tl-bar"><i class="gap" style="left:0.000%;width:1.859%"></i><i class="t" style="left:1.859%;width:0.929%" title="1:20 Nathan (still breathing)"></i><i class="s" style="left:2.788%;width:0.929%" title="2:00 Black Waters"></i><i class="g" style="left:3.717%;width:5.576%" title="2:40 Kammy (like i do)"></i><i class="b" style="left:9.294%;width:4.647%" title="6:40 Danielle (smile on my face)"></i><i class="t" style="left:13.941%;width:4.647%" title="10:00 Tanya (Maybe Life)"></i><i class="s" style="left:18.587%;width:6.506%" title="13:20 Delilah (pull me out of this)"></i><i class="gap" style="left:25.093%;width:0.929%"></i><i class="g" style="left:26.022%;width:4.647%" title="18:40 BBY vs. Real As It Gets"></i><i class="gap" style="left:30.669%;width:0.929%"></i><i class="b" style="left:31.599%;width:3.717%" title="22:40 Stay With Me"></i><i class="t" style="left:35.316%;width:1.859%" title="25:20 Haribo"></i><i class="s" style="left:37.175%;width:7.435%" title="26:40 ()vȯ)) ̷̨ʅ(۝ʅ(Ɵʅ():::()̵̳̗̊(Ɵʅ()vȯ)) ̷̨ʅ"></i><i class="g" style="left:44.610%;width:3.717%" title="32:00 Strong"></i><i class="b" style="left:48.327%;width:0.929%" title="34:40 Ek Dafaa (Live)"></i><i class="t" style="left:49.257%;width:5.576%" title="35:20 Turn On The Lights again.. (feat. Future)"></i><i class="s" style="left:54.833%;width:4.647%" title="39:20 Jungle"></i><i class="g" style="left:59.480%;width:4.647%" title="42:40 Lights Out (HAAi Remix)"></i><i class="gap" style="left:64.126%;width:3.717%"></i><i class="b cur" style="left:67.844%;width:10.223%" title="48:40 Baby again.."></i><i class="gap" style="left:78.067%;width:0.929%"></i><i class="t" style="left:78.996%;width:6.506%" title="56:40 Rumble"></i><i class="gap" style="left:85.502%;width:6.506%"></i><i class="s" style="left:92.007%;width:0.929%" title="1:06:00 Angie (I’ve Been Lost)"></i><i class="gap" style="left:92.937%;width:1.859%"></i><i class="g" style="left:94.796%;width:1.859%" title="1:08:00 Clara (the night is dark)"></i><i class="b" style="left:96.654%;width:1.859%" title="1:09:20 Angie (I’ve Been Lost)"></i><i class="t" style="left:98.513%;width:0.929%" title="1:10:40 Clara (the night is dark)"></i><i class="gap" style="left:99.442%;width:0.558%"></i>
+<div class="cursor" style="left:72.723%"><b>52:10</b></div></div>
+<div class="tl-key"><span><i class="t"></i>Identified track (stage colours rotate)</span><span><i class="gap"></i>Unidentified: Shazam missed it</span></div></div>
+<div class="rows"><div class="row "><div class="time g">2:00</div><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music/29/42/a3/mzi.jkybttob.jpg/400x400cc.jpg" alt="" loading="lazy">
+<div class="ta"><b>Black Waters</b><span>Stephan V. Star</span></div><div class="lab">Housearth Records</div>
+<div class="bpm">128.8 BPM</div>
+<div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Setlist</button></div></div><div class="row cur"><div class="time s">48:40</div><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy">
+<div class="ta"><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span></div><div class="lab">Atlantic Records UK</div>
+<div class="bpm na">BPM n/a</div>
+<div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Setlist</button></div><div class="exp"><div><h4>Similar tracks <small>related artist</small></h4><ul class="sims"><li><img class="cv sm" src="https://cdn-images.dzcdn.net/images/cover/449bdc2e7e00ab241a2b53658fd82fb1/250x250-000000-80-0-0.jpg" alt="" loading="lazy"><div><b>Vhs</b><span>Swimming Paul</span></div>
+<button class="ib" aria-label="Preview Vhs"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add Vhs to setlist"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li><li><img class="cv sm" src="https://cdn-images.dzcdn.net/images/cover/83752f81151d3f9c9d7a846eb65fb5f2/250x250-000000-80-0-0.jpg" alt="" loading="lazy"><div><b>Dance Dance Dance!</b><span>Barry Can’t Swim</span></div>
+<button class="ib" aria-label="Preview Dance Dance Dance!"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add Dance Dance Dance! to setlist"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li><li><img class="cv sm" src="https://cdn-images.dzcdn.net/images/cover/e44468007c45f2523d056a0b19eed80a/250x250-000000-80-0-0.jpg" alt="" loading="lazy"><div><b>Latch</b><span>Disclosure</span></div>
+<button class="ib" aria-label="Preview Latch"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add Latch to setlist"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li></ul></div>
+<div><h4>Open in</h4><div class="opens"><a class="btn ol" href="#"><svg class="ic" aria-hidden="true"><use href="#i-yt"/></svg>YouTube</a><a class="btn ol" href="#"><svg class="ic" aria-hidden="true"><use href="#i-sp"/></svg>Spotify</a><a class="btn ol" href="#"><svg class="ic" aria-hidden="true"><use href="#i-ap"/></svg>Apple Music</a></div></div></div></div><div class="row "><div class="time b">56:40</div><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy">
+<div class="ta"><b>Rumble</b><span>Skrillex, Fred again.. &amp; Flowdan</span></div><div class="lab">Atlantic Records UK</div>
+<div class="bpm na">BPM n/a</div>
+<div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Setlist</button></div></div></div></div>
+<div class="cap">Setlist panel <span>Export to YouTube, Spotify, Apple Music, M3U8, CSV</span></div>
+<div class="s3"><div class="frame setl"><div class="slh"><h3 class="cond">My set times</h3><span class="wide">4 tracks · 1 set</span></div><ul><li><span class="time wide g">2:00</span><div><b>Black Waters</b><span>Stephan V. Star</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><span class="time wide t">25:20</span><div><b>Haribo</b><span>Matt Jam Lamont, Echelon (UKG) &amp; Smokey Bubblin&#x27; B</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><span class="time wide b">32:00</span><div><b>Strong</b><span>Romy &amp; Fred again..</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><span class="time wide s">48:40</span><div><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li></ul>
+<div class="exb"><h4 class="cond">Export</h4><div class="exg"><button class="btn ink wide-b"><svg class="ic" aria-hidden="true"><use href="#i-yt"/></svg>YouTube playlist</button><button class="btn ol"><svg class="ic" aria-hidden="true"><use href="#i-sp"/></svg>Spotify</button><button class="btn ol"><svg class="ic" aria-hidden="true"><use href="#i-ap"/></svg>Apple Music</button><button class="btn ol"><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>M3U8</button><button class="btn ol"><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>CSV</button></div><p>YouTube opens one playable playlist link. Spotify and Apple Music copy the list and open each track.</p></div></div><div class="modes"><h4>Home, Persuade</h4><p>The headline is the comment-section question itself. The proof is the real timetable of the first 26 minutes, beside a paste bar that is the next empty slot.</p><h4>Set view, Operate</h4><p>Video, Track ID and tracklist sit in a plain 8/4 grid with standard buttons and inputs. The world lends type, rules, stage colour and the timetable bar only.</p><h4>Setlist</h4><p>Reads as your own clash-finder: each saved track keeps its stage colour and set time.</p></div></div>
+</div></section><section class="dir d2" id="d2" aria-labelledby="d2-h"><div class="wrap">
+<header class="dh"><div><span class="num">Direction 2</span><h2 id="d2-h">Blend</h2><div class="pal"><span><i style="background:#F7F8FA"></i>sky #F7F8FA</span><span><i style="background:#171A33"></i>ink #171A33</span><span><i style="background:#2E3F9E"></i>indigo #2E3F9E</span><span><i style="background:#B8323F"></i>madder #B8323F</span><span><i style="background:#EFA42A"></i>saffron #EFA42A</span></div></div>
+<div><p class="pov">A DJ set is not a list; it is tracks crossing each other. Blend draws the set the way it sounds: each track a translucent band on one of three lanes, and where two bands cross the colours mix into a third, which is exactly where a listener loses the thread and types &quot;track ID?&quot;. That makes the hard moment the visible one for casual listeners, and gives DJs the transitions at a glance. Sun-white ground, translucent indigo, madder and saffron laid with multiply so overlaps compute their own chord colours. Unbounded, light and wide, for display and tracked lane labels; Hanken Grotesk for everything you read. The home is the canopy itself with the paste bar in the clearing; the set view keeps a plain layout and turns only the timeline into lanes.</p><dl><dt>Fonts</dt><dd>Unbounded (display, tracked labels) + Hanken Grotesk (UI and reading)</dd><dt>Palette</dt><dd>Committed translucency: sky white, indigo, madder, saffron, multiply-blended</dd><dt>Signature</dt><dd>Lane timeline where crossings are the transition windows (±20 s of the 40 s sampling)</dd><dt>Motion</dt><dd>Home bands drift slowly on independent clocks; still in the set view; off under reduced motion</dd><dt>Where it came from</dt><dd>A dealt challenger (a silk canopy of colour chords) that held on product clarity, so it stays a full direction.</dd></dl></div></header>
+<div class="cap">Home <span>Persuade: earn the paste</span></div><div class="frame home"><div class="bar"><span class="logo">SetID</span><nav><a href="#">Library</a><a href="#">How it works</a><a href="#">Setlist · 4</a></nav></div><div class="canopy"><div class="band ind lab-r" style="top:56px;left:-4%;width:66%;height:84px"><span>1:20 · Nathan (still breathing)</span></div><div class="band mad lab-r" style="top:104px;left:38%;width:62%;height:70px"><span>6:40 · Danielle (smile on my face)</span></div><div class="band saf lab-r" style="bottom:118px;left:8%;width:62%;height:78px"><span>48:40 · Baby again..</span></div><div class="band ind lab-r" style="bottom:96px;left:54%;width:46%;height:52px"><span>56:40 · Rumble</span></div>
+<div class="clear"><h3 class="wd h1">Name the track<br>inside the blend.</h3>
+<p class="promise">Paste a DJ set link. SetID listens through the whole thing and hands back every track with its timestamp.</p>
+<form class="paste" onsubmit="return false"><input aria-label="Set link" placeholder="youtube.com/watch?v=…  or  soundcloud.com/…"><button class="go">Find the tracks</button></form>
+<div class="chips"><span class="chip"><i class="ind"></i>Worker online</span><span class="chip"><i class="mad"></i>Shazam ok</span><span class="chip"><i class="saf"></i>2 in queue</span></div></div>
+</div>
+<div class="proc"><div class="pt"><span class="lb">Listening now</span><b>Fred again.. | Boiler Room: London</b><span class="pc">clip 62 of 108 · lanes appear as tracks are named</span></div>
+<div class="pl"><div class="lanes mini"><div class="ln"><i class="ind" style="left:1.394%;width:1.859%" title="1:20 Nathan (still breathing)"></i><i class="ind" style="left:8.829%;width:5.576%" title="6:40 Danielle (smile on my face)"></i><i class="ind" style="left:25.558%;width:5.576%" title="18:40 BBY vs. Real As It Gets"></i><i class="ind" style="left:36.710%;width:8.364%" title="26:40 ()vȯ)) ̷̨ʅ(۝ʅ(Ɵʅ():::()̵̳̗̊(Ɵʅ()vȯ)) ̷̨ʅ"></i><i class="ind" style="left:48.792%;width:6.506%" title="35:20 Turn On The Lights again.. (feat. Future)"></i></div><div class="ln"><i class="mad" style="left:2.323%;width:1.859%" title="2:00 Black Waters"></i><i class="mad" style="left:13.476%;width:5.576%" title="10:00 Tanya (Maybe Life)"></i><i class="mad" style="left:31.134%;width:4.647%" title="22:40 Stay With Me"></i><i class="mad" style="left:44.145%;width:4.647%" title="32:00 Strong"></i><i class="mad" style="left:54.368%;width:3.717%" title="39:20 Jungle"></i></div><div class="ln"><i class="saf" style="left:3.253%;width:6.506%" title="2:40 Kammy (like i do)"></i><i class="saf" style="left:18.123%;width:7.435%" title="13:20 Delilah (pull me out of this)"></i><i class="saf" style="left:34.851%;width:2.788%" title="25:20 Haribo"></i><i class="saf" style="left:47.862%;width:1.859%" title="34:40 Ek Dafaa (Live)"></i></div></div><i class="head" style="left:57.621%"></i></div></div></div>
+<div class="cap">Set view <span>Operate: answer the question, then let DJs dig</span></div><div class="frame setv"><div class="bar"><span class="logo">SetID</span><nav><a href="#">Library</a><a href="#">How it works</a><a href="#">Setlist · 4</a></nav></div>
+<div class="sv"><div class="vcol"><div class="vid"><img src="https://i.ytimg.com/vi/c0-hvjV2A5Y/maxresdefault.jpg" alt="Fred again.. Boiler Room London video"><button class="vplay" aria-label="Play"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button></div></div>
+<div class="side"><div class="now"><span class="lb">Now playing · 52:10 / 1:11:44</span><div class="nw"><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy"><div><b class="wd">Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span></div></div></div>
+<div class="ask"><label class="lb" for="d2t">Track ID @</label><div class="aq"><input id="d2t" value="52:10"><button class="btn pr">Find</button></div>
+<div class="ans"><i class="chord"></i><div><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span><small>playing from 48:40, alone on the lane until 56:00</small></div></div>
+<div class="ab"><button class="btn pr"><svg class="ic" aria-hidden="true"><use href="#i-copy"/></svg>Copy answer</button><button class="btn ol"><svg class="ic" aria-hidden="true"><use href="#i-link"/></svg>Link to this moment</button></div>
+<p class="pastes">Pastes as <code>52:10 Fred again.., Skrillex &amp; Four Tet - Baby again..</code></p></div></div></div>
+<div class="tl"><div class="tlh"><h3 class="wd">Fred again.. | Boiler Room: London</h3><span>1:11:44 · 87 of 108 clips identified</span></div>
+<div class="tl-rule"><span style="left:0.000%">0:00</span><span style="left:13.941%">10:00</span><span style="left:27.881%">20:00</span><span style="left:41.822%">30:00</span><span style="left:55.762%">40:00</span><span style="left:69.703%">50:00</span><span style="left:83.643%">1:00:00</span><span style="left:97.584%">1:10:00</span></div><div class="tlw"><div class="lanes"><div class="ln"><i class="ind" style="left:1.394%;width:1.859%" title="1:20 Nathan (still breathing)"></i><i class="ind" style="left:8.829%;width:5.576%" title="6:40 Danielle (smile on my face)"></i><i class="ind" style="left:25.558%;width:5.576%" title="18:40 BBY vs. Real As It Gets"></i><i class="ind" style="left:36.710%;width:8.364%" title="26:40 ()vȯ)) ̷̨ʅ(۝ʅ(Ɵʅ():::()̵̳̗̊(Ɵʅ()vȯ)) ̷̨ʅ"></i><i class="ind" style="left:48.792%;width:6.506%" title="35:20 Turn On The Lights again.. (feat. Future)"></i><i class="ind cur" style="left:67.379%;width:11.152%" title="48:40 Baby again.."></i><i class="ind" style="left:94.331%;width:2.788%" title="1:08:00 Clara (the night is dark)"></i></div><div class="ln"><i class="mad" style="left:2.323%;width:1.859%" title="2:00 Black Waters"></i><i class="mad" style="left:13.476%;width:5.576%" title="10:00 Tanya (Maybe Life)"></i><i class="mad" style="left:31.134%;width:4.647%" title="22:40 Stay With Me"></i><i class="mad" style="left:44.145%;width:4.647%" title="32:00 Strong"></i><i class="mad" style="left:54.368%;width:5.576%" title="39:20 Jungle"></i><i class="mad" style="left:78.532%;width:7.435%" title="56:40 Rumble"></i><i class="mad" style="left:96.190%;width:2.788%" title="1:09:20 Angie (I’ve Been Lost)"></i></div><div class="ln"><i class="saf" style="left:3.253%;width:6.506%" title="2:40 Kammy (like i do)"></i><i class="saf" style="left:18.123%;width:7.435%" title="13:20 Delilah (pull me out of this)"></i><i class="saf" style="left:34.851%;width:2.788%" title="25:20 Haribo"></i><i class="saf" style="left:47.862%;width:1.859%" title="34:40 Ek Dafaa (Live)"></i><i class="saf" style="left:59.015%;width:5.576%" title="42:40 Lights Out (HAAi Remix)"></i><i class="saf" style="left:91.543%;width:1.859%" title="1:06:00 Angie (I’ve Been Lost)"></i><i class="saf" style="left:98.048%;width:1.859%" title="1:10:40 Clara (the night is dark)"></i></div></div><div class="cursor" style="left:72.723%"><b>52:10</b></div></div>
+<p class="key"><span class="lb">How to read it</span> Each track is a band on one of three overlapping lanes. Where two bands overlap and darken is a transition window: SetID samples every 40 s, so a change is placed within ±20 s. Clear sky is unidentified.</p></div>
+<div class="rows"><div class="row "><span class="time">2:00</span><i class="sw saf"></i><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music/29/42/a3/mzi.jkybttob.jpg/400x400cc.jpg" alt="" loading="lazy">
+<div class="ta"><b>Black Waters</b><span>Stephan V. Star</span></div><span class="lab">Housearth Records</span>
+<span class="bpm">128.8 BPM</span><div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Setlist</button></div></div><div class="row cur"><span class="time">48:40</span><i class="sw ind"></i><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy">
+<div class="ta"><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span></div><span class="lab">Atlantic Records UK</span>
+<span class="bpm na">BPM n/a</span><div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Setlist</button></div><div class="exp"><div><h4 class="lb">Similar tracks · related artist</h4><ul class="sims"><li><img class="cv sm" src="https://cdn-images.dzcdn.net/images/cover/449bdc2e7e00ab241a2b53658fd82fb1/250x250-000000-80-0-0.jpg" alt="" loading="lazy"><div><b>Vhs</b><span>Swimming Paul</span></div><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add to setlist"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li><li><img class="cv sm" src="https://cdn-images.dzcdn.net/images/cover/83752f81151d3f9c9d7a846eb65fb5f2/250x250-000000-80-0-0.jpg" alt="" loading="lazy"><div><b>Dance Dance Dance!</b><span>Barry Can’t Swim</span></div><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add to setlist"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li><li><img class="cv sm" src="https://cdn-images.dzcdn.net/images/cover/e44468007c45f2523d056a0b19eed80a/250x250-000000-80-0-0.jpg" alt="" loading="lazy"><div><b>Latch</b><span>Disclosure</span></div><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add to setlist"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li></ul></div><div><h4 class="lb">Open in</h4><div class="opens"><a class="btn ol" href="#"><svg class="ic" aria-hidden="true"><use href="#i-yt"/></svg>YouTube</a><a class="btn ol" href="#"><svg class="ic" aria-hidden="true"><use href="#i-sp"/></svg>Spotify</a><a class="btn ol" href="#"><svg class="ic" aria-hidden="true"><use href="#i-ap"/></svg>Apple Music</a></div></div></div></div><div class="row "><span class="time">56:40</span><i class="sw mad"></i><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy">
+<div class="ta"><b>Rumble</b><span>Skrillex, Fred again.. &amp; Flowdan</span></div><span class="lab">Atlantic Records UK</span>
+<span class="bpm na">BPM n/a</span><div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Setlist</button></div></div></div></div>
+<div class="cap">Setlist panel <span>Export to YouTube, Spotify, Apple Music, M3U8, CSV</span></div>
+<div class="s3"><div class="frame setl"><div class="slt"><i class="ind"></i><i class="mad"></i><i class="saf"></i></div><div class="slh"><h3 class="wd">Setlist</h3><span class="lb">4 tracks</span></div><ul><li><i class="sw ind"></i><span class="time">2:00</span><div><b>Black Waters</b><span>Stephan V. Star</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><i class="sw mad"></i><span class="time">25:20</span><div><b>Haribo</b><span>Matt Jam Lamont, Echelon (UKG) &amp; Smokey Bubblin&#x27; B</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><i class="sw saf"></i><span class="time">32:00</span><div><b>Strong</b><span>Romy &amp; Fred again..</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><i class="sw ind"></i><span class="time">48:40</span><div><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li></ul>
+<div class="exb"><h4 class="lb">Send it somewhere</h4><div class="exg"><button class="btn pr wide-b"><svg class="ic" aria-hidden="true"><use href="#i-yt"/></svg>YouTube playlist</button><button class="btn ol"><svg class="ic" aria-hidden="true"><use href="#i-sp"/></svg>Spotify</button><button class="btn ol"><svg class="ic" aria-hidden="true"><use href="#i-ap"/></svg>Apple Music</button><button class="btn ol"><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>M3U8</button><button class="btn ol"><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>CSV</button></div><p>YouTube opens one playable playlist link. Spotify and Apple Music copy the list and open each track.</p></div></div><div class="modes"><h4>Home, Persuade</h4><p>The canopy is the page, not a picture on it: real track names ride the band edges, and the clear field between them holds the headline, paste bar and worker state.</p><h4>Set view, Operate</h4><p>Standard video, now playing, Track ID and table rows. Only the timeline carries the world, and it is labelled so colour is never the only signal.</p><h4>Setlist</h4><p>A quiet white panel; the three inks appear only as identity marks.</p></div></div>
+</div></section><section class="dir d3" id="d3" aria-labelledby="d3-h"><div class="wrap">
+<header class="dh"><div><span class="num">Direction 3</span><h2 id="d3-h">Riso</h2><div class="pal"><span><i style="background:#FF48B0"></i>fluoro pink #FF48B0</span><span><i style="background:#15204A"></i>navy #15204A</span><span><i style="background:#FFE800"></i>yellow #FFE800</span><span><i style="background:#FFC4E3"></i>pink tint #FFC4E3</span></div></div>
+<div><p class="pov">Before anyone posts &quot;track ID?&quot; under a video, they found the night through a flyer: two spot inks, a line-up stacked by importance, a tear-off strip at the bottom. Riso makes SetID that flyer. One fluorescent pink owns every surface; navy and yellow are the only other inks. The line-up is real data (track names sized by how long they played in the set), the paste bar is the tear-off ticket, and every cover prints as a pink duotone until you hover it, when it comes back in colour. Listeners get a page loud enough to share; DJs get covers and BPM chips on a dense, legible list. Anybody at its widest and heaviest for flyer type; Barlow Semi Condensed for the small print.</p><dl><dt>Fonts</dt><dd>Anybody (width 150, weight 900) + Barlow Semi Condensed</dd><dt>Palette</dt><dd>Drenched: fluoro pink ground, navy ink, yellow spot</dd><dt>Signature</dt><dd>Duotone covers that print pink and restore on hover; the set as a flyer line-up sized by time played</dd><dt>Motion</dt><dd>Covers dissolve from duotone to colour on hover; the clip counter blinks; nothing else moves</dd><dt>Kept from declined challengers</dt><dd>Green-field capsules: one colour owns the whole viewport, so pink is the ground on all three surfaces, not an accent.</dd></dl></div></header>
+<div class="cap">Home <span>Persuade: earn the paste</span></div><div class="frame home"><div class="bar"><span class="logo fly">SetID</span><nav><a href="#">Library</a><a href="#">How it works</a><a href="#" class="slk">Setlist 4</a></nav></div>
+<div class="hero"><div class="hl"><h3 class="fly h1">Every track<br>in the set</h3>
+<p class="promise">Paste a DJ set link. Get back every track with the minute it plays.</p>
+<form class="ticket" onsubmit="return false"><input aria-label="Set link" placeholder="Paste a YouTube or SoundCloud link"><button class="go fly">Get the<br>tracklist</button></form>
+<ul class="status"><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Worker online</li><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Shazam ok</li><li><b>2</b> in queue</li></ul></div>
+<div class="poster"><div class="duo"><img src="https://i.ytimg.com/vi/c0-hvjV2A5Y/maxresdefault.jpg" alt="Fred again.. Boiler Room London"></div>
+<div class="pcap"><b class="fly">Fred again.. · Boiler Room London</b><span>The line-up, as SetID heard it. Bigger means longer on the decks.</span></div><p class="lineup"><span style="font-size:30px">Kammy (like i do)<small>2:40</small></span> <i>·</i> <span style="font-size:27px">Danielle (smile on my face)<small>6:40</small></span> <i>·</i> <span style="font-size:27px">Tanya (Maybe Life)<small>10:00</small></span> <i>·</i> <span style="font-size:32px">Delilah (pull me out of this)<small>13:20</small></span> <i>·</i> <span style="font-size:27px">BBY vs. Real As It Gets<small>18:40</small></span> <i>·</i> <span style="font-size:30px">Turn On The Lights again.. (feat. Future)<small>35:20</small></span> <i>·</i> <span style="font-size:27px">Jungle<small>39:20</small></span> <i>·</i> <span style="font-size:27px">Lights Out (HAAi Remix)<small>42:40</small></span> <i>·</i> <span style="font-size:42px">Baby again..<small>48:40</small></span> <i>·</i> <span style="font-size:32px">Rumble<small>56:40</small></span></p></div></div>
+<div class="proc"><b class="fly">Now listening</b><span class="pt">Fred again.. | Boiler Room: London · clip 62 of 108</span><span class="tk" role="img" aria-label="clip 62 of 108"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div></div>
+<div class="cap">Set view <span>Operate: answer the question, then let DJs dig</span></div><div class="frame setv"><div class="bar"><span class="logo fly">SetID</span><nav><a href="#">Library</a><a href="#">How it works</a><a href="#" class="slk">Setlist 4</a></nav></div>
+<div class="st"><h3 class="fly">Fred again.. | Boiler Room: London</h3><span>Boiler Room · 1:11:44 · 87 of 108 clips identified</span></div>
+<div class="sv"><div class="lcol"><div class="ask"><label class="fly al" for="d3t">Track ID @</label><div class="aq"><input id="d3t" class="fly" value="52:10"><button class="btn nv">Find</button></div>
+<div class="ans"><b class="fly">Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span><small>playing from 48:40 to 56:00</small>
+<div class="ab"><button class="btn nv"><svg class="ic" aria-hidden="true"><use href="#i-copy"/></svg>Copy answer</button><button class="btn"><svg class="ic" aria-hidden="true"><use href="#i-link"/></svg>Link</button></div></div>
+<p class="pastes">Pastes as <code>52:10 Fred again.., Skrillex &amp; Four Tet - Baby again..</code></p></div></div>
+<div class="vcol"><div class="vid"><img src="https://i.ytimg.com/vi/c0-hvjV2A5Y/maxresdefault.jpg" alt="Fred again.. Boiler Room London video"><button class="vplay" aria-label="Play"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button></div>
+<div class="now"><span class="duo sm"><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy"></span><div><span class="k">Now playing · 48:40</span><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span></div><span class="np fly">52:10<small>/ 1:11:44</small></span></div></div></div>
+<div class="tl"><div class="tl-rule"><span style="left:0.000%">0:00</span><span style="left:13.941%">10:00</span><span style="left:27.881%">20:00</span><span style="left:41.822%">30:00</span><span style="left:55.762%">40:00</span><span style="left:69.703%">50:00</span><span style="left:83.643%">1:00:00</span><span style="left:97.584%">1:10:00</span></div><div class="tl-bar"><i class="b" style="left:1.859%;width:0.929%" title="1:20 Nathan (still breathing)"></i><i class="a" style="left:2.788%;width:0.929%" title="2:00 Black Waters"></i><i class="b" style="left:3.717%;width:5.576%" title="2:40 Kammy (like i do)"></i><i class="a" style="left:9.294%;width:4.647%" title="6:40 Danielle (smile on my face)"></i><i class="b" style="left:13.941%;width:4.647%" title="10:00 Tanya (Maybe Life)"></i><i class="a" style="left:18.587%;width:6.506%" title="13:20 Delilah (pull me out of this)"></i><i class="b" style="left:26.022%;width:4.647%" title="18:40 BBY vs. Real As It Gets"></i><i class="a" style="left:31.599%;width:3.717%" title="22:40 Stay With Me"></i><i class="b" style="left:35.316%;width:1.859%" title="25:20 Haribo"></i><i class="a" style="left:37.175%;width:7.435%" title="26:40 ()vȯ)) ̷̨ʅ(۝ʅ(Ɵʅ():::()̵̳̗̊(Ɵʅ()vȯ)) ̷̨ʅ"></i><i class="b" style="left:44.610%;width:3.717%" title="32:00 Strong"></i><i class="a" style="left:48.327%;width:0.929%" title="34:40 Ek Dafaa (Live)"></i><i class="b" style="left:49.257%;width:5.576%" title="35:20 Turn On The Lights again.. (feat. Future)"></i><i class="a" style="left:54.833%;width:4.647%" title="39:20 Jungle"></i><i class="b" style="left:59.480%;width:4.647%" title="42:40 Lights Out (HAAi Remix)"></i><i class="cur" style="left:67.844%;width:10.223%" title="48:40 Baby again.."></i><i class="b" style="left:78.996%;width:6.506%" title="56:40 Rumble"></i><i class="a" style="left:92.007%;width:0.929%" title="1:06:00 Angie (I’ve Been Lost)"></i><i class="b" style="left:94.796%;width:1.859%" title="1:08:00 Clara (the night is dark)"></i><i class="a" style="left:96.654%;width:1.859%" title="1:09:20 Angie (I’ve Been Lost)"></i><i class="b" style="left:98.513%;width:0.929%" title="1:10:40 Clara (the night is dark)"></i><div class="cursor" style="left:72.723%"><b>52:10</b></div></div><p class="key"><span><i class="a"></i><i class="b"></i>Identified</span><span><i class="n"></i>Unidentified</span><span><i class="c"></i>At 52:10</span></p></div><div class="rows"><div class="row "><span class="time fly">2:00</span><span class="duo"><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music/29/42/a3/mzi.jkybttob.jpg/400x400cc.jpg" alt="" loading="lazy"></span>
+<div class="ta"><b class="fly">Black Waters</b><span>Stephan V. Star</span></div><span class="lab">Housearth Records</span>
+<span class="bpm">128.8 BPM</span><div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Setlist</button></div></div><div class="row cur"><span class="time fly">48:40</span><span class="duo"><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy"></span>
+<div class="ta"><b class="fly">Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span></div><span class="lab">Atlantic Records UK</span>
+<span class="bpm na">BPM n/a</span><div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Setlist</button></div><div class="exp"><div><h4 class="fly">If you like this <small>related artists</small></h4><ul class="sims"><li><span class="duo sm"><img class="cv" src="https://cdn-images.dzcdn.net/images/cover/449bdc2e7e00ab241a2b53658fd82fb1/250x250-000000-80-0-0.jpg" alt="" loading="lazy"></span><div><b>Vhs</b><span>Swimming Paul</span></div><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add to setlist"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li><li><span class="duo sm"><img class="cv" src="https://cdn-images.dzcdn.net/images/cover/83752f81151d3f9c9d7a846eb65fb5f2/250x250-000000-80-0-0.jpg" alt="" loading="lazy"></span><div><b>Dance Dance Dance!</b><span>Barry Can’t Swim</span></div><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add to setlist"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li><li><span class="duo sm"><img class="cv" src="https://cdn-images.dzcdn.net/images/cover/e44468007c45f2523d056a0b19eed80a/250x250-000000-80-0-0.jpg" alt="" loading="lazy"></span><div><b>Latch</b><span>Disclosure</span></div><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add to setlist"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li></ul></div><div><h4 class="fly">Open in</h4><div class="opens"><a class="btn" href="#"><svg class="ic" aria-hidden="true"><use href="#i-yt"/></svg>YouTube</a><a class="btn" href="#"><svg class="ic" aria-hidden="true"><use href="#i-sp"/></svg>Spotify</a><a class="btn" href="#"><svg class="ic" aria-hidden="true"><use href="#i-ap"/></svg>Apple Music</a></div></div></div></div><div class="row "><span class="time fly">56:40</span><span class="duo"><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy"></span>
+<div class="ta"><b class="fly">Rumble</b><span>Skrillex, Fred again.. &amp; Flowdan</span></div><span class="lab">Atlantic Records UK</span>
+<span class="bpm na">BPM n/a</span><div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Setlist</button></div></div></div></div>
+<div class="cap">Setlist panel <span>Export to YouTube, Spotify, Apple Music, M3U8, CSV</span></div>
+<div class="s3"><div class="frame setl"><div class="sheet"><h3 class="fly">Setlist</h3><span class="cnt fly">4 tracks</span><ul><li><span class="duo sm"><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music/29/42/a3/mzi.jkybttob.jpg/400x400cc.jpg" alt="" loading="lazy"></span><div><b>Black Waters</b><span>2:00 · Stephan V. Star</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><span class="duo sm"><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/fa/36/27/fa3627e3-f9d5-9bf9-73cd-90468317e122/cover.jpg/400x400cc.jpg" alt="" loading="lazy"></span><div><b>Haribo</b><span>25:20 · Matt Jam Lamont, Echelon (UKG) &amp; Smokey Bubblin&#x27; B</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><span class="duo sm"><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/57/b4/ea/57b4ea8d-85da-0a6a-49f5-a7d932ab6e9f/889030032072.png/400x400cc.jpg" alt="" loading="lazy"></span><div><b>Strong</b><span>32:00 · Romy &amp; Fred again..</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><span class="duo sm"><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy"></span><div><b>Baby again..</b><span>48:40 · Fred again.., Skrillex &amp; Four Tet</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li></ul>
+<div class="exg"><button class="btn nv wide-b"><svg class="ic" aria-hidden="true"><use href="#i-yt"/></svg>YouTube playlist</button><button class="btn "><svg class="ic" aria-hidden="true"><use href="#i-sp"/></svg>Spotify</button><button class="btn "><svg class="ic" aria-hidden="true"><use href="#i-ap"/></svg>Apple Music</button><button class="btn "><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>M3U8</button><button class="btn "><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>CSV</button></div><p>YouTube opens one playable playlist link. Spotify and Apple Music copy the list and open each track.</p></div></div><div class="modes"><h4>Home, Persuade</h4><p>Headline, ticket-shaped paste bar and worker state on the left; the proof on the right is the actual set as a flyer line-up.</p><h4>Set view, Operate</h4><p>Track ID leads on a yellow slab because that is the casual job; the video and the list stay standard. Contrast held at 5:1 navy on pink.</p><h4>Setlist</h4><p>A yellow guest-list sheet with duotone covers.</p></div></div>
+</div></section><section class="dir d4" id="d4" aria-labelledby="d4-h"><div class="wrap">
+<header class="dh"><div><span class="num">Direction 4</span><h2 id="d4-h">Tonhalle</h2><div class="pal"><span><i style="background:#0E0E0E"></i>black #0E0E0E</span><span><i style="background:#F2F0EA"></i>bone #F2F0EA</span><span><i style="background:#B8B6AF"></i>grey 1 #B8B6AF</span><span><i style="background:#8E8C86"></i>grey 2 #8E8C86</span><span><i style="background:#E8452C"></i>vermilion #E8452C</span></div></div>
+<div><p class="pov">Swiss concert posters (Müller-Brockmann&#x27;s Tonhalle series above all) proved that music can be shown with nothing but a grid, a grotesque and rhythm. Tonhalle applies that discipline to SetID on a black ground. The home headline is the comment-section question at poster scale, and the proof is the whole set drawn as rhythm: 21 lines, one per identified track, placed at the minute it played. No cards, no boxes, no dividers. Rank is brightness: the current track is white and vermilion, everything else steps back to grey. Listeners get one huge answer; DJs get a precise, quiet table they can read in a dark room. Schibsted Grotesk throughout, from 13 px table figures to 160 px display.</p><dl><dt>Fonts</dt><dd>Schibsted Grotesk only, 400 to 800, tabular figures</dd><dt>Palette</dt><dd>Restrained: black, bone white, three greys, vermilion as the one signal</dd><dt>Signature</dt><dd>The set drawn as a rhythm graphic of 21 lines; rank expressed only as brightness</dd><dt>Motion</dt><dd>None on load. State changes are instant brightness steps</dd><dt>Kept from declined challengers</dt><dd>Cracktro scroller: nothing is ever enclosed; depth and brightness carry rank instead of boxes.</dd></dl></div></header>
+<div class="cap">Home <span>Persuade: earn the paste</span></div><div class="frame home"><div class="bar"><span class="logo">SetID</span><nav><a href="#">Library</a><a href="#">How it works</a><a href="#">Setlist 4</a></nav></div>
+<div class="g12 hero"><ul class="stat"><li><i class="on"></i>Worker online</li><li><i class="on"></i>Shazam ok<span>last run 87 / 108 clips</span></li><li><i></i>2 in queue</li></ul>
+<div class="main"><h3 class="h1">Track ID<br>@ 47:12?</h3>
+<p class="promise">Paste a DJ set. SetID listens through all of it and answers with every track and the second it starts.</p>
+<form class="paste" onsubmit="return false"><input aria-label="Set link" placeholder="Paste a YouTube or SoundCloud link"><button class="go">Identify the set</button></form></div></div>
+<div class="g12 proof"><p class="rcap"><b>Fred again.. | Boiler Room: London</b><span>21 identified segments across 1:11:44. Each line is one track, placed at the moment it played.</span></p><div class="rhythm"><div class="rr"><i class="r" style="margin-left:1.859%;width:0.929%" title="1:20 Nathan (still breathing)"></i><i class="r" style="margin-left:2.788%;width:0.929%" title="2:00 Black Waters"></i><i class="r" style="margin-left:3.717%;width:5.576%" title="2:40 Kammy (like i do)"></i><i class="r" style="margin-left:9.294%;width:4.647%" title="6:40 Danielle (smile on my face)"></i><i class="r" style="margin-left:13.941%;width:4.647%" title="10:00 Tanya (Maybe Life)"></i><i class="r" style="margin-left:18.587%;width:6.506%" title="13:20 Delilah (pull me out of this)"></i><i class="r" style="margin-left:26.022%;width:4.647%" title="18:40 BBY vs. Real As It Gets"></i><i class="r" style="margin-left:31.599%;width:3.717%" title="22:40 Stay With Me"></i><i class="r" style="margin-left:35.316%;width:1.859%" title="25:20 Haribo"></i><i class="r" style="margin-left:37.175%;width:7.435%" title="26:40 ()vȯ)) ̷̨ʅ(۝ʅ(Ɵʅ():::()̵̳̗̊(Ɵʅ()vȯ)) ̷̨ʅ"></i><i class="r" style="margin-left:44.610%;width:3.717%" title="32:00 Strong"></i><i class="r" style="margin-left:48.327%;width:0.929%" title="34:40 Ek Dafaa (Live)"></i><i class="r" style="margin-left:49.257%;width:5.576%" title="35:20 Turn On The Lights again.. (feat. Future)"></i><i class="r" style="margin-left:54.833%;width:4.647%" title="39:20 Jungle"></i><i class="r" style="margin-left:59.480%;width:4.647%" title="42:40 Lights Out (HAAi Remix)"></i><i class="r cur" style="margin-left:67.844%;width:10.223%" title="48:40 Baby again.."></i><i class="r" style="margin-left:78.996%;width:6.506%" title="56:40 Rumble"></i><i class="r" style="margin-left:92.007%;width:0.929%" title="1:06:00 Angie (I’ve Been Lost)"></i><i class="r" style="margin-left:94.796%;width:1.859%" title="1:08:00 Clara (the night is dark)"></i><i class="r" style="margin-left:96.654%;width:1.859%" title="1:09:20 Angie (I’ve Been Lost)"></i><i class="r" style="margin-left:98.513%;width:0.929%" title="1:10:40 Clara (the night is dark)"></i></div><div class="rx"><span style="left:0.000%">0:00</span><span style="left:13.941%">10:00</span><span style="left:27.881%">20:00</span><span style="left:41.822%">30:00</span><span style="left:55.762%">40:00</span><span style="left:69.703%">50:00</span><span style="left:83.643%">1:00:00</span><span style="left:97.584%">1:10:00</span></div></div></div>
+<div class="proc"><span>Listening now</span><b>Fred again.. | Boiler Room: London</b><span class="pn">62 / 108</span><span class="prog"><i style="width:57.4%"></i></span></div></div>
+<div class="cap">Set view <span>Operate: answer the question, then let DJs dig</span></div><div class="frame setv"><div class="bar"><span class="logo">SetID</span><nav><a href="#">Library</a><a href="#">How it works</a><a href="#">Setlist 4</a></nav></div>
+<div class="st"><h3>Fred again.. | Boiler Room: London</h3><span>Boiler Room · 1:11:44 · 87 of 108 clips identified</span></div>
+<div class="g12 sv"><div class="vcol"><div class="vid"><img src="https://i.ytimg.com/vi/c0-hvjV2A5Y/maxresdefault.jpg" alt="Fred again.. Boiler Room London video"><button class="vplay" aria-label="Play"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button></div>
+<div class="now"><span class="nk">Now</span><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span><span class="np">52:10 / 1:11:44</span></div></div>
+<div class="ask"><label for="d4t">Track ID @</label><input id="d4t" value="52:10"><button class="btn">Find</button>
+<div class="ans"><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span><small>from 48:40 to 56:00</small>
+<div class="ab"><button class="btn pr"><svg class="ic" aria-hidden="true"><use href="#i-copy"/></svg>Copy answer</button><button class="btn tx"><svg class="ic" aria-hidden="true"><use href="#i-link"/></svg>Link to this moment</button></div><p class="pastes">Pastes as <code>52:10 Fred again.., Skrillex &amp; Four Tet - Baby again..</code></p></div></div></div>
+<div class="tl"><div class="tl-bar"><i class="gap" style="left:0.000%;width:1.859%"></i><i class="" style="left:1.859%;width:0.929%"></i><i class="" style="left:2.788%;width:0.929%"></i><i class="" style="left:3.717%;width:5.576%"></i><i class="" style="left:9.294%;width:4.647%"></i><i class="" style="left:13.941%;width:4.647%"></i><i class="" style="left:18.587%;width:6.506%"></i><i class="gap" style="left:25.093%;width:0.929%"></i><i class="" style="left:26.022%;width:4.647%"></i><i class="gap" style="left:30.669%;width:0.929%"></i><i class="" style="left:31.599%;width:3.717%"></i><i class="" style="left:35.316%;width:1.859%"></i><i class="" style="left:37.175%;width:7.435%"></i><i class="" style="left:44.610%;width:3.717%"></i><i class="" style="left:48.327%;width:0.929%"></i><i class="" style="left:49.257%;width:5.576%"></i><i class="" style="left:54.833%;width:4.647%"></i><i class="" style="left:59.480%;width:4.647%"></i><i class="gap" style="left:64.126%;width:3.717%"></i><i class="cur" style="left:67.844%;width:10.223%"></i><i class="gap" style="left:78.067%;width:0.929%"></i><i class="" style="left:78.996%;width:6.506%"></i><i class="gap" style="left:85.502%;width:6.506%"></i><i class="" style="left:92.007%;width:0.929%"></i><i class="gap" style="left:92.937%;width:1.859%"></i><i class="" style="left:94.796%;width:1.859%"></i><i class="" style="left:96.654%;width:1.859%"></i><i class="" style="left:98.513%;width:0.929%"></i><i class="gap" style="left:99.442%;width:0.558%"></i><div class="cursor" style="left:72.723%"></div></div><div class="tl-rule"><span style="left:0.000%">0:00</span><span style="left:13.941%">10:00</span><span style="left:27.881%">20:00</span><span style="left:41.822%">30:00</span><span style="left:55.762%">40:00</span><span style="left:69.703%">50:00</span><span style="left:83.643%">1:00:00</span><span style="left:97.584%">1:10:00</span></div></div><div class="rows"><div class="row "><span class="time">2:00</span><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music/29/42/a3/mzi.jkybttob.jpg/400x400cc.jpg" alt="" loading="lazy"><div class="ta"><b>Black Waters</b><span>Stephan V. Star</span></div>
+<span class="lab">Housearth Records</span><span class="bpm">128.8 BPM</span><div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Setlist</button></div></div><div class="row cur"><span class="time">48:40</span><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy"><div class="ta"><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span></div>
+<span class="lab">Atlantic Records UK</span><span class="bpm">BPM n/a</span><div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Setlist</button></div><div class="exp"><div><h4>Similar <span>related artist</span></h4><ul class="sims"><li><img class="cv sm" src="https://cdn-images.dzcdn.net/images/cover/449bdc2e7e00ab241a2b53658fd82fb1/250x250-000000-80-0-0.jpg" alt="" loading="lazy"><div><b>Vhs</b><span>Swimming Paul</span></div><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add to setlist"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li><li><img class="cv sm" src="https://cdn-images.dzcdn.net/images/cover/83752f81151d3f9c9d7a846eb65fb5f2/250x250-000000-80-0-0.jpg" alt="" loading="lazy"><div><b>Dance Dance Dance!</b><span>Barry Can’t Swim</span></div><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add to setlist"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li><li><img class="cv sm" src="https://cdn-images.dzcdn.net/images/cover/e44468007c45f2523d056a0b19eed80a/250x250-000000-80-0-0.jpg" alt="" loading="lazy"><div><b>Latch</b><span>Disclosure</span></div><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add to setlist"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li></ul></div><div><h4>Open in</h4><div class="opens"><a class="btn" href="#"><svg class="ic" aria-hidden="true"><use href="#i-yt"/></svg>YouTube</a><a class="btn" href="#"><svg class="ic" aria-hidden="true"><use href="#i-sp"/></svg>Spotify</a><a class="btn" href="#"><svg class="ic" aria-hidden="true"><use href="#i-ap"/></svg>Apple Music</a></div></div></div></div><div class="row "><span class="time">56:40</span><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy"><div class="ta"><b>Rumble</b><span>Skrillex, Fred again.. &amp; Flowdan</span></div>
+<span class="lab">Atlantic Records UK</span><span class="bpm">BPM n/a</span><div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Setlist</button></div></div></div></div>
+<div class="cap">Setlist panel <span>Export to YouTube, Spotify, Apple Music, M3U8, CSV</span></div>
+<div class="s3"><div class="frame setl"><h3>Setlist</h3><p class="sub">4 tracks, in the order you saved them</p><ol><li><span class="n">1</span><div><b>Black Waters</b><span>Stephan V. Star</span></div><span class="t">2:00</span><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><span class="n">2</span><div><b>Haribo</b><span>Matt Jam Lamont, Echelon (UKG) &amp; Smokey Bubblin&#x27; B</span></div><span class="t">25:20</span><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><span class="n">3</span><div><b>Strong</b><span>Romy &amp; Fred again..</span></div><span class="t">32:00</span><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><span class="n">4</span><div><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span></div><span class="t">48:40</span><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li></ol>
+<div class="exg"><button class="btn pr"><svg class="ic" aria-hidden="true"><use href="#i-yt"/></svg>YouTube playlist</button><button class="btn "><svg class="ic" aria-hidden="true"><use href="#i-sp"/></svg>Spotify</button><button class="btn "><svg class="ic" aria-hidden="true"><use href="#i-ap"/></svg>Apple Music</button><button class="btn "><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>M3U8</button><button class="btn "><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>CSV</button></div><p class="note">YouTube opens one playable playlist link. Spotify and Apple Music copy the list and open each track.</p></div><div class="modes"><h4>Home, Persuade</h4><p>Status sits in the left grid column as plain lines; the headline, promise and paste field own the right nine columns. The rhythm graphic below is real proof, not decoration.</p><h4>Set view, Operate</h4><p>A 7/5 grid: video left, a 76 px Track ID field right, the answer printed in vermilion. The table uses brightness, not borders.</p><h4>Setlist</h4><p>Numbered because order is the data. Exports are plain outlined buttons.</p></div></div>
+</div></section><section class="dir d5" id="d5" aria-labelledby="d5-h"><div class="wrap">
+<header class="dh"><div><span class="num">Direction 5</span><h2 id="d5-h">White Label</h2><div class="pal"><span><i style="background:#C49A6C"></i>kraft #C49A6C</span><span><i style="background:#F7F4EE"></i>sleeve #F7F4EE</span><span><i style="background:#1B1712"></i>ink #1B1712</span><span><i style="background:#0E6B43"></i>stamp green #0E6B43</span><span><i style="background:#FF7A1A"></i>sticker #FF7A1A</span><span><i style="background:#1E3BB3"></i>biro #1E3BB3</span></div></div>
+<div><p class="pov">Every DJ learned to dig in a record shop: flicking through a crate, reading the stamped divider card, trusting the handwritten staff pick taped to the rack. White Label turns SetID into that shop, and lets the real artwork do the talking. The home is a crate of actual covers from the set; the timeline is a strip of sleeves, each as wide as the time it played; similar tracks arrive as a staff-pick card in blue biro. Listeners recognise a cover faster than a title, and DJs get the digging ritual they already love. Bricolage Grotesque in its condensed cut for headlines and stamps, Kalam only for the handwritten staff pick. Kraft card, sleeve white, rubber-stamp green, price-gun orange.</p><dl><dt>Fonts</dt><dd>Bricolage Grotesque (opsz and width axes) + Kalam for the staff pick only</dd><dt>Palette</dt><dd>Committed kraft: kraft, sleeve white, ink, stamp green, sticker orange, biro blue</dd><dt>Signature</dt><dd>Real covers everywhere: the crate on the home, the sleeve strip as the timeline</dd><dt>Motion</dt><dd>The front record lifts out of the crate on hover; nothing moves on its own</dd><dt>Kept from declined challengers</dt><dd>Character catalog: every record carries fixed furniture in the same place (stamp time, sleeve, sticker BPM).</dd><dt>Honest risk</dt><dd>The most familiar of the five. Record-shop nostalgia is where many music products land.</dd></dl></div></header>
+<div class="cap">Home <span>Persuade: earn the paste</span></div><div class="frame home"><div class="bar"><span class="logo">SetID</span><nav><a href="#">Library</a><a href="#">How it works</a><a href="#" class="bag">Your bag <b>4</b></a></nav></div>
+<div class="hero"><div class="hl"><h3 class="h1">Dig any<br>DJ set.</h3>
+<p class="promise">Paste a YouTube or SoundCloud link. SetID listens through the set and writes up every record in it, with the minute it went in.</p>
+<form class="paste" onsubmit="return false"><input aria-label="Set link" placeholder="Paste a set link"><button class="go">Get the tracklist <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button></form>
+<div class="stickers"><span class="stk">Worker online</span><span class="stk">Shazam ok</span><span class="stk">2 in queue</span></div></div>
+<div class="crate"><figure class="rec" style="--d:5;z-index:1"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/57/b4/ea/57b4ea8d-85da-0a6a-49f5-a7d932ab6e9f/889030032072.png/400x400cc.jpg" alt="Strong cover"></figure><figure class="rec" style="--d:4;z-index:2"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/fa/36/27/fa3627e3-f9d5-9bf9-73cd-90468317e122/cover.jpg/400x400cc.jpg" alt="Haribo cover"></figure><figure class="rec" style="--d:3;z-index:3"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b5/9f/24/b59f2433-b683-f1fa-c578-b6c7b14083dc/artwork.jpg/400x400cc.jpg" alt="BBY vs. Real As It Gets cover"></figure><figure class="rec" style="--d:2;z-index:4"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/33/63/70/336370d7-e9d8-dad9-a8ec-2e21680366c6/190296363337.jpg/400x400cc.jpg" alt="Tanya (Maybe Life) cover"></figure><figure class="rec" style="--d:1;z-index:5"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2c/b7/4f/2cb74fc9-7c37-a56e-2b57-7c284f224695/190295058562.jpg/400x400cc.jpg" alt="Angie (I’ve Been Lost) cover"></figure><figure class="rec" style="--d:0;z-index:6"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music/29/42/a3/mzi.jkybttob.jpg/400x400cc.jpg" alt="Black Waters cover"></figure><div class="divider"><span class="stamp">2:00</span><b>Black Waters</b><span>Stephan V. Star</span></div><div class="box"><span>Fred again.. · Boiler Room London</span></div></div></div>
+<div class="proc"><span class="slv"><img src="https://i.ytimg.com/vi/c0-hvjV2A5Y/maxresdefault.jpg" alt=""></span><div><span class="k">Now listening</span><b>Fred again.. | Boiler Room: London</b><span class="pc">clip 62 of 108 · 87 records found last time this set ran</span></div><span class="tk" role="img" aria-label="clip 62 of 108"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="cur"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div></div>
+<div class="cap">Set view <span>Operate: answer the question, then let DJs dig</span></div><div class="frame setv"><div class="bar"><span class="logo">SetID</span><nav><a href="#">Library</a><a href="#">How it works</a><a href="#" class="bag">Your bag <b>4</b></a></nav></div>
+<div class="sv"><div class="vcol"><div class="vid"><img src="https://i.ytimg.com/vi/c0-hvjV2A5Y/maxresdefault.jpg" alt="Fred again.. Boiler Room London video"><button class="vplay" aria-label="Play"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button></div>
+<div class="st"><h3>Fred again.. | Boiler Room: London</h3><span>Boiler Room · 1:11:44 · 87 of 108 clips identified</span></div></div>
+<div class="side"><div class="now"><img class="cv big" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy"><div><span class="k">On the deck · 52:10</span><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span><span class="lab">Atlantic Records UK</span></div></div>
+<div class="ask"><label for="d5t">Track ID @</label><div class="aq"><input id="d5t" value="52:10"><button class="btn ink">Find</button></div>
+<div class="ans"><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy"><div><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span><small>in from 48:40 to 56:00</small></div></div>
+<div class="ab"><button class="btn ink"><svg class="ic" aria-hidden="true"><use href="#i-copy"/></svg>Copy answer</button><button class="btn"><svg class="ic" aria-hidden="true"><use href="#i-link"/></svg>Link</button></div><p class="pastes">Pastes as <code>52:10 Fred again.., Skrillex &amp; Four Tet - Baby again..</code></p></div></div></div>
+<div class="tl"><div class="strip"><i class="gap" style="left:0.000%;width:1.859%"></i><i class="c" style="left:1.859%;width:0.929%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/9c/b7/b09cb72c-cca9-5d66-bc9d-a9b5e5f86b22/5054197236389.jpg/400x400cc.jpg')" title="1:20 Nathan (still breathing)"></i><i class="c" style="left:2.788%;width:0.929%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music/29/42/a3/mzi.jkybttob.jpg/400x400cc.jpg')" title="2:00 Black Waters"></i><i class="c" style="left:3.717%;width:5.576%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/9c/b7/b09cb72c-cca9-5d66-bc9d-a9b5e5f86b22/5054197236389.jpg/400x400cc.jpg')" title="2:40 Kammy (like i do)"></i><i class="c" style="left:9.294%;width:4.647%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/9c/b7/b09cb72c-cca9-5d66-bc9d-a9b5e5f86b22/5054197236389.jpg/400x400cc.jpg')" title="6:40 Danielle (smile on my face)"></i><i class="c" style="left:13.941%;width:4.647%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/33/63/70/336370d7-e9d8-dad9-a8ec-2e21680366c6/190296363337.jpg/400x400cc.jpg')" title="10:00 Tanya (Maybe Life)"></i><i class="c" style="left:18.587%;width:6.506%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/9c/b7/b09cb72c-cca9-5d66-bc9d-a9b5e5f86b22/5054197236389.jpg/400x400cc.jpg')" title="13:20 Delilah (pull me out of this)"></i><i class="gap" style="left:25.093%;width:0.929%"></i><i class="c" style="left:26.022%;width:4.647%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b5/9f/24/b59f2433-b683-f1fa-c578-b6c7b14083dc/artwork.jpg/400x400cc.jpg')" title="18:40 BBY vs. Real As It Gets"></i><i class="gap" style="left:30.669%;width:0.929%"></i><i class="nc" style="left:31.599%;width:3.717%" title="Stay With Me"></i><i class="c" style="left:35.316%;width:1.859%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/fa/36/27/fa3627e3-f9d5-9bf9-73cd-90468317e122/cover.jpg/400x400cc.jpg')" title="25:20 Haribo"></i><i class="c" style="left:37.175%;width:7.435%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/c9/fc/6b/c9fc6b10-af52-3f5f-11a2-cf7109cdd9a3/3663729216762_cover.jpg/400x400cc.jpg')" title="26:40 ()vȯ)) ̷̨ʅ(۝ʅ(Ɵʅ():::()̵̳̗̊(Ɵʅ()vȯ)) ̷̨ʅ"></i><i class="c" style="left:44.610%;width:3.717%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/57/b4/ea/57b4ea8d-85da-0a6a-49f5-a7d932ab6e9f/889030032072.png/400x400cc.jpg')" title="32:00 Strong"></i><i class="nc" style="left:48.327%;width:0.929%" title="Ek Dafaa (Live)"></i><i class="c" style="left:49.257%;width:5.576%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg')" title="35:20 Turn On The Lights again.. (feat. Future)"></i><i class="c" style="left:54.833%;width:4.647%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg')" title="39:20 Jungle"></i><i class="c" style="left:59.480%;width:4.647%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg')" title="42:40 Lights Out (HAAi Remix)"></i><i class="gap" style="left:64.126%;width:3.717%"></i><i class="c cur" style="left:67.844%;width:10.223%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg')" title="48:40 Baby again.."></i><i class="gap" style="left:78.067%;width:0.929%"></i><i class="c" style="left:78.996%;width:6.506%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg')" title="56:40 Rumble"></i><i class="gap" style="left:85.502%;width:6.506%"></i><i class="c" style="left:92.007%;width:0.929%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2c/b7/4f/2cb74fc9-7c37-a56e-2b57-7c284f224695/190295058562.jpg/400x400cc.jpg')" title="1:06:00 Angie (I’ve Been Lost)"></i><i class="gap" style="left:92.937%;width:1.859%"></i><i class="c" style="left:94.796%;width:1.859%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/9c/b7/b09cb72c-cca9-5d66-bc9d-a9b5e5f86b22/5054197236389.jpg/400x400cc.jpg')" title="1:08:00 Clara (the night is dark)"></i><i class="c" style="left:96.654%;width:1.859%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2c/b7/4f/2cb74fc9-7c37-a56e-2b57-7c284f224695/190295058562.jpg/400x400cc.jpg')" title="1:09:20 Angie (I’ve Been Lost)"></i><i class="c" style="left:98.513%;width:0.929%;background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/9c/b7/b09cb72c-cca9-5d66-bc9d-a9b5e5f86b22/5054197236389.jpg/400x400cc.jpg')" title="1:10:40 Clara (the night is dark)"></i><i class="gap" style="left:99.442%;width:0.558%"></i><div class="cursor" style="left:72.723%"><b>52:10</b></div></div><div class="tl-rule"><span style="left:0.000%">0:00</span><span style="left:13.941%">10:00</span><span style="left:27.881%">20:00</span><span style="left:41.822%">30:00</span><span style="left:55.762%">40:00</span><span style="left:69.703%">50:00</span><span style="left:83.643%">1:00:00</span><span style="left:97.584%">1:10:00</span></div><p class="key">Every sleeve is a track, as wide as it played. Bare card is a stretch Shazam could not name.</p></div><div class="rows"><div class="row "><span class="stamp">2:00</span><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music/29/42/a3/mzi.jkybttob.jpg/400x400cc.jpg" alt="" loading="lazy"><div class="ta"><b>Black Waters</b><span>Stephan V. Star</span><span class="lab">Housearth Records</span></div>
+<span class="bpm">128.8 BPM</span><div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Bag it</button></div></div><div class="row cur"><span class="stamp">48:40</span><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy"><div class="ta"><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span><span class="lab">Atlantic Records UK</span></div>
+<span class="bpm na">BPM n/a</span><div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Bag it</button></div><div class="exp"><div class="pick"><p class="hand">If you like Baby again.., dig these:</p><ul class="sims"><li><img class="cv sm" src="https://cdn-images.dzcdn.net/images/cover/449bdc2e7e00ab241a2b53658fd82fb1/250x250-000000-80-0-0.jpg" alt="" loading="lazy"><div><b>Vhs</b><span>Swimming Paul</span></div><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add to bag"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li><li><img class="cv sm" src="https://cdn-images.dzcdn.net/images/cover/83752f81151d3f9c9d7a846eb65fb5f2/250x250-000000-80-0-0.jpg" alt="" loading="lazy"><div><b>Dance Dance Dance!</b><span>Barry Can’t Swim</span></div><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add to bag"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li><li><img class="cv sm" src="https://cdn-images.dzcdn.net/images/cover/e44468007c45f2523d056a0b19eed80a/250x250-000000-80-0-0.jpg" alt="" loading="lazy"><div><b>Latch</b><span>Disclosure</span></div><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="ib" aria-label="Add to bag"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button></li></ul><span class="why">picked by related artist</span></div><div><h4>Open in</h4><div class="opens"><a class="btn" href="#"><svg class="ic" aria-hidden="true"><use href="#i-yt"/></svg>YouTube</a><a class="btn" href="#"><svg class="ic" aria-hidden="true"><use href="#i-sp"/></svg>Spotify</a><a class="btn" href="#"><svg class="ic" aria-hidden="true"><use href="#i-ap"/></svg>Apple Music</a></div></div></div></div><div class="row "><span class="stamp">56:40</span><img class="cv" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" loading="lazy"><div class="ta"><b>Rumble</b><span>Skrillex, Fred again.. &amp; Flowdan</span><span class="lab">Atlantic Records UK</span></div>
+<span class="bpm na">BPM n/a</span><div class="acts"><button class="ib" aria-label="Preview"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></button><button class="btn sm"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Bag it</button></div></div></div></div>
+<div class="cap">Setlist panel <span>Export to YouTube, Spotify, Apple Music, M3U8, CSV</span></div>
+<div class="s3"><div class="frame setl"><div class="bagh"><div class="fan"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music/29/42/a3/mzi.jkybttob.jpg/400x400cc.jpg" alt="" style="--i:0"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/fa/36/27/fa3627e3-f9d5-9bf9-73cd-90468317e122/cover.jpg/400x400cc.jpg" alt="" style="--i:1"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/57/b4/ea/57b4ea8d-85da-0a6a-49f5-a7d932ab6e9f/889030032072.png/400x400cc.jpg" alt="" style="--i:2"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg" alt="" style="--i:3"></div><div><h3>Your bag</h3><span>4 records from 1 set</span></div></div><ul><li><span class="stamp">2:00</span><div><b>Black Waters</b><span>Stephan V. Star</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><span class="stamp">25:20</span><div><b>Haribo</b><span>Matt Jam Lamont, Echelon (UKG) &amp; Smokey Bubblin&#x27; B</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><span class="stamp">32:00</span><div><b>Strong</b><span>Romy &amp; Fred again..</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li><li><span class="stamp">48:40</span><div><b>Baby again..</b><span>Fred again.., Skrillex &amp; Four Tet</span></div><button class="ib" aria-label="Remove"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></li></ul>
+<div class="exb"><div class="exg"><button class="btn ink wide-b"><svg class="ic" aria-hidden="true"><use href="#i-yt"/></svg>YouTube playlist</button><button class="btn "><svg class="ic" aria-hidden="true"><use href="#i-sp"/></svg>Spotify</button><button class="btn "><svg class="ic" aria-hidden="true"><use href="#i-ap"/></svg>Apple Music</button><button class="btn "><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>M3U8</button><button class="btn "><svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>CSV</button></div><p>YouTube opens one playable playlist link. Spotify and Apple Music copy the list and open each track.</p></div></div><div class="modes"><h4>Home, Persuade</h4><p>The crate is real artwork from this set; the divider card names the front record with its time. Paste bar and stickers sit on kraft in plain reading order.</p><h4>Set view, Operate</h4><p>Video and title left, now playing and Track ID right, list below. Covers lead every row; controls stay ordinary buttons.</p><h4>Setlist</h4><p>Your record bag, with the covers fanned so you know what you are taking home.</p></div></div>
+</div></section></main>
+<footer class="foot"><h2>How these five were chosen</h2><ul>
+<li><b>Set Times leads.</b><span>From a ranked list of seven worlds DJs and ravers know by heart (record-shop white labels, riso club flyers, cassette J-cards, festival set-times boards, Teletext music pages, Swiss concert posters, club ephemera), the roll put the set-times board first, so it leads instead of the most obvious pick.</span></li>
+<li><b>White Label is the safest strong option.</b><span>It topped the list, and it carries an honest familiarity risk, noted on its card.</span></li>
+<li><b>Blend came from outside the list.</b><span>A dealt challenger (a silk canopy whose overlaps make colour chords) held on product clarity: crossings are exactly where track IDs get asked. It stays a full direction.</span></li>
+<li><b>Riso and Tonhalle come from the list</b><span>and cover the drenched and dark, typographic ends of the brief.</span></li>
+<li><b>Four challengers were declined, each leaving one discipline behind.</b><span>Brick instructions: one module (Set Times). Night instruments: readings carry their last result (Set Times). Cracktro scroller: rank by brightness, no boxes (Tonhalle). Character catalog: fixed furniture per item (White Label). Green-field capsules: one colour owns the viewport (Riso).</span></li>
+</ul></footer>
+</body></html>
