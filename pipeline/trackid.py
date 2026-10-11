@@ -48,12 +48,13 @@ def norm(m):
             "cover": (t.get("images") or {}).get("coverart"), "genre": (t.get("genres") or {}).get("primary"),
             "label": meta.get("label"), "released": meta.get("released"), "shazam": t.get("url"), **links}
 
-async def recognize(shazam, path, retries=3):
+async def recognize(shazam, path, retries=4):
     for i in range(retries):
         try:
-            return await shazam.recognize(path)
-        except Exception:
-            await asyncio.sleep(2 + 3 * i)
+            return await asyncio.wait_for(shazam.recognize(path), timeout=25)
+        except Exception as e:
+            print(f"    shazam retry {i+1}: {type(e).__name__}", file=sys.stderr)
+            await asyncio.sleep([20, 45, 90, 180][i])
     return {}
 
 def merge(hits):
@@ -132,7 +133,7 @@ async def deezer_similar(sess, artist_id, limit=6):
 
 def yt_search(artist, title):
     try:
-        j = sh(["yt-dlp", "--flat-playlist", "-j", "--no-warnings", f"ytsearch1:{artist} - {title}"])
+        j = subprocess.run(["yt-dlp", "--flat-playlist", "-j", "--no-warnings", f"ytsearch1:{artist} - {title}"], check=True, capture_output=True, text=True, timeout=40).stdout
         d = json.loads(j.strip().splitlines()[0])
         return {"youtube": d.get("id"), "youtubeTitle": d.get("title")}
     except Exception:
@@ -187,7 +188,7 @@ async def main():
             print(f"  {int(t)//60:02d}:{int(t)%60:02d}  {tr['artist'] + ' - ' + tr['title'] if tr else '·'}", file=sys.stderr)
             os.remove(c)
             t += a.every
-            await asyncio.sleep(0.4)
+            await asyncio.sleep(1.5)
     segs = merge(hits)
     if segs and segs[-1]['end'] is None and dur < float(meta.get('duration') or 0):
         segs[-1]['end'] = dur
