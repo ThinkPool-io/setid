@@ -71,9 +71,37 @@ async def recognize_shazam(shazam, path, retries=2):
         except Exception as e:
             print(f"    shazam retry {i+1}: {type(e).__name__}", file=sys.stderr)
             await asyncio.sleep([8, 20][i])
+    others = (AUDD_TOKEN and "audd" in PROVIDERS) or (ACR["KEY"] and "acrcloud" in PROVIDERS)
+    if others:
+        RATE_LIMITED.add("shazam")
+        print("    shazam unavailable (rate limited or down), switching provider", file=sys.stderr)
+        return None, False
+    # Shazam is the only provider: wait for the rate limit to lift, then retry this same clip.
+    waited = 0
+    while waited < 90 * 60:
+        code = await shazam_probe()
+        if code != 429:
+            print(f"    shazam back after {waited // 60} min, resuming", file=sys.stderr, flush=True)
+            try:
+                r = await asyncio.wait_for(shazam.recognize(path), timeout=25)
+                return norm(r), True
+            except Exception as e:
+                print(f"    shazam still failing: {type(e).__name__}", file=sys.stderr, flush=True)
+        print(f"    waiting for Shazam rate limit to lift ({waited // 60} min so far)", file=sys.stderr, flush=True)
+        await asyncio.sleep(120); waited += 120
     RATE_LIMITED.add("shazam")
-    print("    shazam unavailable (rate limited or down), switching provider", file=sys.stderr)
+    print("    shazam still rate limited after 90 min, giving up", file=sys.stderr)
     return None, False
+
+async def shazam_probe():
+    url = "https://amp.shazam.com/discovery/v5/en/GB/iphone/-/tag/0/0?sync=true&webv3=true&sampling=true&connected=&shazamapiversion=v3&sharehub=true&video=v0"
+    body = {"timezone": "Europe/London", "signature": {"uri": "data:audio/vnd.shazam.sig;base64,AA==", "samplems": 1000}, "timestamp": 1, "context": {}, "geolocation": {}}
+    try:
+        async with aiohttp.ClientSession() as s:
+            async with s.post(url, json=body, headers={"User-Agent": "Mozilla/5.0"}, timeout=aiohttp.ClientTimeout(total=15)) as r:
+                return r.status
+    except Exception:
+        return 0
 
 async def recognize_audd(sess, path):
     if not AUDD_TOKEN:
@@ -270,7 +298,7 @@ async def main():
             print(f"  {int(t)//60:02d}:{int(t)%60:02d}  {tr['artist'] + ' - ' + tr['title'] if tr else '·'}", file=sys.stderr, flush=True)
             os.remove(c)
             t += a.every
-            await asyncio.sleep(1.5)
+            await asyncio.sleep(3)
             if len(RATE_LIMITED) >= len([p for p in PROVIDERS if p == 'shazam' or (p == 'audd' and AUDD_TOKEN) or (p == 'acrcloud' and ACR['KEY'])]):
                 print("  all identification providers unavailable, stopping early", file=sys.stderr); break
     if not any(h for _, h in hits) and RATE_LIMITED:

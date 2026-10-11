@@ -137,7 +137,7 @@ class H(BaseHTTPRequestHandler):
                 for k in order[::-1]:
                     j = jobs[k]
                     ids = sum(1 for l in j.get("log", []) if re.match(r"^\s+\d+:\d+\s+\S", l) and not l.rstrip().endswith("·"))
-                    last = next((l.strip() for l in reversed(j.get("log", [])) if re.match(r"^\s+\d+:\d+\s", l)), "")
+                    last = next((l.strip() for l in reversed(j.get("log", [])) if re.match(r"^\s+\d+:\d+\s", l) or "waiting for Shazam" in l or "shazam back" in l), "")
                     out.append({"key": k, "url": j["url"], "state": "running" if j["state"] == "adopted" else j["state"], "ids": ids, "last": last[:80], "duration": j.get("duration"),
                                 "position": active.index(k) if k in active else None, "started": j.get("started"), "finished": j.get("finished"), "queued": j.get("queued"), "title": j.get("title")})
             return self._send(200, {"now": time.time(), "jobs": out[:30]})
