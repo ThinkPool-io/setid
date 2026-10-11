@@ -130,7 +130,7 @@
     // tracklist
     $('#tl').innerHTML = segs.map((s, i) => {
       const t = s.track, inSl = t && state.setlist.some(x => x.id === t.id);
-      if (!t) return `<div class="row unk" data-i="${i}"><div class="ts">${ts(s.start)}</div><div></div><div><div class="ti">Unidentified</div><div class="ar">${ts(s.start)} to ${ts(s.end ?? src.duration)} · no confident match</div></div><div></div></div>`;
+      if (!t) return `<div class="row unk" data-i="${i}"><div class="ts">${ts(s.start)}</div><div style="grid-column:2/-1"><div class="ti">Unidentified</div><div class="ar">${ts(s.start)} to ${ts(s.end ?? src.duration)} · no confident match</div></div></div>`;
       const sims = (d.similar || {})[t.id] || [];
       return `<div class="row" data-i="${i}" data-seek="${s.start}">
         <div class="ts">${ts(s.start)}</div><img src="${t.cover || ''}" alt="" loading="lazy">
