@@ -24,6 +24,7 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.035em;line-height:.95}
 .g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gut)}
 .ic{width:18px;height:18px;flex:none;display:block}
 .hidden{display:none!important}
+img[src=""]{visibility:hidden}
 
 /* controls */
 .btn{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 var(--font);padding:11px 16px;background:transparent;color:var(--wh);border:1.5px solid var(--wh);cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
@@ -132,7 +133,7 @@ section.block{padding:64px 0}
 .ask{margin:44px 0 0;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;align-items:end}
 .ask .lbl{grid-column:1/-1;font-size:17px;color:var(--g1);font-weight:500}
 .ask input{font:700 clamp(56px,6vw,84px)/1 var(--font);letter-spacing:-.04em;background:transparent;color:var(--wh);border:0;border-bottom:2px solid var(--wh);padding:4px 0 8px;outline:0;width:100%;min-width:0}
-.ask input::placeholder{color:var(--g3)}.ask input:focus{border-color:var(--vm)}
+.ask input::placeholder{color:var(--g2)}.ask input:focus{border-color:var(--vm)}
 .ask .go{margin-bottom:12px}
 .ask .hint{grid-column:1/-1;margin-top:10px}
 .ans{grid-column:1/-1;margin-top:26px;display:flex;flex-direction:column;gap:4px;color:var(--g2);font-size:15px}
