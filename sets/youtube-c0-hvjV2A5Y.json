@@ -8,16 +8,19 @@
   "duration": 4304.0,
   "thumbnail": "https://i.ytimg.com/vi/c0-hvjV2A5Y/maxresdefault.jpg",
   "upload_date": "20220729",
-  "views": 56107097
+  "views": 56107322
  },
  "analysed": {
-  "seconds": 180.0,
+  "providers": [
+   "shazam"
+  ],
+  "seconds": 4304.0,
   "every": 40.0,
   "clip": 12,
-  "samples": 5,
-  "identified": 3,
-  "ran_at": "2026-10-11T14:22:57Z",
-  "took": 58
+  "samples": 108,
+  "identified": 87,
+  "ran_at": "2026-10-11T15:06:47Z",
+  "took": 528
  },
  "segments": [
   {
@@ -38,8 +41,9 @@
     "label": "Atlantic Records UK",
     "released": "2021",
     "shazam": "https://www.shazam.com/track/628688617/nathan-still-breathing",
-    "apple": "https://music.apple.com/gb/album/nathan-still-breathing/1640463893?i=1640464456",
+    "apple": "https://play.google.com/store/apps/details?id=com.apple.android.music&referrer=utm_source=https%3A%2F%2Fmusic.apple.com%2Fsubscribe%3Fmttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_android_am%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_android_am",
     "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d0/13/e3/d013e3ed-130a-9ea7-a6fc-ac01d6f1fa53/mzaf_15041583760344379107.plus.aac.ep.m4a",
+    "provider": "shazam",
     "bpm": null,
     "deezer": "https://www.deezer.com/track/1912892307",
     "isrc": "GBAHS2201032",
@@ -60,8 +64,9 @@
     "label": "Housearth Records",
     "released": "2011",
     "shazam": "https://www.shazam.com/track/62420207/black-waters",
-    "apple": "https://music.apple.com/gb/album/black-waters/416368254?i=416368258",
+    "apple": "https://play.google.com/store/apps/details?id=com.apple.android.music&referrer=utm_source=https%3A%2F%2Fmusic.apple.com%2Fsubscribe%3Fmttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_android_am%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_android_am",
     "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/cd/61/9c/cd619c1b-8a14-ced9-072d-8b54abd69de9/mzaf_10734209110697429722.plus.aac.ep.m4a",
+    "provider": "shazam",
     "bpm": 128.8,
     "deezer": "https://www.deezer.com/track/15037478",
     "isrc": "GBKQU1130980",
@@ -72,7 +77,7 @@
   },
   {
    "start": 160.0,
-   "end": null,
+   "end": 400.0,
    "track": {
     "id": "sz628688652",
     "title": "Kammy (like i do)",
@@ -84,13 +89,453 @@
     "shazam": "https://www.shazam.com/track/628688652/kammy-like-i-do",
     "apple": "https://music.apple.com/gb/album/kammy-like-i-do/1640463893?i=1640463909",
     "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fb/b4/11/fbb411fa-e979-f9ff-aa4a-ea4fc1c13778/mzaf_1203344259925032488.plus.aac.ep.m4a",
+    "provider": "shazam",
     "bpm": null,
     "deezer": "https://www.deezer.com/track/1912892277",
     "isrc": "GBAHS2201029",
     "youtube": "H80SKrO_dIM",
     "youtubeTitle": "Fred again.. - Kammy (like i do) [Visualiser]"
    },
+   "hits": 6
+  },
+  {
+   "start": 400.0,
+   "end": 600.0,
+   "track": {
+    "id": "sz626607906",
+    "title": "Danielle (smile on my face)",
+    "artist": "Fred again..",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/9c/b7/b09cb72c-cca9-5d66-bc9d-a9b5e5f86b22/5054197236389.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2022",
+    "shazam": "https://www.shazam.com/track/626607906/danielle-smile-on-my-face",
+    "apple": "https://music.apple.com/gb/album/danielle-smile-on-my-face/1640463893?i=1640464458",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4e/4c/47/4e4c4742-d67b-37d5-e08a-1313a90a9576/mzaf_3233479282033759522.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1894584167",
+    "isrc": "GBAHS2201033",
+    "youtube": "qJ1GBL1TPLg",
+    "youtubeTitle": "Fred again.. - Danielle (smile on my face)"
+   },
+   "hits": 5
+  },
+  {
+   "start": 600.0,
+   "end": 800.0,
+   "track": {
+    "id": "sz591262572",
+    "title": "Tanya (Maybe Life)",
+    "artist": "Fred again..",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/33/63/70/336370d7-e9d8-dad9-a8ec-2e21680366c6/190296363337.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2021",
+    "shazam": "https://www.shazam.com/track/591262572/tanya-maybe-life",
+    "apple": "https://music.apple.com/gb/album/tanya-maybe-life/1594208592?i=1594208605",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/55/9f/3e/559f3ea1-a6f7-a5fc-3621-6e2d01d529b0/mzaf_9235659615528515798.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1548255562",
+    "isrc": "GBAHS2101343",
+    "youtube": "6RDpRgBmODI",
+    "youtubeTitle": "Tanya (maybe life)"
+   },
+   "hits": 5
+  },
+  {
+   "start": 800.0,
+   "end": 1080.0,
+   "track": {
+    "id": "sz628688618",
+    "title": "Delilah (pull me out of this)",
+    "artist": "Fred again.. & Delilah Montagu",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/9c/b7/b09cb72c-cca9-5d66-bc9d-a9b5e5f86b22/5054197236389.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2021",
+    "shazam": "https://www.shazam.com/track/628688618/delilah-pull-me-out-of-this",
+    "apple": "https://music.apple.com/gb/album/delilah-pull-me-out-of-this/1640463893?i=1640463908",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b7/52/49/b75249d5-f30c-15bd-b6b6-2b2592a8273f/mzaf_12012436900937691617.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1924777117",
+    "isrc": "GBAHS2201028",
+    "youtube": "Cl6Rz1Uvi2M",
+    "youtubeTitle": "Fred again.. - Delilah (pull me out of this)"
+   },
+   "hits": 7
+  },
+  {
+   "start": 1080.0,
+   "end": 1120.0,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 1120.0,
+   "end": 1320.0,
+   "track": {
+    "id": "sz673883729",
+    "title": "BBY vs. Real As It Gets",
+    "artist": "mason messiah",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b5/9f/24/b59f2433-b683-f1fa-c578-b6c7b14083dc/artwork.jpg/400x400cc.jpg",
+    "genre": "House",
+    "label": "eulen",
+    "released": "2023",
+    "shazam": "https://www.shazam.com/track/673883729/bby-vs-real-as-it-gets",
+    "apple": "https://music.apple.com/gb/album/bby-vs-real-as-it-gets/1700334862?i=1700334863",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/2d/66/fd/2d66fd3b-eebb-4904-28f7-1a551bfb7fb9/mzaf_13301948820761149557.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "youtube": "nXFD4k0tBZU",
+    "youtubeTitle": "Overmono vs. Lil Baby - BBY vs. Real As It Gets (Fred again.. Bootleg)"
+   },
+   "hits": 5
+  },
+  {
+   "start": 1320.0,
+   "end": 1360.0,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 1360.0,
+   "end": 1520.0,
+   "track": {
+    "id": "sz640169907",
+    "title": "Stay With Me",
+    "artist": "Skrillex",
+    "cover": null,
+    "genre": null,
+    "label": null,
+    "released": null,
+    "shazam": "https://www.shazam.com/track/640169907/stay-with-me",
+    "apple": "https://music.apple.com/subscribe?mttnagencyid=s2n",
+    "provider": "shazam",
+    "youtube": "HDJJoH1o17M",
+    "youtubeTitle": "Skrillex - Stay with me (Sentsu Clean)"
+   },
+   "hits": 4
+  },
+  {
+   "start": 1520.0,
+   "end": 1600.0,
+   "track": {
+    "id": "sz514449363",
+    "title": "Haribo",
+    "artist": "Matt Jam Lamont, Echelon (UKG) & Smokey Bubblin' B",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/fa/36/27/fa3627e3-f9d5-9bf9-73cd-90468317e122/cover.jpg/400x400cc.jpg",
+    "genre": "Garage",
+    "label": "Undagrnd Freqz",
+    "released": "2020",
+    "shazam": "https://www.shazam.com/track/514449363/haribo",
+    "apple": "https://play.google.com/store/apps/details?id=com.apple.android.music&referrer=utm_source=https%3A%2F%2Fmusic.apple.com%2Fsubscribe%3Fmttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_android_am%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_android_am",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a5/cf/9c/a5cf9cc7-fecf-f202-5186-16582df4a2fc/mzaf_17779732556555223424.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "youtube": "kU_ZLST2o8M",
+    "youtubeTitle": "Matt Jam Lamont, Echelon, Smokey Bubblin' B - Haribo (Undagrnd Freqz)"
+   },
+   "hits": 2
+  },
+  {
+   "start": 1600.0,
+   "end": 1920.0,
+   "track": {
+    "id": "sz626863525",
+    "title": "()v\u022f)) \u0337\u0328\u0285(\u06dd\u0285(\u019f\u0285():::()\u0335\u0333\u0317\u030a(\u019f\u0285()v\u022f)) \u0337\u0328\u0285",
+    "artist": "\u28ce\u2847\ua27a\u10da\u0f3d\u0b87\u2022\u031b)\u0f80\u25de \u0f0e\u0eb6 \u0f3d\u09e3\u09e2\u061e\u09e2\u061e\u0616 \ua27a\u10da",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/c9/fc/6b/c9fc6b10-af52-3f5f-11a2-cf7109cdd9a3/3663729216762_cover.jpg/400x400cc.jpg",
+    "genre": "Dance",
+    "label": "v\u022f)) \u0337\u0328\u0285v\u022f)) \u0337\u0328\u0285(\u019f\u0285()(\u019f\u0285()",
+    "released": "2022",
+    "shazam": "https://www.shazam.com/track/626863525/v%C8%AF-%CA%85-%CA%85-%C9%B5%CA%85-%C9%B5%CA%85-v%C8%AF-%CA%85",
+    "apple": "https://play.google.com/store/apps/details?id=com.apple.android.music&referrer=utm_source=https%3A%2F%2Fmusic.apple.com%2Fsubscribe%3Fmttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_android_am%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_android_am",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e5/a1/1e/e5a11e0a-6efb-6498-3c78-30e251174d3a/mzaf_6633110955166083031.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "youtube": "3xjW6FjuYaQ",
+    "youtubeTitle": "The Spongebob Movie: Sponge Out of Water | Twerking | Paramount Pictures Australia"
+   },
+   "hits": 8
+  },
+  {
+   "start": 1920.0,
+   "end": 2080.0,
+   "track": {
+    "id": "sz638038258",
+    "title": "Strong",
+    "artist": "Romy & Fred again..",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/57/b4/ea/57b4ea8d-85da-0a6a-49f5-a7d932ab6e9f/889030032072.png/400x400cc.jpg",
+    "genre": "Dance",
+    "label": "Young",
+    "released": "2022",
+    "shazam": "https://www.shazam.com/track/638038258/strong",
+    "apple": "https://music.apple.com/gb/album/strong/1688051982?i=1688052748",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8f/d2/8b/8fd28b76-e0c2-a59e-89f2-1a1f24d38d0f/mzaf_7570887343019916139.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1974590787",
+    "isrc": "UK7MC2200175",
+    "youtube": "3aFF09jjZwk",
+    "youtubeTitle": "Romy & Fred again.. - Strong"
+   },
+   "hits": 4
+  },
+  {
+   "start": 2080.0,
+   "end": 2120.0,
+   "track": {
+    "id": "sz443300629",
+    "title": "Ek Dafaa (Live)",
+    "artist": "Badshah & Aastha Gill",
+    "cover": null,
+    "genre": null,
+    "label": null,
+    "released": null,
+    "shazam": "https://www.shazam.com/track/443300629/ek-dafaa-live",
+    "apple": "https://music.apple.com/subscribe?mttnagencyid=s2n",
+    "provider": "shazam",
+    "youtube": "t6PcXFVTf4Q",
+    "youtubeTitle": "Buzz - Live @ Amazon Great Indian Festival | Aastha | Badshah"
+   },
    "hits": 1
+  },
+  {
+   "start": 2120.0,
+   "end": 2360.0,
+   "track": {
+    "id": "sz624407205",
+    "title": "Turn On The Lights again.. (feat. Future)",
+    "artist": "Fred again.. & Swedish House Mafia",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2022",
+    "shazam": "https://www.shazam.com/track/624407205/turn-on-the-lights-again-feat-future",
+    "apple": "https://music.apple.com/gb/album/turn-on-the-lights-again-feat-future/1884102759?i=1884104110",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a9/a7/c0/a9a7c039-ad58-8639-6f8d-56c66104b11f/mzaf_17552821238365252859.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1832599647",
+    "isrc": "GBAHS2201001",
+    "youtube": "Q22MCFC0CP0",
+    "youtubeTitle": "Fred again.. x Swedish House Mafia - Turn On The Lights again.. (feat. Future) [Visualiser]"
+   },
+   "hits": 6
+  },
+  {
+   "start": 2360.0,
+   "end": 2560.0,
+   "track": {
+    "id": "sz618689012",
+    "title": "Jungle",
+    "artist": "Fred again..",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2022",
+    "shazam": "https://www.shazam.com/track/618689012/jungle",
+    "apple": "https://play.google.com/store/apps/details?id=com.apple.android.music&referrer=utm_source=https%3A%2F%2Fmusic.apple.com%2Fsubscribe%3Fmttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_android_am%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_android_am",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/52/1a/40/521a4041-c628-be75-750b-c3b459a2f2b0/mzaf_5703016986638203365.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1782377777",
+    "isrc": "GBAHS2200844",
+    "youtube": "zBp7KBmgsdU",
+    "youtubeTitle": "Fred again.. - Jungle (18 June 2022)"
+   },
+   "hits": 5
+  },
+  {
+   "start": 2560.0,
+   "end": 2760.0,
+   "track": {
+    "id": "sz600822212",
+    "title": "Lights Out (HAAi Remix)",
+    "artist": "Fred again.., Romy & HAAi",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2022",
+    "shazam": "https://www.shazam.com/track/600822212/lights-out-haai-remix",
+    "apple": "https://music.apple.com/gb/album/lights-out-haai-remix/1884102759?i=1884105052",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/88/1d/65/881d657c-5a1b-38d3-63d8-2ca9d5863638/mzaf_4893762577302233371.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1625506132",
+    "isrc": "GBAHS2200004",
+    "youtube": "oXMrkydM6cY",
+    "youtubeTitle": "Lights Out (feat. Fred again..) (HAAi Remix)"
+   },
+   "hits": 5
+  },
+  {
+   "start": 2760.0,
+   "end": 2920.0,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 2920.0,
+   "end": 3360.0,
+   "track": {
+    "id": "sz626212250",
+    "title": "Baby again..",
+    "artist": "Fred again.., Skrillex & Four Tet",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2022",
+    "shazam": "https://www.shazam.com/track/626212250/baby-again",
+    "apple": "https://music.apple.com/gb/album/baby-again/1884102759?i=1884103796",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fb/49/fc/fb49fc5c-d672-95f9-8483-c44366c8d636/mzaf_12500924428364593841.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/2183959307",
+    "isrc": "GBAHS2300215",
+    "youtube": "uV_QtFVDV-0",
+    "youtubeTitle": "Baby again.."
+   },
+   "hits": 10
+  },
+  {
+   "start": 3360.0,
+   "end": 3400.0,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 3400.0,
+   "end": 3680.0,
+   "track": {
+    "id": "sz626212254",
+    "title": "Rumble",
+    "artist": "Skrillex, Fred again.. & Flowdan",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2022",
+    "shazam": "https://www.shazam.com/track/626212254/rumble",
+    "apple": "https://music.apple.com/gb/album/rumble/1884102759?i=1884104099",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cb/82/3f/cb823f33-f03a-7f46-1b31-4bba23b14784/mzaf_14524429634738751248.plus.aac.p.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/2077255967",
+    "isrc": "USAT22221613",
+    "youtube": "i8Vgo5S-_NM",
+    "youtubeTitle": "Skrillex, Fred again.. & Flowdan - Rumble [Official Music Video]"
+   },
+   "hits": 6
+  },
+  {
+   "start": 3680.0,
+   "end": 3960.0,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 3960.0,
+   "end": 4000.0,
+   "track": {
+    "id": "sz563783823",
+    "title": "Angie (I\u2019ve Been Lost)",
+    "artist": "Fred again..",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2c/b7/4f/2cb74fc9-7c37-a56e-2b57-7c284f224695/190295058562.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2021",
+    "shazam": "https://www.shazam.com/track/563783823/angie-ive-been-lost",
+    "apple": "https://music.apple.com/gb/album/angie-ive-been-lost/1560355896?i=1560355912",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ba/b2/c9/bab2c987-4774-bed2-8aa8-144f933ca4b7/mzaf_11719953446840972419.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1299712272",
+    "isrc": "GBAHS2100156",
+    "youtube": "YPlR8gyVtWs",
+    "youtubeTitle": "Fred again.. - Angie (I've Been Lost)"
+   },
+   "hits": 1
+  },
+  {
+   "start": 4000.0,
+   "end": 4080.0,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 4080.0,
+   "end": 4160.0,
+   "track": {
+    "id": "sz628688602",
+    "title": "Clara (the night is dark)",
+    "artist": "Fred again..",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/9c/b7/b09cb72c-cca9-5d66-bc9d-a9b5e5f86b22/5054197236389.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2021",
+    "shazam": "https://www.shazam.com/track/628688602/clara-the-night-is-dark",
+    "apple": "https://play.google.com/store/apps/details?id=com.apple.android.music&referrer=utm_source=https%3A%2F%2Fmusic.apple.com%2Fsubscribe%3Fmttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_android_am%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_android_am",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b5/3f/c9/b53fc9c4-3dd5-200b-a6b9-c7c79748d1e2/mzaf_2340088130428479239.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1912892347",
+    "isrc": "GBAHS2201036",
+    "youtube": "97DXQTS3pFU",
+    "youtubeTitle": "Fred again.. - Clara (the night is dark)[Visualiser]"
+   },
+   "hits": 2
+  },
+  {
+   "start": 4160.0,
+   "end": 4240.0,
+   "track": {
+    "id": "sz563783823",
+    "title": "Angie (I\u2019ve Been Lost)",
+    "artist": "Fred again..",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2c/b7/4f/2cb74fc9-7c37-a56e-2b57-7c284f224695/190295058562.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2021",
+    "shazam": "https://www.shazam.com/track/563783823/angie-ive-been-lost",
+    "apple": "https://music.apple.com/gb/album/angie-ive-been-lost/1560355896?i=1560355912",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ba/b2/c9/bab2c987-4774-bed2-8aa8-144f933ca4b7/mzaf_11719953446840972419.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1299712272",
+    "isrc": "GBAHS2100156",
+    "youtube": "YPlR8gyVtWs",
+    "youtubeTitle": "Fred again.. - Angie (I've Been Lost)"
+   },
+   "hits": 2
+  },
+  {
+   "start": 4240.0,
+   "end": 4280.0,
+   "track": {
+    "id": "sz628688602",
+    "title": "Clara (the night is dark)",
+    "artist": "Fred again..",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/9c/b7/b09cb72c-cca9-5d66-bc9d-a9b5e5f86b22/5054197236389.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2021",
+    "shazam": "https://www.shazam.com/track/628688602/clara-the-night-is-dark",
+    "apple": "https://play.google.com/store/apps/details?id=com.apple.android.music&referrer=utm_source=https%3A%2F%2Fmusic.apple.com%2Fsubscribe%3Fmttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_android_am%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_android_am",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b5/3f/c9/b53fc9c4-3dd5-200b-a6b9-c7c79748d1e2/mzaf_2340088130428479239.plus.aac.ep.m4a",
+    "provider": "shazam",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1912892347",
+    "isrc": "GBAHS2201036",
+    "youtube": "97DXQTS3pFU",
+    "youtubeTitle": "Fred again.. - Clara (the night is dark)[Visualiser]"
+   },
+   "hits": 1
+  },
+  {
+   "start": 4280.0,
+   "end": null,
+   "track": null,
+   "hits": 0
   }
  ],
  "similar": {
@@ -99,37 +544,37 @@
     "artist": "Duskus",
     "title": "Let Go",
     "why": "listeners of this also play",
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3?hdnea=exp=1791729457~acl=/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3*~data=user_id=0,application_id=42~hmac=f755e0e7cfc0bb323cf239db9605a3147b9433fc7b21bd941ed24173450d0009",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3?hdnea=exp=1791731940~acl=/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3*~data=user_id=0,application_id=42~hmac=b2c93883534012da53cab44823af264a2390a308bdae273af1c99f2e3e28ee77",
     "cover": "https://cdn-images.dzcdn.net/images/cover/bd11f26b787b2bd9dbb9e3d951a35276/250x250-000000-80-0-0.jpg",
     "deezer": "https://www.deezer.com/track/1698158287",
     "bpm": null,
     "youtube": "GnhJ6SYzCuk",
     "youtubeTitle": "Duskus - Let Go (Official Video)",
-    "id": "sim980072790"
+    "id": "sim773137095"
    },
    {
     "artist": "Barry Can\u2019t Swim & Taite Imogen",
     "title": "God Is the Space Between Us",
     "why": "listeners of this also play",
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3?hdnea=exp=1791729458~acl=/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3*~data=user_id=0,application_id=42~hmac=4bd1a003df2ebd2565e00d6b8b1caa49878d59eebe5689337a3061afd18131fc",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3?hdnea=exp=1791731942~acl=/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3*~data=user_id=0,application_id=42~hmac=1985ed90b65ad38de2c4af180dfd36a526b990565f637c8d3f0a70f726b5ca7b",
     "cover": "https://cdn-images.dzcdn.net/images/cover/ad637b17e293164511b322e6f3893df2/250x250-000000-80-0-0.jpg",
     "deezer": "https://www.deezer.com/track/1677376967",
     "bpm": null,
     "youtube": "hYHomCDmYe0",
     "youtubeTitle": "Barry Can\u2019t Swim - 'God Is The Space Between Us (feat. Taite Imogen)' (Official Audio)",
-    "id": "sim898594333"
+    "id": "sim634881099"
    },
    {
     "artist": "Ben B\u00f6hmer",
     "title": "Begin Again",
     "why": "listeners of this also play",
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/3/3/0/9338957ddc1d6d5dda72ee988f9813d5.mp3?hdnea=exp=1791729460~acl=/api/1/1/9/3/3/0/9338957ddc1d6d5dda72ee988f9813d5.mp3*~data=user_id=0,application_id=42~hmac=65d05ea9601840a49b7d25b63b3f232f5e7980f95fdbdb1165acbe0519adb9c4",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/3/3/0/9338957ddc1d6d5dda72ee988f9813d5.mp3?hdnea=exp=1791731943~acl=/api/1/1/9/3/3/0/9338957ddc1d6d5dda72ee988f9813d5.mp3*~data=user_id=0,application_id=42~hmac=f4a5bb50d2dd459389a7bf3977a6d7c69a21c89cac62b90277374cf41a4815e4",
     "cover": "https://cdn-images.dzcdn.net/images/cover/6ca6da475f75cea1995988b7ef1f0a4a/250x250-000000-80-0-0.jpg",
     "deezer": "https://www.deezer.com/track/1496292942",
     "bpm": null,
     "youtube": "p8cYGrK_WyA",
     "youtubeTitle": "Ben B\u00f6hmer - Begin Again (Official Visualiser)",
-    "id": "sim422245686"
+    "id": "sim517731832"
    },
    {
     "artist": "Swimming Paul",
@@ -137,11 +582,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/2712744241",
     "deezerId": 2712744241,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3?hdnea=exp=1791729457~acl=/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3*~data=user_id=0,application_id=42~hmac=b5036d8b53f12d044a492bea179457a7e7d6aa51aca9414c823937a3ec312258",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3?hdnea=exp=1791731940~acl=/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3*~data=user_id=0,application_id=42~hmac=9b7103f981a7ca27cc31f6bfdf462eb85fafc530018e5a48985e9bf707fbf2ff",
     "cover": "https://cdn-images.dzcdn.net/images/cover/449bdc2e7e00ab241a2b53658fd82fb1/250x250-000000-80-0-0.jpg",
     "youtube": "dmxJIc3M7LI",
     "youtubeTitle": "Swimming Paul - Vhs",
-    "id": "sim391847407"
+    "id": "sim430087552"
    },
    {
     "artist": "Swimming Paul",
@@ -149,11 +594,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/4138760131",
     "deezerId": 4138760131,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3?hdnea=exp=1791729457~acl=/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3*~data=user_id=0,application_id=42~hmac=cfc1cb8aefeace109ca4f5da22d49def8c570efa935e953048513a850ec0f537",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3?hdnea=exp=1791731940~acl=/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3*~data=user_id=0,application_id=42~hmac=b716e007b3c9c392b04f7c480f6aaa5037e7d5ab2af316e897b77279737d05b3",
     "cover": "https://cdn-images.dzcdn.net/images/cover/6e2626ea508d0eeb0a28bc7da2f9c3f5/250x250-000000-80-0-0.jpg",
     "youtube": "VC9HBeLarDM",
     "youtubeTitle": "Swimming Paul, LP Giobbi - Stay Cool",
-    "id": "sim662956723"
+    "id": "sim986672339"
    },
    {
     "artist": "Barry Can\u2019t Swim",
@@ -161,11 +606,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/3953713231",
     "deezerId": 3953713231,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3?hdnea=exp=1791729457~acl=/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3*~data=user_id=0,application_id=42~hmac=fbecf8114d5c706f297a6de78ca8e95684ff610e89f9769442a71c1c7466e9f0",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3?hdnea=exp=1791731940~acl=/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3*~data=user_id=0,application_id=42~hmac=ea8bfc0db19f1de012d6c6cb66bf6aa683a0e2c975538a77ba18b317fad41aab",
     "cover": "https://cdn-images.dzcdn.net/images/cover/83752f81151d3f9c9d7a846eb65fb5f2/250x250-000000-80-0-0.jpg",
     "youtube": "4cPwPHzExSA",
     "youtubeTitle": "Barry Can't Swim - Dance Dance Dance! (Official Music Video)",
-    "id": "sim536869664"
+    "id": "sim881547613"
    },
    {
     "artist": "Barry Can\u2019t Swim",
@@ -173,11 +618,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/4250155941",
     "deezerId": 4250155941,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3?hdnea=exp=1791729457~acl=/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3*~data=user_id=0,application_id=42~hmac=ad001f8f67ad9074ca0612843dd93aec19b3484a5f3d62ae5739cd8df1de5488",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3?hdnea=exp=1791731940~acl=/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3*~data=user_id=0,application_id=42~hmac=ad3867e529de96cbfd18d5a3f6505dafe3e482eb145f244fc99a812320395dbe",
     "cover": "https://cdn-images.dzcdn.net/images/cover/f3bcdd1e89d00840ebdeb8fe768c4a7e/250x250-000000-80-0-0.jpg",
     "youtube": "H0lSZrcL4oY",
     "youtubeTitle": "Barry Can't Swim x Sammy Virji - I Could Be Madonna (Official Visualiser)",
-    "id": "sim498464793"
+    "id": "sim230572426"
    },
    {
     "artist": "Disclosure",
@@ -185,11 +630,11 @@
     "why": "related artist",
     "deezer": "https://www.deezer.com/track/75526535",
     "deezerId": 75526535,
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3?hdnea=exp=1791729457~acl=/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3*~data=user_id=0,application_id=42~hmac=ed84866182367d9bf09b0632e048c61fd891e52c1d775f81ac7b14ecde210784",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3?hdnea=exp=1791731940~acl=/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3*~data=user_id=0,application_id=42~hmac=e42cb3e44abd3d438bed3b8011aa636d0c0a93a041fdeb536b169052d74a5e19",
     "cover": "https://cdn-images.dzcdn.net/images/cover/e44468007c45f2523d056a0b19eed80a/250x250-000000-80-0-0.jpg",
     "youtube": "93ASUImTedo",
     "youtubeTitle": "Disclosure - Latch ft. Sam Smith",
-    "id": "sim576283521"
+    "id": "sim755499998"
    }
   ],
   "sz62420207": [],
@@ -198,49 +643,984 @@
     "artist": "Duskus",
     "title": "Let Go",
     "why": "listeners of this also play",
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3?hdnea=exp=1791729472~acl=/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3*~data=user_id=0,application_id=42~hmac=9749f3e01d976b0847eb0db609a655a47430a8fbaa02d8ec04790d451b771d1b",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3?hdnea=exp=1791731955~acl=/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3*~data=user_id=0,application_id=42~hmac=4a35cdf3519551bad6c630bd97cba8632ed61cd49ee17f496e99821573504f86",
     "cover": "https://cdn-images.dzcdn.net/images/cover/bd11f26b787b2bd9dbb9e3d951a35276/250x250-000000-80-0-0.jpg",
     "deezer": "https://www.deezer.com/track/1698158287",
     "bpm": null,
     "youtube": "GnhJ6SYzCuk",
     "youtubeTitle": "Duskus - Let Go (Official Video)",
-    "id": "sim980072790"
+    "id": "sim773137095"
    },
    {
     "artist": "Barry Can\u2019t Swim & Taite Imogen",
     "title": "God Is the Space Between Us",
     "why": "listeners of this also play",
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3?hdnea=exp=1791729473~acl=/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3*~data=user_id=0,application_id=42~hmac=df8e3deb05bee6d6b18ac9a39ce07dcdbf78f99af4603d49bc7fc89dacb65377",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3?hdnea=exp=1791731956~acl=/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3*~data=user_id=0,application_id=42~hmac=d85f287ae193efdf2df6ddd8ec1b875755a81dcaff32a7d29a14438144d28436",
     "cover": "https://cdn-images.dzcdn.net/images/cover/ad637b17e293164511b322e6f3893df2/250x250-000000-80-0-0.jpg",
     "deezer": "https://www.deezer.com/track/1677376967",
     "bpm": null,
     "youtube": "hYHomCDmYe0",
     "youtubeTitle": "Barry Can\u2019t Swim - 'God Is The Space Between Us (feat. Taite Imogen)' (Official Audio)",
-    "id": "sim898594333"
+    "id": "sim634881099"
    },
    {
     "artist": "Skrillex, Starrah & Four Tet",
     "title": "Butterflies",
     "why": "listeners of this also play",
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/7/d/0/17d7d10efbe446f717ec5be02a533532.mp3?hdnea=exp=1791729474~acl=/api/1/1/1/7/d/0/17d7d10efbe446f717ec5be02a533532.mp3*~data=user_id=0,application_id=42~hmac=7c1867a585c631f6c073d135ff3bf196060af4c0de77f3d6c1efcb27fe5e74e9",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/7/d/0/17d7d10efbe446f717ec5be02a533532.mp3?hdnea=exp=1791731957~acl=/api/1/1/1/7/d/0/17d7d10efbe446f717ec5be02a533532.mp3*~data=user_id=0,application_id=42~hmac=82c5d6d93bd070e1d5c8abcbff710b914095e9dea666460618e937fe9f744a7d",
     "cover": "https://cdn-images.dzcdn.net/images/cover/9da22875b9466d606251a7edff810a3f/250x250-000000-80-0-0.jpg",
     "deezer": "https://www.deezer.com/track/1366419422",
     "bpm": null,
     "youtube": "zliasEkWx0M",
     "youtubeTitle": "Skrillex, Starrah & Four Tet - Butterflies (Official Music Video)",
-    "id": "sim686474340"
+    "id": "sim929450091"
    },
    {
     "artist": "Skrillex, Noisia, josh pan & Dylan Brady",
     "title": "Supersonic (my existence)",
     "why": "listeners of this also play",
-    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/d/4/0/bd46bc6e3691cbd0755646cb96b37048.mp3?hdnea=exp=1791729476~acl=/api/1/1/b/d/4/0/bd46bc6e3691cbd0755646cb96b37048.mp3*~data=user_id=0,application_id=42~hmac=20c53d86dd35569dca6948b5db4a6a39c26c9bfed8d467c2771e11275d39b15d",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/d/4/0/bd46bc6e3691cbd0755646cb96b37048.mp3?hdnea=exp=1791731959~acl=/api/1/1/b/d/4/0/bd46bc6e3691cbd0755646cb96b37048.mp3*~data=user_id=0,application_id=42~hmac=d1121659607122fa49bb51a3f62748e677bf1e0395964e78f84400182e039f0f",
     "cover": "https://cdn-images.dzcdn.net/images/cover/0255bcabe0fe1a7eba082408cfd75a80/250x250-000000-80-0-0.jpg",
     "deezer": "https://www.deezer.com/track/1394903512",
     "bpm": null,
     "youtube": "U41bONK2V-U",
     "youtubeTitle": "Skrillex, Noisia, josh pan & Dylan Brady - Supersonic (My Existence) [Official Audio]",
-    "id": "sim849740413"
+    "id": "sim224879858"
+   }
+  ],
+  "sz626607906": [
+   {
+    "artist": "Duskus",
+    "title": "Let Go",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3?hdnea=exp=1791731966~acl=/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3*~data=user_id=0,application_id=42~hmac=96796555bd2552c619c521fea69a078744983264a6e19c0caf97a4f16ac50435",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/bd11f26b787b2bd9dbb9e3d951a35276/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1698158287",
+    "bpm": null,
+    "youtube": "GnhJ6SYzCuk",
+    "youtubeTitle": "Duskus - Let Go (Official Video)",
+    "id": "sim773137095"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim & Taite Imogen",
+    "title": "God Is the Space Between Us",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3?hdnea=exp=1791731967~acl=/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3*~data=user_id=0,application_id=42~hmac=23bdfe1bf47651ee2af5486cbf9440e596b371f3a0fa402f771546b474944b35",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/ad637b17e293164511b322e6f3893df2/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1677376967",
+    "bpm": null,
+    "youtube": "hYHomCDmYe0",
+    "youtubeTitle": "Barry Can\u2019t Swim - 'God Is The Space Between Us (feat. Taite Imogen)' (Official Audio)",
+    "id": "sim634881099"
+   },
+   {
+    "artist": "RSCL, it\u2019s murph & Twin Diplomacy feat. Jack August",
+    "title": "Lost",
+    "why": "listeners of this also play",
+    "youtube": "ZPygRnFfDg4",
+    "youtubeTitle": "RSCL, it's murph & Twin Diplomacy feat. Jack August - Lost (Deep House / Tech House)",
+    "id": "sim144932888"
+   },
+   {
+    "artist": "Mild Minds",
+    "title": "Formations",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/0/1/3/0/0138b263779bedd292a9c77e5e61fdb9.mp3?hdnea=exp=1791731970~acl=/api/1/1/0/1/3/0/0138b263779bedd292a9c77e5e61fdb9.mp3*~data=user_id=0,application_id=42~hmac=407777bdb88948ab9b79c610819ded34d9aff70e9c6c71d8e70c50e8cba252a2",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/8344f4de0f6c7f26336ac0b944ae8076/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/870080462",
+    "bpm": null,
+    "youtube": "zBkttXJyN50",
+    "youtubeTitle": "Mild Minds - Formations",
+    "id": "sim115063685"
+   },
+   {
+    "artist": "Skrillex & Bobby Raps",
+    "title": "Don\u2019t Leave Me Like This",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/5/1/0/25130ce880498ae6dc53db8c4a0e0861.mp3?hdnea=exp=1791731971~acl=/api/1/1/2/5/1/0/25130ce880498ae6dc53db8c4a0e0861.mp3*~data=user_id=0,application_id=42~hmac=1451a1cdf7c0416a0b8ec3a060638c30cc97f43ac98bf4a1a758683aefd3a175",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/4310739247e323854a6032a8db64d5c2/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/2153897877",
+    "bpm": null,
+    "youtube": "pP-GzB6kDx8",
+    "youtubeTitle": "Skrillex & Bobby Raps - Don't Leave Me Like This [Official Visualizer]",
+    "id": "sim75160088"
+   },
+   {
+    "artist": "D.O.D feat. Carla Monroe",
+    "title": "Still Sleepless",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/a/4/6/0/a46f0ccc64db0525451f6cd5b7376cdb.mp3?hdnea=exp=1791731972~acl=/api/1/1/a/4/6/0/a46f0ccc64db0525451f6cd5b7376cdb.mp3*~data=user_id=0,application_id=42~hmac=5808fc390212a071291f8a9221bc599d9766b47a2636855dc25c00add2a351f9",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/578bd3a4c6ec3d6db28f896049a5d717/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1468288322",
+    "bpm": null,
+    "youtube": "t5Da9RjQDgM",
+    "youtubeTitle": "D.O.D feat. Carla Monroe - Still Sleepless (Official Lyric Video)",
+    "id": "sim831723648"
+   },
+   {
+    "artist": "Swedish House Mafia & Connie Constance",
+    "title": "Heaven Takes You Home",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/e/a/0/cea748f5135a045bc834b2840f85538d.mp3?hdnea=exp=1791731974~acl=/api/1/1/c/e/a/0/cea748f5135a045bc834b2840f85538d.mp3*~data=user_id=0,application_id=42~hmac=1e6fc75ad99c09ebf77be7fec12ce25c59d60e211fbe2557719ed68b21e5acdf",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/9bd2f0768b8b53cb3338f546526796ec/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1713175737",
+    "bpm": null,
+    "youtube": "kYHoSET3SGU",
+    "youtubeTitle": "Swedish House Mafia and Connie Constance - Heaven Takes You Home (Connies Lens)",
+    "id": "sim103355357"
+   },
+   {
+    "artist": "Ben B\u00f6hmer",
+    "title": "Begin Again",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/3/3/0/9338957ddc1d6d5dda72ee988f9813d5.mp3?hdnea=exp=1791731975~acl=/api/1/1/9/3/3/0/9338957ddc1d6d5dda72ee988f9813d5.mp3*~data=user_id=0,application_id=42~hmac=5fdc2c8ca5e785f08e005e12c976f48a6d6edc20b2e1d98641e07d60168c1de8",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6ca6da475f75cea1995988b7ef1f0a4a/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1496292942",
+    "bpm": null,
+    "youtube": "p8cYGrK_WyA",
+    "youtubeTitle": "Ben B\u00f6hmer - Begin Again (Official Visualiser)",
+    "id": "sim517731832"
+   }
+  ],
+  "sz591262572": [
+   {
+    "artist": "Swimming Paul",
+    "title": "Vhs",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2712744241",
+    "deezerId": 2712744241,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3?hdnea=exp=1791731980~acl=/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3*~data=user_id=0,application_id=42~hmac=944e418983e88bc2a485cb9ce23192b4298df3e7e9a08c5b3f94aa2c072f492e",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/449bdc2e7e00ab241a2b53658fd82fb1/250x250-000000-80-0-0.jpg",
+    "youtube": "dmxJIc3M7LI",
+    "youtubeTitle": "Swimming Paul - Vhs",
+    "id": "sim430087552"
+   },
+   {
+    "artist": "Swimming Paul",
+    "title": "Stay Cool",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4138760131",
+    "deezerId": 4138760131,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3?hdnea=exp=1791731980~acl=/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3*~data=user_id=0,application_id=42~hmac=6f692ccbd51c5aa5997e7ac61103e45cbc3d476a24f8b9e5e75b4a141c18d1e4",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6e2626ea508d0eeb0a28bc7da2f9c3f5/250x250-000000-80-0-0.jpg",
+    "youtube": "VC9HBeLarDM",
+    "youtubeTitle": "Swimming Paul, LP Giobbi - Stay Cool",
+    "id": "sim986672339"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim",
+    "title": "Dance Dance Dance!",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3953713231",
+    "deezerId": 3953713231,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3?hdnea=exp=1791731980~acl=/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3*~data=user_id=0,application_id=42~hmac=81ad585c17710bea544a7e311b6cae6f4daf4245c2e5abdad832c6bab859d40e",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/83752f81151d3f9c9d7a846eb65fb5f2/250x250-000000-80-0-0.jpg",
+    "youtube": "4cPwPHzExSA",
+    "youtubeTitle": "Barry Can't Swim - Dance Dance Dance! (Official Music Video)",
+    "id": "sim881547613"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim",
+    "title": "I Could Be Madonna",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4250155941",
+    "deezerId": 4250155941,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3?hdnea=exp=1791731980~acl=/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3*~data=user_id=0,application_id=42~hmac=8fd7cf05961b24c9a0fd989aa068f6d05609631304e4f855db5d26ca63afc3ba",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/f3bcdd1e89d00840ebdeb8fe768c4a7e/250x250-000000-80-0-0.jpg",
+    "youtube": "H0lSZrcL4oY",
+    "youtubeTitle": "Barry Can't Swim x Sammy Virji - I Could Be Madonna (Official Visualiser)",
+    "id": "sim230572426"
+   },
+   {
+    "artist": "Disclosure",
+    "title": "Latch",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/75526535",
+    "deezerId": 75526535,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3?hdnea=exp=1791731980~acl=/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3*~data=user_id=0,application_id=42~hmac=800a0462b6df084e6fd6db9e1cbbbbbdc9ecc62d1758c3ce3a5b51e084ae1056",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/e44468007c45f2523d056a0b19eed80a/250x250-000000-80-0-0.jpg",
+    "youtube": "93ASUImTedo",
+    "youtubeTitle": "Disclosure - Latch ft. Sam Smith",
+    "id": "sim755499998"
+   },
+   {
+    "artist": "Disclosure",
+    "title": "She\u2019s Gone, Dance On",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2813082002",
+    "deezerId": 2813082002,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/a/5/0/da5442aa71926d30be4299cb6bce0f4a.mp3?hdnea=exp=1791731980~acl=/api/1/1/d/a/5/0/da5442aa71926d30be4299cb6bce0f4a.mp3*~data=user_id=0,application_id=42~hmac=0f3fd4677382fc2614001efb888bbb05cba7d79647a973f160816eb12e552773",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/1346ad41412c615634a6aeee94eb70ca/250x250-000000-80-0-0.jpg",
+    "youtube": "QZrcXTHqQ_c",
+    "youtubeTitle": "Disclosure - She\u2019s Gone, Dance On (Official Video)",
+    "id": "sim579146579"
+   }
+  ],
+  "sz628688618": [
+   {
+    "artist": "Duskus",
+    "title": "Let Go",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3?hdnea=exp=1791731989~acl=/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3*~data=user_id=0,application_id=42~hmac=cc24b7839acaa5cfcaae62b9a9f10be893a28a10dd22b3b9a799a8d82e921d60",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/bd11f26b787b2bd9dbb9e3d951a35276/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1698158287",
+    "bpm": null,
+    "youtube": "GnhJ6SYzCuk",
+    "youtubeTitle": "Duskus - Let Go (Official Video)",
+    "id": "sim773137095"
+   },
+   {
+    "artist": "Skrillex, Missy Elliott & Mr. Oizo",
+    "title": "RATATA",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/d/5/0/4d5c07b1f854c1697f3e11652c910ce3.mp3?hdnea=exp=1791731991~acl=/api/1/1/4/d/5/0/4d5c07b1f854c1697f3e11652c910ce3.mp3*~data=user_id=0,application_id=42~hmac=330f8f0cc9ea5778f7377a4ea8c80548c3119b4fd7dfe36b8c31af34eb7419e2",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/0c9feaff1f4b1b6855a3fb78fcc8ff44/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/2150143827",
+    "bpm": null,
+    "youtube": "xkejbXejA-0",
+    "youtubeTitle": "Skrillex, Missy Elliott, & Mr. Oizo - RATATA [Official Visualizer]",
+    "id": "sim254435001"
+   },
+   {
+    "artist": "LF SYSTEM",
+    "title": "Afraid to Feel",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/e/e/0/dee4954de339d12cfa709a9de08c944f.mp3?hdnea=exp=1791731992~acl=/api/1/1/d/e/e/0/dee4954de339d12cfa709a9de08c944f.mp3*~data=user_id=0,application_id=42~hmac=60167ce58219561361b4cef8fabb2c872a246ae143e6de6e703766c1548e1347",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/cd5a4a6939e4a368f36067d804bb6124/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1703521177",
+    "bpm": null,
+    "youtube": "VHSmO_72Uro",
+    "youtubeTitle": "LF SYSTEM - Afraid To Feel (Official Lyric Video)",
+    "id": "sim152777385"
+   },
+   {
+    "artist": "Calvin Harris & Ellie Goulding",
+    "title": "Miracle",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/3/8/0/138c92685098e1ea748fadb6d886d70f.mp3?hdnea=exp=1791731994~acl=/api/1/1/1/3/8/0/138c92685098e1ea748fadb6d886d70f.mp3*~data=user_id=0,application_id=42~hmac=7d115d15ef7d606cb6ab7156eb9ad595da297ada16796e8b53ad259176d0bd72",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/5d0eb93aa3aa10117214550413ebf959/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/2182322087",
+    "bpm": null,
+    "youtube": "961v0E3b01g",
+    "youtubeTitle": "Calvin Harris, Ellie Goulding - Miracle (Official Video)",
+    "id": "sim971688194"
+   },
+   {
+    "artist": "Taylor Swift",
+    "title": "Anti\u2010Hero",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/1/1/0/4110a4ad9a0f2dfd6ff84a7bffad5a46.mp3?hdnea=exp=1791731995~acl=/api/1/1/4/1/1/0/4110a4ad9a0f2dfd6ff84a7bffad5a46.mp3*~data=user_id=0,application_id=42~hmac=773134a38936d3bfc842b0ec9b3a4ee78bfc7b8edf8af8f0a97228aa4a60863f",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/f571cb780b339ec087201b1cea53c3d9/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1976903157",
+    "bpm": null,
+    "youtube": "b1kbLwvqugk",
+    "youtubeTitle": "Taylor Swift - Anti-Hero (Official Music Video)",
+    "id": "sim85615891"
+   },
+   {
+    "artist": "RSCL, it\u2019s murph & Twin Diplomacy feat. Jack August",
+    "title": "Lost",
+    "why": "listeners of this also play",
+    "youtube": "ZPygRnFfDg4",
+    "youtubeTitle": "RSCL, it's murph & Twin Diplomacy feat. Jack August - Lost (Deep House / Tech House)",
+    "id": "sim144932888"
+   },
+   {
+    "artist": "Eliza Rose & Interplanetary Criminal",
+    "title": "B.O.T.A. (Baddest of Them All) (edit)",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/8/9/b/0/89b3a2ac52ead4715ab93b464554667d.mp3?hdnea=exp=1791731998~acl=/api/1/1/8/9/b/0/89b3a2ac52ead4715ab93b464554667d.mp3*~data=user_id=0,application_id=42~hmac=710208a98d7819694ded85284618d76477027f2151c60f72ebebec69e72058ce",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/78ed734ccd222cc3ac05fe1d61039dd9/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/3492957151",
+    "bpm": null,
+    "youtube": "KtGFByAJRQQ",
+    "youtubeTitle": "Eliza Rose & Interplanetary Criminal - B.O.T.A. (Baddest Of Them All) [Official Video]",
+    "id": "sim894580436"
+   },
+   {
+    "artist": "Skrillex & Bobby Raps",
+    "title": "Don\u2019t Leave Me Like This",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/5/1/0/25130ce880498ae6dc53db8c4a0e0861.mp3?hdnea=exp=1791731999~acl=/api/1/1/2/5/1/0/25130ce880498ae6dc53db8c4a0e0861.mp3*~data=user_id=0,application_id=42~hmac=060e8b8800d7502c8a97daed67a2b050a9c844c524a1b9b54677e00c4a657198",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/4310739247e323854a6032a8db64d5c2/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/2153897877",
+    "bpm": null,
+    "youtube": "pP-GzB6kDx8",
+    "youtubeTitle": "Skrillex & Bobby Raps - Don't Leave Me Like This [Official Visualizer]",
+    "id": "sim75160088"
+   }
+  ],
+  "sz673883729": [],
+  "sz640169907": [],
+  "sz514449363": [],
+  "sz626863525": [],
+  "sz638038258": [
+   {
+    "artist": "Jamie xx",
+    "title": "KILL DEM",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/8/3/e/0/83eecbeb67d72b5c0a31635262e5ddbd.mp3?hdnea=exp=1791732011~acl=/api/1/1/8/3/e/0/83eecbeb67d72b5c0a31635262e5ddbd.mp3*~data=user_id=0,application_id=42~hmac=c87f82b6a420c96337fb0e5d20d15343917828d0fbdf2018121bffdbcc3778cf",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/51f4466720b209fa552e1629c123aefb/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1892750597",
+    "bpm": null,
+    "youtube": "6NLEp6awMQQ",
+    "youtubeTitle": "Jamie xx - KILL DEM (Official Video)",
+    "id": "sim330954452"
+   },
+   {
+    "artist": "PinkPantheress",
+    "title": "Do you miss me?",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/f/c/0/2fc7340b17098093927b481c2f40fa7b.mp3?hdnea=exp=1791732012~acl=/api/1/1/2/f/c/0/2fc7340b17098093927b481c2f40fa7b.mp3*~data=user_id=0,application_id=42~hmac=68ad6d4eab2a46a25d4920b8179104c1c7da728cf6b6af6ce7cd6b4cd07d4cc8",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/07c7913a65de2468b9a971e047cc8b02/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1877905967",
+    "bpm": null,
+    "youtube": "UblEdT-hW78",
+    "youtubeTitle": "PinkPantheress - Do you miss me? (Lyric Video)",
+    "id": "sim432953559"
+   },
+   {
+    "artist": "Confidence Man",
+    "title": "Holiday (Tame Impala Remix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/1902456757",
+    "deezerId": 1902456757,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/5/d/5/0/5d5bec73ae4c5f2b014c1ae4c75c100b.mp3?hdnea=exp=1791732011~acl=/api/1/1/5/d/5/0/5d5bec73ae4c5f2b014c1ae4c75c100b.mp3*~data=user_id=0,application_id=42~hmac=ebfee090a78415053278ed5a83988a54b4c10f6592c96cc70c992926373a1678",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/46038c65ab423fc4ac1c807563e39b31/250x250-000000-80-0-0.jpg",
+    "youtube": "ADA6mRDqbqA",
+    "youtubeTitle": "Confidence Man - Holiday (Tame Impala Remix) - Official Audio",
+    "id": "sim12669045"
+   },
+   {
+    "artist": "DJ Seinfeld",
+    "title": "Now U Do",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2285452567",
+    "deezerId": 2285452567,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/b/6/0/cb69c62f993117f0de2e98ebe644103c.mp3?hdnea=exp=1791732011~acl=/api/1/1/c/b/6/0/cb69c62f993117f0de2e98ebe644103c.mp3*~data=user_id=0,application_id=42~hmac=669cde811d8d16bba4ad5aee55a4413f87038b90ecbbfa05282e9ac287196797",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/ebd56fa4fe532abf75213d9ac109667c/250x250-000000-80-0-0.jpg",
+    "youtube": "VyLbEEwd7FI",
+    "youtubeTitle": "DJ Seinfeld & @ConfidenceMan - 'Now U Do' (Official Music Video)",
+    "id": "sim714543065"
+   },
+   {
+    "artist": "Fred again..",
+    "title": "Marea (we\u2019ve lost dancing)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/1239694902",
+    "deezerId": 1239694902,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/9/2/0/e9250423586af70f93d72a9279cefe9a.mp3?hdnea=exp=1791732011~acl=/api/1/1/e/9/2/0/e9250423586af70f93d72a9279cefe9a.mp3*~data=user_id=0,application_id=42~hmac=b88dd6192664bb3496856b2bc7de548dd3c83de13aecd220a57dcdcbeabb6f32",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/0cd6c8b99dd8456829ca0c711068842f/250x250-000000-80-0-0.jpg",
+    "youtube": "l4UkYBr1NnA",
+    "youtubeTitle": "Fred again.. feat. The Blessed Madonna - Marea (We\u2019ve Lost Dancing) (Official Audio)",
+    "id": "sim311540212"
+   },
+   {
+    "artist": "Latin Mafia",
+    "title": "Te Estoy Correteando",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4195078842",
+    "deezerId": 4195078842,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/3/7/0/b3701e106928d31d593065ad79773578.mp3?hdnea=exp=1791732011~acl=/api/1/1/b/3/7/0/b3701e106928d31d593065ad79773578.mp3*~data=user_id=0,application_id=42~hmac=33134d4f9e4494f8929117da7c7017eadce67600a0e8fdd53d4b01de44fc9ded",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/b945dcfb50bf0dea43fddbb196c5bd12/250x250-000000-80-0-0.jpg",
+    "youtube": "PIVr5H9EShI",
+    "youtubeTitle": "LATIN MAFIA, Fred again.. - Te Estoy Correteando",
+    "id": "sim848670087"
+   },
+   {
+    "artist": "TSHA",
+    "title": "Renegade",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/1081213942",
+    "deezerId": 1081213942,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/1/4/0/d14967659efd43c16291dc406efddcab.mp3?hdnea=exp=1791732011~acl=/api/1/1/d/1/4/0/d14967659efd43c16291dc406efddcab.mp3*~data=user_id=0,application_id=42~hmac=cd8696e44dccc84fdcabf7ebba3322fd74a37950d74ef2ee0902661a22c68352",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/74d8f7e0e80aa6a23f725a605b608b79/250x250-000000-80-0-0.jpg",
+    "youtube": "4NW5KfxAnx4",
+    "youtubeTitle": "TSHA - 'Renegade (feat. Ell Murphy)' (Official Audio)",
+    "id": "sim898013868"
+   },
+   {
+    "artist": "TSHA",
+    "title": "I Need U (feat. Ellie Maxwell)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3982158351",
+    "deezerId": 3982158351,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/0/e/0/c0ed910e7c29aec8aa2971b3ee7a4e3b.mp3?hdnea=exp=1791732011~acl=/api/1/1/c/0/e/0/c0ed910e7c29aec8aa2971b3ee7a4e3b.mp3*~data=user_id=0,application_id=42~hmac=1a7610b922011d9d05ebf2ddec43c40561d5b1c07202de117cbf12d37409bd15",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/23211d353e78c69b339919258f5d1249/250x250-000000-80-0-0.jpg",
+    "youtube": "zq_1in3hp38",
+    "youtubeTitle": "TSHA, HoneyLuv - I Need U (feat. Ellie Maxwell) [Official Audio]",
+    "id": "sim367886137"
+   }
+  ],
+  "sz443300629": [],
+  "sz624407205": [
+   {
+    "artist": "Swimming Paul",
+    "title": "Vhs",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2712744241",
+    "deezerId": 2712744241,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3?hdnea=exp=1791732025~acl=/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3*~data=user_id=0,application_id=42~hmac=66843aafdf8ec3ea36065ca9f7048b27c940b188b37af6d25988075af64f691f",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/449bdc2e7e00ab241a2b53658fd82fb1/250x250-000000-80-0-0.jpg",
+    "youtube": "dmxJIc3M7LI",
+    "youtubeTitle": "Swimming Paul - Vhs",
+    "id": "sim430087552"
+   },
+   {
+    "artist": "Swimming Paul",
+    "title": "Stay Cool",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4138760131",
+    "deezerId": 4138760131,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3?hdnea=exp=1791732025~acl=/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3*~data=user_id=0,application_id=42~hmac=6f4f505819671e5ba4cae30932e36c8c50c74f8455fdfcdc97fcc61050823df1",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6e2626ea508d0eeb0a28bc7da2f9c3f5/250x250-000000-80-0-0.jpg",
+    "youtube": "VC9HBeLarDM",
+    "youtubeTitle": "Swimming Paul, LP Giobbi - Stay Cool",
+    "id": "sim986672339"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim",
+    "title": "Dance Dance Dance!",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3953713231",
+    "deezerId": 3953713231,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3?hdnea=exp=1791732025~acl=/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3*~data=user_id=0,application_id=42~hmac=97ccfddbd7143fc9da16d77d9ebf41bd239e72800838462ad03d8ea1509eb632",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/83752f81151d3f9c9d7a846eb65fb5f2/250x250-000000-80-0-0.jpg",
+    "youtube": "4cPwPHzExSA",
+    "youtubeTitle": "Barry Can't Swim - Dance Dance Dance! (Official Music Video)",
+    "id": "sim881547613"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim",
+    "title": "I Could Be Madonna",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4250155941",
+    "deezerId": 4250155941,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3?hdnea=exp=1791732025~acl=/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3*~data=user_id=0,application_id=42~hmac=944f3321d14e4834d6916f99e35debb1423e1989dab75d580cff9d9294da2c35",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/f3bcdd1e89d00840ebdeb8fe768c4a7e/250x250-000000-80-0-0.jpg",
+    "youtube": "H0lSZrcL4oY",
+    "youtubeTitle": "Barry Can't Swim x Sammy Virji - I Could Be Madonna (Official Visualiser)",
+    "id": "sim230572426"
+   },
+   {
+    "artist": "Disclosure",
+    "title": "Latch",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/75526535",
+    "deezerId": 75526535,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3?hdnea=exp=1791732026~acl=/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3*~data=user_id=0,application_id=42~hmac=4f2862795c57b5ffc6c17e6fa8632b7e4bf7f9fb91d626a1474a27c13aa1a2d4",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/e44468007c45f2523d056a0b19eed80a/250x250-000000-80-0-0.jpg",
+    "youtube": "93ASUImTedo",
+    "youtubeTitle": "Disclosure - Latch ft. Sam Smith",
+    "id": "sim755499998"
+   },
+   {
+    "artist": "Disclosure",
+    "title": "She\u2019s Gone, Dance On",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2813082002",
+    "deezerId": 2813082002,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/a/5/0/da5442aa71926d30be4299cb6bce0f4a.mp3?hdnea=exp=1791732026~acl=/api/1/1/d/a/5/0/da5442aa71926d30be4299cb6bce0f4a.mp3*~data=user_id=0,application_id=42~hmac=ca11b608a91a1f86c8efa36b61d555e2b342dc05f30cdf14a3c15b62f515b009",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/1346ad41412c615634a6aeee94eb70ca/250x250-000000-80-0-0.jpg",
+    "youtube": "QZrcXTHqQ_c",
+    "youtubeTitle": "Disclosure - She\u2019s Gone, Dance On (Official Video)",
+    "id": "sim579146579"
+   }
+  ],
+  "sz618689012": [
+   {
+    "artist": "RSCL, it\u2019s murph & Twin Diplomacy feat. Jack August",
+    "title": "Lost",
+    "why": "listeners of this also play",
+    "youtube": "ZPygRnFfDg4",
+    "youtubeTitle": "RSCL, it's murph & Twin Diplomacy feat. Jack August - Lost (Deep House / Tech House)",
+    "id": "sim144932888"
+   },
+   {
+    "artist": "Duskus",
+    "title": "Let Go",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3?hdnea=exp=1791732038~acl=/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3*~data=user_id=0,application_id=42~hmac=123261da7b52db918100ddb7b13ca9b45ecffc2139ee720a6397edc2c266c929",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/bd11f26b787b2bd9dbb9e3d951a35276/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1698158287",
+    "bpm": null,
+    "youtube": "GnhJ6SYzCuk",
+    "youtubeTitle": "Duskus - Let Go (Official Video)",
+    "id": "sim773137095"
+   },
+   {
+    "artist": "Skrillex, Missy Elliott & Mr. Oizo",
+    "title": "RATATA",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/d/5/0/4d5c07b1f854c1697f3e11652c910ce3.mp3?hdnea=exp=1791732039~acl=/api/1/1/4/d/5/0/4d5c07b1f854c1697f3e11652c910ce3.mp3*~data=user_id=0,application_id=42~hmac=b2a5f3e46391f3bdd198a84e5ced03c94790521ac43249eb6c91acb37f5efab8",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/0c9feaff1f4b1b6855a3fb78fcc8ff44/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/2150143827",
+    "bpm": null,
+    "youtube": "xkejbXejA-0",
+    "youtubeTitle": "Skrillex, Missy Elliott, & Mr. Oizo - RATATA [Official Visualizer]",
+    "id": "sim254435001"
+   },
+   {
+    "artist": "Skrillex, Boys Noize & Opus III",
+    "title": "Fine Day Anthem",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/3/a/0/43ab45891b75266d0804ae7ecb944515.mp3?hdnea=exp=1791732040~acl=/api/1/1/4/3/a/0/43ab45891b75266d0804ae7ecb944515.mp3*~data=user_id=0,application_id=42~hmac=769696e649116d6eb72772e00f893d832a76356864e4b3d4d8174f20ca568f28",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/1c3f0783a4521ee74882a79929c200f9/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/2350357385",
+    "bpm": null,
+    "youtube": "wTR-ScwmOXI",
+    "youtubeTitle": "Skrillex & Boys Noize - Fine Day Anthem (Official Audio)",
+    "id": "sim182424494"
+   },
+   {
+    "artist": "Skrillex, Noisia, josh pan & Dylan Brady",
+    "title": "Supersonic (my existence)",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/d/4/0/bd46bc6e3691cbd0755646cb96b37048.mp3?hdnea=exp=1791732042~acl=/api/1/1/b/d/4/0/bd46bc6e3691cbd0755646cb96b37048.mp3*~data=user_id=0,application_id=42~hmac=ef717585f9d50ba2914a7860b4bc65980a60a13cc0732cc8e54d5e3bcbcfba17",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/0255bcabe0fe1a7eba082408cfd75a80/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1394903512",
+    "bpm": null,
+    "youtube": "U41bONK2V-U",
+    "youtubeTitle": "Skrillex, Noisia, josh pan & Dylan Brady - Supersonic (My Existence) [Official Audio]",
+    "id": "sim224879858"
+   },
+   {
+    "artist": "LF SYSTEM",
+    "title": "Afraid to Feel",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/e/e/0/dee4954de339d12cfa709a9de08c944f.mp3?hdnea=exp=1791732043~acl=/api/1/1/d/e/e/0/dee4954de339d12cfa709a9de08c944f.mp3*~data=user_id=0,application_id=42~hmac=8da0520b17eca6c088610d9130372ea4e8e42fe2fb354649b017528bde438b9e",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/cd5a4a6939e4a368f36067d804bb6124/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1703521177",
+    "bpm": null,
+    "youtube": "VHSmO_72Uro",
+    "youtubeTitle": "LF SYSTEM - Afraid To Feel (Official Lyric Video)",
+    "id": "sim152777385"
+   },
+   {
+    "artist": "Dom Dolla feat. Clementine Douglas",
+    "title": "Miracle Maker",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/7/b/f/0/7bf9ed1afb00451316291d342b192ddc.mp3?hdnea=exp=1791732044~acl=/api/1/1/7/b/f/0/7bf9ed1afb00451316291d342b192ddc.mp3*~data=user_id=0,application_id=42~hmac=07b4333c1bd962eb9f94d0fd0d8f7767478bd75696c05b1ff947b8f2f60bc4bc",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/2fd139a5dc77bbb146ed3f85508a04b5/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1793904837",
+    "bpm": null,
+    "youtube": "vhMAcPrt1LU",
+    "youtubeTitle": "Dom Dolla - Miracle Maker feat. Clementine Douglas (Official Live Video)",
+    "id": "sim232397653"
+   },
+   {
+    "artist": "D.O.D feat. Carla Monroe",
+    "title": "Still Sleepless",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/a/4/6/0/a46f0ccc64db0525451f6cd5b7376cdb.mp3?hdnea=exp=1791732045~acl=/api/1/1/a/4/6/0/a46f0ccc64db0525451f6cd5b7376cdb.mp3*~data=user_id=0,application_id=42~hmac=41c32d1e233cc52810e6baaf88abf913f2070e082bf36ef757acc0ae5ba14074",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/578bd3a4c6ec3d6db28f896049a5d717/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1468288322",
+    "bpm": null,
+    "youtube": "t5Da9RjQDgM",
+    "youtubeTitle": "D.O.D feat. Carla Monroe - Still Sleepless (Official Lyric Video)",
+    "id": "sim831723648"
+   }
+  ],
+  "sz600822212": [
+   {
+    "artist": "Confidence Man",
+    "title": "Holiday (Tame Impala Remix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/1902456757",
+    "deezerId": 1902456757,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/5/d/5/0/5d5bec73ae4c5f2b014c1ae4c75c100b.mp3?hdnea=exp=1791732052~acl=/api/1/1/5/d/5/0/5d5bec73ae4c5f2b014c1ae4c75c100b.mp3*~data=user_id=0,application_id=42~hmac=b3d47fa53a2afe17a081f7894e1009ccecf24ca8afe259756d00f8b5cc4ad585",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/46038c65ab423fc4ac1c807563e39b31/250x250-000000-80-0-0.jpg",
+    "youtube": "ADA6mRDqbqA",
+    "youtubeTitle": "Confidence Man - Holiday (Tame Impala Remix) - Official Audio",
+    "id": "sim12669045"
+   },
+   {
+    "artist": "DJ Seinfeld",
+    "title": "Now U Do",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2285452567",
+    "deezerId": 2285452567,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/b/6/0/cb69c62f993117f0de2e98ebe644103c.mp3?hdnea=exp=1791732052~acl=/api/1/1/c/b/6/0/cb69c62f993117f0de2e98ebe644103c.mp3*~data=user_id=0,application_id=42~hmac=bedd9d4b9e80eca612d197cb309d729ce0fb0ae7bed4cb75fc2fdd1953cae9bd",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/ebd56fa4fe532abf75213d9ac109667c/250x250-000000-80-0-0.jpg",
+    "youtube": "VyLbEEwd7FI",
+    "youtubeTitle": "DJ Seinfeld & @ConfidenceMan - 'Now U Do' (Official Music Video)",
+    "id": "sim714543065"
+   },
+   {
+    "artist": "Fred again..",
+    "title": "Marea (we\u2019ve lost dancing)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/1239694902",
+    "deezerId": 1239694902,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/9/2/0/e9250423586af70f93d72a9279cefe9a.mp3?hdnea=exp=1791732052~acl=/api/1/1/e/9/2/0/e9250423586af70f93d72a9279cefe9a.mp3*~data=user_id=0,application_id=42~hmac=30e6edc98337477992c65b36a0c0b4248f0f7ee50adcaf1e8ed8b33558defe21",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/0cd6c8b99dd8456829ca0c711068842f/250x250-000000-80-0-0.jpg",
+    "youtube": "l4UkYBr1NnA",
+    "youtubeTitle": "Fred again.. feat. The Blessed Madonna - Marea (We\u2019ve Lost Dancing) (Official Audio)",
+    "id": "sim311540212"
+   },
+   {
+    "artist": "Latin Mafia",
+    "title": "Te Estoy Correteando",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4195078842",
+    "deezerId": 4195078842,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/3/7/0/b3701e106928d31d593065ad79773578.mp3?hdnea=exp=1791732052~acl=/api/1/1/b/3/7/0/b3701e106928d31d593065ad79773578.mp3*~data=user_id=0,application_id=42~hmac=09a1bb112125822d68591d82f2ab1ac5562c8e047078351a7d5c401d4563dac1",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/b945dcfb50bf0dea43fddbb196c5bd12/250x250-000000-80-0-0.jpg",
+    "youtube": "PIVr5H9EShI",
+    "youtubeTitle": "LATIN MAFIA, Fred again.. - Te Estoy Correteando",
+    "id": "sim848670087"
+   },
+   {
+    "artist": "TSHA",
+    "title": "Renegade",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/1081213942",
+    "deezerId": 1081213942,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/1/4/0/d14967659efd43c16291dc406efddcab.mp3?hdnea=exp=1791732052~acl=/api/1/1/d/1/4/0/d14967659efd43c16291dc406efddcab.mp3*~data=user_id=0,application_id=42~hmac=f84e48f85a1d2a4b9f10506d5bed330c243c27bccb3fe19e0e8fdbbd9ba8fa93",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/74d8f7e0e80aa6a23f725a605b608b79/250x250-000000-80-0-0.jpg",
+    "youtube": "4NW5KfxAnx4",
+    "youtubeTitle": "TSHA - 'Renegade (feat. Ell Murphy)' (Official Audio)",
+    "id": "sim898013868"
+   },
+   {
+    "artist": "TSHA",
+    "title": "I Need U (feat. Ellie Maxwell)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3982158351",
+    "deezerId": 3982158351,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/c/0/e/0/c0ed910e7c29aec8aa2971b3ee7a4e3b.mp3?hdnea=exp=1791732052~acl=/api/1/1/c/0/e/0/c0ed910e7c29aec8aa2971b3ee7a4e3b.mp3*~data=user_id=0,application_id=42~hmac=d36d9cda06e832952a6fcc0bede6315a76e3d4fd6f982922168b4e2669e9ce62",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/23211d353e78c69b339919258f5d1249/250x250-000000-80-0-0.jpg",
+    "youtube": "zq_1in3hp38",
+    "youtubeTitle": "TSHA, HoneyLuv - I Need U (feat. Ellie Maxwell) [Official Audio]",
+    "id": "sim367886137"
+   }
+  ],
+  "sz626212250": [
+   {
+    "artist": "Swimming Paul",
+    "title": "Vhs",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2712744241",
+    "deezerId": 2712744241,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3?hdnea=exp=1791732061~acl=/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3*~data=user_id=0,application_id=42~hmac=2426a13e64cbcef2f389676a14e8fb4c39252648f800e23221018068b593ab1e",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/449bdc2e7e00ab241a2b53658fd82fb1/250x250-000000-80-0-0.jpg",
+    "youtube": "dmxJIc3M7LI",
+    "youtubeTitle": "Swimming Paul - Vhs",
+    "id": "sim430087552"
+   },
+   {
+    "artist": "Swimming Paul",
+    "title": "Stay Cool",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4138760131",
+    "deezerId": 4138760131,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3?hdnea=exp=1791732061~acl=/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3*~data=user_id=0,application_id=42~hmac=539042c3a25b786ce0bb7296cc42d6ec8840eddf0789274a46458c57c62f4e73",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6e2626ea508d0eeb0a28bc7da2f9c3f5/250x250-000000-80-0-0.jpg",
+    "youtube": "VC9HBeLarDM",
+    "youtubeTitle": "Swimming Paul, LP Giobbi - Stay Cool",
+    "id": "sim986672339"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim",
+    "title": "Dance Dance Dance!",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3953713231",
+    "deezerId": 3953713231,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3?hdnea=exp=1791732062~acl=/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3*~data=user_id=0,application_id=42~hmac=60ef7c6edfec93547246ce99c4e402fcabfa7bd9ad0c2c882936b05dd0d1a11a",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/83752f81151d3f9c9d7a846eb65fb5f2/250x250-000000-80-0-0.jpg",
+    "youtube": "4cPwPHzExSA",
+    "youtubeTitle": "Barry Can't Swim - Dance Dance Dance! (Official Music Video)",
+    "id": "sim881547613"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim",
+    "title": "I Could Be Madonna",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4250155941",
+    "deezerId": 4250155941,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3?hdnea=exp=1791732062~acl=/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3*~data=user_id=0,application_id=42~hmac=48974ed8ce00be8b595e2d26e35355542e1b25cef01194701cdfd01abe7f70e2",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/f3bcdd1e89d00840ebdeb8fe768c4a7e/250x250-000000-80-0-0.jpg",
+    "youtube": "H0lSZrcL4oY",
+    "youtubeTitle": "Barry Can't Swim x Sammy Virji - I Could Be Madonna (Official Visualiser)",
+    "id": "sim230572426"
+   },
+   {
+    "artist": "Disclosure",
+    "title": "Latch",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/75526535",
+    "deezerId": 75526535,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3?hdnea=exp=1791732062~acl=/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3*~data=user_id=0,application_id=42~hmac=43be9fb0eea7ff1b2c755db3c83a907d32e16de65740c456937858f84341a133",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/e44468007c45f2523d056a0b19eed80a/250x250-000000-80-0-0.jpg",
+    "youtube": "93ASUImTedo",
+    "youtubeTitle": "Disclosure - Latch ft. Sam Smith",
+    "id": "sim755499998"
+   },
+   {
+    "artist": "Disclosure",
+    "title": "She\u2019s Gone, Dance On",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2813082002",
+    "deezerId": 2813082002,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/a/5/0/da5442aa71926d30be4299cb6bce0f4a.mp3?hdnea=exp=1791732062~acl=/api/1/1/d/a/5/0/da5442aa71926d30be4299cb6bce0f4a.mp3*~data=user_id=0,application_id=42~hmac=9d3c1ede4ceef058ee417ea17242b0687caa381a406a64dda5d0ea6b2da54ec0",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/1346ad41412c615634a6aeee94eb70ca/250x250-000000-80-0-0.jpg",
+    "youtube": "QZrcXTHqQ_c",
+    "youtubeTitle": "Disclosure - She\u2019s Gone, Dance On (Official Video)",
+    "id": "sim579146579"
+   }
+  ],
+  "sz626212254": [
+   {
+    "artist": "RSCL, it\u2019s murph & Twin Diplomacy feat. Jack August",
+    "title": "Lost",
+    "why": "listeners of this also play",
+    "youtube": "ZPygRnFfDg4",
+    "youtubeTitle": "RSCL, it's murph & Twin Diplomacy feat. Jack August - Lost (Deep House / Tech House)",
+    "id": "sim144932888"
+   },
+   {
+    "artist": "Duskus",
+    "title": "Let Go",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3?hdnea=exp=1791732074~acl=/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3*~data=user_id=0,application_id=42~hmac=80fb1b384724df97d5451aa159b5787041e69f26e290390ea268f70079ed4f04",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/bd11f26b787b2bd9dbb9e3d951a35276/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1698158287",
+    "bpm": null,
+    "youtube": "GnhJ6SYzCuk",
+    "youtubeTitle": "Duskus - Let Go (Official Video)",
+    "id": "sim773137095"
+   },
+   {
+    "artist": "100 gecs",
+    "title": "torture me",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/5/f/0/e5fcfe8cbdb307e2927adea0b1197e1f.mp3?hdnea=exp=1791732075~acl=/api/1/1/e/5/f/0/e5fcfe8cbdb307e2927adea0b1197e1f.mp3*~data=user_id=0,application_id=42~hmac=b5b2edf6e62f693c69953a112a33129634353da307174c2b00f9b10b25e41910",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/873f90c008bb35fce5c7bf7cd3b43fe9/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/2043080687",
+    "bpm": null,
+    "youtube": "vaBFLNWnQ0E",
+    "youtubeTitle": "100 gecs - Torture Me (feat. Skrillex) {VISUALIZER}",
+    "id": "sim610639390"
+   },
+   {
+    "artist": "Knock2",
+    "title": "dashstar* (VIP)",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/0/c/1/0/0c15e027937f3a141b57cb4d87f22855.mp3?hdnea=exp=1791732076~acl=/api/1/1/0/c/1/0/0c15e027937f3a141b57cb4d87f22855.mp3*~data=user_id=0,application_id=42~hmac=d2c7f2952d8b7d05bdce67cf60a3ba96a1f9791a11e0e9712c53ea724835ca8c",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/d5890a711d1850d1c8431781a8a6ddb1/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/2094963357",
+    "bpm": null,
+    "youtube": "PL7AvEObPAM",
+    "youtubeTitle": "Knock2 - dashstar* (VIP)",
+    "id": "sim150189954"
+   },
+   {
+    "artist": "Chris Lake feat. Aatig",
+    "title": "In the Yuma",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/5/b/0/b5bf82c7d89f4c9a2cc8159ebb7d875d.mp3?hdnea=exp=1791732078~acl=/api/1/1/b/5/b/0/b5bf82c7d89f4c9a2cc8159ebb7d875d.mp3*~data=user_id=0,application_id=42~hmac=9dd7f6ff36ad5fc56b48d0ad9a4e3f7f2a1ff64a0670dc39fb3597196b763f9f",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/03c26b07d7a0f57e98dfcb7cb78fd14c/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1999274077",
+    "bpm": null,
+    "youtube": "OAKM41Ng_Fg",
+    "youtubeTitle": "Chris Lake (ft. Aatig) - In The Yuma [Official Visualizer]",
+    "id": "sim805946628"
+   },
+   {
+    "artist": "Zeds Dead ft. Scrufizzer",
+    "title": "One Three Nine",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/b/f/0/9bf67248682a67a35a4ed983d0b8a3a5.mp3?hdnea=exp=1791732079~acl=/api/1/1/9/b/f/0/9bf67248682a67a35a4ed983d0b8a3a5.mp3*~data=user_id=0,application_id=42~hmac=981e05a0a61c1fadc222754268548c085561db0a0bfc7e54717a4761abf404bf",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/9cf1c4ca9b915b511fccf182ffbc7eff/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/2318014935",
+    "bpm": null,
+    "youtube": "TsE9QSgTMv0",
+    "youtubeTitle": "Zeds Dead   One Three Nine ft  Scrufizzer",
+    "id": "sim765320212"
+   },
+   {
+    "artist": "RAYE ft. 070 Shake",
+    "title": "Escapism.",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/8/b/0/0/8b0fc5258c0e61d0342deba8df664585.mp3?hdnea=exp=1791732081~acl=/api/1/1/8/b/0/0/8b0fc5258c0e61d0342deba8df664585.mp3*~data=user_id=0,application_id=42~hmac=759ffd31ebab5093397af1897a0b4329b494989377f8b5446cd5fbb75e65a2e4",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/87d3870a44a28f2ba5695e12059072b0/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1925023707",
+    "bpm": null,
+    "youtube": "Dll6VJ2C7wo",
+    "youtubeTitle": "RAYE, 070 Shake - Escapism. (Official Music Video)",
+    "id": "sim275149771"
+   },
+   {
+    "artist": "PinkPantheress",
+    "title": "Boy\u2019s a liar",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/0/b/0/0/0b0fac84d47057949c90b07350bd852e.mp3?hdnea=exp=1791732082~acl=/api/1/1/0/b/0/0/0b0fac84d47057949c90b07350bd852e.mp3*~data=user_id=0,application_id=42~hmac=7a46777de41f63cfa27cb7c99ef40f25ae57f345d77f5022be90bc9332106e0e",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/7479aef13a2a7c404824a4700f1ccf58/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/2106386037",
+    "bpm": null,
+    "youtube": "oftolPu9qp4",
+    "youtubeTitle": "PinkPantheress, Ice Spice - Boy\u2019s a liar Pt. 2 (Official Video)",
+    "id": "sim989740586"
+   }
+  ],
+  "sz563783823": [
+   {
+    "artist": "Swimming Paul",
+    "title": "Vhs",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2712744241",
+    "deezerId": 2712744241,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3?hdnea=exp=1791732088~acl=/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3*~data=user_id=0,application_id=42~hmac=52ecd1110567b9c7394be7114a7d07fb3c39ae2a36427d0adefbc89e8f185adb",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/449bdc2e7e00ab241a2b53658fd82fb1/250x250-000000-80-0-0.jpg",
+    "youtube": "dmxJIc3M7LI",
+    "youtubeTitle": "Swimming Paul - Vhs",
+    "id": "sim430087552"
+   },
+   {
+    "artist": "Swimming Paul",
+    "title": "Stay Cool",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4138760131",
+    "deezerId": 4138760131,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3?hdnea=exp=1791732088~acl=/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3*~data=user_id=0,application_id=42~hmac=fd8fc28effa1c02a30041de4acb8f2368453cd9b014a2101c30a3b177311c885",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6e2626ea508d0eeb0a28bc7da2f9c3f5/250x250-000000-80-0-0.jpg",
+    "youtube": "VC9HBeLarDM",
+    "youtubeTitle": "Swimming Paul, LP Giobbi - Stay Cool",
+    "id": "sim986672339"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim",
+    "title": "Dance Dance Dance!",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3953713231",
+    "deezerId": 3953713231,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3?hdnea=exp=1791732088~acl=/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3*~data=user_id=0,application_id=42~hmac=cf0991771cce5e517681c8a723f1bd280d762a33b6f840d94e4262328b4e2a2a",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/83752f81151d3f9c9d7a846eb65fb5f2/250x250-000000-80-0-0.jpg",
+    "youtube": "4cPwPHzExSA",
+    "youtubeTitle": "Barry Can't Swim - Dance Dance Dance! (Official Music Video)",
+    "id": "sim881547613"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim",
+    "title": "I Could Be Madonna",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4250155941",
+    "deezerId": 4250155941,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3?hdnea=exp=1791732088~acl=/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3*~data=user_id=0,application_id=42~hmac=3e06c3b1ec2ec581c8e0b756ca55f46a756d82479dcc211eeb48ddbc8be131a5",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/f3bcdd1e89d00840ebdeb8fe768c4a7e/250x250-000000-80-0-0.jpg",
+    "youtube": "H0lSZrcL4oY",
+    "youtubeTitle": "Barry Can't Swim x Sammy Virji - I Could Be Madonna (Official Visualiser)",
+    "id": "sim230572426"
+   },
+   {
+    "artist": "Disclosure",
+    "title": "Latch",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/75526535",
+    "deezerId": 75526535,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3?hdnea=exp=1791732088~acl=/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3*~data=user_id=0,application_id=42~hmac=90dcb65ffd1a7ecc143828ed972154ba2eddc38711c034ad4952e825c24b4aee",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/e44468007c45f2523d056a0b19eed80a/250x250-000000-80-0-0.jpg",
+    "youtube": "93ASUImTedo",
+    "youtubeTitle": "Disclosure - Latch ft. Sam Smith",
+    "id": "sim755499998"
+   },
+   {
+    "artist": "Disclosure",
+    "title": "She\u2019s Gone, Dance On",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2813082002",
+    "deezerId": 2813082002,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/a/5/0/da5442aa71926d30be4299cb6bce0f4a.mp3?hdnea=exp=1791732088~acl=/api/1/1/d/a/5/0/da5442aa71926d30be4299cb6bce0f4a.mp3*~data=user_id=0,application_id=42~hmac=fabe1a359a620f2c204e57d170b2efaed45af4245976bb87c8f23b777b35e032",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/1346ad41412c615634a6aeee94eb70ca/250x250-000000-80-0-0.jpg",
+    "youtube": "QZrcXTHqQ_c",
+    "youtubeTitle": "Disclosure - She\u2019s Gone, Dance On (Official Video)",
+    "id": "sim579146579"
+   }
+  ],
+  "sz628688602": [
+   {
+    "artist": "Duskus",
+    "title": "Let Go",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3?hdnea=exp=1791732099~acl=/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3*~data=user_id=0,application_id=42~hmac=69f8ebe41cd7872cd1f2a936bf47e226035358b707b879859049b3b4f5a62cce",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/bd11f26b787b2bd9dbb9e3d951a35276/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1698158287",
+    "bpm": null,
+    "youtube": "GnhJ6SYzCuk",
+    "youtubeTitle": "Duskus - Let Go (Official Video)",
+    "id": "sim773137095"
+   },
+   {
+    "artist": "Swimming Paul",
+    "title": "Vhs",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2712744241",
+    "deezerId": 2712744241,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3?hdnea=exp=1791732098~acl=/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3*~data=user_id=0,application_id=42~hmac=3862474454a3645d23049cfa32b3143958932ee71a31abc08d7914297b82d5ed",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/449bdc2e7e00ab241a2b53658fd82fb1/250x250-000000-80-0-0.jpg",
+    "youtube": "dmxJIc3M7LI",
+    "youtubeTitle": "Swimming Paul - Vhs",
+    "id": "sim430087552"
+   },
+   {
+    "artist": "Swimming Paul",
+    "title": "Stay Cool",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4138760131",
+    "deezerId": 4138760131,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3?hdnea=exp=1791732098~acl=/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3*~data=user_id=0,application_id=42~hmac=708d2d0b126b910912eab52723b4a4dfe98b9b116254aa9806e294eddef3df6a",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6e2626ea508d0eeb0a28bc7da2f9c3f5/250x250-000000-80-0-0.jpg",
+    "youtube": "VC9HBeLarDM",
+    "youtubeTitle": "Swimming Paul, LP Giobbi - Stay Cool",
+    "id": "sim986672339"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim",
+    "title": "Dance Dance Dance!",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3953713231",
+    "deezerId": 3953713231,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3?hdnea=exp=1791732098~acl=/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3*~data=user_id=0,application_id=42~hmac=2c988202de6699e6229d8091c6bdfccf13a791b1c0d0dd4b036f26e5a8b40030",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/83752f81151d3f9c9d7a846eb65fb5f2/250x250-000000-80-0-0.jpg",
+    "youtube": "4cPwPHzExSA",
+    "youtubeTitle": "Barry Can't Swim - Dance Dance Dance! (Official Music Video)",
+    "id": "sim881547613"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim",
+    "title": "I Could Be Madonna",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4250155941",
+    "deezerId": 4250155941,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3?hdnea=exp=1791732098~acl=/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3*~data=user_id=0,application_id=42~hmac=28e0b62ff187b3fb8a0c5f16871ec5a68ddc94600b1735487b13539c38263e5d",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/f3bcdd1e89d00840ebdeb8fe768c4a7e/250x250-000000-80-0-0.jpg",
+    "youtube": "H0lSZrcL4oY",
+    "youtubeTitle": "Barry Can't Swim x Sammy Virji - I Could Be Madonna (Official Visualiser)",
+    "id": "sim230572426"
+   },
+   {
+    "artist": "Disclosure",
+    "title": "Latch",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/75526535",
+    "deezerId": 75526535,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3?hdnea=exp=1791732099~acl=/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3*~data=user_id=0,application_id=42~hmac=ac6e7e356d913265e39ef6055667bf0a4827cd65f2371717ffcc8bcfea3852d1",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/e44468007c45f2523d056a0b19eed80a/250x250-000000-80-0-0.jpg",
+    "youtube": "93ASUImTedo",
+    "youtubeTitle": "Disclosure - Latch ft. Sam Smith",
+    "id": "sim755499998"
+   },
+   {
+    "artist": "Disclosure",
+    "title": "She\u2019s Gone, Dance On",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2813082002",
+    "deezerId": 2813082002,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/a/5/0/da5442aa71926d30be4299cb6bce0f4a.mp3?hdnea=exp=1791732099~acl=/api/1/1/d/a/5/0/da5442aa71926d30be4299cb6bce0f4a.mp3*~data=user_id=0,application_id=42~hmac=082ffac0813253123164aadcddc99356e0063126abf43a072aa3d2a350648d4e",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/1346ad41412c615634a6aeee94eb70ca/250x250-000000-80-0-0.jpg",
+    "youtube": "QZrcXTHqQ_c",
+    "youtubeTitle": "Disclosure - She\u2019s Gone, Dance On (Official Video)",
+    "id": "sim579146579"
    }
   ]
  }
