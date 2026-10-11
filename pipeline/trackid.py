@@ -10,15 +10,16 @@ import argparse, asyncio, json, os, subprocess, sys, tempfile, time, urllib.pars
 import aiohttp
 from shazamio import Shazam
 
+YTDLP = os.path.join(os.path.dirname(sys.executable), "yt-dlp") if os.path.exists(os.path.join(os.path.dirname(sys.executable), "yt-dlp")) else "yt-dlp"
 UA = {"User-Agent": "setid-prototype/0.1 (https://github.com/ThinkPool-io/setid)"}
 
 def sh(cmd):
     return subprocess.run(cmd, check=True, capture_output=True, text=True).stdout
 
 def fetch(url, workdir):
-    meta = json.loads(sh(["yt-dlp", "-J", "--no-playlist", url]))
+    meta = json.loads(sh([YTDLP, "-J", "--no-playlist", url]))
     out = os.path.join(workdir, "set.%(ext)s")
-    subprocess.run(["yt-dlp", "-q", "--no-playlist", "-x", "--audio-format", "mp3", "--audio-quality", "6", "-o", out, url], check=True)
+    subprocess.run([YTDLP, "-q", "--no-playlist", "-x", "--audio-format", "mp3", "--audio-quality", "6", "-o", out, url], check=True)
     return meta, os.path.join(workdir, "set.mp3")
 
 def clip(src, start, length, workdir):
@@ -207,7 +208,7 @@ async def deezer_similar(sess, artist_id, limit=6):
 
 def yt_search(artist, title):
     try:
-        j = subprocess.run(["yt-dlp", "--flat-playlist", "-j", "--no-warnings", f"ytsearch1:{artist} - {title}"], check=True, capture_output=True, text=True, timeout=40).stdout
+        j = subprocess.run([YTDLP, "--flat-playlist", "-j", "--no-warnings", f"ytsearch1:{artist} - {title}"], check=True, capture_output=True, text=True, timeout=40).stdout
         d = json.loads(j.strip().splitlines()[0])
         return {"youtube": d.get("id"), "youtubeTitle": d.get("title")}
     except Exception:
