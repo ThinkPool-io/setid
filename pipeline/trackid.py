@@ -19,7 +19,13 @@ def sh(cmd):
 def fetch(url, workdir):
     meta = json.loads(sh([YTDLP, "-J", "--no-playlist", url]))
     out = os.path.join(workdir, "set.%(ext)s")
-    subprocess.run([YTDLP, "-q", "--no-playlist", "-x", "--audio-format", "mp3", "--audio-quality", "6", "-o", out, url], check=True)
+    for attempt in range(4):  # YouTube throws intermittent 403s; retry
+        r = subprocess.run([YTDLP, "-q", "--no-playlist", "-x", "--audio-format", "mp3", "--audio-quality", "6", "-o", out, url])
+        if r.returncode == 0 and os.path.exists(os.path.join(workdir, "set.mp3")):
+            break
+        print(f"  download attempt {attempt+1} failed, retrying", file=sys.stderr, flush=True); time.sleep(10 * (attempt + 1))
+    else:
+        print("failed: could not download the audio after 4 attempts", file=sys.stderr); sys.exit(3)
     return meta, os.path.join(workdir, "set.mp3")
 
 def clip(src, start, length, workdir):
