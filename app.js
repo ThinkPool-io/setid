@@ -11,7 +11,7 @@
   const ts = s => { s = Math.max(0, Math.floor(s)); const hh = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), ss = s % 60; return (hh ? hh + ':' + String(m).padStart(2, '0') : m) + ':' + String(ss).padStart(2, '0'); };
   const parseTs = str => { const p = String(str).trim().split(':').map(Number); if (p.some(isNaN) || !p.length) return null; return p.reduce((a, v) => a * 60 + v, 0); };
   const PLAY = '<svg viewBox="0 0 14 14"><path d="M3 1.5v11l9-5.5z"/></svg>', STOP = '<svg viewBox="0 0 14 14"><rect x="2.5" y="2.5" width="9" height="9" rx="1"/></svg>';
-  const COLORS = ['#c8ff2e', '#6ad1ff', '#ff8ad1', '#ffb13d', '#8af0c4', '#b79cff', '#ff6b6b', '#4ee0ff', '#ffe36b', '#7fff9f'];
+  const icon = n => `<svg class="ic" aria-hidden="true"><use href="#i-${n}"/></svg>`;
 
   const state = { index: [], set: null, key: null, tracks: {}, setlist: JSON.parse(localStorage.getItem('setid.setlist') || '[]'), curSeg: -1, api: '', apiOk: false, apiInfo: null };
 
@@ -68,13 +68,28 @@
   }
 
   // ---------- home ----------
+  let rhythmKey = null;
+  async function renderRhythm() {
+    const x = state.index.find(v => v.tracks) || state.index[0]; if (!x || rhythmKey === x.key) return;
+    let d; try { d = await loadSet(x.key); } catch { return; }
+    const dur = d.source.duration, segs = d.segments.filter(s => s.track && s.start != null);
+    if (!segs.length || !dur) return;
+    rhythmKey = x.key;
+    const len = s => (s.end ?? dur) - s.start;
+    const longest = segs.reduce((a, s) => len(s) > len(a) ? s : a, segs[0]);
+    $('#rhythm').innerHTML = segs.map((s, n) => `<i class="${s === longest ? 'hi' : ''}" style="--n:${n};margin-left:${s.start / dur * 100}%;width:${len(s) / dur * 100}%" title="${ts(s.start)} ${h(s.track.artist + ' - ' + s.track.title)}"></i>`).join('');
+    const step = dur > 5400 ? 1200 : 600;
+    $('#rhythmX').innerHTML = Array.from({ length: Math.floor(dur / step) + 1 }, (_, k) => `<span style="left:${k * step / dur * 100}%">${ts(k * step)}</span>`).join('');
+    $('#rhythmCap').innerHTML = `<a href="#/set/${x.key}">${h(d.source.title)}</a><span>${segs.length} identified segments across ${ts(dur)}. Each line is one track, placed at the moment it played. In vermilion, the longest: ${h(longest.track.title)}.</span>`;
+    $('#proof').classList.remove('hidden');
+  }
   function renderHome() {
     $('#home').classList.remove('hidden'); $('#set').classList.add('hidden');
     stopPlayer();
     const w = $('#worker'); const info = state.apiInfo || {};
     w.innerHTML = state.apiOk ? `<span class="chip acc">worker online</span> <span class="chip">Shazam: ${h(info.shazam || '?')}</span> <span class="chip">AudD: ${info.audd ? 'key set' : 'no key'}</span> <span class="chip">ACRCloud: ${info.acrcloud ? 'key set' : 'no key'}</span> <span class="chip">${info.queue || 0} in queue</span>` : '<span class="chip" style="color:var(--warn)">worker offline: only library sets open</span>';
     $('#every').value = localStorage.getItem('setid.every') || 40; $('#audd').value = localStorage.getItem('setid.audd') || '';
-    startTracker();
+    startTracker(); renderRhythm();
     $('#library').innerHTML = state.index.length ? state.index.map(x => `<a class="card" href="#/set/${x.key}"><img src="${x.thumbnail}" alt="" loading="lazy"><div class="b"><div class="t">${h(x.title)}</div><div class="m"><span class="chip acc">${x.tracks} IDs</span><span class="chip">${ts(x.duration)}</span><span class="chip">${Math.round(x.coverage * 100)}% covered</span></div></div></a>`).join('') : '<div class="empty">No sets processed yet.</div>';
   }
   let trackerT = null;
@@ -161,12 +176,12 @@
     let t = 0; try { t = player.getCurrentTime() || 0; } catch { return; }
     const i = segAt(t);
     const ph = $('#timeline .ph'); if (ph) ph.style.left = (t / state.set.source.duration * 100) + '%';
-    if (i !== state.curSeg) { state.curSeg = i; renderNow(i, t); document.querySelectorAll('#tl .row').forEach(r => r.classList.toggle('cur', +r.dataset.i === i)); }
+    if (i !== state.curSeg) { state.curSeg = i; renderNow(i, t); document.querySelectorAll('#tl .row, #timeline [data-i]').forEach(r => r.classList.toggle('cur', +r.dataset.i === i)); }
     const pos = $('#now .pos'); if (pos) pos.textContent = ts(t);
   }
   function renderNow(i, t) {
     const s = state.set.segments[i]; const tr = s && s.track;
-    $('#now').innerHTML = tr ? `<img src="${tr.cover || ''}" alt=""><div><div class="t">${h(tr.title)}</div><div class="a">${h(tr.artist)}${tr.label ? ' · ' + h(tr.label) : ''}</div></div><span class="pos">${ts(t || 0)}</span>`
+    $('#now').innerHTML = tr ? `<img src="${tr.cover || 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22/%3E'}" onerror="this.style.visibility='hidden'" alt=""><div><div class="t">${h(tr.title)}</div><div class="a">${h(tr.artist)}${tr.label ? ' · ' + h(tr.label) : ''}</div></div><span class="pos">${ts(t || 0)}</span>`
       : `<div><div class="t" style="color:var(--mute)">${s ? 'Unidentified passage' : 'Press play'}</div><div class="a">${s ? 'Shazam had no confident match here (mixing, acapella or unreleased)' : 'The tracklist follows the video as it plays'}</div></div><span class="pos">${ts(t || 0)}</span>`;
   }
 
@@ -181,8 +196,7 @@
     $('#setMeta').innerHTML = `<span>${h(src.channel || '')}</span><span class="chip acc">${n} tracks identified</span><span class="chip">${ts(src.duration)}</span>${d.analysed.method === 'comments' ? `<span class="chip">from ${d.analysed.comments} YouTube comments</span>` : `<span class="chip">${Math.round(d.analysed.identified / d.analysed.samples * 100)}% of samples matched</span>`}<a class="btn sm" target="_blank" rel="noopener" href="${src.url}">Open on ${src.platform}</a><button class="btn sm" id="shareSet">Share</button>`;
     $('#shareSet').onclick = () => copy(location.href.split('?')[0], 'Link copied');
     // timeline
-    const colorOf = {}; let ci = 0;
-    $('#timeline').innerHTML = segs.map((s, i) => { const w = ((s.end ?? src.duration) - s.start) / src.duration * 100; let c = '#1a1a22'; if (s.track) { if (!(s.track.id in colorOf)) colorOf[s.track.id] = COLORS[ci++ % COLORS.length]; c = colorOf[s.track.id]; } return `<div style="width:${w}%;background:${c}" title="${ts(s.start)} ${s.track ? h(s.track.artist + ' - ' + s.track.title) : 'unidentified'}"></div>`; }).join('') + '<div class="ph" style="left:0"></div>';
+    $('#timeline').innerHTML = segs.map((s, i) => { const w = ((s.end ?? src.duration) - s.start) / src.duration * 100; return `<div class="${s.track ? 'tr' : 'gap'}" data-i="${i}" style="width:${w}%" title="${ts(s.start)} ${s.track ? h(s.track.artist + ' - ' + s.track.title) : 'unidentified'}"></div>`; }).join('') + '<div class="ph" style="left:0"></div>';
     $('#timeline').onclick = e => { const r = e.currentTarget.getBoundingClientRect(); const t = (e.clientX - r.left) / r.width * src.duration; seek(t); askAt(t); };
     // tracklist
     $('#tl').innerHTML = segs.map((s, i) => {
@@ -190,13 +204,13 @@
       if (!t) return `<div class="row unk" data-i="${i}"><div class="ts">${ts(s.start)}</div><div style="grid-column:2/-1"><div class="ti">Unidentified</div><div class="ar">${ts(s.start)} to ${ts(s.end ?? src.duration)} · ${d.analysed.method === 'comments' ? 'nobody has named this part yet' : 'no confident match'}</div></div></div>`;
       const sims = (d.similar || {})[t.id] || [];
       return `<div class="row" data-i="${i}" data-seek="${s.start}">
-        <div class="ts">${ts(s.start)}</div><img src="${t.cover || ''}" alt="" loading="lazy">
+        <div class="ts">${ts(s.start)}</div><img src="${t.cover || 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22/%3E'}" onerror="this.style.visibility='hidden'" alt="" loading="lazy">
         <div style="min-width:0"><div class="ti">${h(t.title)}</div><div class="ar">${h(t.artist)}${t.label ? ' · ' + h(t.label) : ''}${t.released ? ' · ' + h(t.released) : ''}</div>
           <div class="meta">${t.source === 'comments' ? `<span class="chip" style="color:var(--warn);border-color:#4a3d18" title="${h((t.evidence || []).join(' · '))}">from comments · ${t.votes} ${t.votes === 1 ? 'person' : 'people'}${t.approx ? ' · time approx' : ''}</span>` : s.hits === 1 ? '<span class="chip" style="color:var(--warn);border-color:#4a3d18" title="Matched on a single 12-second sample">low confidence</span>' : ''}${t.bpm ? `<span class="chip">${Math.round(t.bpm)} BPM</span>` : ''}${t.genre ? `<span class="chip">${h(t.genre)}</span>` : ''}<span class="chip">${sims.length} similar</span></div></div>
-        <div class="acts">${pvBtn(t)}<button class="btn sm" data-add="${t.id}" ${inSl ? 'disabled' : ''}>${inSl ? 'Added' : '+ Setlist'}</button><button class="btn sm ic" data-more="${i}" aria-label="More">⋯</button></div>
-        <div class="exp"><div class="open">${openLinks(t)}<button class="btn sm" data-idcopy="${i}">Copy "track ID" answer</button></div>
-          <div class="eyebrow" style="margin-bottom:6px">Similar tracks</div>
-          <div class="sims">${sims.length ? sims.map(x => `<div class="sim"><img src="${x.cover || ''}" alt="" loading="lazy"><div style="min-width:0"><div class="ti">${h(x.title)}</div><div class="ar">${h(x.artist)}${x.bpm ? ' · ' + Math.round(x.bpm) + ' BPM' : ''}</div><div class="why">${h(x.why || '')}</div></div><div class="acts">${pvBtn(x)}<a class="btn sm ic yt" target="_blank" rel="noopener" href="${links(x).yt}" title="Open on YouTube">▶</a><button class="btn sm" data-add="${x.id}" ${state.setlist.some(z => z.id === x.id) ? 'disabled' : ''}>+</button></div></div>`).join('') : '<div class="empty">No similarity data for this one yet.</div>'}</div></div>
+        <div class="acts">${pvBtn(t)}<button class="btn sm" data-add="${t.id}" ${inSl ? 'disabled' : ''}>${inSl ? 'Added' : '+ Setlist'}</button><button class="btn sm ic" data-more="${i}" aria-label="Similar tracks and links">${icon('down')}</button></div>
+        <div class="exp"><div class="open">${openLinks(t)}<button class="btn sm" data-idcopy="${i}">${icon('copy')}Copy "track ID" answer</button></div>
+          <h4>Similar tracks</h4>
+          <div class="sims">${sims.length ? sims.map(x => `<div class="sim"><img src="${x.cover || 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22/%3E'}" onerror="this.style.visibility='hidden'" alt="" loading="lazy"><div style="min-width:0"><div class="ti">${h(x.title)}</div><div class="ar">${h(x.artist)}${x.bpm ? ' · ' + Math.round(x.bpm) + ' BPM' : ''}</div><div class="why">${h(x.why || '')}</div></div><div class="acts">${pvBtn(x)}<a class="btn sm ic yt" target="_blank" rel="noopener" href="${links(x).yt}" title="Open on YouTube" aria-label="Open on YouTube">${icon('yt')}</a><button class="btn sm" data-add="${x.id}" ${state.setlist.some(z => z.id === x.id) ? 'disabled' : ''} aria-label="Add to setlist">${icon('plus')}</button></div></div>`).join('') : '<div class="empty">No similarity data for this one yet.</div>'}</div></div>
       </div>`;
     }).join('');
     $('#setFine').textContent = d.analysed.method === 'comments' ? `Tracklist built from ${d.analysed.comments} YouTube comments and replies: each ID is where someone asked "track ID?" and someone else named it. Times mark when it was asked about, so treat them as roughly when the track plays. Not audio-verified yet.` : `Sampled every ${d.analysed.every}s with ${d.analysed.clip}s clips · ${d.analysed.identified}/${d.analysed.samples} samples matched · run ${d.analysed.ran_at.slice(0, 10)} · unidentified stretches are usually blends, edits or unreleased material.`;
@@ -214,8 +228,8 @@
   function askAt(t) {
     const i = segAt(t), s = state.set.segments[i];
     $('#askT').value = ts(t);
-    $('#askAns').innerHTML = s && s.track ? `<b>${h(s.track.artist)} – ${h(s.track.title)}</b><span>${s.track.source === 'comments' ? `named in the comments around ${ts(s.start)} by ${s.track.votes} ${s.track.votes === 1 ? 'person' : 'people'}` : `playing from ${ts(s.start)}${s.hits === 1 ? ' · single-sample match, treat as a guess' : ''}`}</span><button class="btn sm" id="askCopy">Copy answer</button><a class="btn sm" href="?t=${Math.floor(t)}#/set/${state.key}" id="askLink">Link to this moment</a>`
-      : `<b>Not identified at ${ts(t)}</b><span>${s ? `nothing matched between ${ts(s.start)} and ${ts(s.end ?? state.set.source.duration)}` : 'outside the set'}</span>`;
+    $('#askAns').innerHTML = s && s.track ? `<b class="at">${h(s.track.title)}</b><span class="aa">${h(s.track.artist)}</span><span>${s.track.source === 'comments' ? `named in the comments around ${ts(s.start)} by ${s.track.votes} ${s.track.votes === 1 ? 'person' : 'people'}` : `playing from ${ts(s.start)}${s.hits === 1 ? ' · single-sample match, treat as a guess' : ''}`}</span><div class="ab"><button class="btn sm" id="askCopy">${icon('copy')}Copy answer</button><a class="btn sm" href="?t=${Math.floor(t)}#/set/${state.key}" id="askLink">${icon('link')}Link to this moment</a></div>`
+      : `<b class="at" style="color:var(--wh)">Not identified at ${ts(t)}</b><span>${s ? `nothing matched between ${ts(s.start)} and ${ts(s.end ?? state.set.source.duration)}` : 'outside the set'}</span>`;
     const c = $('#askCopy'); if (c) c.onclick = () => copy(`${ts(t)} ${s.track.artist} - ${s.track.title}`, 'Answer copied');
     const l = $('#askLink'); if (l) l.onclick = ev => { ev.preventDefault(); copy(location.origin + location.pathname + `?t=${Math.floor(t)}#/set/${state.key}`, 'Link copied'); };
   }
@@ -236,7 +250,7 @@
   function renderSetlist() {
     $('#slCount').textContent = state.setlist.length;
     const L = state.setlist;
-    $('#sl').innerHTML = L.length ? L.map((t, i) => `<div class="it"><div class="n">${i + 1}</div><div style="min-width:0"><div class="ti">${h(t.title)}</div><div class="ar">${h(t.artist)}${t.bpm ? ' · ' + Math.round(t.bpm) : ''}</div></div><div class="ctl"><button data-mv="${i}:-1" aria-label="Up">↑</button><button data-mv="${i}:1" aria-label="Down">↓</button><button data-rm="${i}" aria-label="Remove">✕</button></div></div>`).join('') : '<div class="empty">Add tracks from the tracklist or from "similar". The setlist stays with you across sets.</div>';
+    $('#sl').innerHTML = L.length ? L.map((t, i) => `<div class="it"><div class="n">${i + 1}</div><div style="min-width:0"><div class="ti">${h(t.title)}</div><div class="ar">${h(t.artist)}${t.bpm ? ' · ' + Math.round(t.bpm) : ''}</div></div><div class="ctl"><button data-mv="${i}:-1" aria-label="Move up">${icon('up')}</button><button data-mv="${i}:1" aria-label="Move down">${icon('down')}</button><button data-rm="${i}" aria-label="Remove">${icon('x')}</button></div></div>`).join('') : '<div class="empty">Add tracks from the tracklist or from "similar". The setlist stays with you across sets.</div>';
     const withYt = L.filter(t => t.youtube).length;
     $('#slFine').innerHTML = L.length ? `${L.length} tracks · ${withYt} resolved on YouTube · ${L.filter(t => t.apple).length} with Apple Music links.${CONFIG.spotifyClientId ? '' : ' Spotify: one-tap playlist needs a Spotify app id (see README); until then it opens a search per track.'} Apple Music: opens each track; a native playlist needs an Apple developer token.` : '';
   }
