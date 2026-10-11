@@ -1,0 +1,5 @@
+.DS_Store
+pipeline/.venv/
+pipeline/logs/
+pipeline/sets-test/
+__pycache__/

@@ -1,0 +1,247 @@
+{
+ "source": {
+  "url": "https://www.youtube.com/watch?v=c0-hvjV2A5Y",
+  "platform": "Youtube",
+  "id": "c0-hvjV2A5Y",
+  "title": "Fred again.. | Boiler Room: London",
+  "channel": "Boiler Room",
+  "duration": 4304.0,
+  "thumbnail": "https://i.ytimg.com/vi/c0-hvjV2A5Y/maxresdefault.jpg",
+  "upload_date": "20220729",
+  "views": 56107097
+ },
+ "analysed": {
+  "seconds": 180.0,
+  "every": 40.0,
+  "clip": 12,
+  "samples": 5,
+  "identified": 3,
+  "ran_at": "2026-10-11T14:22:57Z",
+  "took": 58
+ },
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 80.0,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 80.0,
+   "end": 120.0,
+   "track": {
+    "id": "sz628688617",
+    "title": "Nathan (still breathing)",
+    "artist": "Fred again..",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/9c/b7/b09cb72c-cca9-5d66-bc9d-a9b5e5f86b22/5054197236389.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2021",
+    "shazam": "https://www.shazam.com/track/628688617/nathan-still-breathing",
+    "apple": "https://music.apple.com/gb/album/nathan-still-breathing/1640463893?i=1640464456",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d0/13/e3/d013e3ed-130a-9ea7-a6fc-ac01d6f1fa53/mzaf_15041583760344379107.plus.aac.ep.m4a",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1912892307",
+    "isrc": "GBAHS2201032",
+    "youtube": "_-xRPba9qdY",
+    "youtubeTitle": "Fred again.. - Nathan (still breathing) [Visualiser]"
+   },
+   "hits": 1
+  },
+  {
+   "start": 120.0,
+   "end": 160.0,
+   "track": {
+    "id": "sz62420207",
+    "title": "Black Waters",
+    "artist": "Stephan V. Star",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music/29/42/a3/mzi.jkybttob.jpg/400x400cc.jpg",
+    "genre": "Dance",
+    "label": "Housearth Records",
+    "released": "2011",
+    "shazam": "https://www.shazam.com/track/62420207/black-waters",
+    "apple": "https://music.apple.com/gb/album/black-waters/416368254?i=416368258",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/cd/61/9c/cd619c1b-8a14-ced9-072d-8b54abd69de9/mzaf_10734209110697429722.plus.aac.ep.m4a",
+    "bpm": 128.8,
+    "deezer": "https://www.deezer.com/track/15037478",
+    "isrc": "GBKQU1130980",
+    "youtube": "mTCJu1pNe5M",
+    "youtubeTitle": "Black Waters (Original Mix)"
+   },
+   "hits": 1
+  },
+  {
+   "start": 160.0,
+   "end": null,
+   "track": {
+    "id": "sz628688652",
+    "title": "Kammy (like i do)",
+    "artist": "Fred again..",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b0/9c/b7/b09cb72c-cca9-5d66-bc9d-a9b5e5f86b22/5054197236389.jpg/400x400cc.jpg",
+    "genre": "Electronic",
+    "label": "Atlantic Records UK",
+    "released": "2021",
+    "shazam": "https://www.shazam.com/track/628688652/kammy-like-i-do",
+    "apple": "https://music.apple.com/gb/album/kammy-like-i-do/1640463893?i=1640463909",
+    "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fb/b4/11/fbb411fa-e979-f9ff-aa4a-ea4fc1c13778/mzaf_1203344259925032488.plus.aac.ep.m4a",
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/1912892277",
+    "isrc": "GBAHS2201029",
+    "youtube": "H80SKrO_dIM",
+    "youtubeTitle": "Fred again.. - Kammy (like i do) [Visualiser]"
+   },
+   "hits": 1
+  }
+ ],
+ "similar": {
+  "sz628688617": [
+   {
+    "artist": "Duskus",
+    "title": "Let Go",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3?hdnea=exp=1791729457~acl=/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3*~data=user_id=0,application_id=42~hmac=f755e0e7cfc0bb323cf239db9605a3147b9433fc7b21bd941ed24173450d0009",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/bd11f26b787b2bd9dbb9e3d951a35276/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1698158287",
+    "bpm": null,
+    "youtube": "GnhJ6SYzCuk",
+    "youtubeTitle": "Duskus - Let Go (Official Video)",
+    "id": "sim980072790"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim & Taite Imogen",
+    "title": "God Is the Space Between Us",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3?hdnea=exp=1791729458~acl=/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3*~data=user_id=0,application_id=42~hmac=4bd1a003df2ebd2565e00d6b8b1caa49878d59eebe5689337a3061afd18131fc",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/ad637b17e293164511b322e6f3893df2/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1677376967",
+    "bpm": null,
+    "youtube": "hYHomCDmYe0",
+    "youtubeTitle": "Barry Can\u2019t Swim - 'God Is The Space Between Us (feat. Taite Imogen)' (Official Audio)",
+    "id": "sim898594333"
+   },
+   {
+    "artist": "Ben B\u00f6hmer",
+    "title": "Begin Again",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/3/3/0/9338957ddc1d6d5dda72ee988f9813d5.mp3?hdnea=exp=1791729460~acl=/api/1/1/9/3/3/0/9338957ddc1d6d5dda72ee988f9813d5.mp3*~data=user_id=0,application_id=42~hmac=65d05ea9601840a49b7d25b63b3f232f5e7980f95fdbdb1165acbe0519adb9c4",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6ca6da475f75cea1995988b7ef1f0a4a/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1496292942",
+    "bpm": null,
+    "youtube": "p8cYGrK_WyA",
+    "youtubeTitle": "Ben B\u00f6hmer - Begin Again (Official Visualiser)",
+    "id": "sim422245686"
+   },
+   {
+    "artist": "Swimming Paul",
+    "title": "Vhs",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/2712744241",
+    "deezerId": 2712744241,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3?hdnea=exp=1791729457~acl=/api/1/1/2/4/7/0/2474bfcafb30f4d65edef74c4a7d545c.mp3*~data=user_id=0,application_id=42~hmac=b5036d8b53f12d044a492bea179457a7e7d6aa51aca9414c823937a3ec312258",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/449bdc2e7e00ab241a2b53658fd82fb1/250x250-000000-80-0-0.jpg",
+    "youtube": "dmxJIc3M7LI",
+    "youtubeTitle": "Swimming Paul - Vhs",
+    "id": "sim391847407"
+   },
+   {
+    "artist": "Swimming Paul",
+    "title": "Stay Cool",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4138760131",
+    "deezerId": 4138760131,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3?hdnea=exp=1791729457~acl=/api/1/1/9/5/b/0/95bfef745f84acd0215ca9619364b4be.mp3*~data=user_id=0,application_id=42~hmac=cfc1cb8aefeace109ca4f5da22d49def8c570efa935e953048513a850ec0f537",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/6e2626ea508d0eeb0a28bc7da2f9c3f5/250x250-000000-80-0-0.jpg",
+    "youtube": "VC9HBeLarDM",
+    "youtubeTitle": "Swimming Paul, LP Giobbi - Stay Cool",
+    "id": "sim662956723"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim",
+    "title": "Dance Dance Dance!",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3953713231",
+    "deezerId": 3953713231,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3?hdnea=exp=1791729457~acl=/api/1/1/e/c/6/0/ec6542fe8a6e953d29306cdad5f26817.mp3*~data=user_id=0,application_id=42~hmac=fbecf8114d5c706f297a6de78ca8e95684ff610e89f9769442a71c1c7466e9f0",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/83752f81151d3f9c9d7a846eb65fb5f2/250x250-000000-80-0-0.jpg",
+    "youtube": "4cPwPHzExSA",
+    "youtubeTitle": "Barry Can't Swim - Dance Dance Dance! (Official Music Video)",
+    "id": "sim536869664"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim",
+    "title": "I Could Be Madonna",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/4250155941",
+    "deezerId": 4250155941,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3?hdnea=exp=1791729457~acl=/api/1/1/d/0/4/0/d04f6a6a20ae97159af4483f9f83d23b.mp3*~data=user_id=0,application_id=42~hmac=ad001f8f67ad9074ca0612843dd93aec19b3484a5f3d62ae5739cd8df1de5488",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/f3bcdd1e89d00840ebdeb8fe768c4a7e/250x250-000000-80-0-0.jpg",
+    "youtube": "H0lSZrcL4oY",
+    "youtubeTitle": "Barry Can't Swim x Sammy Virji - I Could Be Madonna (Official Visualiser)",
+    "id": "sim498464793"
+   },
+   {
+    "artist": "Disclosure",
+    "title": "Latch",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/75526535",
+    "deezerId": 75526535,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3?hdnea=exp=1791729457~acl=/api/1/1/f/e/0/0/fe0f0222e7b333f0505f6d1b11707958.mp3*~data=user_id=0,application_id=42~hmac=ed84866182367d9bf09b0632e048c61fd891e52c1d775f81ac7b14ecde210784",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/e44468007c45f2523d056a0b19eed80a/250x250-000000-80-0-0.jpg",
+    "youtube": "93ASUImTedo",
+    "youtubeTitle": "Disclosure - Latch ft. Sam Smith",
+    "id": "sim576283521"
+   }
+  ],
+  "sz62420207": [],
+  "sz628688652": [
+   {
+    "artist": "Duskus",
+    "title": "Let Go",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3?hdnea=exp=1791729472~acl=/api/1/1/2/b/4/0/2b418a88fa18053dac2db210cafa8a2a.mp3*~data=user_id=0,application_id=42~hmac=9749f3e01d976b0847eb0db609a655a47430a8fbaa02d8ec04790d451b771d1b",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/bd11f26b787b2bd9dbb9e3d951a35276/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1698158287",
+    "bpm": null,
+    "youtube": "GnhJ6SYzCuk",
+    "youtubeTitle": "Duskus - Let Go (Official Video)",
+    "id": "sim980072790"
+   },
+   {
+    "artist": "Barry Can\u2019t Swim & Taite Imogen",
+    "title": "God Is the Space Between Us",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3?hdnea=exp=1791729473~acl=/api/1/1/d/0/5/0/d058b8580d7d7ad1ac2c26eff7842a9d.mp3*~data=user_id=0,application_id=42~hmac=df8e3deb05bee6d6b18ac9a39ce07dcdbf78f99af4603d49bc7fc89dacb65377",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/ad637b17e293164511b322e6f3893df2/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1677376967",
+    "bpm": null,
+    "youtube": "hYHomCDmYe0",
+    "youtubeTitle": "Barry Can\u2019t Swim - 'God Is The Space Between Us (feat. Taite Imogen)' (Official Audio)",
+    "id": "sim898594333"
+   },
+   {
+    "artist": "Skrillex, Starrah & Four Tet",
+    "title": "Butterflies",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/1/7/d/0/17d7d10efbe446f717ec5be02a533532.mp3?hdnea=exp=1791729474~acl=/api/1/1/1/7/d/0/17d7d10efbe446f717ec5be02a533532.mp3*~data=user_id=0,application_id=42~hmac=7c1867a585c631f6c073d135ff3bf196060af4c0de77f3d6c1efcb27fe5e74e9",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/9da22875b9466d606251a7edff810a3f/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1366419422",
+    "bpm": null,
+    "youtube": "zliasEkWx0M",
+    "youtubeTitle": "Skrillex, Starrah & Four Tet - Butterflies (Official Music Video)",
+    "id": "sim686474340"
+   },
+   {
+    "artist": "Skrillex, Noisia, josh pan & Dylan Brady",
+    "title": "Supersonic (my existence)",
+    "why": "listeners of this also play",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/d/4/0/bd46bc6e3691cbd0755646cb96b37048.mp3?hdnea=exp=1791729476~acl=/api/1/1/b/d/4/0/bd46bc6e3691cbd0755646cb96b37048.mp3*~data=user_id=0,application_id=42~hmac=20c53d86dd35569dca6948b5db4a6a39c26c9bfed8d467c2771e11275d39b15d",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/0255bcabe0fe1a7eba082408cfd75a80/250x250-000000-80-0-0.jpg",
+    "deezer": "https://www.deezer.com/track/1394903512",
+    "bpm": null,
+    "youtube": "U41bONK2V-U",
+    "youtubeTitle": "Skrillex, Noisia, josh pan & Dylan Brady - Supersonic (My Existence) [Official Audio]",
+    "id": "sim849740413"
+   }
+  ]
+ }
+}
