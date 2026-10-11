@@ -3,3 +3,5 @@ pipeline/.venv/
 pipeline/logs/
 pipeline/sets-test/
 __pycache__/
+pipeline/cache/
+pipeline/vendor/
