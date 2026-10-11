@@ -38,6 +38,13 @@ def proc_alive(url):
     r = subprocess.run(["pgrep", "-f", f"trackid.py {url}"], capture_output=True, text=True)
     return bool(r.stdout.strip())
 
+def fetch_title(job):
+    try:
+        out = subprocess.run([os.path.join(HERE, ".venv", "bin", "yt-dlp"), "-J", "--no-playlist", "--no-warnings", job["url"]], capture_output=True, text=True, timeout=40).stdout
+        d = json.loads(out); job["title"] = d.get("title"); job["duration"] = d.get("duration"); save()
+    except Exception:
+        pass
+
 def title_of(key):
     p = os.path.join(SETS, key + ".json")
     try: return json.load(open(p))["source"]["title"]
@@ -119,8 +126,10 @@ class H(BaseHTTPRequestHandler):
     def do_GET(self):
         path = urllib.parse.urlparse(self.path).path
         if path == "/health":
-            with lock: q = sum(1 for j in jobs.values() if j["state"] in ("queued", "running"))
-            return self._send(200, {"ok": True, "queue": q, "shazam": shazam_state(), "audd": bool(os.environ.get("AUDD_TOKEN")), "acrcloud": bool(os.environ.get("ACR_KEY"))})
+            with lock:
+                q = sum(1 for j in jobs.values() if j["state"] in ("queued", "running", "adopted"))
+                busy = any(j["state"] in ("running", "adopted") and any(re.match(r"^\s+\d+:\d+\s+\S", l) and not l.rstrip().endswith("·") for l in j.get("log", [])[-6:]) for j in jobs.values())
+            return self._send(200, {"ok": True, "queue": q, "shazam": "ok" if busy else shazam_state(), "audd": bool(os.environ.get("AUDD_TOKEN")), "acrcloud": bool(os.environ.get("ACR_KEY"))})
         if path == "/jobs":
             with lock:
                 active = [k for k in order if jobs[k]["state"] in ("queued", "running", "adopted")]
@@ -129,7 +138,7 @@ class H(BaseHTTPRequestHandler):
                     j = jobs[k]
                     ids = sum(1 for l in j.get("log", []) if re.match(r"^\s+\d+:\d+\s+\S", l) and not l.rstrip().endswith("·"))
                     last = next((l.strip() for l in reversed(j.get("log", [])) if re.match(r"^\s+\d+:\d+\s", l)), "")
-                    out.append({"key": k, "url": j["url"], "state": "running" if j["state"] == "adopted" else j["state"], "ids": ids, "last": last[:80],
+                    out.append({"key": k, "url": j["url"], "state": "running" if j["state"] == "adopted" else j["state"], "ids": ids, "last": last[:80], "duration": j.get("duration"),
                                 "position": active.index(k) if k in active else None, "started": j.get("started"), "finished": j.get("finished"), "queued": j.get("queued"), "title": j.get("title")})
             return self._send(200, {"now": time.time(), "jobs": out[:30]})
         m = re.match(r"^/status/([\w-]+)$", path)
@@ -162,6 +171,7 @@ class H(BaseHTTPRequestHandler):
             if key in order: order.remove(key)
             order.append(key)
         save()
+        threading.Thread(target=fetch_title, args=(jobs[key],), daemon=True).start()
         self._send(200, {"key": key, "state": "queued"})
 
 def shazam_state():
