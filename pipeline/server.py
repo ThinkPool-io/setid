@@ -14,6 +14,34 @@ SETS = os.path.join(HERE, "..", "sets")
 LOGS = os.path.join(HERE, "logs"); os.makedirs(LOGS, exist_ok=True)
 PY = os.path.join(HERE, ".venv", "bin", "python")
 jobs, order, lock = {}, [], threading.Lock()
+STATE = os.path.join(LOGS, "jobs.json")
+
+def save():
+    with lock:
+        data = {"order": order, "jobs": {k: {kk: vv for kk, vv in j.items() if kk != "audd_token"} for k, j in jobs.items()}}
+    tmp = STATE + ".tmp"; json.dump(data, open(tmp, "w")); os.replace(tmp, STATE)
+
+def load():
+    if not os.path.exists(STATE):
+        return
+    try:
+        data = json.load(open(STATE))
+    except Exception:
+        return
+    with lock:
+        jobs.update(data.get("jobs", {})); order[:] = data.get("order", [])
+        for j in jobs.values():
+            if j["state"] == "running":
+                j["state"] = "adopted"  # a previous server instance started it; worker() decides what to do
+
+def proc_alive(url):
+    r = subprocess.run(["pgrep", "-f", f"trackid.py {url}"], capture_output=True, text=True)
+    return bool(r.stdout.strip())
+
+def title_of(key):
+    p = os.path.join(SETS, key + ".json")
+    try: return json.load(open(p))["source"]["title"]
+    except Exception: return None
 
 def key_for(url):
     m = re.search(r"(?:youtu\.be/|[?&]v=|/shorts/|/live/)([\w-]{11})", url) or re.match(r"^([\w-]{11})$", url.strip())
@@ -29,10 +57,27 @@ def worker():
         job = None
         with lock:
             for k in order:
-                if jobs[k]["state"] == "queued":
-                    job = jobs[k]; job["state"] = "running"; job["started"] = time.time(); break
+                if jobs[k]["state"] == "adopted":
+                    job = jobs[k]; break
+            if not job:
+                for k in order:
+                    if jobs[k]["state"] == "queued":
+                        job = jobs[k]; job["state"] = "running"; job["started"] = time.time(); break
         if not job:
             time.sleep(1); continue
+        if job["state"] == "adopted":
+            logp = os.path.join(LOGS, job["key"] + ".server.log")
+            if proc_alive(job["url"]):
+                job["state"] = "running"; save()
+                while proc_alive(job["url"]):
+                    try: job["log"] = [l.rstrip() for l in open(logp, errors="replace").read().splitlines() if not l.startswith("[download]")][-40:]
+                    except Exception: pass
+                    time.sleep(1.5)
+                finalize(job, logp, os.path.exists(os.path.join(SETS, job["key"] + ".json"))); continue
+            if os.path.exists(os.path.join(SETS, job["key"] + ".json")):
+                job["state"] = "done"; job["finished"] = time.time(); save(); continue
+            job["state"] = "queued"; save(); continue
+        save()
         env = dict(os.environ)
         if job.get("audd_token"):
             env["AUDD_TOKEN"] = job["audd_token"]
@@ -46,9 +91,12 @@ def worker():
                 except Exception:
                     pass
                 time.sleep(1.5)
-        job["log"] = [l.rstrip() for l in open(logp, errors="replace").read().splitlines() if not l.startswith("[download]")][-60:]
-        ok = p.returncode == 0 and os.path.exists(os.path.join(SETS, job["key"] + ".json"))
-        job["state"] = "done" if ok else "failed"; job["finished"] = time.time()
+        finalize(job, logp, p.returncode == 0 and os.path.exists(os.path.join(SETS, job["key"] + ".json")))
+
+def finalize(job, logp, ok):
+        try: job["log"] = [l.rstrip() for l in open(logp, errors="replace").read().splitlines() if not l.startswith("[download]")][-60:]
+        except Exception: pass
+        job["state"] = "done" if ok else "failed"; job["finished"] = time.time(); job["title"] = title_of(job["key"]); save()
         if ok:
             subprocess.run([sys.executable, os.path.join(HERE, "build_index.py")], capture_output=True)
             try:  # persist to GitHub Pages
@@ -73,6 +121,17 @@ class H(BaseHTTPRequestHandler):
         if path == "/health":
             with lock: q = sum(1 for j in jobs.values() if j["state"] in ("queued", "running"))
             return self._send(200, {"ok": True, "queue": q, "shazam": shazam_state(), "audd": bool(os.environ.get("AUDD_TOKEN")), "acrcloud": bool(os.environ.get("ACR_KEY"))})
+        if path == "/jobs":
+            with lock:
+                active = [k for k in order if jobs[k]["state"] in ("queued", "running", "adopted")]
+                out = []
+                for k in order[::-1]:
+                    j = jobs[k]
+                    ids = sum(1 for l in j.get("log", []) if re.match(r"^\s+\d+:\d+\s+\S", l) and not l.rstrip().endswith("·"))
+                    last = next((l.strip() for l in reversed(j.get("log", [])) if re.match(r"^\s+\d+:\d+\s", l)), "")
+                    out.append({"key": k, "url": j["url"], "state": "running" if j["state"] == "adopted" else j["state"], "ids": ids, "last": last[:80],
+                                "position": active.index(k) if k in active else None, "started": j.get("started"), "finished": j.get("finished"), "queued": j.get("queued"), "title": j.get("title")})
+            return self._send(200, {"now": time.time(), "jobs": out[:30]})
         m = re.match(r"^/status/([\w-]+)$", path)
         if m:
             j = jobs.get(m.group(1))
@@ -102,6 +161,7 @@ class H(BaseHTTPRequestHandler):
             jobs[key] = {"key": key, "url": url, "every": every, "state": "queued", "log": [], "queued": time.time(), "audd_token": (body.get("audd_token") or "").strip()}
             if key in order: order.remove(key)
             order.append(key)
+        save()
         self._send(200, {"key": key, "state": "queued"})
 
 def shazam_state():
@@ -114,6 +174,7 @@ def shazam_state():
         return "unknown"
 
 if __name__ == "__main__":
+    load()
     threading.Thread(target=worker, daemon=True).start()
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8787
     print(f"SetID queue server on :{port}", flush=True)

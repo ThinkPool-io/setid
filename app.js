@@ -74,8 +74,27 @@
     const w = $('#worker'); const info = state.apiInfo || {};
     w.innerHTML = state.apiOk ? `<span class="chip acc">worker online</span> <span class="chip">Shazam: ${h(info.shazam || '?')}</span> <span class="chip">AudD: ${info.audd ? 'key set' : 'no key'}</span> <span class="chip">ACRCloud: ${info.acrcloud ? 'key set' : 'no key'}</span> <span class="chip">${info.queue || 0} in queue</span>` : '<span class="chip" style="color:var(--warn)">worker offline: only library sets open</span>';
     $('#every').value = localStorage.getItem('setid.every') || 40; $('#audd').value = localStorage.getItem('setid.audd') || '';
+    startTracker();
     $('#library').innerHTML = state.index.length ? state.index.map(x => `<a class="card" href="#/set/${x.key}"><img src="${x.thumbnail}" alt="" loading="lazy"><div class="b"><div class="t">${h(x.title)}</div><div class="m"><span class="chip acc">${x.tracks} IDs</span><span class="chip">${ts(x.duration)}</span><span class="chip">${Math.round(x.coverage * 100)}% covered</span></div></div></a>`).join('') : '<div class="empty">No sets processed yet.</div>';
   }
+  let trackerT = null;
+  async function renderTracker() {
+    const el = $('#tracker'); if (!el) return;
+    if (!state.apiOk) { el.innerHTML = '<div class="empty">Worker offline. Nothing is being processed.</div>'; return; }
+    let j; try { j = await (await fetch(state.api + '/jobs', { cache: 'no-store' })).json(); } catch { el.innerHTML = '<div class="empty">Worker unreachable.</div>'; return; }
+    const rel = t => { if (!t) return ''; const s = Math.max(0, Math.round(j.now - t)); return s < 60 ? `${s}s` : s < 3600 ? `${Math.floor(s / 60)} min` : `${Math.floor(s / 3600)} h ${Math.floor(s % 3600 / 60)} min`; };
+    const vid = u => (u.match(/v=([\w-]{11})/) || [])[1];
+    const label = x => x.title || (state.index.find(s => s.key === x.key) || {}).title || x.url.replace(/^https?:\/\/(www\.)?/, '');
+    if (!j.jobs.length) { el.innerHTML = '<div class="empty">Queue is empty. Paste a set above to start one.</div>'; return; }
+    el.innerHTML = j.jobs.map(x => {
+      const st = x.state === 'running' ? `listening · ${x.ids} IDs` : x.state === 'queued' ? `queued · #${x.position + 1}` : x.state;
+      const right = x.state === 'running' ? `${rel(x.started)} running` : x.state === 'queued' ? `waiting ${rel(x.queued)}` : x.state === 'done' ? `done ${rel(x.finished)} ago` : `failed ${rel(x.finished)} ago`;
+      const sub = x.state === 'running' && x.last ? x.last : x.state === 'done' ? 'in the library' : x.state === 'failed' ? 'see log on retry' : '';
+      const inner = `<div class="st"><i></i>${h(st)}</div><div style="min-width:0"><div class="t">${h(label(x))}</div><div class="sub">${h(sub)}</div></div><div class="r">${h(right)}</div>`;
+      return x.state === 'done' ? `<a class="job ${x.state}" href="#/set/${x.key}" style="text-decoration:none">${inner}</a>` : `<div class="job ${x.state}">${inner}</div>`;
+    }).join('');
+  }
+  function startTracker() { clearInterval(trackerT); renderTracker(); trackerT = setInterval(() => { if ($('#home').classList.contains('hidden')) return; renderTracker(); }, 4000); }
   function onPaste(v) {
     const r = findKey(v);
     if (typeof r === 'string') { location.hash = '#/set/' + r; return; }
@@ -103,6 +122,7 @@
       $('#progHead').innerHTML = st.state === 'queued' ? `<b>Queued</b> · position ${st.position + 1} · ${h(url)}` : st.state === 'running' ? `<b>Listening…</b> · ${ids} IDs so far · ${mins} min · sampling every ${st.every}s` : st.state === 'done' ? `<b>Done.</b> Opening the tracklist…` : `<b>Failed.</b> The log below says why.`;
       $('#progLog').textContent = st.log.join('\n') || 'Waiting for the worker…';
       $('#progLog').scrollTop = 1e9;
+      renderTracker();
       if (st.state === 'done') { await loadIndex(); setTimeout(() => { location.hash = '#/set/' + st.key; }, 800); return; }
       if (st.state === 'failed') return;
       setTimeout(poll, 2500);
