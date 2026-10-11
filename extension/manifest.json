@@ -11,7 +11,7 @@
     "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png" }
   },
   "background": { "service_worker": "background.js" },
-  "host_permissions": ["https://thinkpool-io.github.io/*"],
+  "host_permissions": ["https://setid.vercel.app/*"],
   "content_scripts": [
     {
       "matches": ["https://www.youtube.com/*"],

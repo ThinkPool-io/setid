@@ -5,3 +5,6 @@ pipeline/sets-test/
 __pycache__/
 pipeline/cache/
 pipeline/vendor/
+.vercel
+.env*
+node_modules/

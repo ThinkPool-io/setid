@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/api/sets/index.json", "destination": "/api/sets-index" },
+    { "source": "/api/sets/:key.json", "destination": "/api/set?key=:key" },
+    { "source": "/api/status/:key", "destination": "/api/status?key=:key" }
+  ],
+  "headers": [
+    { "source": "/sets/(.*)", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }, { "key": "Cache-Control", "value": "public, max-age=60" }] }
+  ]
+}

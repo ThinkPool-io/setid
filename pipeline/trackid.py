@@ -78,7 +78,8 @@ async def recognize_shazam(shazam, path, retries=2):
         return None, False
     # Shazam is the only provider: wait for the rate limit to lift, then retry this same clip.
     waited = 0
-    while waited < 90 * 60:
+    max_wait = int(os.environ.get("SETID_SHAZAM_MAX_WAIT", str(90 * 60)))
+    while waited < max_wait:
         code = await shazam_probe()
         if code != 429:
             print(f"    shazam back after {waited // 60} min, resuming", file=sys.stderr, flush=True)
@@ -90,7 +91,7 @@ async def recognize_shazam(shazam, path, retries=2):
         print(f"    waiting for Shazam rate limit to lift ({waited // 60} min so far)", file=sys.stderr, flush=True)
         await asyncio.sleep(120); waited += 120
     RATE_LIMITED.add("shazam")
-    print("    shazam still rate limited after 90 min, giving up", file=sys.stderr)
+    print(f"    shazam still rate limited after {max_wait // 60} min, continuing without it", file=sys.stderr)
     return None, False
 
 async def shazam_probe():
@@ -277,12 +278,14 @@ async def enrich_track(sess, tr, with_similar=True):
 async def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("url"); ap.add_argument("--every", type=float, default=40); ap.add_argument("--clip", type=float, default=12)
-    ap.add_argument("--limit-min", type=float, default=0); ap.add_argument("--out", default="../site/sets"); ap.add_argument("--no-similar", action="store_true")
+    ap.add_argument("--limit-min", type=float, default=0); ap.add_argument("--out", default="../site/sets"); ap.add_argument("--no-similar", action="store_true"); ap.add_argument("--save-audio", help="keep a copy of the downloaded audio here")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     t0 = time.time()
     with tempfile.TemporaryDirectory() as wd:
         meta, mp3 = fetch(a.url, wd)
+        if a.save_audio:
+            import shutil; shutil.copyfile(mp3, a.save_audio)
         dur = float(meta.get("duration") or 0)
         if a.limit_min:
             dur = min(dur, a.limit_min * 60)

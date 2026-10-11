@@ -47,11 +47,11 @@
   async function loadIndex() {
     try { state.index = await (await fetch('sets/index.json', { cache: 'no-store' })).json(); } catch { state.index = []; }
     try { const c = await (await fetch('api.json', { cache: 'no-store' })).json(); state.api = (c.api || '').replace(/\/$/, ''); } catch { }
-    if (state.api) { try { const ctl = new AbortController(); setTimeout(() => ctl.abort(), 8000); const hinfo = await (await fetch(state.api + '/health', { signal: ctl.signal })).json(); state.apiOk = !!hinfo.ok; state.apiInfo = hinfo; const remote = await (await fetch(state.api + '/sets/index.json')).json(); const have = new Set(state.index.map(x => x.key)); remote.forEach(x => { if (!have.has(x.key)) state.index.push(x); }); } catch { state.apiOk = false; } }
+    if (state.api) { try { const ctl = new AbortController(); setTimeout(() => ctl.abort(), 8000); const hinfo = await (await fetch(state.api + '/health', { signal: ctl.signal })).json(); state.apiOk = !!hinfo.ok; state.apiInfo = hinfo; const remote = await (await fetch(state.api + '/sets/index.json', { cache: 'no-store' })).json(); const fresh = new Map(remote.map(x => [x.key, x])); state.index = state.index.filter(x => !fresh.has(x.key)).concat(remote); } catch { state.apiOk = false; } }
   }
   async function loadSet(key) {
-    let r = await fetch(`sets/${key}.json`, { cache: 'no-store' });
-    if (!r.ok && state.api) r = await fetch(`${state.api}/sets/${key}.json`, { cache: 'no-store' });
+    let r = state.api ? await fetch(`${state.api}/sets/${key}.json`, { cache: 'no-store' }).catch(() => null) : null;  // the API holds the newest copy
+    if (!r || !r.ok) r = await fetch(`sets/${key}.json`, { cache: 'no-store' });
     const d = await r.json();
     d.segments.forEach(s => { if (s.track) state.tracks[s.track.id] = s.track; });
     Object.values(d.similar || {}).flat().forEach(t => { state.tracks[t.id] = t; });
@@ -87,7 +87,8 @@
     $('#home').classList.remove('hidden'); $('#set').classList.add('hidden');
     stopPlayer();
     const w = $('#worker'); const info = state.apiInfo || {};
-    w.innerHTML = state.apiOk ? `<span class="chip acc">worker online</span> <span class="chip">Shazam: ${h(info.shazam || '?')}</span> <span class="chip">AudD: ${info.audd ? 'key set' : 'no key'}</span> <span class="chip">ACRCloud: ${info.acrcloud ? 'key set' : 'no key'}</span> <span class="chip">${info.queue || 0} in queue</span>` : '<span class="chip" style="color:var(--warn)">worker offline: only library sets open</span>';
+    const online = info.workerOnline !== undefined ? info.workerOnline : state.apiOk;
+    w.innerHTML = state.apiOk ? `<span class="chip ${online ? 'acc' : ''}">${online ? 'worker online' : 'worker asleep: new sets wait in the queue'}</span> <span class="chip">Shazam: ${h(info.shazam || '?')}</span> <span class="chip">AudD: ${info.audd ? 'key set' : 'no key'}</span> <span class="chip">ACRCloud: ${info.acrcloud ? 'key set' : 'no key'}</span> <span class="chip">${info.queue || 0} in queue</span>` : '<span class="chip" style="color:var(--warn)">worker offline: only library sets open</span>';
     $('#every').value = localStorage.getItem('setid.every') || 40; $('#audd').value = localStorage.getItem('setid.audd') || '';
     startTracker(); renderRhythm();
     $('#library').innerHTML = state.index.length ? state.index.map(x => `<a class="card" href="#/set/${x.key}"><img src="${x.thumbnail}" alt="" loading="lazy"><div class="b"><div class="t">${h(x.title)}</div><div class="m"><span class="chip acc">${x.tracks} IDs</span><span class="chip">${ts(x.duration)}</span><span class="chip">${Math.round(x.coverage * 100)}% covered</span></div></div></a>`).join('') : '<div class="empty">No sets processed yet.</div>';
@@ -317,7 +318,11 @@
   async function route() {
     const m = location.hash.match(/^#\/set\/([\w-]+)/);
     if (m) { const t = new URLSearchParams(location.search).get('t'); await renderSet(m[1], t != null ? +t : null); window.scrollTo({ top: 0 }); }
-    else renderHome();
+    else {
+      renderHome();
+      const q = new URLSearchParams((location.hash.split('?')[1]) || '').get('q');  // e.g. from the extension's "Request it"
+      if (q && !state.prefilled) { state.prefilled = true; $('#pasteQ').value = q; onPaste(q); }
+    }
   }
   window.addEventListener('hashchange', route);
   (async () => { await loadIndex(); await spotifyCallback(); renderSetlist(); route(); })();
