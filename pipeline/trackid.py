@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """SetID pipeline: DJ set URL -> timestamped tracklist (Shazam) -> similar tracks -> streaming links.
 
-usage: python trackid.py <youtube-or-soundcloud-url> [--every 40] [--clip 12] [--limit-min 0] [--out ../site/sets]
+usage: python trackid.py <youtube-or-soundcloud-url> [--every 40] [--clip 12] [--limit-min 0] [--out ../sets]
 
 Sources (all free, no keys): yt-dlp (audio), Shazam (ID), Deezer (BPM, previews, related artists),
 MusicBrainz + ListenBrainz (track-level similarity), yt-dlp search (YouTube video ids for playlist export).

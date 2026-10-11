@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Rebuild site/sets/index.json from the set JSON files."""
+"""Rebuild sets/index.json from the set JSON files."""
 import glob, json, os
 here = os.path.dirname(os.path.abspath(__file__))
-sets_dir = os.path.join(here, "..", "site", "sets")
+sets_dir = os.path.join(here, "..", "sets")
 rows = []
 for p in sorted(glob.glob(os.path.join(sets_dir, "*.json"))):
     if p.endswith("index.json"):

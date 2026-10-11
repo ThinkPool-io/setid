@@ -16,9 +16,9 @@ Live prototype: https://thinkpool-io.github.io/setid/
    **MusicBrainz → ListenBrainz** (track-level "listeners of this also play" similarity),
    Deezer related artists as fallback, and **yt-dlp search** resolves a YouTube video id per track
    so playlist export is a single link.
-4. Output is one JSON per set in `site/sets/`. `build_index.py` rebuilds the library index.
+4. Output is one JSON per set in `sets/`. `build_index.py` rebuilds the library index.
 
-The site (`site/`) is static: a YouTube player, a tracklist that follows playback, a "track ID @ time"
+The site (`index.html` + `app.js`) is static: a YouTube player, a tracklist that follows playback, a "track ID @ time"
 lookup that produces a copy-paste answer for comment sections, similar tracks with previews, a setlist
 that persists across sets, and exports.
 
@@ -37,7 +37,7 @@ python build_index.py
 | Target | Prototype | Full product |
 |---|---|---|
 | YouTube / YouTube Music | One link opens a playable playlist (`watch_videos?video_ids=`). Works today. | Save to account via YouTube Data API |
-| Spotify | PKCE flow is implemented; set `spotifyClientId` in `site/app.js` (register an app at developer.spotify.com with the site URL as redirect) and it creates a real playlist. Without it: copies the list and opens searches. | Same, with the app id configured |
+| Spotify | PKCE flow is implemented; set `spotifyClientId` in `app.js` (register an app at developer.spotify.com with the site URL as redirect) and it creates a real playlist. Without it: copies the list and opens searches. | Same, with the app id configured |
 | Apple Music | Opens the Shazam-provided Apple Music link per track, copies the list. | MusicKit JS playlist creation (needs an Apple developer token) |
 | M3U8 / CSV / text | Works today | |
 
