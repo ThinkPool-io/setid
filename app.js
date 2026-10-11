@@ -178,7 +178,7 @@
     document.title = `${src.title} · tracklist · SetID`;
     $('#setTitle').textContent = src.title;
     const n = new Set(segs.filter(s => s.track).map(s => s.track.id)).size;
-    $('#setMeta').innerHTML = `<span>${h(src.channel || '')}</span><span class="chip acc">${n} tracks identified</span><span class="chip">${ts(src.duration)}</span><span class="chip">${Math.round(d.analysed.identified / d.analysed.samples * 100)}% of samples matched</span><a class="btn sm" target="_blank" rel="noopener" href="${src.url}">Open on ${src.platform}</a><button class="btn sm" id="shareSet">Share</button>`;
+    $('#setMeta').innerHTML = `<span>${h(src.channel || '')}</span><span class="chip acc">${n} tracks identified</span><span class="chip">${ts(src.duration)}</span>${d.analysed.method === 'comments' ? `<span class="chip">from ${d.analysed.comments} YouTube comments</span>` : `<span class="chip">${Math.round(d.analysed.identified / d.analysed.samples * 100)}% of samples matched</span>`}<a class="btn sm" target="_blank" rel="noopener" href="${src.url}">Open on ${src.platform}</a><button class="btn sm" id="shareSet">Share</button>`;
     $('#shareSet').onclick = () => copy(location.href.split('?')[0], 'Link copied');
     // timeline
     const colorOf = {}; let ci = 0;
@@ -187,19 +187,19 @@
     // tracklist
     $('#tl').innerHTML = segs.map((s, i) => {
       const t = s.track, inSl = t && state.setlist.some(x => x.id === t.id);
-      if (!t) return `<div class="row unk" data-i="${i}"><div class="ts">${ts(s.start)}</div><div style="grid-column:2/-1"><div class="ti">Unidentified</div><div class="ar">${ts(s.start)} to ${ts(s.end ?? src.duration)} · no confident match</div></div></div>`;
+      if (!t) return `<div class="row unk" data-i="${i}"><div class="ts">${ts(s.start)}</div><div style="grid-column:2/-1"><div class="ti">Unidentified</div><div class="ar">${ts(s.start)} to ${ts(s.end ?? src.duration)} · ${d.analysed.method === 'comments' ? 'nobody has named this part yet' : 'no confident match'}</div></div></div>`;
       const sims = (d.similar || {})[t.id] || [];
       return `<div class="row" data-i="${i}" data-seek="${s.start}">
         <div class="ts">${ts(s.start)}</div><img src="${t.cover || ''}" alt="" loading="lazy">
         <div style="min-width:0"><div class="ti">${h(t.title)}</div><div class="ar">${h(t.artist)}${t.label ? ' · ' + h(t.label) : ''}${t.released ? ' · ' + h(t.released) : ''}</div>
-          <div class="meta">${s.hits === 1 ? '<span class="chip" style="color:var(--warn);border-color:#4a3d18" title="Matched on a single 12-second sample">low confidence</span>' : ''}${t.bpm ? `<span class="chip">${Math.round(t.bpm)} BPM</span>` : ''}${t.genre ? `<span class="chip">${h(t.genre)}</span>` : ''}<span class="chip">${sims.length} similar</span></div></div>
+          <div class="meta">${t.source === 'comments' ? `<span class="chip" style="color:var(--warn);border-color:#4a3d18" title="${h((t.evidence || []).join(' · '))}">from comments · ${t.votes} ${t.votes === 1 ? 'person' : 'people'}${t.approx ? ' · time approx' : ''}</span>` : s.hits === 1 ? '<span class="chip" style="color:var(--warn);border-color:#4a3d18" title="Matched on a single 12-second sample">low confidence</span>' : ''}${t.bpm ? `<span class="chip">${Math.round(t.bpm)} BPM</span>` : ''}${t.genre ? `<span class="chip">${h(t.genre)}</span>` : ''}<span class="chip">${sims.length} similar</span></div></div>
         <div class="acts">${pvBtn(t)}<button class="btn sm" data-add="${t.id}" ${inSl ? 'disabled' : ''}>${inSl ? 'Added' : '+ Setlist'}</button><button class="btn sm ic" data-more="${i}" aria-label="More">⋯</button></div>
         <div class="exp"><div class="open">${openLinks(t)}<button class="btn sm" data-idcopy="${i}">Copy "track ID" answer</button></div>
           <div class="eyebrow" style="margin-bottom:6px">Similar tracks</div>
           <div class="sims">${sims.length ? sims.map(x => `<div class="sim"><img src="${x.cover || ''}" alt="" loading="lazy"><div style="min-width:0"><div class="ti">${h(x.title)}</div><div class="ar">${h(x.artist)}${x.bpm ? ' · ' + Math.round(x.bpm) + ' BPM' : ''}</div><div class="why">${h(x.why || '')}</div></div><div class="acts">${pvBtn(x)}<a class="btn sm ic yt" target="_blank" rel="noopener" href="${links(x).yt}" title="Open on YouTube">▶</a><button class="btn sm" data-add="${x.id}" ${state.setlist.some(z => z.id === x.id) ? 'disabled' : ''}>+</button></div></div>`).join('') : '<div class="empty">No similarity data for this one yet.</div>'}</div></div>
       </div>`;
     }).join('');
-    $('#setFine').textContent = `Sampled every ${d.analysed.every}s with ${d.analysed.clip}s clips · ${d.analysed.identified}/${d.analysed.samples} samples matched · run ${d.analysed.ran_at.slice(0, 10)} · unidentified stretches are usually blends, edits or unreleased material.`;
+    $('#setFine').textContent = d.analysed.method === 'comments' ? `Tracklist built from ${d.analysed.comments} YouTube comments and replies: each ID is where someone asked "track ID?" and someone else named it. Times mark when it was asked about, so treat them as roughly when the track plays. Not audio-verified yet.` : `Sampled every ${d.analysed.every}s with ${d.analysed.clip}s clips · ${d.analysed.identified}/${d.analysed.samples} samples matched · run ${d.analysed.ran_at.slice(0, 10)} · unidentified stretches are usually blends, edits or unreleased material.`;
     renderNow(-1, 0);
     if (ytReady) mountPlayer();
     if (tParam != null) { seek(tParam); askAt(tParam); }
@@ -214,7 +214,7 @@
   function askAt(t) {
     const i = segAt(t), s = state.set.segments[i];
     $('#askT').value = ts(t);
-    $('#askAns').innerHTML = s && s.track ? `<b>${h(s.track.artist)} – ${h(s.track.title)}</b><span>playing from ${ts(s.start)}${s.hits === 1 ? ' · single-sample match, treat as a guess' : ''}</span><button class="btn sm" id="askCopy">Copy answer</button><a class="btn sm" href="?t=${Math.floor(t)}#/set/${state.key}" id="askLink">Link to this moment</a>`
+    $('#askAns').innerHTML = s && s.track ? `<b>${h(s.track.artist)} – ${h(s.track.title)}</b><span>${s.track.source === 'comments' ? `named in the comments around ${ts(s.start)} by ${s.track.votes} ${s.track.votes === 1 ? 'person' : 'people'}` : `playing from ${ts(s.start)}${s.hits === 1 ? ' · single-sample match, treat as a guess' : ''}`}</span><button class="btn sm" id="askCopy">Copy answer</button><a class="btn sm" href="?t=${Math.floor(t)}#/set/${state.key}" id="askLink">Link to this moment</a>`
       : `<b>Not identified at ${ts(t)}</b><span>${s ? `nothing matched between ${ts(s.start)} and ${ts(s.end ?? state.set.source.duration)}` : 'outside the set'}</span>`;
     const c = $('#askCopy'); if (c) c.onclick = () => copy(`${ts(t)} ${s.track.artist} - ${s.track.title}`, 'Answer copied');
     const l = $('#askLink'); if (l) l.onclick = ev => { ev.preventDefault(); copy(location.origin + location.pathname + `?t=${Math.floor(t)}#/set/${state.key}`, 'Link copied'); };

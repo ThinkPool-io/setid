@@ -1,0 +1,269 @@
+{
+ "source": {
+  "url": "https://www.youtube.com/watch?v=08__IepUcFA",
+  "platform": "Youtube",
+  "id": "08__IepUcFA",
+  "title": "GOTEC - Adri\u00e1n Mills | H\u00d6R - May 29 / 2024",
+  "channel": "H\u00d6R BERLIN",
+  "duration": 3336.0,
+  "thumbnail": "https://i.ytimg.com/vi/08__IepUcFA/maxresdefault.jpg",
+  "upload_date": "20240529",
+  "views": 373136
+ },
+ "analysed": {
+  "method": "comments",
+  "comments": 452,
+  "named": 6,
+  "samples": 452,
+  "identified": 6,
+  "every": 0,
+  "clip": 0,
+  "ran_at": "2026-10-11T15:41:14Z",
+  "took": 33
+ },
+ "segments": [
+  {
+   "start": 0,
+   "end": 240,
+   "track": {
+    "id": "cm608129109",
+    "artist": "Adri\u00e1n Mills",
+    "title": "BABY",
+    "source": "comments",
+    "votes": 1,
+    "likes": 0,
+    "approx": false,
+    "evidence": [
+     "reply to \"1st track???\""
+    ],
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/3916754041",
+    "isrc": "QM6MZ2619543",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/f/3/8/0/f389635bd87306509deaa9fc631e04f5.mp3?hdnea=exp=1791734156~acl=/api/1/1/f/3/8/0/f389635bd87306509deaa9fc631e04f5.mp3*~data=user_id=0,application_id=42~hmac=e080adfe2898e66a819da471a5a4b5e0d7f0745592ac3c37dca6b47584a58a4a",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/8ed0d830157f6c645288ac93b105e59f/250x250-000000-80-0-0.jpg",
+    "youtube": "3fC9C-ZF7IM",
+    "youtubeTitle": "BABY"
+   },
+   "hits": 1
+  },
+  {
+   "start": 240,
+   "end": 570,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 570,
+   "end": 810,
+   "track": {
+    "id": "cm294965613",
+    "artist": "Adri\u00e1n Mills",
+    "title": "AM DB9",
+    "source": "comments",
+    "votes": 1,
+    "likes": 4,
+    "approx": false,
+    "evidence": [
+     "reply to \"9:30 track id?\""
+    ],
+    "youtube": "Op4PHCOSKPM",
+    "youtubeTitle": "Adrian Mills - AM DB9. 2023"
+   },
+   "hits": 1
+  },
+  {
+   "start": 810,
+   "end": 960,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 960,
+   "end": 1200,
+   "track": {
+    "id": "cm933015493",
+    "artist": "Adri\u00e1n Mills",
+    "title": "240 Intro",
+    "source": "comments",
+    "votes": 3,
+    "likes": 3,
+    "approx": false,
+    "evidence": [
+     "reply to \"16:15 Id?  Dos cuarenta dos cuarentaa probando probandoooo \ud83c\udf89\"",
+     "reply to \"16:50?\"",
+     "reply to \"Track id @16:00 plsssss\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\""
+    ],
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/3465541351",
+    "isrc": "DEH742517692",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/b/d/b/0/bdb3b18ea3e0f8f6f41a479a75ce9803.mp3?hdnea=exp=1791734163~acl=/api/1/1/b/d/b/0/bdb3b18ea3e0f8f6f41a479a75ce9803.mp3*~data=user_id=0,application_id=42~hmac=e49ab625176221660ada36b815e917c89b0579314bff52d0d974e021402cc4d2",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/1ebe9d0f03666a81f37de600bd634e0b/250x250-000000-80-0-0.jpg",
+    "youtube": "tOaWGp84U2g",
+    "youtubeTitle": "240 INTRO"
+   },
+   "hits": 3
+  },
+  {
+   "start": 1200,
+   "end": 1460,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 1460,
+   "end": 1700,
+   "track": {
+    "id": "cm115059844",
+    "artist": "Adri\u00e1n Mills",
+    "title": "Atlantis",
+    "source": "comments",
+    "votes": 1,
+    "likes": 3,
+    "approx": false,
+    "evidence": [
+     "reply to \"24:20 Track Id? Pleeeeeeease! \ud83d\ude4f\ud83c\udffc\""
+    ],
+    "bpm": null,
+    "deezer": "https://www.deezer.com/track/3972126951",
+    "isrc": "NLCK42416369",
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/e/5/f/0/e5f589a5ed77aa990a6b43e2c92055fd.mp3?hdnea=exp=1791734168~acl=/api/1/1/e/5/f/0/e5f589a5ed77aa990a6b43e2c92055fd.mp3*~data=user_id=0,application_id=42~hmac=b0ad1238a6dd3b71bd6201438345adb1102ac82715b26674b671d2d3d6c1234f",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/93c976651b255eaba3d3cf38a1ea3e91/250x250-000000-80-0-0.jpg",
+    "youtube": "pmcg6JR7B1k",
+    "youtubeTitle": "\u00c1TLANTIS"
+   },
+   "hits": 1
+  },
+  {
+   "start": 1700,
+   "end": 2790,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 2790,
+   "end": 3030,
+   "track": {
+    "id": "cm926154088",
+    "artist": "Stef de Haan x Adrian Mills",
+    "title": "Instant classic",
+    "source": "comments",
+    "votes": 2,
+    "likes": 0,
+    "approx": false,
+    "evidence": [
+     "reply to \"48:00 please track id\"",
+     "reply to \"Tema/track 46:30?????\""
+    ],
+    "youtube": "fbf3NFax24o",
+    "youtubeTitle": "INSTANT CLASSIC (feat. Adrian Mills)"
+   },
+   "hits": 2
+  },
+  {
+   "start": 3030,
+   "end": 3096.0,
+   "track": null,
+   "hits": 0
+  },
+  {
+   "start": 3096.0,
+   "end": 3336.0,
+   "track": {
+    "id": "cm158440901",
+    "artist": "EXTENDO",
+    "title": "RAWSPORT [LATENIGHT MIX]",
+    "source": "comments",
+    "votes": 1,
+    "likes": 0,
+    "approx": true,
+    "evidence": [
+     "reply to \"name of the last trackk plsssssssssssssssssss\""
+    ]
+   },
+   "hits": 1
+  }
+ ],
+ "similar": {
+  "cm608129109": [
+   {
+    "artist": "240 KM/H",
+    "title": "Tranquilo (zwilling. Remix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3467274871",
+    "deezerId": 3467274871,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791734159~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=230fe25144137ec0be33b186945014fd0327a6a1d4bf64bbcd7ea2fa59abac70",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
+    "youtube": "kswV_qYnYFU",
+    "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
+    "id": "sim871202401"
+   },
+   {
+    "artist": "Serafina",
+    "title": "FLUTE",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3819901601",
+    "deezerId": 3819901601,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791734160~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=d4c1cbe2265c073391e82c19184047d9ee868be31454f2cebe1f71f0fc4577fb",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
+    "youtube": "EC9O9b7bVas",
+    "youtubeTitle": "FLUTE",
+    "id": "sim898830887"
+   }
+  ],
+  "cm294965613": [],
+  "cm933015493": [
+   {
+    "artist": "240 KM/H",
+    "title": "Tranquilo (zwilling. Remix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3467274871",
+    "deezerId": 3467274871,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791734165~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=7e289d732666045a0ad30bc0799461db18d75c099bc784ceb91714fa84da1e56",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
+    "youtube": "kswV_qYnYFU",
+    "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
+    "id": "sim871202401"
+   },
+   {
+    "artist": "Serafina",
+    "title": "FLUTE",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3819901601",
+    "deezerId": 3819901601,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791734165~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=3a17ef0d51c210c2a4c63eff27ff0e0d86f28512b41632ceba07c98ec57536d2",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
+    "youtube": "EC9O9b7bVas",
+    "youtubeTitle": "FLUTE",
+    "id": "sim898830887"
+   }
+  ],
+  "cm115059844": [
+   {
+    "artist": "240 KM/H",
+    "title": "Tranquilo (zwilling. Remix)",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3467274871",
+    "deezerId": 3467274871,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3?hdnea=exp=1791734170~acl=/api/1/1/4/a/e/0/4aece0b4af1c65c7224eccf330100f13.mp3*~data=user_id=0,application_id=42~hmac=3d73aa93fc05fa7e387e4b5e3f042e0c22d88f867ea515cbe1aa531cd25b1170",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/758d0aed05e536a4494496a1174c7692/250x250-000000-80-0-0.jpg",
+    "youtube": "kswV_qYnYFU",
+    "youtubeTitle": "Louis BPM - TRANQUILO (zwilling. Official Remix)",
+    "id": "sim871202401"
+   },
+   {
+    "artist": "Serafina",
+    "title": "FLUTE",
+    "why": "related artist",
+    "deezer": "https://www.deezer.com/track/3819901601",
+    "deezerId": 3819901601,
+    "preview": "https://cdnt-preview.dzcdn.net/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3?hdnea=exp=1791734170~acl=/api/1/1/3/5/2/0/35213241706eab54b31b783e64545b96.mp3*~data=user_id=0,application_id=42~hmac=1cc7f31312c5b960a3fd043f087abc409016290eec2c8374e9ab1a86d39da558",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/797ec6bed50b6fc1bb42d7d8dbabeeaf/250x250-000000-80-0-0.jpg",
+    "youtube": "EC9O9b7bVas",
+    "youtubeTitle": "FLUTE",
+    "id": "sim898830887"
+   }
+  ],
+  "cm926154088": [],
+  "cm158440901": []
+ }
+}
