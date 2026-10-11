@@ -13,7 +13,7 @@
   const PLAY = '<svg viewBox="0 0 14 14"><path d="M3 1.5v11l9-5.5z"/></svg>', STOP = '<svg viewBox="0 0 14 14"><rect x="2.5" y="2.5" width="9" height="9" rx="1"/></svg>';
   const COLORS = ['#c8ff2e', '#6ad1ff', '#ff8ad1', '#ffb13d', '#8af0c4', '#b79cff', '#ff6b6b', '#4ee0ff', '#ffe36b', '#7fff9f'];
 
-  const state = { index: [], set: null, key: null, tracks: {}, setlist: JSON.parse(localStorage.getItem('setid.setlist') || '[]'), curSeg: -1 };
+  const state = { index: [], set: null, key: null, tracks: {}, setlist: JSON.parse(localStorage.getItem('setid.setlist') || '[]'), curSeg: -1, api: '', apiOk: false, apiInfo: null };
 
   // ---------- utils ----------
   let toastT; function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 2600); }
@@ -44,9 +44,15 @@
   const pvBtn = t => `<button class="pv" data-pv="${t.id}" ${t.preview ? '' : 'disabled title="No preview available"'} aria-label="30 second preview">${PLAY}</button>`;
 
   // ---------- data ----------
-  async function loadIndex() { try { state.index = await (await fetch('sets/index.json', { cache: 'no-store' })).json(); } catch { state.index = []; } }
+  async function loadIndex() {
+    try { state.index = await (await fetch('sets/index.json', { cache: 'no-store' })).json(); } catch { state.index = []; }
+    try { const c = await (await fetch('api.json', { cache: 'no-store' })).json(); state.api = (c.api || '').replace(/\/$/, ''); } catch { }
+    if (state.api) { try { const ctl = new AbortController(); setTimeout(() => ctl.abort(), 8000); const hinfo = await (await fetch(state.api + '/health', { signal: ctl.signal })).json(); state.apiOk = !!hinfo.ok; state.apiInfo = hinfo; const remote = await (await fetch(state.api + '/sets/index.json')).json(); const have = new Set(state.index.map(x => x.key)); remote.forEach(x => { if (!have.has(x.key)) state.index.push(x); }); } catch { state.apiOk = false; } }
+  }
   async function loadSet(key) {
-    const d = await (await fetch(`sets/${key}.json`, { cache: 'no-store' })).json();
+    let r = await fetch(`sets/${key}.json`, { cache: 'no-store' });
+    if (!r.ok && state.api) r = await fetch(`${state.api}/sets/${key}.json`, { cache: 'no-store' });
+    const d = await r.json();
     d.segments.forEach(s => { if (s.track) state.tracks[s.track.id] = s.track; });
     Object.values(d.similar || {}).flat().forEach(t => { state.tracks[t.id] = t; });
     return d;
@@ -65,17 +71,48 @@
   function renderHome() {
     $('#home').classList.remove('hidden'); $('#set').classList.add('hidden');
     stopPlayer();
+    const w = $('#worker'); const info = state.apiInfo || {};
+    w.innerHTML = state.apiOk ? `<span class="chip acc">worker online</span> <span class="chip">Shazam: ${h(info.shazam || '?')}</span> <span class="chip">AudD: ${info.audd ? 'key set' : 'no key'}</span> <span class="chip">ACRCloud: ${info.acrcloud ? 'key set' : 'no key'}</span> <span class="chip">${info.queue || 0} in queue</span>` : '<span class="chip" style="color:var(--warn)">worker offline: only library sets open</span>';
+    $('#every').value = localStorage.getItem('setid.every') || 40; $('#audd').value = localStorage.getItem('setid.audd') || '';
     $('#library').innerHTML = state.index.length ? state.index.map(x => `<a class="card" href="#/set/${x.key}"><img src="${x.thumbnail}" alt="" loading="lazy"><div class="b"><div class="t">${h(x.title)}</div><div class="m"><span class="chip acc">${x.tracks} IDs</span><span class="chip">${ts(x.duration)}</span><span class="chip">${Math.round(x.coverage * 100)}% covered</span></div></div></a>`).join('') : '<div class="empty">No sets processed yet.</div>';
   }
   function onPaste(v) {
     const r = findKey(v);
     if (typeof r === 'string') { location.hash = '#/set/' + r; return; }
     const hint = $('#pasteHint'); hint.classList.add('warn');
-    if (!r) hint.textContent = 'Paste a YouTube or SoundCloud link.';
-    else if (r.missing) hint.textContent = `That set isn't processed yet. In the full product it would queue now and be ready in a couple of minutes (about 1 minute of compute per hour of audio). The prototype runs the pipeline offline: python pipeline/trackid.py "${v.trim()}"`;
-    else hint.textContent = `No set in the library matches "${v.trim()}". Paste a YouTube or SoundCloud link to a set.`;
+    if (!r) { hint.textContent = 'Paste a YouTube or SoundCloud link.'; return; }
+    if (!r.missing) { hint.textContent = `No set in the library matches "${v.trim()}". Paste a YouTube or SoundCloud link to a set.`; return; }
+    if (!state.apiOk) { hint.textContent = 'That set isn\'t processed yet and the processing worker is offline right now. Try one from the library below.'; return; }
+    queueSet(v.trim());
+  }
+  async function queueSet(url) {
+    const hint = $('#pasteHint'); hint.classList.remove('warn');
+    const every = +(localStorage.getItem('setid.every') || 40);
+    const audd = localStorage.getItem('setid.audd') || '';
+    hint.textContent = 'Queuing…';
+    let j; try { j = await (await fetch(state.api + '/queue', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url, every, audd_token: audd }) })).json(); } catch { hint.classList.add('warn'); hint.textContent = 'Could not reach the worker.'; return; }
+    if (j.error) { hint.classList.add('warn'); hint.textContent = j.error; return; }
+    if (j.state === 'done') { location.hash = '#/set/' + j.key; return; }
+    $('#progress').classList.remove('hidden'); $('#progress').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    hint.textContent = '';
+    const t0 = Date.now();
+    const poll = async () => {
+      let st; try { st = await (await fetch(`${state.api}/status/${j.key}`)).json(); } catch { setTimeout(poll, 3000); return; }
+      const mins = Math.round((Date.now() - t0) / 60000);
+      const ids = st.log.filter(l => /^\s+\d+:\d+\s+\S/.test(l) && !/·\s*$/.test(l)).length;
+      $('#progHead').innerHTML = st.state === 'queued' ? `<b>Queued</b> · position ${st.position + 1} · ${h(url)}` : st.state === 'running' ? `<b>Listening…</b> · ${ids} IDs so far · ${mins} min · sampling every ${st.every}s` : st.state === 'done' ? `<b>Done.</b> Opening the tracklist…` : `<b>Failed.</b> The log below says why.`;
+      $('#progLog').textContent = st.log.join('\n') || 'Waiting for the worker…';
+      $('#progLog').scrollTop = 1e9;
+      if (st.state === 'done') { await loadIndex(); setTimeout(() => { location.hash = '#/set/' + st.key; }, 800); return; }
+      if (st.state === 'failed') return;
+      setTimeout(poll, 2500);
+    };
+    poll();
   }
   $('#pasteForm').addEventListener('submit', e => { e.preventDefault(); onPaste($('#pasteQ').value); });
+  $('#every').addEventListener('change', e => localStorage.setItem('setid.every', Math.max(20, Math.min(120, +e.target.value || 40))));
+  $('#audd').addEventListener('change', e => localStorage.setItem('setid.audd', e.target.value.trim()));
+  $('#progClose').onclick = () => $('#progress').classList.add('hidden');
   $('#navForm').addEventListener('submit', e => { e.preventDefault(); const v = $('#navQ').value; location.hash = '#/'; $('#pasteQ').value = v; onPaste(v); });
 
   // ---------- YouTube player ----------

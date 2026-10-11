@@ -48,14 +48,88 @@ def norm(m):
             "cover": (t.get("images") or {}).get("coverart"), "genre": (t.get("genres") or {}).get("primary"),
             "label": meta.get("label"), "released": meta.get("released"), "shazam": t.get("url"), **links}
 
-async def recognize(shazam, path, retries=4):
+PROVIDERS = [p for p in os.environ.get("SETID_PROVIDERS", "shazam,audd,acrcloud").split(",") if p]
+AUDD_TOKEN = os.environ.get("AUDD_TOKEN", "")
+ACR = {k: os.environ.get("ACR_" + k, "") for k in ("HOST", "KEY", "SECRET")}
+RATE_LIMITED = set()
+
+async def recognize_shazam(shazam, path, retries=2):
+    """Returns (normalised track or None, ok). ok=False means the provider failed (not 'no match')."""
+    if "shazam" in RATE_LIMITED:
+        return None, False
     for i in range(retries):
         try:
-            return await asyncio.wait_for(shazam.recognize(path), timeout=25)
+            r = await asyncio.wait_for(shazam.recognize(path), timeout=25)
+            return norm(r), True
         except Exception as e:
             print(f"    shazam retry {i+1}: {type(e).__name__}", file=sys.stderr)
-            await asyncio.sleep([20, 45, 90, 180][i])
-    return {}
+            await asyncio.sleep([8, 20][i])
+    RATE_LIMITED.add("shazam")
+    print("    shazam unavailable (rate limited or down), switching provider", file=sys.stderr)
+    return None, False
+
+async def recognize_audd(sess, path):
+    if not AUDD_TOKEN:
+        return None, False
+    try:
+        form = aiohttp.FormData(); form.add_field("api_token", AUDD_TOKEN); form.add_field("return", "apple_music,deezer,spotify")
+        form.add_field("file", open(path, "rb"), filename="clip.mp3", content_type="audio/mpeg")
+        async with sess.post("https://api.audd.io/", data=form, timeout=aiohttp.ClientTimeout(total=30)) as r:
+            j = await r.json(content_type=None)
+    except Exception as e:
+        print(f"    audd error: {type(e).__name__}", file=sys.stderr); return None, False
+    if j.get("status") != "success":
+        print(f"    audd: {j.get('error', {}).get('error_message', j.get('status'))}", file=sys.stderr); return None, False
+    t = j.get("result")
+    if not t:
+        return None, True
+    am, dz, sp = t.get("apple_music") or {}, t.get("deezer") or {}, t.get("spotify") or {}
+    return {"id": "ad" + str(abs(hash((t.get("artist"), t.get("title")))) % 10**9), "title": t.get("title"), "artist": t.get("artist"),
+            "cover": (am.get("artwork") or {}).get("url", "").replace("{w}", "400").replace("{h}", "400") or (dz.get("album") or {}).get("cover_medium"),
+            "label": t.get("label"), "released": (t.get("release_date") or "")[:4] or None, "apple": am.get("url"),
+            "preview": (am.get("previews") or [{}])[0].get("url") or dz.get("preview"), "deezer": dz.get("link"),
+            "spotifyUri": sp.get("uri"), "provider": "audd"}, True
+
+async def recognize_acr(sess, path):
+    if not (ACR["HOST"] and ACR["KEY"] and ACR["SECRET"]):
+        return None, False
+    import base64, hashlib, hmac
+    ts = str(int(time.time()))
+    sig = base64.b64encode(hmac.new(ACR["SECRET"].encode(), "\n".join(["POST", "/v1/identify", ACR["KEY"], "audio", "1", ts]).encode(), hashlib.sha1).digest()).decode()
+    data = open(path, "rb").read()
+    form = aiohttp.FormData()
+    for k, v in {"access_key": ACR["KEY"], "sample_bytes": str(len(data)), "timestamp": ts, "signature": sig, "data_type": "audio", "signature_version": "1"}.items():
+        form.add_field(k, v)
+    form.add_field("sample", data, filename="clip.mp3", content_type="audio/mpeg")
+    try:
+        async with sess.post(f"https://{ACR['HOST']}/v1/identify", data=form, timeout=aiohttp.ClientTimeout(total=30)) as r:
+            j = await r.json(content_type=None)
+    except Exception as e:
+        print(f"    acrcloud error: {type(e).__name__}", file=sys.stderr); return None, False
+    code = (j.get("status") or {}).get("code")
+    if code == 1001:
+        return None, True
+    if code != 0:
+        print(f"    acrcloud: {(j.get('status') or {}).get('msg')}", file=sys.stderr); return None, False
+    m = ((j.get("metadata") or {}).get("music") or [{}])[0]
+    artist = ", ".join(a.get("name", "") for a in m.get("artists", []))
+    return {"id": "acr" + str(m.get("acrid", "")[:12]), "title": m.get("title"), "artist": artist, "label": m.get("label"),
+            "released": (m.get("release_date") or "")[:4] or None, "provider": "acrcloud"}, True
+
+async def recognize(shazam, sess, path):
+    for p in PROVIDERS:
+        if p == "shazam":
+            tr, ok = await recognize_shazam(shazam, path)
+        elif p == "audd":
+            tr, ok = await recognize_audd(sess, path)
+        elif p == "acrcloud":
+            tr, ok = await recognize_acr(sess, path)
+        else:
+            continue
+        if ok:
+            if tr: tr.setdefault("provider", p)
+            return tr
+    return None
 
 def merge(hits):
     segs = []
@@ -180,15 +254,20 @@ async def main():
         print(f"[{meta.get('id')}] {meta.get('title')} ({dur/60:.1f} min) downloaded in {time.time()-t0:.0f}s", file=sys.stderr)
         shazam = Shazam()
         hits, t = [], 0.0
-        while t + a.clip <= dur:
+        print(f"  providers: {', '.join(p for p in PROVIDERS if p == 'shazam' or (p == 'audd' and AUDD_TOKEN) or (p == 'acrcloud' and ACR['KEY']))}", file=sys.stderr)
+        async with aiohttp.ClientSession() as rsess:
+          while t + a.clip <= dur:
             c = clip(mp3, t, a.clip, wd)
-            r = await recognize(shazam, c)
-            tr = norm(r) if r else None
+            tr = await recognize(shazam, rsess, c)
             hits.append((t, tr))
-            print(f"  {int(t)//60:02d}:{int(t)%60:02d}  {tr['artist'] + ' - ' + tr['title'] if tr else '·'}", file=sys.stderr)
+            print(f"  {int(t)//60:02d}:{int(t)%60:02d}  {tr['artist'] + ' - ' + tr['title'] if tr else '·'}", file=sys.stderr, flush=True)
             os.remove(c)
             t += a.every
             await asyncio.sleep(1.5)
+            if len(RATE_LIMITED) >= len([p for p in PROVIDERS if p == 'shazam' or (p == 'audd' and AUDD_TOKEN) or (p == 'acrcloud' and ACR['KEY'])]):
+                print("  all identification providers unavailable, stopping early", file=sys.stderr); break
+    if not any(h for _, h in hits) and RATE_LIMITED:
+        print("failed: no identification provider available (Shazam rate-limited and no AudD/ACRCloud key). Nothing saved.", file=sys.stderr); sys.exit(2)
     segs = merge(hits)
     if segs and segs[-1]['end'] is None and dur < float(meta.get('duration') or 0):
         segs[-1]['end'] = dur
@@ -208,7 +287,7 @@ async def main():
         "source": {"url": a.url, "platform": meta.get("extractor_key"), "id": meta.get("id"), "title": meta.get("title"),
                    "channel": meta.get("uploader") or meta.get("channel"), "duration": float(meta.get("duration") or 0),
                    "thumbnail": meta.get("thumbnail"), "upload_date": meta.get("upload_date"), "views": meta.get("view_count")},
-        "analysed": {"seconds": dur, "every": a.every, "clip": a.clip, "samples": len(hits),
+        "analysed": {"providers": sorted({h["provider"] for _, h in hits if h and h.get("provider")}), "seconds": dur, "every": a.every, "clip": a.clip, "samples": len(hits),
                      "identified": sum(1 for _, x in hits if x), "ran_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                      "took": round(time.time() - t0)},
         "segments": segs, "similar": similar,
